@@ -40,6 +40,7 @@
 //------------------------------------------------------------------------------
 
 // MASKS:
+#define CAN_MASK_MIC19                  0b11111111111   //<! Mask for MIC17
 #define CAN_MASK_MIC17                  0b11111111111   //<! Mask for MIC17
 #define CAN_MASK_MAM17                  0b11111111111   //<! Mask for MAM17
 #define CAN_MASK_MAB17                  0b11111111111   //<! Mask for MAB17
@@ -83,6 +84,44 @@
 #define CAN_LENGHT_MSG_MIC17_MCS            2
 #define CAN_MSG_MIC17_MCS_BOAT_ON_BYTE      1
 #define CAN_MSG_MIC17_MCS_BOAT_ON_BIT       0
+
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+
+// FILTERS FOR MESSAGES FROM MIC19 :
+#define CAN_FILTER_MSG_MIC19_STATE      0b00000001000   //<! Informs about state and errors
+#define CAN_FILTER_MSG_MIC19_MOTOR      0b00000001001   //<! Informs about motor controls.
+#define CAN_FILTER_MSG_MIC19_PUMPS      0b00000001010   //<! Informs about pumps controls.
+#define CAN_FILTER_MSG_MIC19_MPPTS    	0b00000001011   //<! Informs about mppts controls.
+#define CAN_FILTER_MSG_MIC19_MCS        0b00000001100   //<! Informs about boat_on to mcs.
+
+// MESSAGES FROM MIC19 TO MAM19:4
+#define CAN_LENGTH_MSG_MIC19_MOTOR          4
+#define CAN_MSG_MIC19_MOTOR_MOTOR_ON_BYTE   1
+#define CAN_MSG_MIC19_MOTOR_MOTOR_ON_BIT    0
+#define CAN_MSG_MIC19_MOTOR_DMS_BYTE    	1
+#define CAN_MSG_MIC19_MOTOR_DMS_BIT      	1
+#define CAN_MSG_MIC19_MOTOR_D_RAW_BYTE	    2
+#define CAN_MSG_MIC19_MOTOR_I_RAW_BYTE		3
+
+// MESSAGES FROM MIC19 TO MAB19:
+#define CAN_LENGTH_MSG_MIC19_PUMPS          2
+#define CAN_MSG_MIC19_PUMPS_PUMPS_BYTE      1
+#define CAN_MSG_MIC19_PUMPS_PUMP1_BIT       0
+#define CAN_MSG_MIC19_PUMPS_PUMP2_BIT       1
+#define CAN_MSG_MIC19_PUMPS_PUMP3_BIT       2
+
+// MESSAGES FROM MIC19 TO MCC19_x:
+#define CAN_LENGTH_MSG_MIC19_MPPTS          3
+#define CAN_MSG_MIC19_MPPTS_MPPTS_ON_BYTE   1
+#define CAN_MSG_MIC19_MPPTS_MPPTS_ON_BIT    0
+#define CAN_MSG_MIC19_MPPTS_POT_BYTE        2
+
+// MESSAGES FROM MIC19 TO MCS19:
+#define CAN_LENGHT_MSG_MIC19_MCS            2
+#define CAN_MSG_MIC19_MCS_BOAT_ON_BYTE      1
+#define CAN_MSG_MIC19_MCS_BOAT_ON_BIT       0
 
 //------------------------------------------------------------------------------
 
