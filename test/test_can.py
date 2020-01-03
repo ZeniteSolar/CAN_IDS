@@ -81,11 +81,11 @@ class test_can_module(unittest.TestCase):
             expected
         )
 
-    def test_subscribe_topic(self):
+    def test_add_topic(self):
         m = self.can.module("mic17", 10)
         t = self.can.topic("motor", 9)
 
-        m.subscribe_topic(t)
+        m.add_topic(t)
 
         expected = {
             "name": "MIC17",
@@ -104,6 +104,31 @@ class test_can_module(unittest.TestCase):
 
         self.assertEqual(
             dict(m.get()),
+            expected
+        )
+
+
+class test_can(unittest.TestCase):
+    def setUp(self):
+        self.can = Can
+
+    def test_add_module(self):
+        m = self.can.module("mic17", 10)
+        c = Can()
+        c.add_module(m)
+
+        expected = {
+            "modules": [
+                {
+                    "name": "MIC17",
+                    "signature": 10,
+                    "topics": []
+                }
+            ]
+        }
+
+        self.assertEqual(
+            dict(c.get()),
             expected
         )
 

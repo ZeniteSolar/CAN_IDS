@@ -8,7 +8,9 @@ class Can:
     def convert_string(string: str) -> str:
         string = string.upper()
         string = string.replace(' ', '_')
-        string = normalize('NFKD', string).encode('ASCII', 'ignore').decode('ASCII')
+        string = normalize('NFKD', string)
+        string = string.encode('ASCII', 'ignore')
+        string = string.decode('ASCII')
         string = re.sub('[^A-Z0-9_]+', '', string)
         return string
 
@@ -71,20 +73,44 @@ class Can:
         def print(self):
             print(json.dumps(self.get(), indent=4))
 
-        def subscribe_topic(self, topic):
+        def add_topic(self, topic):
             self.topics.append(dict(topic.get()))
+
+    def __init__(self):
+        self.modules = []
+
+    def get(self) -> str:
+        return {
+            "modules": self.modules
+        }
+
+    def print(self):
+        print(json.dumps(self.get(), indent=4))
+
+    def add_module(self, module):
+        self.modules.append(dict(module.get()))
+
+    def import_json(self, file: str):
+        pass
+
+    def export_json(self, file: str):
+        pass
 
 
 if __name__ == '__main__':
-    a = Can.topic("motor", 9)
-    a.describe_byte("motor", 1)
-    a.describe_bit("motor on", 1, 0)
-    a.describe_byte("D raw", 2)
-    a.describe_byte("I raw", 3)
-    #a.print()
+    t1 = Can.topic("motor", 9)
+    t1.describe_byte("motor", 1)
+    t1.describe_bit("motor on", 1, 0)
+    t1.describe_byte("D raw", 2)
+    t1.describe_byte("I raw", 3)
+    #t1.print()
 
-    m = Can.module("mic17", 10)
-    m.subscribe_topic(a)
-    m.print()
+    m1 = Can.module("mic17", 10)
+    m1.add_topic(t1)
+    #m1.print()
+
+    c = Can()
+    c.add_module(m1)
+    c.print()
 
 
