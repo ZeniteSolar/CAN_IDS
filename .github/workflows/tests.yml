@@ -32,7 +32,10 @@ jobs:
       run: |
         python -m unittest discover -v
         
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
+    - name: coverage
+    - uses: devmasx/coverage-check-action@v1.1.0
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        type: simplecov
+        result_path: coverage/.last_run.json
+        min_coverage: 90
+        token: ${{secrets.GITHUB_TOKEN}}
