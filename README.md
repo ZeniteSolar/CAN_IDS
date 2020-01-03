@@ -6,7 +6,7 @@
   </a>
 </p>
 
-Code generation for the CAN BUS messages of the boat
+CAN BUS protocol description with code generation for the solar boat modules and applications.
 
 ## How it works
   - You programatically describe all modules and its messages using Python language.
