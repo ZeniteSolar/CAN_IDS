@@ -118,9 +118,9 @@ if __name__ == '__main__':
     c1 = Can()
     c1.add_module(m1)
     # c1.print()
-    c1.export_json("test.json")
+    c1.export_json("sample.json")
 
     c2 = Can()
-    c2.import_json("test.json")
+    c2.import_json("sample.json")
     c2.print()
 

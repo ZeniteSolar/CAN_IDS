@@ -1,0 +1,42 @@
+{
+    "modules": [
+        {
+            "name": "MIC17",
+            "signature": 10,
+            "topics": [
+                {
+                    "name": "CAN_FILTER_MSG_MOTOR",
+                    "id": 9,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE"
+                        },
+                        {
+                            "name": "MOTOR",
+                            "bits": [
+                                "MOTOR_ON",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        {
+                            "name": "D_RAW"
+                        },
+                        {
+                            "name": "I_RAW"
+                        },
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            ]
+        }
+    ]
+}

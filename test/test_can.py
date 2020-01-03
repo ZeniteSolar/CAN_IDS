@@ -136,10 +136,10 @@ class test_can(unittest.TestCase):
         m = self.can.module("mic17", 10)
         c1 = Can()
         c1.add_module(m)
-        c1.export_json("test.json")
+        c1.export_json("test/test.json")
 
         c2 = Can()
-        c2.import_json("test.json")
+        c2.import_json("test/test.json")
 
         self.assertEqual(
             dict(c1.get()),
