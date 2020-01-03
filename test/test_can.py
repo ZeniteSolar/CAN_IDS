@@ -8,12 +8,18 @@ class test_can_topic(unittest.TestCase):
         self.can = Can
 
     def test_topic(self):
-        t = self.can.topic("motor", 9)
+        t = self.can.topic("motor", 9, "topic description text here")
         expected = {
             "name": "CAN_FILTER_MSG_MOTOR",
+            "description": "topic description text here",
             "id": 9,
             "bytes": [
-                {"name": "SIGNATURE" },
+                {
+                    "name": "SIGNATURE",
+                    "description": "Senders signature",
+                    "type": "u8",
+                    "units": ""
+                },
                 *[None]*7
             ]
         }
@@ -24,15 +30,26 @@ class test_can_topic(unittest.TestCase):
         )
 
     def test_describe_byte(self):
-        t = self.can.topic("motor", 9)
-        t.describe_byte("motor", 1)
+        t = self.can.topic("motor", 9, "topic description text here")
+        t.describe_byte("motor", 1, "byte description text here", "bitfield", "")
 
         expected = {
             "name": "CAN_FILTER_MSG_MOTOR",
+            "description": "topic description text here",
             "id": 9,
             "bytes": [
-                {"name": "SIGNATURE" },
-                {"name": "MOTOR"},
+                {
+                    "name": "SIGNATURE",
+                    "description": "Senders signature",
+                    "type": "u8",
+                    "units": "",
+                },
+                {
+                    "name": "MOTOR",
+                    "description": "byte description text here",
+                    "type": "bitfield",
+                    "units": "",
+                },
                 *[None]*6
             ]
         }
@@ -43,16 +60,28 @@ class test_can_topic(unittest.TestCase):
         )
 
     def test_describe_bit(self):
-        t = self.can.topic("motor", 9)
-        t.describe_byte("motor", 1)
+        t = self.can.topic("motor", 9, "topic description text here")
+        t.describe_byte("motor", 1, "byte description text here", "bitfield", "")
         t.describe_bit("motor on", 1, 0)
 
         expected = {
             "name": "CAN_FILTER_MSG_MOTOR",
+            "description": "topic description text here",
             "id": 9,
             "bytes": [
-                {"name": "SIGNATURE" },
-                {"name": "MOTOR", "bits": ["MOTOR_ON", *[None]*7],},
+                {
+                    "name": "SIGNATURE",
+                    "description": "Senders signature",
+                    "type": "u8",
+                    "units": "",
+                },
+                {
+                    "name": "MOTOR",
+                    "description": "byte description text here",
+                    "type": "bitfield",
+                    "units": "",
+                    "bits": ["MOTOR_ON", *[None]*7],
+                },
                 *[None]*6
             ]
         }
@@ -68,12 +97,13 @@ class test_can_module(unittest.TestCase):
         self.can = Can
 
     def test_module(self):
-        m = self.can.module("mic17", 10)
+        m = self.can.module("mic17", 10, "module description text here")
 
         expected = {
             "name": "MIC17",
+            "description": "module description text here",
             "signature": 10,
-            "topics": []
+            "topics": [],
         }
 
         self.assertEqual(
@@ -82,24 +112,31 @@ class test_can_module(unittest.TestCase):
         )
 
     def test_add_topic(self):
-        m = self.can.module("mic17", 10)
-        t = self.can.topic("motor", 9)
+        m = self.can.module("mic17", 10, "module description text here")
+        t = self.can.topic("motor", 9, "topic description text here")
 
         m.add_topic(t)
 
         expected = {
             "name": "MIC17",
+            "description": "module description text here",
             "signature": 10,
             "topics": [
                 {
                     "name": "CAN_FILTER_MSG_MOTOR",
+                    "description": "topic description text here",
                     "id": 9,
                     "bytes": [
-                        {"name": "SIGNATURE" },
-                        *[None]*7
-                    ]
-                }
-            ]
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        *[None]*7,
+                    ],
+                },
+            ],
         }
 
         self.assertEqual(
@@ -113,7 +150,7 @@ class test_can(unittest.TestCase):
         self.can = Can
 
     def test_add_module(self):
-        m = self.can.module("mic17", 10)
+        m = self.can.module("mic17", 10, "module description text here")
         c = Can()
         c.add_module(m)
 
@@ -121,10 +158,11 @@ class test_can(unittest.TestCase):
             "modules": [
                 {
                     "name": "MIC17",
+                    "description": "module description text here",
                     "signature": 10,
-                    "topics": []
-                }
-            ]
+                    "topics": [],
+                },
+            ],
         }
 
         self.assertEqual(
@@ -133,7 +171,7 @@ class test_can(unittest.TestCase):
         )
 
     def test_export_and_import_json(self):
-        m = self.can.module("mic17", 10)
+        m = self.can.module("mic17", 10, "module description text here")
         c1 = Can()
         c1.add_module(m)
         c1.export_json("test/test.json")

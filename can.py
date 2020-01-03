@@ -17,15 +17,17 @@ class Can:
     class topic:
         name_prefix = "CAN_FILTER_MSG_"
 
-        def __init__(self, msg: str, id: int):
+        def __init__(self, msg: str, id: int, description: str):
             self.name = Can.convert_string(msg)
             self.id = id
             self.bytes = [None] * 8
-            self.describe_byte("signature", 0)
+            self.describe_byte("signature", 0, "Senders signature", "u8", "")
+            self.description = description
 
         def get(self) -> str:
             return {
                 "name": str(self.name_prefix + self.name),
+                "description": self.description,
                 "id": self.id,
                 "bytes": self.bytes
             }
@@ -33,13 +35,23 @@ class Can:
         def print(self):
             print(json.dumps(self.get(), indent=4))
 
-        def describe_byte(self, name: str, byte: int):
+        def describe_byte(self,
+                          name: str,
+                          byte: int,
+                          description: str,
+                          type: str,
+                          units: str = None):
             name = Can.convert_string(name)
             if (byte < 0) | (byte > 8):
                 print("Byte number MUST be between 0 and 7 to be described.")
                 return
 
-            self.bytes[byte] = {"name": name}
+            self.bytes[byte] = {
+                "name": name,
+                "description": description,
+                "type": type,
+                "units": units
+            }
 
         def describe_bit(self, name: str, byte: int, bit: int):
             name = Can.convert_string(name)
@@ -58,14 +70,16 @@ class Can:
     class module:
         name_prefix = ""
 
-        def __init__(self, name: str, signature: int):
+        def __init__(self, name: str, signature: int, description: str):
             self.name = Can.convert_string(name)
             self.signature = signature
             self.topics = []
+            self.description = description
 
         def get(self) -> str:
             return {
                 "name": str(self.name_prefix + self.name),
+                "description": self.description,
                 "signature": self.signature,
                 "topics": self.topics
             }
@@ -104,14 +118,14 @@ class Can:
 
 
 if __name__ == '__main__':
-    t1 = Can.topic("motor", 9)
-    t1.describe_byte("motor", 1)
+    t1 = Can.topic("motor", 9, "Motor controller parameters")
+    t1.describe_byte("motor", 1, "Switches and states", "bitfield", "")
     t1.describe_bit("motor on", 1, 0)
-    t1.describe_byte("D raw", 2)
-    t1.describe_byte("I raw", 3)
+    t1.describe_byte("D raw", 2, "Motor Duty Cycle", "u8", "%")
+    t1.describe_byte("I raw", 3, "Motor Soft Start", "u8", "%")
     # t1.print()
 
-    m1 = Can.module("mic17", 10)
+    m1 = Can.module("mic17", 10, "Modulo de Interface de Controle")
     m1.add_topic(t1)
     # m1.print()
 

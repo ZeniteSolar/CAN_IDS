@@ -2,6 +2,7 @@
     "modules": [
         {
             "name": "MIC17",
+            "description": "module description text here",
             "signature": 10,
             "topics": []
         }

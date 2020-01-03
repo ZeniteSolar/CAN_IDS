@@ -2,17 +2,25 @@
     "modules": [
         {
             "name": "MIC17",
+            "description": "Modulo de Interface de Controle",
             "signature": 10,
             "topics": [
                 {
                     "name": "CAN_FILTER_MSG_MOTOR",
+                    "description": "Motor controller parameters",
                     "id": 9,
                     "bytes": [
                         {
-                            "name": "SIGNATURE"
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
                         },
                         {
                             "name": "MOTOR",
+                            "description": "Switches and states",
+                            "type": "bitfield",
+                            "units": "",
                             "bits": [
                                 "MOTOR_ON",
                                 null,
@@ -25,10 +33,16 @@
                             ]
                         },
                         {
-                            "name": "D_RAW"
+                            "name": "D_RAW",
+                            "description": "Motor Duty Cycle",
+                            "type": "u8",
+                            "units": "%"
                         },
                         {
-                            "name": "I_RAW"
+                            "name": "I_RAW",
+                            "description": "Motor Soft Start",
+                            "type": "u8",
+                            "units": "%"
                         },
                         null,
                         null,
