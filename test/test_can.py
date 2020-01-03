@@ -72,7 +72,7 @@ class test_can_module(unittest.TestCase):
 
         expected = {
             "name": "MIC17",
-            "id": 10,
+            "signature": 10,
             "topics": []
         }
 
@@ -89,7 +89,7 @@ class test_can_module(unittest.TestCase):
 
         expected = {
             "name": "MIC17",
-            "id": 10,
+            "signature": 10,
             "topics": [
                 {
                     "name": "CAN_FILTER_MSG_MOTOR",
