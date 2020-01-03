@@ -1,7 +1,9 @@
+#!/bin/python
+
 import unittest
 from can import Can
 
-class test_can(unittest.TestCase):
+class test_can_topic(unittest.TestCase):
     def setUp(self):
         self.can = Can
 
@@ -57,6 +59,51 @@ class test_can(unittest.TestCase):
 
         self.assertEqual(
             dict(t.get()),
+            expected
+        )
+
+
+class test_can_module(unittest.TestCase):
+    def setUp(self):
+        self.can = Can
+
+    def test_module(self):
+        m = self.can.module("mic17", 10)
+
+        expected = {
+            "name": "MIC17",
+            "id": 10,
+            "topics": []
+        }
+
+        self.assertEqual(
+            dict(m.get()),
+            expected
+        )
+
+    def test_subscribe_topic(self):
+        m = self.can.module("mic17", 10)
+        t = self.can.topic("motor", 9)
+
+        m.subscribe_topic(t)
+
+        expected = {
+            "name": "MIC17",
+            "id": 10,
+            "topics": [
+                {
+                    "name": "CAN_FILTER_MSG_MOTOR",
+                    "id": 9,
+                    "bytes": [
+                        {"name": "SIGNATURE" },
+                        *[None]*7
+                    ]
+                }
+            ]
+        }
+
+        self.assertEqual(
+            dict(m.get()),
             expected
         )
 

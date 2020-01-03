@@ -1,3 +1,5 @@
+#!/bin/python
+
 from unicodedata import normalize
 import json
 import re
@@ -51,6 +53,27 @@ class Can:
 
             self.bytes[byte]["bits"][bit] = name
 
+    class module:
+        name_prefix = ""
+
+        def __init__(self, name: str, signature: int):
+            self.name = Can.convert_string(name)
+            self.signature = signature
+            self.topics = []
+
+        def get(self) -> str:
+            return {
+                "name": str(self.name_prefix + self.name),
+                "signature": self.signature,
+                "topics": self.topics
+            }
+
+        def print(self):
+            print(json.dumps(self.get(), indent=4))
+
+        def subscribe_topic(self, topic):
+            self.topics.append(dict(topic.get()))
+
 
 if __name__ == '__main__':
     a = Can.topic("motor", 9)
@@ -58,6 +81,10 @@ if __name__ == '__main__':
     a.describe_bit("motor on", 1, 0)
     a.describe_byte("D raw", 2)
     a.describe_byte("I raw", 3)
-    a.print()
-    del a
+    #a.print()
+
+    m = Can.module("mic17", 10)
+    m.subscribe_topic(a)
+    m.print()
+
 
