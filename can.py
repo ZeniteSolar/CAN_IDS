@@ -3,6 +3,7 @@
 from unicodedata import normalize
 import json
 import re
+from mako.template import Template
 
 class Can:
     def convert_string(string: str) -> str:
@@ -116,6 +117,12 @@ class Can:
         with open(filename, 'w') as file:
             json.dump(dict(self.get()), file, indent=4)
 
+    def export_h(self, filename: str):
+        template = Template(filename="can_ids.h.mako")
+        rendered = template.render(db=dict(self.get()))
+        with open(filename, 'w') as file:
+            file.write(rendered)
+
 
 if __name__ == '__main__':
     t1 = Can.topic("motor", 9, "Motor controller parameters")
@@ -137,4 +144,6 @@ if __name__ == '__main__':
     c2 = Can()
     c2.import_json("sample.json")
     c2.print()
+
+    c2.export_h("sample.h")
 
