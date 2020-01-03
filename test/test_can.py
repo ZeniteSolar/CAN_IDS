@@ -132,6 +132,20 @@ class test_can(unittest.TestCase):
             expected
         )
 
+    def test_export_and_import_json(self):
+        m = self.can.module("mic17", 10)
+        c1 = Can()
+        c1.add_module(m)
+        c1.export_json("test.json")
+
+        c2 = Can()
+        c2.import_json("test.json")
+
+        self.assertEqual(
+            dict(c1.get()),
+            dict(c2.get())
+        )
+
 
 if __name__ == '__main__':
     unittest.main()

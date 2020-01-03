@@ -90,11 +90,17 @@ class Can:
     def add_module(self, module):
         self.modules.append(dict(module.get()))
 
-    def import_json(self, file: str):
-        pass
+    def import_json(self, filename: str):
+        with open(filename, 'r') as file:
+            data = dict(json.load(file))
+            for moduleslist in data.values():
+                for module in moduleslist:
+                    self.modules.append(dict(module))
+        return self
 
-    def export_json(self, file: str):
-        pass
+    def export_json(self, filename: str):
+        with open(filename, 'w') as file:
+            json.dump(dict(self.get()), file, indent=4)
 
 
 if __name__ == '__main__':
@@ -103,14 +109,18 @@ if __name__ == '__main__':
     t1.describe_bit("motor on", 1, 0)
     t1.describe_byte("D raw", 2)
     t1.describe_byte("I raw", 3)
-    #t1.print()
+    # t1.print()
 
     m1 = Can.module("mic17", 10)
     m1.add_topic(t1)
-    #m1.print()
+    # m1.print()
 
-    c = Can()
-    c.add_module(m1)
-    c.print()
+    c1 = Can()
+    c1.add_module(m1)
+    # c1.print()
+    c1.export_json("test.json")
 
+    c2 = Can()
+    c2.import_json("test.json")
+    c2.print()
 
