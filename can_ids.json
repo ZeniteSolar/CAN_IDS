@@ -1,20 +1,36 @@
 {
     "modules": [
         {
-            "name": "MIC17",
+            "name": "MIC19",
             "description": "Modulo de Interface de Controle",
-            "signature": 9,
+            "signature": 240,
             "topics": [
                 {
                     "name": "CAN_FILTER_MSG_MOTOR",
                     "description": "Motor controller parameters",
-                    "id": 10,
+                    "id": 9,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
                             "type": "u8",
                             "units": ""
+                        },
+                        {
+                            "name": "MOTOR",
+                            "description": "Motor state",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "MOTOR_ON",
+                                "DMS_ON",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
                         },
                         {
                             "name": "D",
@@ -31,11 +47,150 @@
                         null,
                         null,
                         null,
+                        null
+                    ]
+                },
+                {
+                    "name": "CAN_FILTER_MSG_PUMPS",
+                    "description": "Pumps controller parameters",
+                    "id": 10,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "PUMPS",
+                            "description": "Pumps state",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "PUMP1",
+                                "PUMP2",
+                                "PUMP3",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "CAN_FILTER_MSG_MPTTS",
+                    "description": "Mppts controller parameters",
+                    "id": 11,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MPPTS_ON",
+                            "description": "MPPTs state",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "MPPTS_ON",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        {
+                            "name": "POT",
+                            "description": "MPPTs maximum power limitation",
+                            "type": "u8",
+                            "units": "%"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "CAN_FILTER_MSG_MCS",
+                    "description": "",
+                    "id": 12,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "BOAT_ON",
+                            "description": "Boat state",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "BOAT_ON",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
                         null,
                         null
                     ]
                 }
             ]
+        },
+        {
+            "name": "MAM19",
+            "description": "Modulo de Acionamento do Motor",
+            "signature": 190,
+            "topics": []
+        },
+        {
+            "name": "MAB19",
+            "description": "Modulo de Acionamento das Bombas de Porao",
+            "signature": 230,
+            "topics": []
+        },
+        {
+            "name": "MSC19",
+            "description": "Modulo de Sensores CAN",
+            "signature": 250,
+            "topics": []
+        },
+        {
+            "name": "MCS19",
+            "description": "Modulo de Carregamento do Sistema",
+            "signature": 200,
+            "topics": []
+        },
+        {
+            "name": "MT19",
+            "description": "Modulo Tacometro",
+            "signature": 255,
+            "topics": []
         }
     ]
 }

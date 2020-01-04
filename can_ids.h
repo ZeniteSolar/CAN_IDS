@@ -1,19 +1,81 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
 // FILE_VERSION: {db["version"]}
 
-// MIC17 - Modulo de Interface de Controle
-#define CAN_SIGNATURE_MIC17 9
+// MIC19 - Modulo de Interface de Controle
+#define CAN_SIGNATURE_MIC19 240
 // CAN_FILTER_MSG_MOTOR - Motor controller parameters
-#define CAN_FILTER_MSG_MOTOR 10
+#define CAN_FILTER_MSG_MOTOR 9
 #define CAN_FILTER_MSG_MOTOR_SIGNATURE_BYTE 0 //<!" Senders signature
 #define CAN_FILTER_MSG_MOTOR_SIGNATURE_TYPE "u8"
 #define CAN_FILTER_MSG_MOTOR_SIGNATURE_UNITS ""
-#define CAN_FILTER_MSG_MOTOR_D_BYTE 1 //<!" Motor Duty Cycle
+#define CAN_FILTER_MSG_MOTOR_MOTOR_BYTE 1 //<!" Motor state
+#define CAN_FILTER_MSG_MOTOR_MOTOR_TYPE "bitfield"
+#define CAN_FILTER_MSG_MOTOR_MOTOR_UNITS ""
+#define CAN_FILTER_MSG_MOTOR_MOTOR_MOTOR_ON_BIT 0
+#define CAN_FILTER_MSG_MOTOR_MOTOR_DMS_ON_BIT 1
+#define CAN_FILTER_MSG_MOTOR_D_BYTE 2 //<!" Motor Duty Cycle
 #define CAN_FILTER_MSG_MOTOR_D_TYPE "u8"
 #define CAN_FILTER_MSG_MOTOR_D_UNITS "%"
-#define CAN_FILTER_MSG_MOTOR_I_BYTE 2 //<!" Motor Soft Start
+#define CAN_FILTER_MSG_MOTOR_I_BYTE 3 //<!" Motor Soft Start
 #define CAN_FILTER_MSG_MOTOR_I_TYPE "u8"
 #define CAN_FILTER_MSG_MOTOR_I_UNITS "%"
+// CAN_FILTER_MSG_PUMPS - Pumps controller parameters
+#define CAN_FILTER_MSG_PUMPS 10
+#define CAN_FILTER_MSG_PUMPS_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_FILTER_MSG_PUMPS_SIGNATURE_TYPE "u8"
+#define CAN_FILTER_MSG_PUMPS_SIGNATURE_UNITS ""
+#define CAN_FILTER_MSG_PUMPS_PUMPS_BYTE 1 //<!" Pumps state
+#define CAN_FILTER_MSG_PUMPS_PUMPS_TYPE "bitfield"
+#define CAN_FILTER_MSG_PUMPS_PUMPS_UNITS ""
+#define CAN_FILTER_MSG_PUMPS_PUMPS_PUMP1_BIT 0
+#define CAN_FILTER_MSG_PUMPS_PUMPS_PUMP2_BIT 1
+#define CAN_FILTER_MSG_PUMPS_PUMPS_PUMP3_BIT 2
+// CAN_FILTER_MSG_MPTTS - Mppts controller parameters
+#define CAN_FILTER_MSG_MPTTS 11
+#define CAN_FILTER_MSG_MPTTS_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_FILTER_MSG_MPTTS_SIGNATURE_TYPE "u8"
+#define CAN_FILTER_MSG_MPTTS_SIGNATURE_UNITS ""
+#define CAN_FILTER_MSG_MPTTS_MPPTS_ON_BYTE 1 //<!" MPPTs state
+#define CAN_FILTER_MSG_MPTTS_MPPTS_ON_TYPE "bitfield"
+#define CAN_FILTER_MSG_MPTTS_MPPTS_ON_UNITS ""
+#define CAN_FILTER_MSG_MPTTS_MPPTS_ON_MPPTS_ON_BIT 0
+#define CAN_FILTER_MSG_MPTTS_POT_BYTE 2 //<!" MPPTs maximum power limitation
+#define CAN_FILTER_MSG_MPTTS_POT_TYPE "u8"
+#define CAN_FILTER_MSG_MPTTS_POT_UNITS "%"
+// CAN_FILTER_MSG_MCS - 
+#define CAN_FILTER_MSG_MCS 12
+#define CAN_FILTER_MSG_MCS_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_FILTER_MSG_MCS_SIGNATURE_TYPE "u8"
+#define CAN_FILTER_MSG_MCS_SIGNATURE_UNITS ""
+#define CAN_FILTER_MSG_MCS_BOAT_ON_BYTE 1 //<!" Boat state
+#define CAN_FILTER_MSG_MCS_BOAT_ON_TYPE "bitfield"
+#define CAN_FILTER_MSG_MCS_BOAT_ON_UNITS ""
+#define CAN_FILTER_MSG_MCS_BOAT_ON_BOAT_ON_BIT 0
+
+
+
+// MAM19 - Modulo de Acionamento do Motor
+#define CAN_SIGNATURE_MAM19 190
+
+
+
+// MAB19 - Modulo de Acionamento das Bombas de Porao
+#define CAN_SIGNATURE_MAB19 230
+
+
+
+// MSC19 - Modulo de Sensores CAN
+#define CAN_SIGNATURE_MSC19 250
+
+
+
+// MCS19 - Modulo de Carregamento do Sistema
+#define CAN_SIGNATURE_MCS19 200
+
+
+
+// MT19 - Modulo Tacometro
+#define CAN_SIGNATURE_MT19 255
 
 
 
