@@ -3,6 +3,17 @@
 
 // MIC19 - Modulo de Interface de Controle
 #define CAN_SIGNATURE_MIC19 240
+// CAN_FILTER_MSG_STATE - Module state report
+#define CAN_FILTER_MSG_STATE 8
+#define CAN_FILTER_MSG_STATE_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_FILTER_MSG_STATE_SIGNATURE_TYPE "u8"
+#define CAN_FILTER_MSG_STATE_SIGNATURE_UNITS ""
+#define CAN_FILTER_MSG_STATE_STATE_BYTE 1 //<!" State code
+#define CAN_FILTER_MSG_STATE_STATE_TYPE "u8"
+#define CAN_FILTER_MSG_STATE_STATE_UNITS ""
+#define CAN_FILTER_MSG_STATE_ERROR_BYTE 2 //<!" Error code
+#define CAN_FILTER_MSG_STATE_ERROR_TYPE "u8"
+#define CAN_FILTER_MSG_STATE_ERROR_UNITS ""
 // CAN_FILTER_MSG_MOTOR - Motor controller parameters
 #define CAN_FILTER_MSG_MOTOR 9
 #define CAN_FILTER_MSG_MOTOR_SIGNATURE_BYTE 0 //<!" Senders signature
@@ -42,7 +53,7 @@
 #define CAN_FILTER_MSG_MPTTS_POT_BYTE 2 //<!" MPPTs maximum power limitation
 #define CAN_FILTER_MSG_MPTTS_POT_TYPE "u8"
 #define CAN_FILTER_MSG_MPTTS_POT_UNITS "%"
-// CAN_FILTER_MSG_MCS - 
+// CAN_FILTER_MSG_MCS - MCS controller parameters
 #define CAN_FILTER_MSG_MCS 12
 #define CAN_FILTER_MSG_MCS_SIGNATURE_BYTE 0 //<!" Senders signature
 #define CAN_FILTER_MSG_MCS_SIGNATURE_TYPE "u8"
@@ -56,6 +67,28 @@
 
 // MAM19 - Modulo de Acionamento do Motor
 #define CAN_SIGNATURE_MAM19 190
+// CAN_FILTER_MSG_STATE - Module state report
+#define CAN_FILTER_MSG_STATE 16
+#define CAN_FILTER_MSG_STATE_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_FILTER_MSG_STATE_SIGNATURE_TYPE "u8"
+#define CAN_FILTER_MSG_STATE_SIGNATURE_UNITS ""
+#define CAN_FILTER_MSG_STATE_STATE_BYTE 1 //<!" State code
+#define CAN_FILTER_MSG_STATE_STATE_TYPE "u8"
+#define CAN_FILTER_MSG_STATE_STATE_UNITS ""
+#define CAN_FILTER_MSG_STATE_ERROR_BYTE 2 //<!" Error code
+#define CAN_FILTER_MSG_STATE_ERROR_TYPE "u8"
+#define CAN_FILTER_MSG_STATE_ERROR_UNITS ""
+// CAN_FILTER_MSG_MOTOR - Motor controller parameters
+#define CAN_FILTER_MSG_MOTOR 17
+#define CAN_FILTER_MSG_MOTOR_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_FILTER_MSG_MOTOR_SIGNATURE_TYPE "u8"
+#define CAN_FILTER_MSG_MOTOR_SIGNATURE_UNITS ""
+#define CAN_FILTER_MSG_MOTOR_D_BYTE 1 //<!" Motor Duty Cycle
+#define CAN_FILTER_MSG_MOTOR_D_TYPE "u8"
+#define CAN_FILTER_MSG_MOTOR_D_UNITS "%"
+#define CAN_FILTER_MSG_MOTOR_I_BYTE 2 //<!" Motor Soft Start
+#define CAN_FILTER_MSG_MOTOR_I_TYPE "u8"
+#define CAN_FILTER_MSG_MOTOR_I_UNITS "%"
 
 
 

@@ -6,6 +6,36 @@
             "signature": 240,
             "topics": [
                 {
+                    "name": "CAN_FILTER_MSG_STATE",
+                    "description": "Module state report",
+                    "id": 8,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
                     "name": "CAN_FILTER_MSG_MOTOR",
                     "description": "Motor controller parameters",
                     "id": 9,
@@ -127,7 +157,7 @@
                 },
                 {
                     "name": "CAN_FILTER_MSG_MCS",
-                    "description": "",
+                    "description": "MCS controller parameters",
                     "id": 12,
                     "bytes": [
                         {
@@ -166,7 +196,68 @@
             "name": "MAM19",
             "description": "Modulo de Acionamento do Motor",
             "signature": 190,
-            "topics": []
+            "topics": [
+                {
+                    "name": "CAN_FILTER_MSG_STATE",
+                    "description": "Module state report",
+                    "id": 16,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "CAN_FILTER_MSG_MOTOR",
+                    "description": "Motor controller parameters",
+                    "id": 17,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "D",
+                            "description": "Motor Duty Cycle",
+                            "type": "u8",
+                            "units": "%"
+                        },
+                        {
+                            "name": "I",
+                            "description": "Motor Soft Start",
+                            "type": "u8",
+                            "units": "%"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            ]
         },
         {
             "name": "MAB19",

@@ -3,11 +3,32 @@
 from can import Can
 can = Can()
 
+
 ### MODULE: MIC19
 module_mic19 = can.module(
     name = "mic19",
     signature = 240,
     description = "Modulo de Interface de Controle"
+)
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b1000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    type = "u8",
+    units = ""
 )
 #### TOPIC: MOTOR
 topic_motor = can.topic(
@@ -103,7 +124,7 @@ topic_mppts.describe_byte(
 topic_mcs = can.topic(
     msg = "mcs",
     id = 0b1100,
-    description = ""
+    description = "MCS controller parameters"
 )
 topic_mcs.describe_byte(
     name = "boat on",
@@ -118,6 +139,7 @@ topic_mcs.describe_bit(
     bit = 0
 )
 
+module_mic19.add_topic(topic_state)
 module_mic19.add_topic(topic_motor)
 module_mic19.add_topic(topic_pumps)
 module_mic19.add_topic(topic_mppts)
@@ -131,8 +153,49 @@ module_mam19 = can.module(
     signature = 190,
     description = "Modulo de Acionamento do Motor"
 )
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b10000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    type = "u8",
+    units = ""
+)
+#### TOPIC: MOTOR
+topic_motor = can.topic(
+    msg = "motor",
+    id = 0b10001,
+    description = "Motor controller parameters"
+)
+topic_motor.describe_byte(
+    name = "D",
+    byte = 1,
+    description = "Motor Duty Cycle",
+    type = "u8",
+    units = "%"
+)
+topic_motor.describe_byte(
+    name = "I",
+    byte = 2,
+    description = "Motor Soft Start",
+    type = "u8",
+    units = "%"
+)
 
-
+module_mam19.add_topic(topic_state)
+module_mam19.add_topic(topic_motor)
 can.add_module(module_mam19)
 
 ### MODULE: MAB19
@@ -141,7 +204,6 @@ module_mab19 = can.module(
     signature = 230,
     description = "Modulo de Acionamento das Bombas de Porao"
 )
-
 
 can.add_module(module_mab19)
 
