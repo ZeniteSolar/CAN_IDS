@@ -207,14 +207,84 @@ module_mab19 = can.module(
 
 can.add_module(module_mab19)
 
+
 ### MODULE: MSC19
 module_msc19 = can.module(
     name = "msc19",
     signature = 250,
     description = "Modulo de Sensores CAN"
 )
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b100000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    type = "u8",
+    units = ""
+)
+#### TOPIC: ADC
+topic_adc = can.topic(
+    msg = "ADC",
+    id = 0b100001,
+    description = "ADC values"
+)
+topic_adc.describe_byte(
+    name = "AVG_L",
+    byte = 1,
+    description = "Avg byte low",
+    type = "u8",
+    units = ""
+)
+topic_adc.describe_byte(
+    name = "AVG_H",
+    byte = 2,
+    description = "Avg byte high",
+    type = "u8",
+    units = ""
+)
+topic_adc.describe_byte(
+    name = "MIN_L",
+    byte = 3,
+    description = "Min byte low",
+    type = "u8",
+    units = ""
+)
+topic_adc.describe_byte(
+    name = "MIN_H",
+    byte = 4,
+    description = "Min byte high",
+    type = "u8",
+    units = ""
+)
+topic_adc.describe_byte(
+    name = "MAX_L",
+    byte = 5,
+    description = "Max byte low",
+    type = "u8",
+    units = ""
+)
+topic_adc.describe_byte(
+    name = "MAX_H",
+    byte = 6,
+    description = "Max byte low",
+    type = "u8",
+    units = ""
+)
 
-
+module_msc19.add_topic(topic_state)
+module_msc19.add_topic(topic_adc)
 can.add_module(module_msc19)
 
 ### MODULE: MCS19
@@ -242,4 +312,3 @@ can.add_module(module_mt19)
 ### EXPORT
 can.export_json("can_ids.json")
 can.export_h("can_ids.h")
-
