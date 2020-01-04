@@ -12,7 +12,7 @@ CAN BUS protocol description with code generation for the solar boat modules and
   - You programatically describe all modules and its messages using Python language.
   - The script exports a Javascript Object Notation file (.json).  
   - The script exports a documentation (.html). **(not implemented yet)**  
-  - The script exports a C header file (.h) with all definitions. **(not implemented yet)**  
+  - The script exports a C header file (.h) with all definitions.  
   - The script exports a Python file (.py) with all encoders and decorders. **(not implemented yet)**  
   - The script exports a JS file (.js) with all encoders and decorders. **(not implemented yet)**  
   - The script exports a C source file (.c) with all encoders and decorders. **(not implemented yet)**  
