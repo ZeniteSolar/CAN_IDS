@@ -299,42 +299,42 @@ topic_adc.describe_byte(
     name = "AVG_L",
     byte = 1,
     description = "Avg byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_adc.describe_byte(
     name = "AVG_H",
     byte = 2,
     description = "Avg byte high",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_adc.describe_byte(
     name = "MIN_L",
     byte = 3,
     description = "Min byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_adc.describe_byte(
     name = "MIN_H",
     byte = 4,
     description = "Min byte high",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_adc.describe_byte(
     name = "MAX_L",
     byte = 5,
     description = "Max byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_adc.describe_byte(
     name = "MAX_H",
     byte = 6,
     description = "Max byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 
@@ -414,42 +414,42 @@ topic_bat.describe_byte(
     name = "AVG_L",
     byte = 1,
     description = "Avg byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_bat.describe_byte(
     name = "AVG_H",
     byte = 2,
     description = "Avg byte high",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_bat.describe_byte(
     name = "MIN_L",
     byte = 3,
     description = "Min byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_bat.describe_byte(
     name = "MIN_H",
     byte = 4,
     description = "Min byte high",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_bat.describe_byte(
     name = "MAX_L",
     byte = 5,
     description = "Max byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_bat.describe_byte(
     name = "MAX_H",
     byte = 6,
     description = "Max byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 
@@ -464,42 +464,42 @@ topic_cap.describe_byte(
     name = "AVG_L",
     byte = 1,
     description = "Avg byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_cap.describe_byte(
     name = "AVG_H",
     byte = 2,
     description = "Avg byte high",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_cap.describe_byte(
     name = "MIN_L",
     byte = 3,
     description = "Min byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_cap.describe_byte(
     name = "MIN_H",
     byte = 4,
     description = "Min byte high",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_cap.describe_byte(
     name = "MAX_L",
     byte = 5,
     description = "Max byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_cap.describe_byte(
     name = "MAX_H",
     byte = 6,
     description = "Max byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 
@@ -549,14 +549,14 @@ topic_rpm.describe_byte(
     name = "AVG_L",
     byte = 1,
     description = "RPM Avg byte low",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 topic_rpm.describe_byte(
     name = "AVG_H",
     byte = 2,
     description = "RPM Avg byte high",
-    type = "u8",
+    type = "u16",
     units = ""
 )
 
