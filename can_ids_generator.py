@@ -287,14 +287,173 @@ module_msc19.add_topic(topic_state)
 module_msc19.add_topic(topic_adc)
 can.add_module(module_msc19)
 
+
+
 ### MODULE: MCS19
 module_mcs19 = can.module(
     name = "mcs19",
     signature = 200,
     description = "Modulo de Carregamento do Sistema"
 )
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b00100000000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    type = "u8",
+    units = ""
+)
+
+#### TOPIC: Start stages
+topic_start_stages = can.topic(
+    msg = "start_stages",
+    id = 0b001000000100,
+    description = "Boat charging // Boat on"
+)
+topic_start_stages.describe_byte(
+    name = "main_relay",
+    byte = 1,
+    description = "Boat on/off",
+    type = "bitfield",
+    units = ""
+)
+topic_start_stages.describe_bit(
+    name = "main_relay",
+    byte = 1,
+    bit = 0
+)
+
+topic_start_stages.describe_byte(
+    name = "charge_relay",
+    byte = 2,
+    description = "Boat Charging",
+    type = "bitfield",
+    units = ""
+)
+topic_start_stages.describe_bit(
+    name = "charge_relay",
+    byte = 2,
+    bit = 0
+)
 
 
+#### TOPIC: BATTERY
+topic_bat = can.topic(
+    msg = "BAT",
+    id = 0b00100000010,
+    description = "battery voltage values"
+)
+topic_bat.describe_byte(
+    name = "AVG_L",
+    byte = 1,
+    description = "Avg byte low",
+    type = "u8",
+    units = ""
+)
+topic_bat.describe_byte(
+    name = "AVG_H",
+    byte = 2,
+    description = "Avg byte high",
+    type = "u8",
+    units = ""
+)
+topic_bat.describe_byte(
+    name = "MIN_L",
+    byte = 3,
+    description = "Min byte low",
+    type = "u8",
+    units = ""
+)
+topic_bat.describe_byte(
+    name = "MIN_H",
+    byte = 4,
+    description = "Min byte high",
+    type = "u8",
+    units = ""
+)
+topic_bat.describe_byte(
+    name = "MAX_L",
+    byte = 5,
+    description = "Max byte low",
+    type = "u8",
+    units = ""
+)
+topic_bat.describe_byte(
+    name = "MAX_H",
+    byte = 6,
+    description = "Max byte low",
+    type = "u8",
+    units = ""
+)
+
+
+#### TOPIC: CAPACITOR
+topic_cap = can.topic(
+    msg = "CAP",
+    id = 0b00100000011,
+    description = "capacitor bank voltage values"
+)
+topic_cap.describe_byte(
+    name = "AVG_L",
+    byte = 1,
+    description = "Avg byte low",
+    type = "u8",
+    units = ""
+)
+topic_cap.describe_byte(
+    name = "AVG_H",
+    byte = 2,
+    description = "Avg byte high",
+    type = "u8",
+    units = ""
+)
+topic_cap.describe_byte(
+    name = "MIN_L",
+    byte = 3,
+    description = "Min byte low",
+    type = "u8",
+    units = ""
+)
+topic_cap.describe_byte(
+    name = "MIN_H",
+    byte = 4,
+    description = "Min byte high",
+    type = "u8",
+    units = ""
+)
+topic_cap.describe_byte(
+    name = "MAX_L",
+    byte = 5,
+    description = "Max byte low",
+    type = "u8",
+    units = ""
+)
+topic_cap.describe_byte(
+    name = "MAX_H",
+    byte = 6,
+    description = "Max byte low",
+    type = "u8",
+    units = ""
+)
+
+
+
+module_mcs19.add_topic(topic_state)
+module_mcs19.add_topic(topic_start_stages)
+module_mcs19.add_topic(topic_bat)
+module_mcs19.add_topic(topic_cap)
 can.add_module(module_mcs19)
 
 ### MODULE: MT19

@@ -269,13 +269,275 @@
             "name": "MSC19",
             "description": "Modulo de Sensores CAN",
             "signature": 250,
-            "topics": []
+            "topics": [
+                {
+                    "name": "CAN_FILTER_MSG_STATE",
+                    "description": "Module state report",
+                    "id": 32,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "CAN_FILTER_MSG_ADC",
+                    "description": "ADC values",
+                    "id": 33,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Avg byte low",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Avg byte high",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null
+                    ]
+                }
+            ]
         },
         {
             "name": "MCS19",
             "description": "Modulo de Carregamento do Sistema",
             "signature": 200,
-            "topics": []
+            "topics": [
+                {
+                    "name": "CAN_FILTER_MSG_STATE",
+                    "description": "Module state report",
+                    "id": 256,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "CAN_FILTER_MSG_START_STAGES",
+                    "description": "Boat charging // Boat on",
+                    "id": 516,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAIN_RELAY",
+                            "description": "Boat on/off",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "MAIN_RELAY",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        {
+                            "name": "CHARGE_RELAY",
+                            "description": "Boat Charging",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "CHARGE_RELAY",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "CAN_FILTER_MSG_BAT",
+                    "description": "battery voltage values",
+                    "id": 258,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Avg byte low",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Avg byte high",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null
+                    ]
+                },
+                {
+                    "name": "CAN_FILTER_MSG_CAP",
+                    "description": "capacitor bank voltage values",
+                    "id": 259,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Avg byte low",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Avg byte high",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null
+                    ]
+                }
+            ]
         },
         {
             "name": "MT19",
