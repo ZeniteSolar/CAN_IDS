@@ -198,6 +198,8 @@ module_mam19.add_topic(topic_state)
 module_mam19.add_topic(topic_motor)
 can.add_module(module_mam19)
 
+
+
 ### MODULE: MAB19
 module_mab19 = can.module(
     name = "mab19",
@@ -205,6 +207,59 @@ module_mab19 = can.module(
     description = "Modulo de Acionamento das Bombas de Porao"
 )
 
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b1000000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    type = "u8",
+    units = ""
+)
+
+#### TOPIC: PUMPS
+topic_pumps = can.topic(
+    msg = "pumps",
+    id = 0b1000001,
+    description = "Pumps state"
+)
+topic_pumps.describe_byte(
+    name = "pumps",
+    byte = 1,
+    description = "Pumps state",
+    type = "bitfield",
+    units = ""
+)
+topic_pumps.describe_bit(
+    name = "pump1",
+    byte = 1,
+    bit = 0
+)
+topic_pumps.describe_bit(
+    name = "pump2",
+    byte = 1,
+    bit = 1
+)
+topic_pumps.describe_bit(
+    name = "pump3",
+    byte = 1,
+    bit = 2
+)
+
+
+module_mab19.add_topic(topic_state)
+module_mab19.add_topic(topic_pumps)
 can.add_module(module_mab19)
 
 

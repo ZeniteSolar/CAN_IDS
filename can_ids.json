@@ -263,7 +263,73 @@
             "name": "MAB19",
             "description": "Modulo de Acionamento das Bombas de Porao",
             "signature": 230,
-            "topics": []
+            "topics": [
+                {
+                    "name": "CAN_FILTER_MSG_STATE",
+                    "description": "Module state report",
+                    "id": 64,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "CAN_FILTER_MSG_PUMPS",
+                    "description": "Pumps state",
+                    "id": 65,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "PUMPS",
+                            "description": "Pumps state",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "PUMP1",
+                                "PUMP2",
+                                "PUMP3",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            ]
         },
         {
             "name": "MSC19",
