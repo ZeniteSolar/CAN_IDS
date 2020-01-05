@@ -380,37 +380,37 @@
                         {
                             "name": "AVG_L",
                             "description": "Avg byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "AVG_H",
                             "description": "Avg byte high",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "MIN_L",
                             "description": "Min byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "MIN_H",
                             "description": "Min byte high",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "MAX_L",
                             "description": "Max byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "MAX_H",
                             "description": "Max byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         null
@@ -517,37 +517,37 @@
                         {
                             "name": "AVG_L",
                             "description": "Avg byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "AVG_H",
                             "description": "Avg byte high",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "MIN_L",
                             "description": "Min byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "MIN_H",
                             "description": "Min byte high",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "MAX_L",
                             "description": "Max byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "MAX_H",
                             "description": "Max byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         null
@@ -567,37 +567,37 @@
                         {
                             "name": "AVG_L",
                             "description": "Avg byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "AVG_H",
                             "description": "Avg byte high",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "MIN_L",
                             "description": "Min byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "MIN_H",
                             "description": "Min byte high",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "MAX_L",
                             "description": "Max byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "MAX_H",
                             "description": "Max byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         null
@@ -654,13 +654,13 @@
                         {
                             "name": "AVG_L",
                             "description": "RPM Avg byte low",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "AVG_H",
                             "description": "RPM Avg byte high",
-                            "type": "u8",
+                            "type": "u16",
                             "units": ""
                         },
                         null,
