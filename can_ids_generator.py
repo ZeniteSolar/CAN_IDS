@@ -463,7 +463,50 @@ module_mt19 = can.module(
     description = "Modulo Tacometro"
 )
 
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b00000100000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    type = "u8",
+    units = ""
+)
 
+#### TOPIC: RPM
+topic_rpm = can.topic(
+    msg = "RPM",
+    id = 0b00000100001,
+    description = "RPM motor values"
+)
+topic_rpm.describe_byte(
+    name = "AVG_L",
+    byte = 1,
+    description = "RPM Avg byte low",
+    type = "u8",
+    units = ""
+)
+topic_rpm.describe_byte(
+    name = "AVG_H",
+    byte = 2,
+    description = "RPM Avg byte high",
+    type = "u8",
+    units = ""
+)
+
+module_mt19.add_topic(topic_state)
+module_mt19.add_topic(topic_rpm)
 can.add_module(module_mt19)
 
 
