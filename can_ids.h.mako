@@ -8,6 +8,7 @@
         %for topic in module["topics"]:
 // ${topic["name"]} - ${topic["description"]}
 #define ${topic["name"]} ${topic["id"]}
+#define ${topic["name"]}_LENGTH ${len(list(filter(None, topic["bytes"])))}
             %for i,byte in enumerate(topic["bytes"]):
                 %if byte:
 #define ${topic["name"]}_${byte["name"]}_BYTE ${i} //<!" ${byte["description"]}
