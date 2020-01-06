@@ -6,7 +6,7 @@
             "signature": 240,
             "topics": [
                 {
-                    "name": "CAN_FILTER_MSG_STATE",
+                    "name": "STATE",
                     "description": "Module state report",
                     "id": 8,
                     "bytes": [
@@ -36,7 +36,7 @@
                     ]
                 },
                 {
-                    "name": "CAN_FILTER_MSG_MOTOR",
+                    "name": "MOTOR",
                     "description": "Motor controller parameters",
                     "id": 9,
                     "bytes": [
@@ -81,7 +81,7 @@
                     ]
                 },
                 {
-                    "name": "CAN_FILTER_MSG_PUMPS",
+                    "name": "PUMPS",
                     "description": "Pumps controller parameters",
                     "id": 10,
                     "bytes": [
@@ -116,7 +116,7 @@
                     ]
                 },
                 {
-                    "name": "CAN_FILTER_MSG_MPTTS",
+                    "name": "MPTTS",
                     "description": "Mppts controller parameters",
                     "id": 11,
                     "bytes": [
@@ -156,7 +156,7 @@
                     ]
                 },
                 {
-                    "name": "CAN_FILTER_MSG_MCS",
+                    "name": "MCS",
                     "description": "MCS controller parameters",
                     "id": 12,
                     "bytes": [
@@ -198,7 +198,7 @@
             "signature": 190,
             "topics": [
                 {
-                    "name": "CAN_FILTER_MSG_STATE",
+                    "name": "STATE",
                     "description": "Module state report",
                     "id": 16,
                     "bytes": [
@@ -228,7 +228,7 @@
                     ]
                 },
                 {
-                    "name": "CAN_FILTER_MSG_MOTOR",
+                    "name": "MOTOR",
                     "description": "Motor controller parameters",
                     "id": 17,
                     "bytes": [
@@ -265,7 +265,7 @@
             "signature": 230,
             "topics": [
                 {
-                    "name": "CAN_FILTER_MSG_STATE",
+                    "name": "STATE",
                     "description": "Module state report",
                     "id": 64,
                     "bytes": [
@@ -295,7 +295,7 @@
                     ]
                 },
                 {
-                    "name": "CAN_FILTER_MSG_PUMPS",
+                    "name": "PUMPS",
                     "description": "Pumps state",
                     "id": 65,
                     "bytes": [
@@ -337,7 +337,7 @@
             "signature": 250,
             "topics": [
                 {
-                    "name": "CAN_FILTER_MSG_STATE",
+                    "name": "STATE",
                     "description": "Module state report",
                     "id": 32,
                     "bytes": [
@@ -367,7 +367,7 @@
                     ]
                 },
                 {
-                    "name": "CAN_FILTER_MSG_ADC",
+                    "name": "ADC",
                     "description": "ADC values",
                     "id": 33,
                     "bytes": [
@@ -424,7 +424,7 @@
             "signature": 200,
             "topics": [
                 {
-                    "name": "CAN_FILTER_MSG_STATE",
+                    "name": "STATE",
                     "description": "Module state report",
                     "id": 256,
                     "bytes": [
@@ -454,7 +454,7 @@
                     ]
                 },
                 {
-                    "name": "CAN_FILTER_MSG_START_STAGES",
+                    "name": "START_STAGES",
                     "description": "Boat charging // Boat on",
                     "id": 516,
                     "bytes": [
@@ -504,7 +504,7 @@
                     ]
                 },
                 {
-                    "name": "CAN_FILTER_MSG_BAT",
+                    "name": "BAT",
                     "description": "battery voltage values",
                     "id": 258,
                     "bytes": [
@@ -554,7 +554,7 @@
                     ]
                 },
                 {
-                    "name": "CAN_FILTER_MSG_CAP",
+                    "name": "CAP",
                     "description": "capacitor bank voltage values",
                     "id": 259,
                     "bytes": [
@@ -611,7 +611,7 @@
             "signature": 255,
             "topics": [
                 {
-                    "name": "CAN_FILTER_MSG_STATE",
+                    "name": "STATE",
                     "description": "Module state report",
                     "id": 32,
                     "bytes": [
@@ -641,7 +641,7 @@
                     ]
                 },
                 {
-                    "name": "CAN_FILTER_MSG_RPM",
+                    "name": "RPM",
                     "description": "RPM motor values",
                     "id": 33,
                     "bytes": [

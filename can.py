@@ -16,7 +16,7 @@ class Can:
         return string
 
     class topic:
-        name_prefix = "CAN_FILTER_MSG_"
+        name_prefix = ""
 
         def __init__(self, msg: str, id: int, description: str):
             self.name = Can.convert_string(msg)
