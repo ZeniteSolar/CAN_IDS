@@ -126,44 +126,204 @@
 #define CAN_MSG_MAB19_PUMPS_PUMPS_PUMP3_BIT 2
 
 
-// MSC19 - Modulo de Sensores CAN
-#define CAN_SIGNATURE_MSC19 250
-// MSC19 - STATE - Module state report
-#define CAN_MSG_MSC19_STATE_ID 32
-#define CAN_MSG_MSC19_STATE_LENGTH 3
-#define CAN_MSG_MSC19_STATE_SIGNATURE_BYTE 0 //<!" Senders signature
-#define CAN_MSG_MSC19_STATE_SIGNATURE_TYPE "u8"
-#define CAN_MSG_MSC19_STATE_SIGNATURE_UNITS ""
-#define CAN_MSG_MSC19_STATE_STATE_BYTE 1 //<!" State code
-#define CAN_MSG_MSC19_STATE_STATE_TYPE "u8"
-#define CAN_MSG_MSC19_STATE_STATE_UNITS ""
-#define CAN_MSG_MSC19_STATE_ERROR_BYTE 2 //<!" Error code
-#define CAN_MSG_MSC19_STATE_ERROR_TYPE "u8"
-#define CAN_MSG_MSC19_STATE_ERROR_UNITS ""
-// MSC19 - ADC - ADC values
-#define CAN_MSG_MSC19_ADC_ID 33
-#define CAN_MSG_MSC19_ADC_LENGTH 7
-#define CAN_MSG_MSC19_ADC_SIGNATURE_BYTE 0 //<!" Senders signature
-#define CAN_MSG_MSC19_ADC_SIGNATURE_TYPE "u8"
-#define CAN_MSG_MSC19_ADC_SIGNATURE_UNITS ""
-#define CAN_MSG_MSC19_ADC_AVG_L_BYTE 1 //<!" Avg byte low
-#define CAN_MSG_MSC19_ADC_AVG_L_TYPE "u16"
-#define CAN_MSG_MSC19_ADC_AVG_L_UNITS ""
-#define CAN_MSG_MSC19_ADC_AVG_H_BYTE 2 //<!" Avg byte high
-#define CAN_MSG_MSC19_ADC_AVG_H_TYPE "u16"
-#define CAN_MSG_MSC19_ADC_AVG_H_UNITS ""
-#define CAN_MSG_MSC19_ADC_MIN_L_BYTE 3 //<!" Min byte low
-#define CAN_MSG_MSC19_ADC_MIN_L_TYPE "u16"
-#define CAN_MSG_MSC19_ADC_MIN_L_UNITS ""
-#define CAN_MSG_MSC19_ADC_MIN_H_BYTE 4 //<!" Min byte high
-#define CAN_MSG_MSC19_ADC_MIN_H_TYPE "u16"
-#define CAN_MSG_MSC19_ADC_MIN_H_UNITS ""
-#define CAN_MSG_MSC19_ADC_MAX_L_BYTE 5 //<!" Max byte low
-#define CAN_MSG_MSC19_ADC_MAX_L_TYPE "u16"
-#define CAN_MSG_MSC19_ADC_MAX_L_UNITS ""
-#define CAN_MSG_MSC19_ADC_MAX_H_BYTE 6 //<!" Max byte low
-#define CAN_MSG_MSC19_ADC_MAX_H_TYPE "u16"
-#define CAN_MSG_MSC19_ADC_MAX_H_UNITS ""
+// MSC19_1 - Main Battery Voltage Sensor
+#define CAN_SIGNATURE_MSC19_1 250
+// MSC19_1 - STATE - Module state report
+#define CAN_MSG_MSC19_1_STATE_ID 32
+#define CAN_MSG_MSC19_1_STATE_LENGTH 3
+#define CAN_MSG_MSC19_1_STATE_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_MSC19_1_STATE_SIGNATURE_TYPE "u8"
+#define CAN_MSG_MSC19_1_STATE_SIGNATURE_UNITS ""
+#define CAN_MSG_MSC19_1_STATE_STATE_BYTE 1 //<!" State code
+#define CAN_MSG_MSC19_1_STATE_STATE_TYPE "u8"
+#define CAN_MSG_MSC19_1_STATE_STATE_UNITS ""
+#define CAN_MSG_MSC19_1_STATE_ERROR_BYTE 2 //<!" Error code
+#define CAN_MSG_MSC19_1_STATE_ERROR_TYPE "u8"
+#define CAN_MSG_MSC19_1_STATE_ERROR_UNITS ""
+// MSC19_1 - ADC - Voltage measurements
+#define CAN_MSG_MSC19_1_ADC_ID 33
+#define CAN_MSG_MSC19_1_ADC_LENGTH 7
+#define CAN_MSG_MSC19_1_ADC_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_MSC19_1_ADC_SIGNATURE_TYPE "u8"
+#define CAN_MSG_MSC19_1_ADC_SIGNATURE_UNITS ""
+#define CAN_MSG_MSC19_1_ADC_AVG_L_BYTE 1 //<!" Average, byte low
+#define CAN_MSG_MSC19_1_ADC_AVG_L_TYPE "u16"
+#define CAN_MSG_MSC19_1_ADC_AVG_L_UNITS "V/100"
+#define CAN_MSG_MSC19_1_ADC_AVG_H_BYTE 2 //<!" Average, byte high
+#define CAN_MSG_MSC19_1_ADC_AVG_H_TYPE "u16"
+#define CAN_MSG_MSC19_1_ADC_AVG_H_UNITS "V/100"
+#define CAN_MSG_MSC19_1_ADC_MIN_L_BYTE 3 //<!" Min byte low
+#define CAN_MSG_MSC19_1_ADC_MIN_L_TYPE "u16"
+#define CAN_MSG_MSC19_1_ADC_MIN_L_UNITS "V/100"
+#define CAN_MSG_MSC19_1_ADC_MIN_H_BYTE 4 //<!" Min byte high
+#define CAN_MSG_MSC19_1_ADC_MIN_H_TYPE "u16"
+#define CAN_MSG_MSC19_1_ADC_MIN_H_UNITS "V/100"
+#define CAN_MSG_MSC19_1_ADC_MAX_L_BYTE 5 //<!" Max byte low
+#define CAN_MSG_MSC19_1_ADC_MAX_L_TYPE "u16"
+#define CAN_MSG_MSC19_1_ADC_MAX_L_UNITS "V/100"
+#define CAN_MSG_MSC19_1_ADC_MAX_H_BYTE 6 //<!" Max byte low
+#define CAN_MSG_MSC19_1_ADC_MAX_H_TYPE "u16"
+#define CAN_MSG_MSC19_1_ADC_MAX_H_UNITS "V/100"
+
+
+// MSC19_2 - Auxilliary Battery Voltage Sensor
+#define CAN_SIGNATURE_MSC19_2 251
+// MSC19_2 - STATE - Module state report
+#define CAN_MSG_MSC19_2_STATE_ID 32
+#define CAN_MSG_MSC19_2_STATE_LENGTH 3
+#define CAN_MSG_MSC19_2_STATE_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_MSC19_2_STATE_SIGNATURE_TYPE "u8"
+#define CAN_MSG_MSC19_2_STATE_SIGNATURE_UNITS ""
+#define CAN_MSG_MSC19_2_STATE_STATE_BYTE 1 //<!" State code
+#define CAN_MSG_MSC19_2_STATE_STATE_TYPE "u8"
+#define CAN_MSG_MSC19_2_STATE_STATE_UNITS ""
+#define CAN_MSG_MSC19_2_STATE_ERROR_BYTE 2 //<!" Error code
+#define CAN_MSG_MSC19_2_STATE_ERROR_TYPE "u8"
+#define CAN_MSG_MSC19_2_STATE_ERROR_UNITS ""
+// MSC19_2 - ADC - Voltage measurements
+#define CAN_MSG_MSC19_2_ADC_ID 33
+#define CAN_MSG_MSC19_2_ADC_LENGTH 7
+#define CAN_MSG_MSC19_2_ADC_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_MSC19_2_ADC_SIGNATURE_TYPE "u8"
+#define CAN_MSG_MSC19_2_ADC_SIGNATURE_UNITS ""
+#define CAN_MSG_MSC19_2_ADC_AVG_L_BYTE 1 //<!" Average, byte low
+#define CAN_MSG_MSC19_2_ADC_AVG_L_TYPE "u16"
+#define CAN_MSG_MSC19_2_ADC_AVG_L_UNITS "V/100"
+#define CAN_MSG_MSC19_2_ADC_AVG_H_BYTE 2 //<!" Average, byte high
+#define CAN_MSG_MSC19_2_ADC_AVG_H_TYPE "u16"
+#define CAN_MSG_MSC19_2_ADC_AVG_H_UNITS "V/100"
+#define CAN_MSG_MSC19_2_ADC_MIN_L_BYTE 3 //<!" Min byte low
+#define CAN_MSG_MSC19_2_ADC_MIN_L_TYPE "u16"
+#define CAN_MSG_MSC19_2_ADC_MIN_L_UNITS "V/100"
+#define CAN_MSG_MSC19_2_ADC_MIN_H_BYTE 4 //<!" Min byte high
+#define CAN_MSG_MSC19_2_ADC_MIN_H_TYPE "u16"
+#define CAN_MSG_MSC19_2_ADC_MIN_H_UNITS "V/100"
+#define CAN_MSG_MSC19_2_ADC_MAX_L_BYTE 5 //<!" Max byte low
+#define CAN_MSG_MSC19_2_ADC_MAX_L_TYPE "u16"
+#define CAN_MSG_MSC19_2_ADC_MAX_L_UNITS "V/100"
+#define CAN_MSG_MSC19_2_ADC_MAX_H_BYTE 6 //<!" Max byte low
+#define CAN_MSG_MSC19_2_ADC_MAX_H_TYPE "u16"
+#define CAN_MSG_MSC19_2_ADC_MAX_H_UNITS "V/100"
+
+
+// MSC19_3 - Extra Battery Voltage Sensor
+#define CAN_SIGNATURE_MSC19_3 252
+// MSC19_3 - STATE - Module state report
+#define CAN_MSG_MSC19_3_STATE_ID 32
+#define CAN_MSG_MSC19_3_STATE_LENGTH 3
+#define CAN_MSG_MSC19_3_STATE_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_MSC19_3_STATE_SIGNATURE_TYPE "u8"
+#define CAN_MSG_MSC19_3_STATE_SIGNATURE_UNITS ""
+#define CAN_MSG_MSC19_3_STATE_STATE_BYTE 1 //<!" State code
+#define CAN_MSG_MSC19_3_STATE_STATE_TYPE "u8"
+#define CAN_MSG_MSC19_3_STATE_STATE_UNITS ""
+#define CAN_MSG_MSC19_3_STATE_ERROR_BYTE 2 //<!" Error code
+#define CAN_MSG_MSC19_3_STATE_ERROR_TYPE "u8"
+#define CAN_MSG_MSC19_3_STATE_ERROR_UNITS ""
+// MSC19_3 - ADC - Voltage measurements
+#define CAN_MSG_MSC19_3_ADC_ID 33
+#define CAN_MSG_MSC19_3_ADC_LENGTH 7
+#define CAN_MSG_MSC19_3_ADC_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_MSC19_3_ADC_SIGNATURE_TYPE "u8"
+#define CAN_MSG_MSC19_3_ADC_SIGNATURE_UNITS ""
+#define CAN_MSG_MSC19_3_ADC_AVG_L_BYTE 1 //<!" Average, byte low
+#define CAN_MSG_MSC19_3_ADC_AVG_L_TYPE "u16"
+#define CAN_MSG_MSC19_3_ADC_AVG_L_UNITS "V/100"
+#define CAN_MSG_MSC19_3_ADC_AVG_H_BYTE 2 //<!" Average, byte high
+#define CAN_MSG_MSC19_3_ADC_AVG_H_TYPE "u16"
+#define CAN_MSG_MSC19_3_ADC_AVG_H_UNITS "V/100"
+#define CAN_MSG_MSC19_3_ADC_MIN_L_BYTE 3 //<!" Min byte low
+#define CAN_MSG_MSC19_3_ADC_MIN_L_TYPE "u16"
+#define CAN_MSG_MSC19_3_ADC_MIN_L_UNITS "V/100"
+#define CAN_MSG_MSC19_3_ADC_MIN_H_BYTE 4 //<!" Min byte high
+#define CAN_MSG_MSC19_3_ADC_MIN_H_TYPE "u16"
+#define CAN_MSG_MSC19_3_ADC_MIN_H_UNITS "V/100"
+#define CAN_MSG_MSC19_3_ADC_MAX_L_BYTE 5 //<!" Max byte low
+#define CAN_MSG_MSC19_3_ADC_MAX_L_TYPE "u16"
+#define CAN_MSG_MSC19_3_ADC_MAX_L_UNITS "V/100"
+#define CAN_MSG_MSC19_3_ADC_MAX_H_BYTE 6 //<!" Max byte low
+#define CAN_MSG_MSC19_3_ADC_MAX_H_TYPE "u16"
+#define CAN_MSG_MSC19_3_ADC_MAX_H_UNITS "V/100"
+
+
+// MSC19_4 - Main Battery Input Current Sensor
+#define CAN_SIGNATURE_MSC19_4 253
+// MSC19_4 - STATE - Module state report
+#define CAN_MSG_MSC19_4_STATE_ID 32
+#define CAN_MSG_MSC19_4_STATE_LENGTH 3
+#define CAN_MSG_MSC19_4_STATE_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_MSC19_4_STATE_SIGNATURE_TYPE "u8"
+#define CAN_MSG_MSC19_4_STATE_SIGNATURE_UNITS ""
+#define CAN_MSG_MSC19_4_STATE_STATE_BYTE 1 //<!" State code
+#define CAN_MSG_MSC19_4_STATE_STATE_TYPE "u8"
+#define CAN_MSG_MSC19_4_STATE_STATE_UNITS ""
+#define CAN_MSG_MSC19_4_STATE_ERROR_BYTE 2 //<!" Error code
+#define CAN_MSG_MSC19_4_STATE_ERROR_TYPE "u8"
+#define CAN_MSG_MSC19_4_STATE_ERROR_UNITS ""
+// MSC19_4 - ADC - Current measurements
+#define CAN_MSG_MSC19_4_ADC_ID 33
+#define CAN_MSG_MSC19_4_ADC_LENGTH 7
+#define CAN_MSG_MSC19_4_ADC_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_MSC19_4_ADC_SIGNATURE_TYPE "u8"
+#define CAN_MSG_MSC19_4_ADC_SIGNATURE_UNITS ""
+#define CAN_MSG_MSC19_4_ADC_AVG_L_BYTE 1 //<!" Average, byte low
+#define CAN_MSG_MSC19_4_ADC_AVG_L_TYPE "u16"
+#define CAN_MSG_MSC19_4_ADC_AVG_L_UNITS "A/100"
+#define CAN_MSG_MSC19_4_ADC_AVG_H_BYTE 2 //<!" Average, byte high
+#define CAN_MSG_MSC19_4_ADC_AVG_H_TYPE "u16"
+#define CAN_MSG_MSC19_4_ADC_AVG_H_UNITS "A/100"
+#define CAN_MSG_MSC19_4_ADC_MIN_L_BYTE 3 //<!" Min byte low
+#define CAN_MSG_MSC19_4_ADC_MIN_L_TYPE "u16"
+#define CAN_MSG_MSC19_4_ADC_MIN_L_UNITS "A/100"
+#define CAN_MSG_MSC19_4_ADC_MIN_H_BYTE 4 //<!" Min byte high
+#define CAN_MSG_MSC19_4_ADC_MIN_H_TYPE "u16"
+#define CAN_MSG_MSC19_4_ADC_MIN_H_UNITS "A/100"
+#define CAN_MSG_MSC19_4_ADC_MAX_L_BYTE 5 //<!" Max byte low
+#define CAN_MSG_MSC19_4_ADC_MAX_L_TYPE "u16"
+#define CAN_MSG_MSC19_4_ADC_MAX_L_UNITS "A/100"
+#define CAN_MSG_MSC19_4_ADC_MAX_H_BYTE 6 //<!" Max byte low
+#define CAN_MSG_MSC19_4_ADC_MAX_H_TYPE "u16"
+#define CAN_MSG_MSC19_4_ADC_MAX_H_UNITS "A/100"
+
+
+// MSC19_5 - Main Battery Output Current Sensor
+#define CAN_SIGNATURE_MSC19_5 254
+// MSC19_5 - STATE - Module state report
+#define CAN_MSG_MSC19_5_STATE_ID 32
+#define CAN_MSG_MSC19_5_STATE_LENGTH 3
+#define CAN_MSG_MSC19_5_STATE_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_MSC19_5_STATE_SIGNATURE_TYPE "u8"
+#define CAN_MSG_MSC19_5_STATE_SIGNATURE_UNITS ""
+#define CAN_MSG_MSC19_5_STATE_STATE_BYTE 1 //<!" State code
+#define CAN_MSG_MSC19_5_STATE_STATE_TYPE "u8"
+#define CAN_MSG_MSC19_5_STATE_STATE_UNITS ""
+#define CAN_MSG_MSC19_5_STATE_ERROR_BYTE 2 //<!" Error code
+#define CAN_MSG_MSC19_5_STATE_ERROR_TYPE "u8"
+#define CAN_MSG_MSC19_5_STATE_ERROR_UNITS ""
+// MSC19_5 - ADC - Current measurements
+#define CAN_MSG_MSC19_5_ADC_ID 33
+#define CAN_MSG_MSC19_5_ADC_LENGTH 7
+#define CAN_MSG_MSC19_5_ADC_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_MSC19_5_ADC_SIGNATURE_TYPE "u8"
+#define CAN_MSG_MSC19_5_ADC_SIGNATURE_UNITS ""
+#define CAN_MSG_MSC19_5_ADC_AVG_L_BYTE 1 //<!" Average, byte low
+#define CAN_MSG_MSC19_5_ADC_AVG_L_TYPE "u16"
+#define CAN_MSG_MSC19_5_ADC_AVG_L_UNITS "A/100"
+#define CAN_MSG_MSC19_5_ADC_AVG_H_BYTE 2 //<!" Average, byte high
+#define CAN_MSG_MSC19_5_ADC_AVG_H_TYPE "u16"
+#define CAN_MSG_MSC19_5_ADC_AVG_H_UNITS "A/100"
+#define CAN_MSG_MSC19_5_ADC_MIN_L_BYTE 3 //<!" Min byte low
+#define CAN_MSG_MSC19_5_ADC_MIN_L_TYPE "u16"
+#define CAN_MSG_MSC19_5_ADC_MIN_L_UNITS "A/100"
+#define CAN_MSG_MSC19_5_ADC_MIN_H_BYTE 4 //<!" Min byte high
+#define CAN_MSG_MSC19_5_ADC_MIN_H_TYPE "u16"
+#define CAN_MSG_MSC19_5_ADC_MIN_H_UNITS "A/100"
+#define CAN_MSG_MSC19_5_ADC_MAX_L_BYTE 5 //<!" Max byte low
+#define CAN_MSG_MSC19_5_ADC_MAX_L_TYPE "u16"
+#define CAN_MSG_MSC19_5_ADC_MAX_L_UNITS "A/100"
+#define CAN_MSG_MSC19_5_ADC_MAX_H_BYTE 6 //<!" Max byte low
+#define CAN_MSG_MSC19_5_ADC_MAX_H_TYPE "u16"
+#define CAN_MSG_MSC19_5_ADC_MAX_H_UNITS "A/100"
 
 
 // MCS19 - Modulo de Carregamento do Sistema
@@ -200,10 +360,10 @@
 #define CAN_MSG_MCS19_BAT_SIGNATURE_BYTE 0 //<!" Senders signature
 #define CAN_MSG_MCS19_BAT_SIGNATURE_TYPE "u8"
 #define CAN_MSG_MCS19_BAT_SIGNATURE_UNITS ""
-#define CAN_MSG_MCS19_BAT_AVG_L_BYTE 1 //<!" Avg byte low
+#define CAN_MSG_MCS19_BAT_AVG_L_BYTE 1 //<!" Average, byte low
 #define CAN_MSG_MCS19_BAT_AVG_L_TYPE "u16"
 #define CAN_MSG_MCS19_BAT_AVG_L_UNITS ""
-#define CAN_MSG_MCS19_BAT_AVG_H_BYTE 2 //<!" Avg byte high
+#define CAN_MSG_MCS19_BAT_AVG_H_BYTE 2 //<!" Average, byte high
 #define CAN_MSG_MCS19_BAT_AVG_H_TYPE "u16"
 #define CAN_MSG_MCS19_BAT_AVG_H_UNITS ""
 #define CAN_MSG_MCS19_BAT_MIN_L_BYTE 3 //<!" Min byte low
@@ -224,10 +384,10 @@
 #define CAN_MSG_MCS19_CAP_SIGNATURE_BYTE 0 //<!" Senders signature
 #define CAN_MSG_MCS19_CAP_SIGNATURE_TYPE "u8"
 #define CAN_MSG_MCS19_CAP_SIGNATURE_UNITS ""
-#define CAN_MSG_MCS19_CAP_AVG_L_BYTE 1 //<!" Avg byte low
+#define CAN_MSG_MCS19_CAP_AVG_L_BYTE 1 //<!" Average, byte low
 #define CAN_MSG_MCS19_CAP_AVG_L_TYPE "u16"
 #define CAN_MSG_MCS19_CAP_AVG_L_UNITS ""
-#define CAN_MSG_MCS19_CAP_AVG_H_BYTE 2 //<!" Avg byte high
+#define CAN_MSG_MCS19_CAP_AVG_H_BYTE 2 //<!" Average, byte high
 #define CAN_MSG_MCS19_CAP_AVG_H_TYPE "u16"
 #define CAN_MSG_MCS19_CAP_AVG_H_UNITS ""
 #define CAN_MSG_MCS19_CAP_MIN_L_BYTE 3 //<!" Min byte low
@@ -264,10 +424,10 @@
 #define CAN_MSG_MT19_RPM_SIGNATURE_BYTE 0 //<!" Senders signature
 #define CAN_MSG_MT19_RPM_SIGNATURE_TYPE "u8"
 #define CAN_MSG_MT19_RPM_SIGNATURE_UNITS ""
-#define CAN_MSG_MT19_RPM_AVG_L_BYTE 1 //<!" RPM Avg byte low
+#define CAN_MSG_MT19_RPM_AVG_L_BYTE 1 //<!" RPM Average, byte low
 #define CAN_MSG_MT19_RPM_AVG_L_TYPE "u16"
 #define CAN_MSG_MT19_RPM_AVG_L_UNITS ""
-#define CAN_MSG_MT19_RPM_AVG_H_BYTE 2 //<!" RPM Avg byte high
+#define CAN_MSG_MT19_RPM_AVG_H_BYTE 2 //<!" RPM Average, byte high
 #define CAN_MSG_MT19_RPM_AVG_H_TYPE "u16"
 #define CAN_MSG_MT19_RPM_AVG_H_UNITS ""
 

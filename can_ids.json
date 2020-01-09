@@ -332,8 +332,8 @@
             ]
         },
         {
-            "name": "MSC19",
-            "description": "Modulo de Sensores CAN",
+            "name": "MSC19_1",
+            "description": "Main Battery Voltage Sensor",
             "signature": 250,
             "topics": [
                 {
@@ -368,7 +368,7 @@
                 },
                 {
                     "name": "ADC",
-                    "description": "ADC values",
+                    "description": "Voltage measurements",
                     "id": 33,
                     "bytes": [
                         {
@@ -379,39 +379,387 @@
                         },
                         {
                             "name": "AVG_L",
-                            "description": "Avg byte low",
+                            "description": "Average, byte low",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
                             "name": "AVG_H",
-                            "description": "Avg byte high",
+                            "description": "Average, byte high",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
                             "name": "MIN_L",
                             "description": "Min byte low",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
                             "name": "MIN_H",
                             "description": "Min byte high",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
                             "name": "MAX_L",
                             "description": "Max byte low",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
                             "name": "MAX_H",
                             "description": "Max byte low",
                             "type": "u16",
+                            "units": "V/100"
+                        },
+                        null
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MSC19_2",
+            "description": "Auxilliary Battery Voltage Sensor",
+            "signature": 251,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 32,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
                             "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "ADC",
+                    "description": "Voltage measurements",
+                    "id": 33,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Average, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Average, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        null
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MSC19_3",
+            "description": "Extra Battery Voltage Sensor",
+            "signature": 252,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 32,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "ADC",
+                    "description": "Voltage measurements",
+                    "id": 33,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Average, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Average, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        null
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MSC19_4",
+            "description": "Main Battery Input Current Sensor",
+            "signature": 253,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 32,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "ADC",
+                    "description": "Current measurements",
+                    "id": 33,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Average, byte low",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Average, byte high",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        null
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MSC19_5",
+            "description": "Main Battery Output Current Sensor",
+            "signature": 254,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 32,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "ADC",
+                    "description": "Current measurements",
+                    "id": 33,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Average, byte low",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Average, byte high",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": "A/100"
                         },
                         null
                     ]
@@ -516,13 +864,13 @@
                         },
                         {
                             "name": "AVG_L",
-                            "description": "Avg byte low",
+                            "description": "Average, byte low",
                             "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "AVG_H",
-                            "description": "Avg byte high",
+                            "description": "Average, byte high",
                             "type": "u16",
                             "units": ""
                         },
@@ -566,13 +914,13 @@
                         },
                         {
                             "name": "AVG_L",
-                            "description": "Avg byte low",
+                            "description": "Average, byte low",
                             "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "AVG_H",
-                            "description": "Avg byte high",
+                            "description": "Average, byte high",
                             "type": "u16",
                             "units": ""
                         },
@@ -653,13 +1001,13 @@
                         },
                         {
                             "name": "AVG_L",
-                            "description": "RPM Avg byte low",
+                            "description": "RPM Average, byte low",
                             "type": "u16",
                             "units": ""
                         },
                         {
                             "name": "AVG_H",
-                            "description": "RPM Avg byte high",
+                            "description": "RPM Average, byte high",
                             "type": "u16",
                             "units": ""
                         },
