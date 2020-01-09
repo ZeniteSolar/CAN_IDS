@@ -5,6 +5,13 @@ import json
 import re
 from mako.template import Template
 
+# TODO: escrever funções para facilitar a edição e criação de variações:
+#   - criar uma cópia do modulo, mensagem, byte ou bit
+#   - atualizar um campo do modulo
+#   - atualizar um campo de um topico do modulo
+#   - atualizar um campo de um byte de um topico do modulo
+#   - atualizar um campo de um bit de um byte de um topico do modulo
+
 class Can:
     def convert_string(string: str) -> str:
         string = string.upper()
@@ -16,8 +23,6 @@ class Can:
         return string
 
     class topic:
-        name_prefix = "CAN_FILTER_MSG_"
-
         def __init__(self, msg: str, id: int, description: str):
             self.name = Can.convert_string(msg)
             self.id = id
@@ -27,7 +32,7 @@ class Can:
 
         def get(self) -> str:
             return {
-                "name": str(self.name_prefix + self.name),
+                "name": str(self.name),
                 "description": self.description,
                 "id": self.id,
                 "bytes": self.bytes
@@ -69,8 +74,6 @@ class Can:
             self.bytes[byte]["bits"][bit] = name
 
     class module:
-        name_prefix = ""
-
         def __init__(self, name: str, signature: int, description: str):
             self.name = Can.convert_string(name)
             self.signature = signature
@@ -79,7 +82,7 @@ class Can:
 
         def get(self) -> str:
             return {
-                "name": str(self.name_prefix + self.name),
+                "name": str(self.name),
                 "description": self.description,
                 "signature": self.signature,
                 "topics": self.topics

@@ -10,7 +10,7 @@ class test_can_topic(unittest.TestCase):
     def test_topic(self):
         t = self.can.topic("motor", 9, "topic description text here")
         expected = {
-            "name": "CAN_FILTER_MSG_MOTOR",
+            "name": "MOTOR",
             "description": "topic description text here",
             "id": 9,
             "bytes": [
@@ -34,7 +34,7 @@ class test_can_topic(unittest.TestCase):
         t.describe_byte("motor", 1, "byte description text here", "bitfield", "")
 
         expected = {
-            "name": "CAN_FILTER_MSG_MOTOR",
+            "name": "MOTOR",
             "description": "topic description text here",
             "id": 9,
             "bytes": [
@@ -65,7 +65,7 @@ class test_can_topic(unittest.TestCase):
         t.describe_bit("motor on", 1, 0)
 
         expected = {
-            "name": "CAN_FILTER_MSG_MOTOR",
+            "name": "MOTOR",
             "description": "topic description text here",
             "id": 9,
             "bytes": [
@@ -123,7 +123,7 @@ class test_can_module(unittest.TestCase):
             "signature": 10,
             "topics": [
                 {
-                    "name": "CAN_FILTER_MSG_MOTOR",
+                    "name": "MOTOR",
                     "description": "topic description text here",
                     "id": 9,
                     "bytes": [

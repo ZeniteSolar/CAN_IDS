@@ -6,7 +6,7 @@
             "signature": 10,
             "topics": [
                 {
-                    "name": "CAN_FILTER_MSG_MOTOR",
+                    "name": "MOTOR",
                     "description": "Motor controller parameters",
                     "id": 9,
                     "bytes": [
