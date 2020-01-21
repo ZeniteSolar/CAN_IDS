@@ -2,6 +2,28 @@
 // FILE_VERSION: {db["version"]}
 
 
+// GENERIC - Modulo generico para facilitar implementacoes genericas
+#define CAN_SIGNATURE_GENERIC 0
+// GENERIC - STATE - Module state report
+#define CAN_MSG_GENERIC_STATE_ID 8
+#define CAN_MSG_GENERIC_STATE_LENGTH 3
+#define CAN_MSG_GENERIC_STATE_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_GENERIC_STATE_SIGNATURE_TYPE "u8"
+#define CAN_MSG_GENERIC_STATE_SIGNATURE_UNITS ""
+#define CAN_MSG_GENERIC_STATE_STATE_BYTE 1 //<!" State code
+#define CAN_MSG_GENERIC_STATE_STATE_TYPE "u8"
+#define CAN_MSG_GENERIC_STATE_STATE_UNITS ""
+#define CAN_MSG_GENERIC_STATE_ERROR_BYTE 2 //<!" Error code
+#define CAN_MSG_GENERIC_STATE_ERROR_TYPE "u8"
+#define CAN_MSG_GENERIC_STATE_ERROR_UNITS ""
+// GENERIC - GENERIC - Generic topic
+#define CAN_MSG_GENERIC_GENERIC_ID 0
+#define CAN_MSG_GENERIC_GENERIC_LENGTH 1
+#define CAN_MSG_GENERIC_GENERIC_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_GENERIC_GENERIC_SIGNATURE_TYPE "u8"
+#define CAN_MSG_GENERIC_GENERIC_SIGNATURE_UNITS ""
+
+
 // MIC19 - Modulo de Interface de Controle
 #define CAN_SIGNATURE_MIC19 240
 // MIC19 - STATE - Module state report
