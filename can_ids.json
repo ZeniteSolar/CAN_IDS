@@ -250,6 +250,454 @@
             ]
         },
         {
+            "name": "MVC19_1",
+            "description": "Modulo de voltimetro 1",
+            "signature": 210,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 32,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MVC19_2",
+            "description": "Modulo de voltimetro 2",
+            "signature": 211,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 32,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MCB19_1",
+            "description": "Modulo de carregamento das baterias auxiliares",
+            "signature": 220,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 16,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "OUTPUT_VOLTAGE",
+                    "description": "Output voltage measurement",
+                    "id": 17,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Average, byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Average, byte high",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        null
+                    ]
+                },
+                {
+                    "name": "OUTPUT_CURRENT",
+                    "description": "Output current measurement",
+                    "id": 18,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Average, byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Average, byte high",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        null
+                    ]
+                },
+                {
+                    "name": "INPUT_VOLTAGE",
+                    "description": "Input voltage measurement",
+                    "id": 19,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Average, byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Average, byte high",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        null
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MCB19_2",
+            "description": "Modulo de carregamento das baterias auxiliares",
+            "signature": 221,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 16,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "OUTPUT_VOLTAGE",
+                    "description": "Output voltage measurement",
+                    "id": 17,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Average, byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Average, byte high",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        null
+                    ]
+                },
+                {
+                    "name": "OUTPUT_CURRENT",
+                    "description": "Output current measurement",
+                    "id": 18,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Average, byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Average, byte high",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        null
+                    ]
+                },
+                {
+                    "name": "INPUT_VOLTAGE",
+                    "description": "Input voltage measurement",
+                    "id": 19,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Average, byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Average, byte high",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_L",
+                            "description": "Min byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MIN_H",
+                            "description": "Min byte high",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_L",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        {
+                            "name": "MAX_H",
+                            "description": "Max byte low",
+                            "type": "u16",
+                            "units": ""
+                        },
+                        null
+                    ]
+                }
+            ]
+        },
+        {
             "name": "MAM19",
             "description": "Modulo de Acionamento do Motor",
             "signature": 190,

@@ -247,9 +247,9 @@ module_mvc19_2.add_topic(topic_state)
 can.add_module(module_mvc19_2)
 
 ################################################################################
-### MODULE: MCB20_1
-module_mcb20_1 = can.module(
-    name = "mcb20_1",
+### MODULE: MCB19_1
+module_mcb19_1 = can.module(
+    name = "mcb19_1",
     signature = 220,
     description = "Modulo de carregamento das baterias auxiliares"
 )
@@ -420,16 +420,16 @@ topic_input_voltage.describe_byte(
     units = ""
 )
 
-module_mcb20_1.add_topic(topic_state)
-module_mcb20_1.add_topic(topic_output_voltage)
-module_mcb20_1.add_topic(topic_output_current)
-module_mcb20_1.add_topic(topic_input_voltage)
-can.add_module(module_mcb20_1)
+module_mcb19_1.add_topic(topic_state)
+module_mcb19_1.add_topic(topic_output_voltage)
+module_mcb19_1.add_topic(topic_output_current)
+module_mcb19_1.add_topic(topic_input_voltage)
+can.add_module(module_mcb19_1)
 
 ################################################################################
-### MODULE: MCB20_2
-module_mcb20_2 = can.module(
-    name = "mcb20_2",
+### MODULE: MCB19_2
+module_mcb19_2 = can.module(
+    name = "mcb19_2",
     signature = 221,
     description = "Modulo de carregamento das baterias auxiliares"
 )
@@ -600,11 +600,11 @@ topic_input_voltage.describe_byte(
     units = ""
 )
 
-module_mcb20_2.add_topic(topic_state)
-module_mcb20_2.add_topic(topic_output_voltage)
-module_mcb20_2.add_topic(topic_output_current)
-module_mcb20_2.add_topic(topic_input_voltage)
-can.add_module(module_mcb20_2)
+module_mcb19_2.add_topic(topic_state)
+module_mcb19_2.add_topic(topic_output_voltage)
+module_mcb19_2.add_topic(topic_output_current)
+module_mcb19_2.add_topic(topic_input_voltage)
+can.add_module(module_mcb19_2)
 
 ################################################################################
 ### MODULE: MAM19
