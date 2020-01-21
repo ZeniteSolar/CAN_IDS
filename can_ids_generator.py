@@ -3,6 +3,43 @@
 from can import Can
 can = Can()
 
+################################################################################
+### MODULE: GENERIC
+module_generic = can.module(
+    name = "generic",
+    signature = 0,
+    description = "Modulo generico para facilitar implementacoes genericas"
+)
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b1000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    type = "u8",
+    units = ""
+)
+#### TOPIC: GENERIC
+topic_generic = can.topic(
+    msg = "generic",
+    id = 0,
+    description = "Generic topic"
+)
+
+module_generic.add_topic(topic_state)
+module_generic.add_topic(topic_generic)
+can.add_module(module_generic)
 
 ################################################################################
 ### MODULE: MIC19
