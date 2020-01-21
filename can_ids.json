@@ -173,7 +173,7 @@
                     ]
                 },
                 {
-                    "name": "MPTTS",
+                    "name": "MPPTS",
                     "description": "Mppts controller parameters",
                     "id": 11,
                     "bytes": [

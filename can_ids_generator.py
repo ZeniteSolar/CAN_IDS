@@ -135,7 +135,7 @@ topic_pumps.describe_bit(
 )
 #### TOPIC: MPPTS
 topic_mppts = can.topic(
-    msg = "mptts",
+    msg = "mppts",
     id = 0b1011,
     description = "Mppts controller parameters"
 )
