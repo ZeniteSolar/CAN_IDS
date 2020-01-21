@@ -1524,6 +1524,198 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "MSWI19",
+            "description": "Modulo de Interface de Controle",
+            "signature": 241,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 8,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "MOTOR",
+                    "description": "Motor controller parameters",
+                    "id": 9,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MOTOR",
+                            "description": "Motor state",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "MOTOR_ON",
+                                "DMS_ON",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        {
+                            "name": "D",
+                            "description": "Motor Duty Cycle",
+                            "type": "u8",
+                            "units": "%"
+                        },
+                        {
+                            "name": "I",
+                            "description": "Motor Soft Start",
+                            "type": "u8",
+                            "units": "%"
+                        },
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "PUMPS",
+                    "description": "Pumps controller parameters",
+                    "id": 10,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "PUMPS",
+                            "description": "Pumps state",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "PUMP1",
+                                "PUMP2",
+                                "PUMP3",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "MPPTS",
+                    "description": "Mppts controller parameters",
+                    "id": 11,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "MPPTS_ON",
+                            "description": "MPPTs state",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "MPPTS_ON",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        {
+                            "name": "POT",
+                            "description": "MPPTs maximum power limitation",
+                            "type": "u8",
+                            "units": "%"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "MCS",
+                    "description": "MCS controller parameters",
+                    "id": 12,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "BOAT_ON",
+                            "description": "Boat state",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "BOAT_ON",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            ]
         }
     ]
 }
