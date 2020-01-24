@@ -324,6 +324,414 @@
             ]
         },
         {
+            "name": "MCC19_1",
+            "description": "Modulo controlador de carga",
+            "signature": 225,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 16,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "CONTROL",
+                            "description": "Control flags for operating point",
+                            "type": "bitfiled",
+                            "units": "",
+                            "bits": [
+                                "ENABLE",
+                                "VI_SAFE_RANGE",
+                                "VO_SAFE_RANGE",
+                                "VI_STABLE",
+                                "DT_SAFE_RANGE",
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "MEASUREMENTS",
+                    "description": "All measurements from the converter",
+                    "id": 17,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_VOLTAGE_L",
+                            "description": "Average output voltage, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_VOLTAGE_H",
+                            "description": "Average output voltage, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "INPUT_VOLTAGE_L",
+                            "description": "Average input voltage, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "INPUT_VOLTAGE_H",
+                            "description": "Average input voltage, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "DT",
+                            "description": "converter's duty cycle",
+                            "type": "u8",
+                            "units": "%/255"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MCC19_2",
+            "description": "Modulo controlador de carga",
+            "signature": 226,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 16,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "CONTROL",
+                            "description": "Control flags for operating point",
+                            "type": "bitfiled",
+                            "units": "",
+                            "bits": [
+                                "ENABLE",
+                                "VI_SAFE_RANGE",
+                                "VO_SAFE_RANGE",
+                                "VI_STABLE",
+                                "DT_SAFE_RANGE",
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "MEASUREMENTS",
+                    "description": "All measurements from the converter",
+                    "id": 17,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_VOLTAGE_L",
+                            "description": "Average output voltage, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_VOLTAGE_H",
+                            "description": "Average output voltage, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "INPUT_VOLTAGE_L",
+                            "description": "Average input voltage, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "INPUT_VOLTAGE_H",
+                            "description": "Average input voltage, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "DT",
+                            "description": "converter's duty cycle",
+                            "type": "u8",
+                            "units": "%/255"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MCC19_3",
+            "description": "Modulo controlador de carga",
+            "signature": 227,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 16,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "CONTROL",
+                            "description": "Control flags for operating point",
+                            "type": "bitfiled",
+                            "units": "",
+                            "bits": [
+                                "ENABLE",
+                                "VI_SAFE_RANGE",
+                                "VO_SAFE_RANGE",
+                                "VI_STABLE",
+                                "DT_SAFE_RANGE",
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "MEASUREMENTS",
+                    "description": "All measurements from the converter",
+                    "id": 17,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_VOLTAGE_L",
+                            "description": "Average output voltage, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_VOLTAGE_H",
+                            "description": "Average output voltage, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "INPUT_VOLTAGE_L",
+                            "description": "Average input voltage, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "INPUT_VOLTAGE_H",
+                            "description": "Average input voltage, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "DT",
+                            "description": "converter's duty cycle",
+                            "type": "u8",
+                            "units": "%/255"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MCC19_4",
+            "description": "Modulo controlador de carga",
+            "signature": 228,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 16,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "CONTROL",
+                            "description": "Control flags for operating point",
+                            "type": "bitfiled",
+                            "units": "",
+                            "bits": [
+                                "ENABLE",
+                                "VI_SAFE_RANGE",
+                                "VO_SAFE_RANGE",
+                                "VI_STABLE",
+                                "DT_SAFE_RANGE",
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "MEASUREMENTS",
+                    "description": "All measurements from the converter",
+                    "id": 17,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_VOLTAGE_L",
+                            "description": "Average output voltage, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_VOLTAGE_H",
+                            "description": "Average output voltage, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "INPUT_VOLTAGE_L",
+                            "description": "Average input voltage, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "INPUT_VOLTAGE_H",
+                            "description": "Average input voltage, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "DT",
+                            "description": "converter's duty cycle",
+                            "type": "u8",
+                            "units": "%/255"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "MCB19_1",
             "description": "Modulo de carregamento das baterias auxiliares",
             "signature": 220,
@@ -346,10 +754,20 @@
                             "units": ""
                         },
                         {
-                            "name": "ERROR",
-                            "description": "Error code",
-                            "type": "u8",
-                            "units": ""
+                            "name": "CONTROL",
+                            "description": "Control flags for operating point",
+                            "type": "bitfiled",
+                            "units": "",
+                            "bits": [
+                                "ENABLE",
+                                "VI_SAFE_RANGE",
+                                "VO_SAFE_RANGE",
+                                "VI_STABLE",
+                                "DT_SAFE_RANGE",
+                                null,
+                                null,
+                                null
+                            ]
                         },
                         null,
                         null,
@@ -359,8 +777,8 @@
                     ]
                 },
                 {
-                    "name": "OUTPUT_VOLTAGE",
-                    "description": "Output voltage measurement",
+                    "name": "MEASUREMENTS",
+                    "description": "All measurements from the converter",
                     "id": 17,
                     "bytes": [
                         {
@@ -370,142 +788,47 @@
                             "units": ""
                         },
                         {
-                            "name": "AVG_L",
-                            "description": "Average, byte low",
+                            "name": "OUTPUT_VOLTAGE_L",
+                            "description": "Average output voltage, byte low",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
-                            "name": "AVG_H",
-                            "description": "Average, byte high",
+                            "name": "OUTPUT_VOLTAGE_H",
+                            "description": "Average output voltage, byte high",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
-                            "name": "MIN_L",
-                            "description": "Min byte low",
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
-                            "name": "MIN_H",
-                            "description": "Min byte high",
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
-                            "name": "MAX_L",
-                            "description": "Max byte low",
+                            "name": "INPUT_VOLTAGE_L",
+                            "description": "Average input voltage, byte low",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
-                            "name": "MAX_H",
-                            "description": "Max byte low",
+                            "name": "INPUT_VOLTAGE_H",
+                            "description": "Average input voltage, byte high",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
-                        null
-                    ]
-                },
-                {
-                    "name": "OUTPUT_CURRENT",
-                    "description": "Output current measurement",
-                    "id": 18,
-                    "bytes": [
                         {
-                            "name": "SIGNATURE",
-                            "description": "Senders signature",
+                            "name": "DT",
+                            "description": "converter's duty cycle",
                             "type": "u8",
-                            "units": ""
-                        },
-                        {
-                            "name": "AVG_L",
-                            "description": "Average, byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "AVG_H",
-                            "description": "Average, byte high",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MIN_L",
-                            "description": "Min byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MIN_H",
-                            "description": "Min byte high",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MAX_L",
-                            "description": "Max byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MAX_H",
-                            "description": "Max byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        null
-                    ]
-                },
-                {
-                    "name": "INPUT_VOLTAGE",
-                    "description": "Input voltage measurement",
-                    "id": 19,
-                    "bytes": [
-                        {
-                            "name": "SIGNATURE",
-                            "description": "Senders signature",
-                            "type": "u8",
-                            "units": ""
-                        },
-                        {
-                            "name": "AVG_L",
-                            "description": "Average, byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "AVG_H",
-                            "description": "Average, byte high",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MIN_L",
-                            "description": "Min byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MIN_H",
-                            "description": "Min byte high",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MAX_L",
-                            "description": "Max byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MAX_H",
-                            "description": "Max byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        null
+                            "units": "%/255"
+                        }
                     ]
                 }
             ]
@@ -533,10 +856,20 @@
                             "units": ""
                         },
                         {
-                            "name": "ERROR",
-                            "description": "Error code",
-                            "type": "u8",
-                            "units": ""
+                            "name": "CONTROL",
+                            "description": "Control flags for operating point",
+                            "type": "bitfiled",
+                            "units": "",
+                            "bits": [
+                                "ENABLE",
+                                "VI_SAFE_RANGE",
+                                "VO_SAFE_RANGE",
+                                "VI_STABLE",
+                                "DT_SAFE_RANGE",
+                                null,
+                                null,
+                                null
+                            ]
                         },
                         null,
                         null,
@@ -546,8 +879,8 @@
                     ]
                 },
                 {
-                    "name": "OUTPUT_VOLTAGE",
-                    "description": "Output voltage measurement",
+                    "name": "MEASUREMENTS",
+                    "description": "All measurements from the converter",
                     "id": 17,
                     "bytes": [
                         {
@@ -557,142 +890,47 @@
                             "units": ""
                         },
                         {
-                            "name": "AVG_L",
-                            "description": "Average, byte low",
+                            "name": "OUTPUT_VOLTAGE_L",
+                            "description": "Average output voltage, byte low",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
-                            "name": "AVG_H",
-                            "description": "Average, byte high",
+                            "name": "OUTPUT_VOLTAGE_H",
+                            "description": "Average output voltage, byte high",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
-                            "name": "MIN_L",
-                            "description": "Min byte low",
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
-                            "name": "MIN_H",
-                            "description": "Min byte high",
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
-                            "name": "MAX_L",
-                            "description": "Max byte low",
+                            "name": "INPUT_VOLTAGE_L",
+                            "description": "Average input voltage, byte low",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
                         {
-                            "name": "MAX_H",
-                            "description": "Max byte low",
+                            "name": "INPUT_VOLTAGE_H",
+                            "description": "Average input voltage, byte high",
                             "type": "u16",
-                            "units": ""
+                            "units": "V/100"
                         },
-                        null
-                    ]
-                },
-                {
-                    "name": "OUTPUT_CURRENT",
-                    "description": "Output current measurement",
-                    "id": 18,
-                    "bytes": [
                         {
-                            "name": "SIGNATURE",
-                            "description": "Senders signature",
+                            "name": "DT",
+                            "description": "converter's duty cycle",
                             "type": "u8",
-                            "units": ""
-                        },
-                        {
-                            "name": "AVG_L",
-                            "description": "Average, byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "AVG_H",
-                            "description": "Average, byte high",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MIN_L",
-                            "description": "Min byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MIN_H",
-                            "description": "Min byte high",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MAX_L",
-                            "description": "Max byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MAX_H",
-                            "description": "Max byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        null
-                    ]
-                },
-                {
-                    "name": "INPUT_VOLTAGE",
-                    "description": "Input voltage measurement",
-                    "id": 19,
-                    "bytes": [
-                        {
-                            "name": "SIGNATURE",
-                            "description": "Senders signature",
-                            "type": "u8",
-                            "units": ""
-                        },
-                        {
-                            "name": "AVG_L",
-                            "description": "Average, byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "AVG_H",
-                            "description": "Average, byte high",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MIN_L",
-                            "description": "Min byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MIN_H",
-                            "description": "Min byte high",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MAX_L",
-                            "description": "Max byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        {
-                            "name": "MAX_H",
-                            "description": "Max byte low",
-                            "type": "u16",
-                            "units": ""
-                        },
-                        null
+                            "units": "%/255"
+                        }
                     ]
                 }
             ]

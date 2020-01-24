@@ -246,6 +246,491 @@ topic_state.describe_byte(
 module_mvc19_2.add_topic(topic_state)
 can.add_module(module_mvc19_2)
 
+
+################################################################################
+### MODULE: MCC19_1
+module_mcc19_1 = can.module(
+    name = "mcc19_1",
+    signature = 225,
+    description = "Modulo controlador de carga"
+)
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b10000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "control",
+    byte = 2,
+    description = "Control flags for operating point",
+    type = "bitfiled",
+    units = ""
+)
+topic_state.describe_bit(
+    name = "enable",
+    byte = 2,
+    bit = 0
+)
+topic_state.describe_bit(
+    name = "vi_safe_range",
+    byte = 2,
+    bit = 1
+)
+topic_state.describe_bit(
+    name = "vo_safe_range",
+    byte = 2,
+    bit = 2
+)
+topic_state.describe_bit(
+    name = "vi_stable",
+    byte = 2,
+    bit = 3
+)
+topic_state.describe_bit(
+    name = "dt_safe_range",
+    byte = 2,
+    bit = 4
+)
+
+### TOPIC: MEASUREMENTS
+topic_measurements = can.topic(
+    msg = "measurements",
+    id  = 0b10001,
+    description = "All measurements from the converter"
+)
+topic_measurements.describe_byte(
+    name = "output_voltage_l",
+    byte = 1,
+    description = "Average output voltage, byte low",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "output_voltage_h",
+    byte = 2,
+    description = "Average output voltage, byte high",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "output_current_l",
+    byte = 3,
+    description = "Average output current, byte low",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "output_current_h",
+    byte = 4,
+    description = "Average output current, byte high",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "input_voltage_l",
+    byte = 5,
+    description = "Average input voltage, byte low",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "input_voltage_h",
+    byte = 6,
+    description = "Average input voltage, byte high",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "dt",
+    byte = 7,
+    description = "converter's duty cycle",
+    type = "u8",
+    units = "%/255"
+)
+
+module_mcc19_1.add_topic(topic_state)
+module_mcc19_1.add_topic(topic_measurements)
+can.add_module(module_mcc19_1)
+
+
+################################################################################
+### MODULE: MCC19_2
+module_mcc19_2 = can.module(
+    name = "mcc19_2",
+    signature = 226,
+    description = "Modulo controlador de carga"
+)
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b10000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "control",
+    byte = 2,
+    description = "Control flags for operating point",
+    type = "bitfiled",
+    units = ""
+)
+topic_state.describe_bit(
+    name = "enable",
+    byte = 2,
+    bit = 0
+)
+topic_state.describe_bit(
+    name = "vi_safe_range",
+    byte = 2,
+    bit = 1
+)
+topic_state.describe_bit(
+    name = "vo_safe_range",
+    byte = 2,
+    bit = 2
+)
+topic_state.describe_bit(
+    name = "vi_stable",
+    byte = 2,
+    bit = 3
+)
+topic_state.describe_bit(
+    name = "dt_safe_range",
+    byte = 2,
+    bit = 4
+)
+
+### TOPIC: MEASUREMENTS
+topic_measurements = can.topic(
+    msg = "measurements",
+    id  = 0b10001,
+    description = "All measurements from the converter"
+)
+topic_measurements.describe_byte(
+    name = "output_voltage_l",
+    byte = 1,
+    description = "Average output voltage, byte low",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "output_voltage_h",
+    byte = 2,
+    description = "Average output voltage, byte high",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "output_current_l",
+    byte = 3,
+    description = "Average output current, byte low",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "output_current_h",
+    byte = 4,
+    description = "Average output current, byte high",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "input_voltage_l",
+    byte = 5,
+    description = "Average input voltage, byte low",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "input_voltage_h",
+    byte = 6,
+    description = "Average input voltage, byte high",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "dt",
+    byte = 7,
+    description = "converter's duty cycle",
+    type = "u8",
+    units = "%/255"
+)
+
+module_mcc19_2.add_topic(topic_state)
+module_mcc19_2.add_topic(topic_measurements)
+can.add_module(module_mcc19_2)
+
+
+################################################################################
+### MODULE: MCC19_3
+module_mcc19_3 = can.module(
+    name = "mcc19_3",
+    signature = 227,
+    description = "Modulo controlador de carga"
+)
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b10000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "control",
+    byte = 2,
+    description = "Control flags for operating point",
+    type = "bitfiled",
+    units = ""
+)
+topic_state.describe_bit(
+    name = "enable",
+    byte = 2,
+    bit = 0
+)
+topic_state.describe_bit(
+    name = "vi_safe_range",
+    byte = 2,
+    bit = 1
+)
+topic_state.describe_bit(
+    name = "vo_safe_range",
+    byte = 2,
+    bit = 2
+)
+topic_state.describe_bit(
+    name = "vi_stable",
+    byte = 2,
+    bit = 3
+)
+topic_state.describe_bit(
+    name = "dt_safe_range",
+    byte = 2,
+    bit = 4
+)
+
+### TOPIC: MEASUREMENTS
+topic_measurements = can.topic(
+    msg = "measurements",
+    id  = 0b10001,
+    description = "All measurements from the converter"
+)
+topic_measurements.describe_byte(
+    name = "output_voltage_l",
+    byte = 1,
+    description = "Average output voltage, byte low",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "output_voltage_h",
+    byte = 2,
+    description = "Average output voltage, byte high",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "output_current_l",
+    byte = 3,
+    description = "Average output current, byte low",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "output_current_h",
+    byte = 4,
+    description = "Average output current, byte high",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "input_voltage_l",
+    byte = 5,
+    description = "Average input voltage, byte low",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "input_voltage_h",
+    byte = 6,
+    description = "Average input voltage, byte high",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "dt",
+    byte = 7,
+    description = "converter's duty cycle",
+    type = "u8",
+    units = "%/255"
+)
+
+module_mcc19_3.add_topic(topic_state)
+module_mcc19_3.add_topic(topic_measurements)
+can.add_module(module_mcc19_3)
+
+
+################################################################################
+### MODULE: MCC19_4
+module_mcc19_4 = can.module(
+    name = "mcc19_4",
+    signature = 228,
+    description = "Modulo controlador de carga"
+)
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b10000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    type = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "control",
+    byte = 2,
+    description = "Control flags for operating point",
+    type = "bitfiled",
+    units = ""
+)
+topic_state.describe_bit(
+    name = "enable",
+    byte = 2,
+    bit = 0
+)
+topic_state.describe_bit(
+    name = "vi_safe_range",
+    byte = 2,
+    bit = 1
+)
+topic_state.describe_bit(
+    name = "vo_safe_range",
+    byte = 2,
+    bit = 2
+)
+topic_state.describe_bit(
+    name = "vi_stable",
+    byte = 2,
+    bit = 3
+)
+topic_state.describe_bit(
+    name = "dt_safe_range",
+    byte = 2,
+    bit = 4
+)
+
+### TOPIC: MEASUREMENTS
+topic_measurements = can.topic(
+    msg = "measurements",
+    id  = 0b10001,
+    description = "All measurements from the converter"
+)
+topic_measurements.describe_byte(
+    name = "output_voltage_l",
+    byte = 1,
+    description = "Average output voltage, byte low",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "output_voltage_h",
+    byte = 2,
+    description = "Average output voltage, byte high",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "output_current_l",
+    byte = 3,
+    description = "Average output current, byte low",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "output_current_h",
+    byte = 4,
+    description = "Average output current, byte high",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "input_voltage_l",
+    byte = 5,
+    description = "Average input voltage, byte low",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "input_voltage_h",
+    byte = 6,
+    description = "Average input voltage, byte high",
+    type = "u16",
+    units = "V/100"
+)
+topic_measurements.describe_byte(
+    name = "dt",
+    byte = 7,
+    description = "converter's duty cycle",
+    type = "u8",
+    units = "%/255"
+)
+
+module_mcc19_4.add_topic(topic_state)
+module_mcc19_4.add_topic(topic_measurements)
+can.add_module(module_mcc19_4)
+
+
 ################################################################################
 ### MODULE: MCB19_1
 module_mcb19_1 = can.module(
@@ -273,157 +758,97 @@ topic_state.describe_byte(
     type = "u8",
     units = ""
 )
-### TOPIC: OUTPUT VOLTAGE
-topic_output_voltage = can.topic(
-    msg = "output_voltage",
+topic_state.describe_byte(
+    name = "control",
+    byte = 2,
+    description = "Control flags for operating point",
+    type = "bitfiled",
+    units = ""
+)
+topic_state.describe_bit(
+    name = "enable",
+    byte = 2,
+    bit = 0
+)
+topic_state.describe_bit(
+    name = "vi_safe_range",
+    byte = 2,
+    bit = 1
+)
+topic_state.describe_bit(
+    name = "vo_safe_range",
+    byte = 2,
+    bit = 2
+)
+topic_state.describe_bit(
+    name = "vi_stable",
+    byte = 2,
+    bit = 3
+)
+topic_state.describe_bit(
+    name = "dt_safe_range",
+    byte = 2,
+    bit = 4
+)
+
+### TOPIC: MEASUREMENTS
+topic_measurements = can.topic(
+    msg = "measurements",
     id  = 0b10001,
-    description = "Output voltage measurement"
+    description = "All measurements from the converter"
 )
-topic_output_voltage.describe_byte(
-    name = "AVG_L",
+topic_measurements.describe_byte(
+    name = "output_voltage_l",
     byte = 1,
-    description = "Average, byte low",
+    description = "Average output voltage, byte low",
     type = "u16",
-    units = ""
+    units = "V/100"
 )
-topic_output_voltage.describe_byte(
-    name = "AVG_H",
+topic_measurements.describe_byte(
+    name = "output_voltage_h",
     byte = 2,
-    description = "Average, byte high",
+    description = "Average output voltage, byte high",
     type = "u16",
-    units = ""
+    units = "V/100"
 )
-topic_output_voltage.describe_byte(
-    name = "MIN_L",
+topic_measurements.describe_byte(
+    name = "output_current_l",
     byte = 3,
-    description = "Min byte low",
+    description = "Average output current, byte low",
     type = "u16",
-    units = ""
+    units = "V/100"
 )
-topic_output_voltage.describe_byte(
-    name = "MIN_H",
+topic_measurements.describe_byte(
+    name = "output_current_h",
     byte = 4,
-    description = "Min byte high",
+    description = "Average output current, byte high",
     type = "u16",
-    units = ""
+    units = "V/100"
 )
-topic_output_voltage.describe_byte(
-    name = "MAX_L",
+topic_measurements.describe_byte(
+    name = "input_voltage_l",
     byte = 5,
-    description = "Max byte low",
+    description = "Average input voltage, byte low",
     type = "u16",
-    units = ""
+    units = "V/100"
 )
-topic_output_voltage.describe_byte(
-    name = "MAX_H",
+topic_measurements.describe_byte(
+    name = "input_voltage_h",
     byte = 6,
-    description = "Max byte low",
+    description = "Average input voltage, byte high",
     type = "u16",
-    units = ""
+    units = "V/100"
 )
-
-### TOPIC: OUTPUT CURRENT
-topic_output_current = can.topic(
-    msg = "output_current",
-    id  = 0b10010,
-    description = "Output current measurement"
-)
-topic_output_current.describe_byte(
-    name = "AVG_L",
-    byte = 1,
-    description = "Average, byte low",
-    type = "u16",
-    units = ""
-)
-topic_output_current.describe_byte(
-    name = "AVG_H",
-    byte = 2,
-    description = "Average, byte high",
-    type = "u16",
-    units = ""
-)
-topic_output_current.describe_byte(
-    name = "MIN_L",
-    byte = 3,
-    description = "Min byte low",
-    type = "u16",
-    units = ""
-)
-topic_output_current.describe_byte(
-    name = "MIN_H",
-    byte = 4,
-    description = "Min byte high",
-    type = "u16",
-    units = ""
-)
-topic_output_current.describe_byte(
-    name = "MAX_L",
-    byte = 5,
-    description = "Max byte low",
-    type = "u16",
-    units = ""
-)
-topic_output_current.describe_byte(
-    name = "MAX_H",
-    byte = 6,
-    description = "Max byte low",
-    type = "u16",
-    units = ""
-)
-
-### TOPIC: INPUT VOLTAGE
-topic_input_voltage = can.topic(
-    msg = "input_voltage",
-    id  = 0b10011,
-    description = "Input voltage measurement"
-)
-topic_input_voltage.describe_byte(
-    name = "AVG_L",
-    byte = 1,
-    description = "Average, byte low",
-    type = "u16",
-    units = ""
-)
-topic_input_voltage.describe_byte(
-    name = "AVG_H",
-    byte = 2,
-    description = "Average, byte high",
-    type = "u16",
-    units = ""
-)
-topic_input_voltage.describe_byte(
-    name = "MIN_L",
-    byte = 3,
-    description = "Min byte low",
-    type = "u16",
-    units = ""
-)
-topic_input_voltage.describe_byte(
-    name = "MIN_H",
-    byte = 4,
-    description = "Min byte high",
-    type = "u16",
-    units = ""
-)
-topic_input_voltage.describe_byte(
-    name = "MAX_L",
-    byte = 5,
-    description = "Max byte low",
-    type = "u16",
-    units = ""
-)
-topic_input_voltage.describe_byte(
-    name = "MAX_H",
-    byte = 6,
-    description = "Max byte low",
-    type = "u16",
-    units = ""
+topic_measurements.describe_byte(
+    name = "dt",
+    byte = 7,
+    description = "converter's duty cycle",
+    type = "u8",
+    units = "%/255"
 )
 
 module_mcb19_1.add_topic(topic_state)
-module_mcb19_1.add_topic(topic_output_voltage)
-module_mcb19_1.add_topic(topic_output_current)
-module_mcb19_1.add_topic(topic_input_voltage)
+module_mcb19_1.add_topic(topic_measurements)
 can.add_module(module_mcb19_1)
 
 ################################################################################
@@ -453,157 +878,97 @@ topic_state.describe_byte(
     type = "u8",
     units = ""
 )
-### TOPIC: OUTPUT VOLTAGE
-topic_output_voltage = can.topic(
-    msg = "output_voltage",
+topic_state.describe_byte(
+    name = "control",
+    byte = 2,
+    description = "Control flags for operating point",
+    type = "bitfiled",
+    units = ""
+)
+topic_state.describe_bit(
+    name = "enable",
+    byte = 2,
+    bit = 0
+)
+topic_state.describe_bit(
+    name = "vi_safe_range",
+    byte = 2,
+    bit = 1
+)
+topic_state.describe_bit(
+    name = "vo_safe_range",
+    byte = 2,
+    bit = 2
+)
+topic_state.describe_bit(
+    name = "vi_stable",
+    byte = 2,
+    bit = 3
+)
+topic_state.describe_bit(
+    name = "dt_safe_range",
+    byte = 2,
+    bit = 4
+)
+
+### TOPIC: MEASUREMENTS
+topic_measurements = can.topic(
+    msg = "measurements",
     id  = 0b10001,
-    description = "Output voltage measurement"
+    description = "All measurements from the converter"
 )
-topic_output_voltage.describe_byte(
-    name = "AVG_L",
+topic_measurements.describe_byte(
+    name = "output_voltage_l",
     byte = 1,
-    description = "Average, byte low",
+    description = "Average output voltage, byte low",
     type = "u16",
-    units = ""
+    units = "V/100"
 )
-topic_output_voltage.describe_byte(
-    name = "AVG_H",
+topic_measurements.describe_byte(
+    name = "output_voltage_h",
     byte = 2,
-    description = "Average, byte high",
+    description = "Average output voltage, byte high",
     type = "u16",
-    units = ""
+    units = "V/100"
 )
-topic_output_voltage.describe_byte(
-    name = "MIN_L",
+topic_measurements.describe_byte(
+    name = "output_current_l",
     byte = 3,
-    description = "Min byte low",
+    description = "Average output current, byte low",
     type = "u16",
-    units = ""
+    units = "V/100"
 )
-topic_output_voltage.describe_byte(
-    name = "MIN_H",
+topic_measurements.describe_byte(
+    name = "output_current_h",
     byte = 4,
-    description = "Min byte high",
+    description = "Average output current, byte high",
     type = "u16",
-    units = ""
+    units = "V/100"
 )
-topic_output_voltage.describe_byte(
-    name = "MAX_L",
+topic_measurements.describe_byte(
+    name = "input_voltage_l",
     byte = 5,
-    description = "Max byte low",
+    description = "Average input voltage, byte low",
     type = "u16",
-    units = ""
+    units = "V/100"
 )
-topic_output_voltage.describe_byte(
-    name = "MAX_H",
+topic_measurements.describe_byte(
+    name = "input_voltage_h",
     byte = 6,
-    description = "Max byte low",
+    description = "Average input voltage, byte high",
     type = "u16",
-    units = ""
+    units = "V/100"
 )
-
-### TOPIC: OUTPUT CURRENT
-topic_output_current = can.topic(
-    msg = "output_current",
-    id  = 0b10010,
-    description = "Output current measurement"
-)
-topic_output_current.describe_byte(
-    name = "AVG_L",
-    byte = 1,
-    description = "Average, byte low",
-    type = "u16",
-    units = ""
-)
-topic_output_current.describe_byte(
-    name = "AVG_H",
-    byte = 2,
-    description = "Average, byte high",
-    type = "u16",
-    units = ""
-)
-topic_output_current.describe_byte(
-    name = "MIN_L",
-    byte = 3,
-    description = "Min byte low",
-    type = "u16",
-    units = ""
-)
-topic_output_current.describe_byte(
-    name = "MIN_H",
-    byte = 4,
-    description = "Min byte high",
-    type = "u16",
-    units = ""
-)
-topic_output_current.describe_byte(
-    name = "MAX_L",
-    byte = 5,
-    description = "Max byte low",
-    type = "u16",
-    units = ""
-)
-topic_output_current.describe_byte(
-    name = "MAX_H",
-    byte = 6,
-    description = "Max byte low",
-    type = "u16",
-    units = ""
-)
-
-### TOPIC: INPUT VOLTAGE
-topic_input_voltage = can.topic(
-    msg = "input_voltage",
-    id  = 0b10011,
-    description = "Input voltage measurement"
-)
-topic_input_voltage.describe_byte(
-    name = "AVG_L",
-    byte = 1,
-    description = "Average, byte low",
-    type = "u16",
-    units = ""
-)
-topic_input_voltage.describe_byte(
-    name = "AVG_H",
-    byte = 2,
-    description = "Average, byte high",
-    type = "u16",
-    units = ""
-)
-topic_input_voltage.describe_byte(
-    name = "MIN_L",
-    byte = 3,
-    description = "Min byte low",
-    type = "u16",
-    units = ""
-)
-topic_input_voltage.describe_byte(
-    name = "MIN_H",
-    byte = 4,
-    description = "Min byte high",
-    type = "u16",
-    units = ""
-)
-topic_input_voltage.describe_byte(
-    name = "MAX_L",
-    byte = 5,
-    description = "Max byte low",
-    type = "u16",
-    units = ""
-)
-topic_input_voltage.describe_byte(
-    name = "MAX_H",
-    byte = 6,
-    description = "Max byte low",
-    type = "u16",
-    units = ""
+topic_measurements.describe_byte(
+    name = "dt",
+    byte = 7,
+    description = "converter's duty cycle",
+    type = "u8",
+    units = "%/255"
 )
 
 module_mcb19_2.add_topic(topic_state)
-module_mcb19_2.add_topic(topic_output_voltage)
-module_mcb19_2.add_topic(topic_output_current)
-module_mcb19_2.add_topic(topic_input_voltage)
+module_mcb19_2.add_topic(topic_measurements)
 can.add_module(module_mcb19_2)
 
 ################################################################################
