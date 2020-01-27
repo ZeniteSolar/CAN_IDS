@@ -328,16 +328,16 @@ topic_measurements.describe_byte(
     units = "V/100"
 )
 topic_measurements.describe_byte(
-    name = "output_current_l",
+    name = "input_current_l",
     byte = 3,
-    description = "Average output current, byte low",
+    description = "Average input current, byte low",
     type = "u16",
     units = "V/100"
 )
 topic_measurements.describe_byte(
-    name = "output_current_h",
+    name = "input_current_h",
     byte = 4,
-    description = "Average output current, byte high",
+    description = "Average input current, byte high",
     type = "u16",
     units = "V/100"
 )
@@ -449,16 +449,16 @@ topic_measurements.describe_byte(
     units = "V/100"
 )
 topic_measurements.describe_byte(
-    name = "output_current_l",
+    name = "input_current_l",
     byte = 3,
-    description = "Average output current, byte low",
+    description = "Average input current, byte low",
     type = "u16",
     units = "V/100"
 )
 topic_measurements.describe_byte(
-    name = "output_current_h",
+    name = "input_current_h",
     byte = 4,
-    description = "Average output current, byte high",
+    description = "Average input current, byte high",
     type = "u16",
     units = "V/100"
 )
@@ -570,16 +570,16 @@ topic_measurements.describe_byte(
     units = "V/100"
 )
 topic_measurements.describe_byte(
-    name = "output_current_l",
+    name = "input_current_l",
     byte = 3,
-    description = "Average output current, byte low",
+    description = "Average input current, byte low",
     type = "u16",
     units = "V/100"
 )
 topic_measurements.describe_byte(
-    name = "output_current_h",
+    name = "input_current_h",
     byte = 4,
-    description = "Average output current, byte high",
+    description = "Average input current, byte high",
     type = "u16",
     units = "V/100"
 )
@@ -691,16 +691,16 @@ topic_measurements.describe_byte(
     units = "V/100"
 )
 topic_measurements.describe_byte(
-    name = "output_current_l",
+    name = "input_current_l",
     byte = 3,
-    description = "Average output current, byte low",
+    description = "Average input current, byte low",
     type = "u16",
     units = "V/100"
 )
 topic_measurements.describe_byte(
-    name = "output_current_h",
+    name = "input_current_h",
     byte = 4,
-    description = "Average output current, byte high",
+    description = "Average input current, byte high",
     type = "u16",
     units = "V/100"
 )

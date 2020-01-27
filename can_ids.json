@@ -392,14 +392,14 @@
                             "units": "V/100"
                         },
                         {
-                            "name": "OUTPUT_CURRENT_L",
-                            "description": "Average output current, byte low",
+                            "name": "INPUT_CURRENT_L",
+                            "description": "Average input current, byte low",
                             "type": "u16",
                             "units": "V/100"
                         },
                         {
-                            "name": "OUTPUT_CURRENT_H",
-                            "description": "Average output current, byte high",
+                            "name": "INPUT_CURRENT_H",
+                            "description": "Average input current, byte high",
                             "type": "u16",
                             "units": "V/100"
                         },
@@ -494,14 +494,14 @@
                             "units": "V/100"
                         },
                         {
-                            "name": "OUTPUT_CURRENT_L",
-                            "description": "Average output current, byte low",
+                            "name": "INPUT_CURRENT_L",
+                            "description": "Average input current, byte low",
                             "type": "u16",
                             "units": "V/100"
                         },
                         {
-                            "name": "OUTPUT_CURRENT_H",
-                            "description": "Average output current, byte high",
+                            "name": "INPUT_CURRENT_H",
+                            "description": "Average input current, byte high",
                             "type": "u16",
                             "units": "V/100"
                         },
@@ -596,14 +596,14 @@
                             "units": "V/100"
                         },
                         {
-                            "name": "OUTPUT_CURRENT_L",
-                            "description": "Average output current, byte low",
+                            "name": "INPUT_CURRENT_L",
+                            "description": "Average input current, byte low",
                             "type": "u16",
                             "units": "V/100"
                         },
                         {
-                            "name": "OUTPUT_CURRENT_H",
-                            "description": "Average output current, byte high",
+                            "name": "INPUT_CURRENT_H",
+                            "description": "Average input current, byte high",
                             "type": "u16",
                             "units": "V/100"
                         },
@@ -698,14 +698,14 @@
                             "units": "V/100"
                         },
                         {
-                            "name": "OUTPUT_CURRENT_L",
-                            "description": "Average output current, byte low",
+                            "name": "INPUT_CURRENT_L",
+                            "description": "Average input current, byte low",
                             "type": "u16",
                             "units": "V/100"
                         },
                         {
-                            "name": "OUTPUT_CURRENT_H",
-                            "description": "Average output current, byte high",
+                            "name": "INPUT_CURRENT_H",
+                            "description": "Average input current, byte high",
                             "type": "u16",
                             "units": "V/100"
                         },
