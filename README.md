@@ -28,8 +28,8 @@ Environment setup:
     cd CAN_IDS
     virtualenv env
     source venv/bin/activate
-    pip install --upgrade pip
-    pip install -r requirements.txt
+    python -m pip install --upgrade pip
+    python -m pip install -r requirements.txt
 
 Generating json:
 
