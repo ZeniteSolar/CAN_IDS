@@ -348,7 +348,7 @@
                         {
                             "name": "CONTROL",
                             "description": "Control flags for operating point",
-                            "type": "bitfiled",
+                            "type": "bitfield",
                             "units": "",
                             "bits": [
                                 "ENABLE",
@@ -395,25 +395,25 @@
                             "name": "INPUT_CURRENT_L",
                             "description": "Average input current, byte low",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "INPUT_CURRENT_H",
                             "description": "Average input current, byte high",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_L",
                             "description": "Average input voltage, byte low",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_H",
                             "description": "Average input voltage, byte high",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "DT",
@@ -450,7 +450,7 @@
                         {
                             "name": "CONTROL",
                             "description": "Control flags for operating point",
-                            "type": "bitfiled",
+                            "type": "bitfield",
                             "units": "",
                             "bits": [
                                 "ENABLE",
@@ -497,13 +497,13 @@
                             "name": "INPUT_CURRENT_L",
                             "description": "Average input current, byte low",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "INPUT_CURRENT_H",
                             "description": "Average input current, byte high",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_L",
@@ -552,7 +552,7 @@
                         {
                             "name": "CONTROL",
                             "description": "Control flags for operating point",
-                            "type": "bitfiled",
+                            "type": "bitfield",
                             "units": "",
                             "bits": [
                                 "ENABLE",
@@ -599,13 +599,13 @@
                             "name": "INPUT_CURRENT_L",
                             "description": "Average input current, byte low",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "INPUT_CURRENT_H",
                             "description": "Average input current, byte high",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_L",
@@ -654,7 +654,7 @@
                         {
                             "name": "CONTROL",
                             "description": "Control flags for operating point",
-                            "type": "bitfiled",
+                            "type": "bitfield",
                             "units": "",
                             "bits": [
                                 "ENABLE",
@@ -701,13 +701,13 @@
                             "name": "INPUT_CURRENT_L",
                             "description": "Average input current, byte low",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "INPUT_CURRENT_H",
                             "description": "Average input current, byte high",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_L",
@@ -756,7 +756,7 @@
                         {
                             "name": "CONTROL",
                             "description": "Control flags for operating point",
-                            "type": "bitfiled",
+                            "type": "bitfield",
                             "units": "",
                             "bits": [
                                 "ENABLE",
@@ -803,13 +803,13 @@
                             "name": "OUTPUT_CURRENT_L",
                             "description": "Average output current, byte low",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "OUTPUT_CURRENT_H",
                             "description": "Average output current, byte high",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_L",
@@ -858,7 +858,7 @@
                         {
                             "name": "CONTROL",
                             "description": "Control flags for operating point",
-                            "type": "bitfiled",
+                            "type": "bitfield",
                             "units": "",
                             "bits": [
                                 "ENABLE",
@@ -905,13 +905,13 @@
                             "name": "OUTPUT_CURRENT_L",
                             "description": "Average output current, byte low",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "OUTPUT_CURRENT_H",
                             "description": "Average output current, byte high",
                             "type": "u16",
-                            "units": "V/100"
+                            "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_L",

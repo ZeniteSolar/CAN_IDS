@@ -278,7 +278,7 @@ topic_state.describe_byte(
     name = "control",
     byte = 2,
     description = "Control flags for operating point",
-    type = "bitfiled",
+    type = "bitfield",
     units = ""
 )
 topic_state.describe_bit(
@@ -332,28 +332,28 @@ topic_measurements.describe_byte(
     byte = 3,
     description = "Average input current, byte low",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "input_current_h",
     byte = 4,
     description = "Average input current, byte high",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "input_voltage_l",
     byte = 5,
     description = "Average input voltage, byte low",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "input_voltage_h",
     byte = 6,
     description = "Average input voltage, byte high",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "dt",
@@ -399,7 +399,7 @@ topic_state.describe_byte(
     name = "control",
     byte = 2,
     description = "Control flags for operating point",
-    type = "bitfiled",
+    type = "bitfield",
     units = ""
 )
 topic_state.describe_bit(
@@ -453,14 +453,14 @@ topic_measurements.describe_byte(
     byte = 3,
     description = "Average input current, byte low",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "input_current_h",
     byte = 4,
     description = "Average input current, byte high",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "input_voltage_l",
@@ -520,7 +520,7 @@ topic_state.describe_byte(
     name = "control",
     byte = 2,
     description = "Control flags for operating point",
-    type = "bitfiled",
+    type = "bitfield",
     units = ""
 )
 topic_state.describe_bit(
@@ -574,14 +574,14 @@ topic_measurements.describe_byte(
     byte = 3,
     description = "Average input current, byte low",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "input_current_h",
     byte = 4,
     description = "Average input current, byte high",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "input_voltage_l",
@@ -641,7 +641,7 @@ topic_state.describe_byte(
     name = "control",
     byte = 2,
     description = "Control flags for operating point",
-    type = "bitfiled",
+    type = "bitfield",
     units = ""
 )
 topic_state.describe_bit(
@@ -695,14 +695,14 @@ topic_measurements.describe_byte(
     byte = 3,
     description = "Average input current, byte low",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "input_current_h",
     byte = 4,
     description = "Average input current, byte high",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "input_voltage_l",
@@ -762,7 +762,7 @@ topic_state.describe_byte(
     name = "control",
     byte = 2,
     description = "Control flags for operating point",
-    type = "bitfiled",
+    type = "bitfield",
     units = ""
 )
 topic_state.describe_bit(
@@ -816,14 +816,14 @@ topic_measurements.describe_byte(
     byte = 3,
     description = "Average output current, byte low",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "output_current_h",
     byte = 4,
     description = "Average output current, byte high",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "input_voltage_l",
@@ -882,7 +882,7 @@ topic_state.describe_byte(
     name = "control",
     byte = 2,
     description = "Control flags for operating point",
-    type = "bitfiled",
+    type = "bitfield",
     units = ""
 )
 topic_state.describe_bit(
@@ -936,14 +936,14 @@ topic_measurements.describe_byte(
     byte = 3,
     description = "Average output current, byte low",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "output_current_h",
     byte = 4,
     description = "Average output current, byte high",
     type = "u16",
-    units = "V/100"
+    units = "A/100"
 )
 topic_measurements.describe_byte(
     name = "input_voltage_l",
