@@ -63,8 +63,8 @@ class Can:
                 "bytes": self.bytes
             }
 
-        def print(self):
-            print(json.dumps(self.get(), indent=4))
+        def __str__(self) -> str:
+            return json.dumps(self.get(), indent=4)
 
         def validate_byte(self, byte: int):
             if not isinstance(byte, int):
@@ -155,8 +155,8 @@ class Can:
                 "topics": self.topics
             }
 
-        def print(self):
-            print(json.dumps(self.get(), indent=4))
+        def __str__(self) -> str:
+            return json.dumps(self.get(), indent=4)
 
         def add_topic(self, topic):
             self.topics.append(dict(topic.get()))
@@ -169,8 +169,8 @@ class Can:
             "modules": self.modules
         }
 
-    def print(self):
-        print(json.dumps(self.get(), indent=4))
+    def __str__(self) -> str:
+        return json.dumps(self.get(), indent=4)
 
     def add_module(self, module):
         self.modules.append(dict(module.get()))
@@ -200,20 +200,20 @@ if __name__ == '__main__':
     t1.describe_bit("motor on", 1, 0)
     t1.describe_byte("D raw", 2, "Motor Duty Cycle", "u8", "%")
     t1.describe_byte("I raw", 3, "Motor Soft Start", "u8", "%")
-    # t1.print()
+    #print(t1)
 
     m1 = Can.module("mic17", 10, "Modulo de Interface de Controle")
     m1.add_topic(t1)
-    # m1.print()
+    #print(m1)
 
     c1 = Can()
     c1.add_module(m1)
-    # c1.print()
+    #print(c1)
     c1.export_json("sample.json")
 
     c2 = Can()
     c2.import_json("sample.json")
-    c2.print()
+    print(c2)
 
     c2.export_h("sample.h")
 
