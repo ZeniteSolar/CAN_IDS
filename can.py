@@ -14,23 +14,48 @@ from mako.template import Template
 
 class Can:
     def convert_string(string: str) -> str:
+        if not isinstance(string, str):
+            raise TypeError("`string` needs to be an integer type!")
+
         string = string.upper()
         string = string.replace(' ', '_')
         string = normalize('NFKD', string)
         string = string.encode('ASCII', 'ignore')
         string = string.decode('ASCII')
         string = re.sub('[^A-Z0-9_]+', '', string)
+
         return string
+
+    def validate_byte(byte) -> bool:
+        if (byte < 0) | (byte > 8):
+            print("Byte number MUST be between 0 and 7 to be described.")
+            return False
+        return True
+
+    def validate_bit(bit) -> bool:
+        if (bit < 0) | (bit > 8):
+            print("Bit number MUST be between 0 and 7 to be described.")
+            return False
+        return True
+
 
     class topic:
         def __init__(self, msg: str, id: int, description: str):
             self.name = Can.convert_string(msg)
+
+            if not isinstance(id, int):
+                raise TypeError("`id` must be an integer type!")
             self.id = id
-            self.bytes = [None] * 8
-            self.describe_byte("signature", 0, "Senders signature", "u8", "")
+
+            if not isinstance(description, str):
+                raise TypeError("`description` must be a string type!")
             self.description = description
 
-        def get(self) -> str:
+            self.bytes = [None] * 8
+
+            self.describe_byte("signature", 0, "Senders signature", "u8", "")
+
+        def get(self) -> dict:
             return {
                 "name": str(self.name),
                 "description": self.description,
@@ -41,48 +66,90 @@ class Can:
         def print(self):
             print(json.dumps(self.get(), indent=4))
 
+        def validate_byte(self, byte: int):
+            if not isinstance(byte, int):
+                raise TypeError("`byte` needs to be an integer type!")
+
+            if (byte < 0) or (byte > 7):
+                raise ValueError("`byte` number MUST be between 0 and 7 to be described.")
+
+        def validate_bit(self, bit: int) -> bool:
+            if not isinstance(bit, int):
+                raise TypeError("`bit` needs to be an integer type!")
+
+            if (bit < 0) or (bit > 7):
+                raise ValueError("`bit` number MUST be between 0 and 7 to be described.")
+
+        def validate_byte_name(self, name: str):
+            if not isinstance(name, str):
+                raise TypeError("byte field `name` must be a string type!")
+
+        def validate_bit_name(self, byte: int, name: str):
+            if not isinstance(name, str):
+                raise TypeError("bit field `name` must be a string type!")
+
         def describe_byte(self,
                           name: str,
                           byte: int,
                           description: str,
-                          type: str,
+                          btype: str,
                           units: str = None):
+            self.validate_byte_name(name)
+            self.validate_byte(byte)
+
+            if not isinstance(description, str):
+                raise TypeError("`description` must a string type!")
+
+            if not isinstance(btype, str):
+                raise TypeError("`type` must a string type!")
+
+            if units is not None and not isinstance(units, str):
+                raise TypeError("`units` must a string type!")
+
             name = Can.convert_string(name)
-            if (byte < 0) | (byte > 8):
-                print("Byte number MUST be between 0 and 7 to be described.")
-                return
 
             self.bytes[byte] = {
                 "name": name,
                 "description": description,
-                "type": type,
+                "type": btype,
                 "units": units
             }
 
         def describe_bit(self, name: str, byte: int, bit: int):
-            name = Can.convert_string(name)
-            if (bit < 0) | (bit > 8):
-                print("Byte number MUST be between 0 and 7 to be described.")
-                return
-            if (bit < 0) | (bit > 8):
-                print("bit number MUST be between 0 and 7 to be described.")
-                return
+            self.validate_byte(byte)
+            self.validate_bit(bit)
 
             if "bits" not in self.bytes[byte].keys():
                 self.bytes[byte].update({ "bits": [None]*8 })
+            self.validate_bit_name(byte, name)
+
+            name = Can.convert_string(name)
 
             self.bytes[byte]["bits"][bit] = name
 
     class module:
         def __init__(self, name: str, signature: int, description: str):
+            self.validate_name(name)
+
             self.name = Can.convert_string(name)
+
+            if not isinstance(signature, int):
+                raise TypeError("`signature` must be an int type!")
             self.signature = signature
-            self.topics = []
+
+            if not isinstance(description, str):
+                raise TypeError("`description` must be a string type!")
             self.description = description
 
-        def get(self) -> str:
+            self.topics = []
+
+        def validate_name(self, name: str):
+            if not isinstance(name, str):
+                raise TypeError("byte field `name` must be a string type!")
+
+        def get(self) -> dict:
             return {
-                "name": str(self.name),
+                "name": self.name,
                 "description": self.description,
                 "signature": self.signature,
                 "topics": self.topics
