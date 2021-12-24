@@ -26,13 +26,13 @@ class Can:
 
         return string
 
-    def validate_byte(byte) -> bool:
+    def validate_byte(byte: int) -> bool:
         if (byte < 0) | (byte > 8):
             print("Byte number MUST be between 0 and 7 to be described.")
             return False
         return True
 
-    def validate_bit(bit) -> bool:
+    def validate_bit(bit: int) -> bool:
         if (bit < 0) | (bit > 8):
             print("Bit number MUST be between 0 and 7 to be described.")
             return False
@@ -164,7 +164,7 @@ class Can:
     def __init__(self):
         self.modules = []
 
-    def get(self) -> str:
+    def get(self) -> dict:
         return {
             "modules": self.modules
         }
