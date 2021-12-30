@@ -26,14 +26,14 @@ Environment setup:
 
     git clone https://github.com/ZeniteSolar/CAN_IDS
     cd CAN_IDS
-    virtualenv env
-    source venv/bin/activate
+    python -m venv .python_venv
+    source .python_venv/bin/activate
     python -m pip install --upgrade pip
     python -m pip install -r requirements.txt
 
-Generating json:
+Generating `.json` and `.h` files:
 
-    python can.py
+    python can_ids_generator.py 
   
 Getting the last .json:
 
