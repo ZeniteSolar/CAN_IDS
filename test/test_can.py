@@ -211,6 +211,10 @@ class test_can_module(unittest.TestCase):
             expected
         )
 
+        # But trying to add the same topic twice should raise ValueError:
+        with self.assertRaises(ValueError):
+            m.add_topic(t)
+
 
 class test_can(unittest.TestCase):
     def setUp(self):

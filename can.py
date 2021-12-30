@@ -84,9 +84,18 @@ class Can:
             if not isinstance(name, str):
                 raise TypeError("byte field `name` must be a string type!")
 
+            for byte in filter(None, self.bytes):
+                if byte.get('name') == Can.convert_string(name):
+                    raise ValueError("byte field `name` must be unique!")
+
         def validate_bit_name(self, byte: int, name: str):
             if not isinstance(name, str):
                 raise TypeError("bit field `name` must be a string type!")
+
+            if self.bytes[byte] is not None:
+                for bit in filter(None, self.bytes[byte].get('bits')):
+                    if bit == Can.convert_string(name):
+                        raise ValueError("bit field `name` must be unique!")
 
         def describe_byte(self,
                           name: str,
@@ -159,7 +168,11 @@ class Can:
             return json.dumps(self.get(), indent=4)
 
         def add_topic(self, topic):
-            self.topics.append(dict(topic.get()))
+            for t in self.topics:
+                if t['name'] == dict(topic.get()).get('name'):
+                    raise ValueError("topic field `name` must be unique!")
+
+            self.topics.append(topic.get())
 
     def __init__(self):
         self.modules = []
@@ -173,14 +186,22 @@ class Can:
         return json.dumps(self.get(), indent=4)
 
     def add_module(self, module):
-        self.modules.append(dict(module.get()))
+        for m in self.modules:
+            if m['name'] == dict(module.get()).get('name'):
+                raise ValueError("module field `name` must be unique!")
+
+        self.modules.append(module.get())
 
     def import_json(self, filename: str):
         with open(filename, 'r') as file:
             data = dict(json.load(file))
             for moduleslist in data.values():
                 for module in moduleslist:
-                    self.modules.append(dict(module))
+                    self.add_module(Can.module(
+                        name=module.get('name'),
+                        signature=module.get('signature'),
+                        description=module.get('description')
+                    ))
         return self
 
     def export_json(self, filename: str):
