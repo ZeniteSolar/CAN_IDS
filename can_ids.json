@@ -407,13 +407,13 @@
                             "name": "INPUT_VOLTAGE_L",
                             "description": "Average input voltage, byte low",
                             "type": "u16",
-                            "units": "A/100"
+                            "units": "V/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_H",
                             "description": "Average input voltage, byte high",
                             "type": "u16",
-                            "units": "A/100"
+                            "units": "V/100"
                         },
                         {
                             "name": "DT",

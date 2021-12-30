@@ -346,14 +346,14 @@ topic_measurements.describe_byte(
     byte = 5,
     description = "Average input voltage, byte low",
     btype = "u16",
-    units = "A/100"
+    units = "V/100"
 )
 topic_measurements.describe_byte(
     name = "input_voltage_h",
     byte = 6,
     description = "Average input voltage, byte high",
     btype = "u16",
-    units = "A/100"
+    units = "V/100"
 )
 topic_measurements.describe_byte(
     name = "dt",
