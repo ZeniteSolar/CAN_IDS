@@ -91,6 +91,11 @@ topic_motor.describe_bit(
     byte = 1,
     bit = 1
 )
+topic_motor.describe_bit(
+    name = "reverse",
+    byte = 1,
+    bit = 2
+)
 topic_motor.describe_byte(
     name = "D",
     byte = 2,

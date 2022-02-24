@@ -111,7 +111,7 @@
                             "bits": [
                                 "MOTOR_ON",
                                 "DMS_ON",
-                                null,
+                                "REVERSE",
                                 null,
                                 null,
                                 null,
