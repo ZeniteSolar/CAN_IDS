@@ -999,6 +999,31 @@
                         null,
                         null
                     ]
+                },
+                {
+                    "name": "CONTACTOR",
+                    "description": "Contactor requests",
+                    "id": 18,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "REQUEST",
+                            "description": "Control the Contactor State",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
                 }
             ]
         },

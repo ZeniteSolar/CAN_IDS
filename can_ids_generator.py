@@ -1023,9 +1023,23 @@ topic_motor.describe_byte(
     btype = "u8",
     units = "%"
 )
+#### TOPIC: CONTACTOR
+topic_contactor = can.topic(
+    msg = "contactor",
+    id = 0b10010,
+    description = "Contactor requests"
+)
+topic_contactor.describe_byte(
+    name = "request",
+    byte = 1,
+    description = "Control the Contactor State",
+    btype = "u8",
+    units = ""
+)
 
 module_mam19.add_topic(topic_state)
 module_mam19.add_topic(topic_motor)
+module_mam19.add_topic(topic_contactor)
 can.add_module(module_mam19)
 
 
