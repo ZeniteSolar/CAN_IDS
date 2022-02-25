@@ -936,6 +936,68 @@
             ]
         },
         {
+            "name": "MAC22",
+            "description": "Modulo de Acionamento da Contatora",
+            "signature": 180,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 16,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "CONTACTOR",
+                    "description": "Contactor task response",
+                    "id": 17,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "RESPONSE",
+                            "description": "Contactor task response",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            ]
+        },
+        {
             "name": "MAM19",
             "description": "Modulo de Acionamento do Motor",
             "signature": 190,

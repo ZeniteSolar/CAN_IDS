@@ -977,6 +977,52 @@ module_mcb19_2.add_topic(topic_measurements)
 can.add_module(module_mcb19_2)
 
 ################################################################################
+### MODULE: MAC22
+module_mac22 = can.module(
+    name = "mac22",
+    signature = 180,
+    description = "Modulo de Acionamento da Contatora"
+)
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b10000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    btype = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    btype = "u8",
+    units = ""
+)
+#### TOPIC: CONTACTOR
+topic_contactor = can.topic(
+    msg = "contactor",
+    id = 0b10001,
+    description = "Contactor task response"
+)
+topic_contactor.describe_byte(
+    name = "response",
+    byte = 1,
+    description = "Contactor task response",
+    btype = "u8",
+    units = ""
+)
+
+module_mac22.add_topic(topic_state)
+module_mac22.add_topic(topic_contactor)
+can.add_module(module_mac22)
+
+
+################################################################################
 ### MODULE: MAM19
 module_mam19 = can.module(
     name = "mam19",
