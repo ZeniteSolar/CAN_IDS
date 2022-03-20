@@ -181,12 +181,26 @@ topic_mcs.describe_bit(
     byte = 1,
     bit = 0
 )
+#### TOPIC: MDE
+topic_mde = can.topic(
+    msg = "mde",
+    id = 0b1101,
+    description = "Steereing wheel controls"
+)
+topic_mde.describe_byte(
+    name = "position",
+    byte = 1,
+    description = "Steering wheel position",
+    btype = "u8",
+    units = "%"
+)
 
 module_mic19.add_topic(topic_state)
 module_mic19.add_topic(topic_motor)
 module_mic19.add_topic(topic_pumps)
 module_mic19.add_topic(topic_mppts)
 module_mic19.add_topic(topic_mcs)
+module_mic19.add_topic(topic_mde)
 can.add_module(module_mic19)
 
 ################################################################################

@@ -91,6 +91,15 @@
 #define CAN_MSG_MIC19_MCS_BOAT_ON_TYPE "bitfield"
 #define CAN_MSG_MIC19_MCS_BOAT_ON_UNITS ""
 #define CAN_MSG_MIC19_MCS_BOAT_ON_BOAT_ON_BIT 0
+// MIC19 - MDE - Steereing wheel controls
+#define CAN_MSG_MIC19_MDE_ID 13
+#define CAN_MSG_MIC19_MDE_LENGTH 2
+#define CAN_MSG_MIC19_MDE_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_MIC19_MDE_SIGNATURE_TYPE "u8"
+#define CAN_MSG_MIC19_MDE_SIGNATURE_UNITS ""
+#define CAN_MSG_MIC19_MDE_POSITION_BYTE 1 //<!" Steering wheel position
+#define CAN_MSG_MIC19_MDE_POSITION_TYPE "u8"
+#define CAN_MSG_MIC19_MDE_POSITION_UNITS "%"
 
 
 // MVC19_1 - Modulo de voltimetro 1

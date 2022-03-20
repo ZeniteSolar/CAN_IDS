@@ -246,6 +246,31 @@
                         null,
                         null
                     ]
+                },
+                {
+                    "name": "MDE",
+                    "description": "Steereing wheel controls",
+                    "id": 13,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "POSITION",
+                            "description": "Steering wheel position",
+                            "type": "u8",
+                            "units": "%"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
                 }
             ]
         },
