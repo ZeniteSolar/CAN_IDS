@@ -204,6 +204,65 @@ module_mic19.add_topic(topic_mde)
 can.add_module(module_mic19)
 
 ################################################################################
+### MODULE: MDE22
+module_mde22 = can.module(
+    name = "mde22",
+    signature = 170,
+    description = "Modulo da Direção Elétrica"
+)
+### TOPIC: STATE
+topic_state = can.topic(
+    msg = "state",
+    id = 0b100000,
+    description = "Module state report"
+)
+topic_state.describe_byte(
+    name = "state",
+    byte = 1,
+    description = "State code",
+    btype = "u8",
+    units = ""
+)
+topic_state.describe_byte(
+    name = "error",
+    byte = 2,
+    description = "Error code",
+    btype = "u8",
+    units = ""
+)
+### TOPIC: STEERING WHEEL POSITION
+topic_steering_wheel_position = can.topic(
+    msg = "position",
+    id = 0b100001,
+    description = "Steering Wheel Position"
+)
+topic_steering_wheel_position.describe_byte(
+    name = "setpoint",
+    byte = 1,
+    description = "Setpoint",
+    btype = "u8",
+    units = "%"
+)
+topic_steering_wheel_position.describe_byte(
+    name = "measurement",
+    byte = 2,
+    description = "Measured Position",
+    btype = "u8",
+    units = "%"
+)
+topic_steering_wheel_position.describe_byte(
+    name = "control",
+    byte = 3,
+    description = "Control action",
+    btype = "u8",
+    units = "%"
+)
+
+module_mde22.add_topic(topic_state)
+module_mde22.add_topic(topic_steering_wheel_position)
+can.add_module(module_mde22)
+
+################################################################################
 ### MODULE: MVC19_1
 module_mvc19_1 = can.module(
     name = "mvc19_1",

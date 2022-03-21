@@ -275,6 +275,78 @@
             ]
         },
         {
+            "name": "MDE22",
+            "description": "Modulo da Dire\u00e7\u00e3o El\u00e9trica",
+            "signature": 170,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 32,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "POSITION",
+                    "description": "Steering Wheel Position",
+                    "id": 33,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "SETPOINT",
+                            "description": "Setpoint",
+                            "type": "u8",
+                            "units": "%"
+                        },
+                        {
+                            "name": "MEASUREMENT",
+                            "description": "Measured Position",
+                            "type": "u8",
+                            "units": "%"
+                        },
+                        {
+                            "name": "CONTROL",
+                            "description": "Control action",
+                            "type": "u8",
+                            "units": "%"
+                        },
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            ]
+        },
+        {
             "name": "MVC19_1",
             "description": "Modulo de voltimetro 1",
             "signature": 210,
