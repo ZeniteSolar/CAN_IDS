@@ -258,8 +258,52 @@ topic_steering_wheel_position.describe_byte(
     units = "%"
 )
 
+#### TOPIC: CURRENT
+topic_current = can.topic(
+    msg = "steering wheel current",
+    id = 0b100010,
+    description = "Current measurements"
+)
+topic_current.describe_byte(
+    name = "AVG_L",
+    byte = 1,
+    description = "Average, byte low",
+    btype = "u16",
+    units = "A/100"
+)
+topic_current.describe_byte(
+    name = "AVG_H",
+    byte = 2,
+    description = "Average, byte high",
+    btype = "u16",
+    units = "A/100"
+)
+
+#### TOPIC: VOLTAGE
+topic_voltage = can.topic(
+    msg = "steering wheel voltage",
+    id = 0b100011,
+    description = "Voltage measurements"
+)
+topic_voltage.describe_byte(
+    name = "AVG_L",
+    byte = 1,
+    description = "Average, byte low",
+    btype = "u16",
+    units = "V/100"
+)
+topic_voltage.describe_byte(
+    name = "AVG_H",
+    byte = 2,
+    description = "Average, byte high",
+    btype = "u16",
+    units = "V/100"
+)
+
 module_mde22.add_topic(topic_state)
 module_mde22.add_topic(topic_steering_wheel_position)
+module_mde22.add_topic(topic_current)
+module_mde22.add_topic(topic_voltage)
 can.add_module(module_mde22)
 
 ################################################################################

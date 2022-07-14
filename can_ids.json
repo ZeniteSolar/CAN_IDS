@@ -343,6 +343,66 @@
                         null,
                         null
                     ]
+                },
+                {
+                    "name": "STEERING_WHEEL_CURRENT",
+                    "description": "Current measurements",
+                    "id": 34,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Average, byte low",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Average, byte high",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "STEERING_WHEEL_VOLTAGE",
+                    "description": "Voltage measurements",
+                    "id": 35,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "u8",
+                            "units": ""
+                        },
+                        {
+                            "name": "AVG_L",
+                            "description": "Average, byte low",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "AVG_H",
+                            "description": "Average, byte high",
+                            "type": "u16",
+                            "units": "V/100"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
                 }
             ]
         },
