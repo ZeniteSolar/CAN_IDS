@@ -310,8 +310,8 @@
                     ]
                 },
                 {
-                    "name": "POSITION",
-                    "description": "Steering Wheel Position",
+                    "name": "AUXBAT_VOLTAGE",
+                    "description": "Auxiliar Battery Voltage",
                     "id": 33,
                     "bytes": [
                         {
@@ -321,86 +321,41 @@
                             "units": ""
                         },
                         {
-                            "name": "SETPOINT",
-                            "description": "Setpoint",
-                            "type": "u8",
-                            "units": "%"
-                        },
-                        {
-                            "name": "MEASUREMENT",
-                            "description": "Measured Position",
-                            "type": "u8",
-                            "units": "%"
-                        },
-                        {
-                            "name": "CONTROL",
-                            "description": "Control action",
-                            "type": "u8",
-                            "units": "%"
-                        },
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                {
-                    "name": "STEERING_WHEEL_CURRENT",
-                    "description": "Current measurements",
-                    "id": 34,
-                    "bytes": [
-                        {
-                            "name": "SIGNATURE",
-                            "description": "Senders signature",
-                            "type": "u8",
-                            "units": ""
-                        },
-                        {
-                            "name": "AVG_L",
-                            "description": "Average, byte low",
-                            "type": "u16",
-                            "units": "A/100"
-                        },
-                        {
-                            "name": "AVG_H",
-                            "description": "Average, byte high",
-                            "type": "u16",
-                            "units": "A/100"
-                        },
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
-                    ]
-                },
-                {
-                    "name": "STEERING_WHEEL_VOLTAGE",
-                    "description": "Voltage measurements",
-                    "id": 35,
-                    "bytes": [
-                        {
-                            "name": "SIGNATURE",
-                            "description": "Senders signature",
-                            "type": "u8",
-                            "units": ""
-                        },
-                        {
-                            "name": "AVG_L",
-                            "description": "Average, byte low",
+                            "name": "BATVOLTAGE_L",
+                            "description": "Battery Voltage, byte low",
                             "type": "u16",
                             "units": "V/100"
                         },
                         {
-                            "name": "AVG_H",
-                            "description": "Average, byte high",
+                            "name": "BATVOLTAGE_H",
+                            "description": "Battery Voltage, byte high",
                             "type": "u16",
                             "units": "V/100"
                         },
-                        null,
-                        null,
-                        null,
-                        null,
+                        {
+                            "name": "POSITION_L",
+                            "description": "Tail Poisition, byte low",
+                            "type": "u16",
+                            "units": "\u00b0/100"
+                        },
+                        {
+                            "name": "POSITION_H",
+                            "description": "Tail Poisition, byte high",
+                            "type": "u16",
+                            "units": "\u00b0/100"
+                        },
+                        {
+                            "name": "BATCURRENT_L",
+                            "description": "Battery Current, byte low",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "BATCURRENT_H",
+                            "description": "Battery Current, byte high",
+                            "type": "u16",
+                            "units": "A/100"
+                        },
                         null
                     ]
                 }

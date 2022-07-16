@@ -230,80 +230,57 @@ topic_state.describe_byte(
     btype = "u8",
     units = ""
 )
-### TOPIC: STEERING WHEEL POSITION
-topic_steering_wheel_position = can.topic(
-    msg = "position",
+### TOPIC: STEERING MODULE MEASUREMENTS
+topic_measurements = can.topic(
+    msg = "auxbat voltage",
     id = 0b100001,
-    description = "Steering Wheel Position"
+    description = "Auxiliar Battery Voltage"
 )
-topic_steering_wheel_position.describe_byte(
-    name = "setpoint",
+topic_measurements.describe_byte(
+    name = "batvoltage_l",
     byte = 1,
-    description = "Setpoint",
-    btype = "u8",
-    units = "%"
+    description = "Battery Voltage, byte low",
+    btype = "u16",
+    units = "V/100"
 )
-topic_steering_wheel_position.describe_byte(
-    name = "measurement",
+topic_measurements.describe_byte(
+    name = "batvoltage_h",
     byte = 2,
-    description = "Measured Position",
-    btype = "u8",
-    units = "%"
+    description = "Battery Voltage, byte high",
+    btype = "u16",
+    units = "V/100"
 )
-topic_steering_wheel_position.describe_byte(
-    name = "control",
+topic_measurements.describe_byte(
+    name = "position_l",
     byte = 3,
-    description = "Control action",
-    btype = "u8",
-    units = "%"
+    description = "Tail Poisition, byte low",
+    btype = "u16",
+    units = "°/100"
 )
-
-#### TOPIC: CURRENT
-topic_current = can.topic(
-    msg = "steering wheel current",
-    id = 0b100010,
-    description = "Current measurements"
+topic_measurements.describe_byte(
+    name = "position_h",
+    byte = 4,
+    description = "Tail Poisition, byte high",
+    btype = "u16",
+    units = "°/100"
 )
-topic_current.describe_byte(
-    name = "AVG_L",
-    byte = 1,
-    description = "Average, byte low",
+topic_measurements.describe_byte(
+    name = "batcurrent_l",
+    byte = 5,
+    description = "Battery Current, byte low",
     btype = "u16",
     units = "A/100"
 )
-topic_current.describe_byte(
-    name = "AVG_H",
-    byte = 2,
-    description = "Average, byte high",
+topic_measurements.describe_byte(
+    name = "batcurrent_h",
+    byte = 6,
+    description = "Battery Current, byte high",
     btype = "u16",
     units = "A/100"
-)
-
-#### TOPIC: VOLTAGE
-topic_voltage = can.topic(
-    msg = "steering wheel voltage",
-    id = 0b100011,
-    description = "Voltage measurements"
-)
-topic_voltage.describe_byte(
-    name = "AVG_L",
-    byte = 1,
-    description = "Average, byte low",
-    btype = "u16",
-    units = "V/100"
-)
-topic_voltage.describe_byte(
-    name = "AVG_H",
-    byte = 2,
-    description = "Average, byte high",
-    btype = "u16",
-    units = "V/100"
 )
 
 module_mde22.add_topic(topic_state)
-module_mde22.add_topic(topic_steering_wheel_position)
-module_mde22.add_topic(topic_current)
-module_mde22.add_topic(topic_voltage)
+module_mde22.add_topic(topic_measurements)
 can.add_module(module_mde22)
 
 ################################################################################
