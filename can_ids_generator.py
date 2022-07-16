@@ -232,7 +232,7 @@ topic_state.describe_byte(
 )
 ### TOPIC: STEERING MODULE MEASUREMENTS
 topic_measurements = can.topic(
-    msg = "auxbat voltage",
+    msg = "steeringbat_measurements",
     id = 0b100001,
     description = "Auxiliar Battery Voltage"
 )

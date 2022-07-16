@@ -310,7 +310,7 @@
                     ]
                 },
                 {
-                    "name": "AUXBAT_VOLTAGE",
+                    "name": "STEERINGBAT_MEASUREMENTS",
                     "description": "Auxiliar Battery Voltage",
                     "id": 33,
                     "bytes": [
