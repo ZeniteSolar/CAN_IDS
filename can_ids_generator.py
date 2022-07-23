@@ -188,11 +188,18 @@ topic_mde = can.topic(
     description = "Steereing wheel controls"
 )
 topic_mde.describe_byte(
-    name = "position",
+    name = "position_l",
     byte = 1,
-    description = "Steering wheel position",
-    btype = "u8",
-    units = "%"
+    description = "Steering wheel position, byte LOW",
+    btype = "u16",
+    units = "°/100"
+)
+topic_mde.describe_byte(
+    name = "position_h",
+    byte = 2,
+    description = "Steering wheel position, byte HIGH",
+    btype = "u16",
+    units = "°/100"
 )
 
 module_mic19.add_topic(topic_state)

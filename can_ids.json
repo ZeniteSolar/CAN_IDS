@@ -259,12 +259,17 @@
                             "units": ""
                         },
                         {
-                            "name": "POSITION",
-                            "description": "Steering wheel position",
-                            "type": "u8",
-                            "units": "%"
+                            "name": "POSITION_L",
+                            "description": "Steering wheel position, byte LOW",
+                            "type": "u16",
+                            "units": "\u00b0/100"
                         },
-                        null,
+                        {
+                            "name": "POSITION_H",
+                            "description": "Steering wheel position, byte HIGH",
+                            "type": "u16",
+                            "units": "\u00b0/100"
+                        },
                         null,
                         null,
                         null,

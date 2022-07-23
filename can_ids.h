@@ -93,13 +93,16 @@
 #define CAN_MSG_MIC19_MCS_BOAT_ON_BOAT_ON_BIT 0
 // MIC19 - MDE - Steereing wheel controls
 #define CAN_MSG_MIC19_MDE_ID 13
-#define CAN_MSG_MIC19_MDE_LENGTH 2
+#define CAN_MSG_MIC19_MDE_LENGTH 3
 #define CAN_MSG_MIC19_MDE_SIGNATURE_BYTE 0 //<!" Senders signature
 #define CAN_MSG_MIC19_MDE_SIGNATURE_TYPE "u8"
 #define CAN_MSG_MIC19_MDE_SIGNATURE_UNITS ""
-#define CAN_MSG_MIC19_MDE_POSITION_BYTE 1 //<!" Steering wheel position
-#define CAN_MSG_MIC19_MDE_POSITION_TYPE "u8"
-#define CAN_MSG_MIC19_MDE_POSITION_UNITS "%"
+#define CAN_MSG_MIC19_MDE_POSITION_L_BYTE 1 //<!" Steering wheel position, byte LOW
+#define CAN_MSG_MIC19_MDE_POSITION_L_TYPE "u16"
+#define CAN_MSG_MIC19_MDE_POSITION_L_UNITS "°/100"
+#define CAN_MSG_MIC19_MDE_POSITION_H_BYTE 2 //<!" Steering wheel position, byte HIGH
+#define CAN_MSG_MIC19_MDE_POSITION_H_TYPE "u16"
+#define CAN_MSG_MIC19_MDE_POSITION_H_UNITS "°/100"
 
 
 // MDE22 - Modulo da Direção Elétrica
