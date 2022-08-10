@@ -234,10 +234,11 @@ class test_can(unittest.TestCase):
 
     def test_add_module(self):
         m = self.can.module("mic17", 10, "module description text here")
-        c = Can()
+        c = Can(version="0.0.0")
         c.add_module(m)
 
         expected = {
+            "version": "0.0.0",
             "modules": [
                 {
                     "name": "MIC17",
@@ -259,11 +260,11 @@ class test_can(unittest.TestCase):
 
     def test_export_and_import_json(self):
         m = self.can.module("mic17", 10, "module description text here")
-        c1 = Can()
+        c1 = Can(version="0.0.0")
         c1.add_module(m)
         c1.export_json("test/test.json")
 
-        c2 = Can()
+        c2 = Can(version="0.0.0")
         c2.import_json("test/test.json")
 
         self.assertEqual(
