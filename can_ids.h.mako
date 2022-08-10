@@ -13,7 +13,7 @@
             %for i,byte in enumerate(topic["bytes"]):
                 %if byte:
 #define CAN_MSG_${module["name"]}_${topic["name"]}_${byte["name"]}_BYTE ${i} //<!" ${byte["description"]}
-#define CAN_MSG_${module["name"]}_${topic["name"]}_${byte["name"]}_TYPE ${ byte["type"] if byte["type"] is not "bitfield" else "uint8_t"}
+#define CAN_MSG_${module["name"]}_${topic["name"]}_${byte["name"]}_TYPE ${ byte["type"] if byte["type"] != "bitfield" else "uint8_t"}
 #define CAN_MSG_${module["name"]}_${topic["name"]}_${byte["name"]}_UNITS "${byte["units"]}"
                     %if "bits" in byte.keys():
                         %for k,bit in enumerate(byte["bits"]):

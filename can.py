@@ -226,7 +226,7 @@ class Can:
 
     def export_c_library(self, filename: str = "can_ids.h"):
         self.export_h("can_ids.h")
-        self.export_h("can_parser.h")
+        self.export_h("can_parser_types.h")
 
 
 if __name__ == '__main__':
