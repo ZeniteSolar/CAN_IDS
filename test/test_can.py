@@ -18,7 +18,7 @@ class test_can_topic(unittest.TestCase):
                 {
                     "name": "SIGNATURE",
                     "description": "Senders signature",
-                    "type": "u8",
+                    "type": "uint8_t",
                     "units": ""
                 },
                 *[None]*7
@@ -111,7 +111,7 @@ class test_can_topic(unittest.TestCase):
                 {
                     "name": "SIGNATURE",
                     "description": "Senders signature",
-                    "type": "u8",
+                    "type": "uint8_t",
                     "units": "",
                 },
                 {
@@ -144,7 +144,7 @@ class test_can_topic(unittest.TestCase):
                 {
                     "name": "SIGNATURE",
                     "description": "Senders signature",
-                    "type": "u8",
+                    "type": "uint8_t",
                     "units": "",
                 },
                 {
@@ -164,7 +164,7 @@ class test_can_topic(unittest.TestCase):
         )
 
         t.describe_byte(
-            "dutycycle", 2, "byte description text here", "u8", "")
+            "dutycycle", 2, "byte description text here", "uint8_t", "")
 
         # Trying to describe a bit in some byte that hasn't a "bitfield" type should raise ValueError
         with self.assertRaises(ValueError):
@@ -209,7 +209,7 @@ class test_can_module(unittest.TestCase):
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         *[None]*7,

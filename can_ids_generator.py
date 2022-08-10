@@ -30,14 +30,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 #### TOPIC: GENERIC
@@ -68,14 +68,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 #### TOPIC: MOTOR
@@ -110,14 +110,14 @@ topic_motor.describe_byte(
     name="D",
     byte=2,
     description="Motor Duty Cycle",
-    btype="u8",
+    btype="uint8_t",
     units="%"
 )
 topic_motor.describe_byte(
     name="I",
     byte=3,
     description="Motor Soft Start",
-    btype="u8",
+    btype="uint8_t",
     units="%"
 )
 #### TOPIC: PUMPS
@@ -170,7 +170,7 @@ topic_mppts.describe_byte(
     name="POT",
     byte=2,
     description="MPPTs maximum power limitation",
-    btype="u8",
+    btype="uint8_t",
     units="%"
 )
 #### TOPIC: MCS
@@ -201,14 +201,14 @@ topic_mde.describe_byte(
     name="position_l",
     byte=1,
     description="Steering wheel position, byte LOW",
-    btype="u16",
+    btype="uint16_t",
     units="°/100"
 )
 topic_mde.describe_byte(
     name="position_h",
     byte=2,
     description="Steering wheel position, byte HIGH",
-    btype="u16",
+    btype="uint16_t",
     units="°/100"
 )
 
@@ -237,14 +237,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 # TOPIC: STEERING MODULE MEASUREMENTS
@@ -257,42 +257,42 @@ topic_measurements.describe_byte(
     name="batvoltage_l",
     byte=1,
     description="Battery Voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="batvoltage_h",
     byte=2,
     description="Battery Voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="position_l",
     byte=3,
     description="Tail Poisition, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="°/100"
 )
 topic_measurements.describe_byte(
     name="position_h",
     byte=4,
     description="Tail Poisition, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="°/100"
 )
 topic_measurements.describe_byte(
     name="batcurrent_l",
     byte=5,
     description="Battery Current, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="batcurrent_h",
     byte=6,
     description="Battery Current, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 
@@ -317,14 +317,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 
@@ -348,14 +348,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 
@@ -380,14 +380,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
@@ -433,49 +433,49 @@ topic_measurements.describe_byte(
     name="output_voltage_l",
     byte=1,
     description="Average output voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="output_voltage_h",
     byte=2,
     description="Average output voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="input_current_l",
     byte=3,
     description="Average input current, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="input_current_h",
     byte=4,
     description="Average input current, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="input_voltage_l",
     byte=5,
     description="Average input voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="input_voltage_h",
     byte=6,
     description="Average input voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="dt",
     byte=7,
     description="converter's duty cycle",
-    btype="u8",
+    btype="uint8_t",
     units="%/255"
 )
 
@@ -501,14 +501,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
@@ -554,49 +554,49 @@ topic_measurements.describe_byte(
     name="output_voltage_l",
     byte=1,
     description="Average output voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="output_voltage_h",
     byte=2,
     description="Average output voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="input_current_l",
     byte=3,
     description="Average input current, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="input_current_h",
     byte=4,
     description="Average input current, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="input_voltage_l",
     byte=5,
     description="Average input voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="input_voltage_h",
     byte=6,
     description="Average input voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="dt",
     byte=7,
     description="converter's duty cycle",
-    btype="u8",
+    btype="uint8_t",
     units="%/255"
 )
 
@@ -622,14 +622,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
@@ -675,49 +675,49 @@ topic_measurements.describe_byte(
     name="output_voltage_l",
     byte=1,
     description="Average output voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="output_voltage_h",
     byte=2,
     description="Average output voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="input_current_l",
     byte=3,
     description="Average input current, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="input_current_h",
     byte=4,
     description="Average input current, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="input_voltage_l",
     byte=5,
     description="Average input voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="input_voltage_h",
     byte=6,
     description="Average input voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="dt",
     byte=7,
     description="converter's duty cycle",
-    btype="u8",
+    btype="uint8_t",
     units="%/255"
 )
 
@@ -743,14 +743,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
@@ -796,49 +796,49 @@ topic_measurements.describe_byte(
     name="output_voltage_l",
     byte=1,
     description="Average output voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="output_voltage_h",
     byte=2,
     description="Average output voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="input_current_l",
     byte=3,
     description="Average input current, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="input_current_h",
     byte=4,
     description="Average input current, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="input_voltage_l",
     byte=5,
     description="Average input voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="input_voltage_h",
     byte=6,
     description="Average input voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="dt",
     byte=7,
     description="converter's duty cycle",
-    btype="u8",
+    btype="uint8_t",
     units="%/255"
 )
 
@@ -864,14 +864,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
@@ -917,49 +917,49 @@ topic_measurements.describe_byte(
     name="output_voltage_l",
     byte=1,
     description="Average output voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="output_voltage_h",
     byte=2,
     description="Average output voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="output_current_l",
     byte=3,
     description="Average output current, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="output_current_h",
     byte=4,
     description="Average output current, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="input_voltage_l",
     byte=5,
     description="Average input voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="input_voltage_h",
     byte=6,
     description="Average input voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="dt",
     byte=7,
     description="converter's duty cycle",
-    btype="u8",
+    btype="uint8_t",
     units="%/255"
 )
 
@@ -984,14 +984,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
@@ -1037,49 +1037,49 @@ topic_measurements.describe_byte(
     name="output_voltage_l",
     byte=1,
     description="Average output voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="output_voltage_h",
     byte=2,
     description="Average output voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="output_current_l",
     byte=3,
     description="Average output current, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="output_current_h",
     byte=4,
     description="Average output current, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_measurements.describe_byte(
     name="input_voltage_l",
     byte=5,
     description="Average input voltage, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="input_voltage_h",
     byte=6,
     description="Average input voltage, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_measurements.describe_byte(
     name="dt",
     byte=7,
     description="converter's duty cycle",
-    btype="u8",
+    btype="uint8_t",
     units="%/255"
 )
 
@@ -1104,14 +1104,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 #### TOPIC: CONTACTOR
@@ -1124,7 +1124,7 @@ topic_contactor.describe_byte(
     name="response",
     byte=1,
     description="Contactor task response",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 
@@ -1150,14 +1150,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 #### TOPIC: MOTOR
@@ -1170,14 +1170,14 @@ topic_motor.describe_byte(
     name="D",
     byte=1,
     description="Motor Duty Cycle",
-    btype="u8",
+    btype="uint8_t",
     units="%"
 )
 topic_motor.describe_byte(
     name="I",
     byte=2,
     description="Motor Soft Start",
-    btype="u8",
+    btype="uint8_t",
     units="%"
 )
 #### TOPIC: CONTACTOR
@@ -1190,7 +1190,7 @@ topic_contactor.describe_byte(
     name="request",
     byte=1,
     description="Control the Contactor State",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 
@@ -1218,14 +1218,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 
@@ -1280,14 +1280,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 #### TOPIC: ADC
@@ -1300,42 +1300,42 @@ topic_adc.describe_byte(
     name="AVG_L",
     byte=1,
     description="Average, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="AVG_H",
     byte=2,
     description="Average, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="MIN_L",
     byte=3,
     description="Min byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="MIN_H",
     byte=4,
     description="Min byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="MAX_L",
     byte=5,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="MAX_H",
     byte=6,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 
@@ -1361,14 +1361,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 #### TOPIC: ADC
@@ -1381,42 +1381,42 @@ topic_adc.describe_byte(
     name="AVG_L",
     byte=1,
     description="Average, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="AVG_H",
     byte=2,
     description="Average, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="MIN_L",
     byte=3,
     description="Min byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="MIN_H",
     byte=4,
     description="Min byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="MAX_L",
     byte=5,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="MAX_H",
     byte=6,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 
@@ -1442,14 +1442,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 #### TOPIC: ADC
@@ -1462,42 +1462,42 @@ topic_adc.describe_byte(
     name="AVG_L",
     byte=1,
     description="Average, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="AVG_H",
     byte=2,
     description="Average, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="MIN_L",
     byte=3,
     description="Min byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="MIN_H",
     byte=4,
     description="Min byte high",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="MAX_L",
     byte=5,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 topic_adc.describe_byte(
     name="MAX_H",
     byte=6,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units="V/100"
 )
 
@@ -1523,14 +1523,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 #### TOPIC: ADC
@@ -1543,42 +1543,42 @@ topic_adc.describe_byte(
     name="AVG_L",
     byte=1,
     description="Average, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_adc.describe_byte(
     name="AVG_H",
     byte=2,
     description="Average, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_adc.describe_byte(
     name="MIN_L",
     byte=3,
     description="Min byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_adc.describe_byte(
     name="MIN_H",
     byte=4,
     description="Min byte high",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_adc.describe_byte(
     name="MAX_L",
     byte=5,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_adc.describe_byte(
     name="MAX_H",
     byte=6,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 
@@ -1604,14 +1604,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 #### TOPIC: ADC
@@ -1624,42 +1624,42 @@ topic_adc.describe_byte(
     name="AVG_L",
     byte=1,
     description="Average, byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_adc.describe_byte(
     name="AVG_H",
     byte=2,
     description="Average, byte high",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_adc.describe_byte(
     name="MIN_L",
     byte=3,
     description="Min byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_adc.describe_byte(
     name="MIN_H",
     byte=4,
     description="Min byte high",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_adc.describe_byte(
     name="MAX_L",
     byte=5,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 topic_adc.describe_byte(
     name="MAX_H",
     byte=6,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units="A/100"
 )
 
@@ -1685,14 +1685,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 
@@ -1738,42 +1738,42 @@ topic_bat.describe_byte(
     name="AVG_L",
     byte=1,
     description="Average, byte low",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 topic_bat.describe_byte(
     name="AVG_H",
     byte=2,
     description="Average, byte high",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 topic_bat.describe_byte(
     name="MIN_L",
     byte=3,
     description="Min byte low",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 topic_bat.describe_byte(
     name="MIN_H",
     byte=4,
     description="Min byte high",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 topic_bat.describe_byte(
     name="MAX_L",
     byte=5,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 topic_bat.describe_byte(
     name="MAX_H",
     byte=6,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 
@@ -1787,42 +1787,42 @@ topic_cap.describe_byte(
     name="AVG_L",
     byte=1,
     description="Average, byte low",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 topic_cap.describe_byte(
     name="AVG_H",
     byte=2,
     description="Average, byte high",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 topic_cap.describe_byte(
     name="MIN_L",
     byte=3,
     description="Min byte low",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 topic_cap.describe_byte(
     name="MIN_H",
     byte=4,
     description="Min byte high",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 topic_cap.describe_byte(
     name="MAX_L",
     byte=5,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 topic_cap.describe_byte(
     name="MAX_H",
     byte=6,
     description="Max byte low",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 
@@ -1851,14 +1851,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 
@@ -1872,14 +1872,14 @@ topic_rpm.describe_byte(
     name="AVG_L",
     byte=1,
     description="RPM Average, byte low",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 topic_rpm.describe_byte(
     name="AVG_H",
     byte=2,
     description="RPM Average, byte high",
-    btype="u16",
+    btype="uint16_t",
     units=""
 )
 
@@ -1905,14 +1905,14 @@ topic_state.describe_byte(
     name="state",
     byte=1,
     description="State code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 topic_state.describe_byte(
     name="error",
     byte=2,
     description="Error code",
-    btype="u8",
+    btype="uint8_t",
     units=""
 )
 #### TOPIC: MOTOR
@@ -1942,14 +1942,14 @@ topic_motor.describe_byte(
     name="D",
     byte=2,
     description="Motor Duty Cycle",
-    btype="u8",
+    btype="uint8_t",
     units="%"
 )
 topic_motor.describe_byte(
     name="I",
     byte=3,
     description="Motor Soft Start",
-    btype="u8",
+    btype="uint8_t",
     units="%"
 )
 #### TOPIC: PUMPS
@@ -2002,7 +2002,7 @@ topic_mppts.describe_byte(
     name="POT",
     byte=2,
     description="MPPTs maximum power limitation",
-    btype="u8",
+    btype="uint8_t",
     units="%"
 )
 #### TOPIC: MCS

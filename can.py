@@ -53,7 +53,8 @@ class Can:
 
             self.bytes = [None] * 8
 
-            self.describe_byte("signature", 0, "Senders signature", "u8", "")
+            self.describe_byte(
+                "signature", 0, "Senders signature", "uint8_t", "")
 
         def get(self) -> dict:
             return {
@@ -232,8 +233,8 @@ if __name__ == '__main__':
     t1 = Can.topic("motor", 9, "Motor controller parameters")
     t1.describe_byte("motor", 1, "Switches and states", "bitfield", "")
     t1.describe_bit("motor on", 1, 0)
-    t1.describe_byte("D raw", 2, "Motor Duty Cycle", "u8", "%")
-    t1.describe_byte("I raw", 3, "Motor Soft Start", "u8", "%")
+    t1.describe_byte("D raw", 2, "Motor Duty Cycle", "uint8_t", "%")
+    t1.describe_byte("I raw", 3, "Motor Soft Start", "uint8_t", "%")
     # print(t1)
 
     m1 = Can.module("mic17", 10, "Modulo de Interface de Controle")

@@ -1,56 +1,51 @@
 {
-    "modules": [
-        {
-            "name": "MIC17",
-            "description": "Modulo de Interface de Controle",
-            "signature": 10,
-            "topics": [
+    "modules": [{
+        "name": "MIC17",
+        "description": "Modulo de Interface de Controle",
+        "signature": 10,
+        "topics": [{
+            "name": "MOTOR",
+            "description": "Motor controller parameters",
+            "id": 9,
+            "bytes": [{
+                    "name": "SIGNATURE",
+                    "description": "Senders signature",
+                    "type": "uint8_t",
+                    "units": ""
+                },
                 {
                     "name": "MOTOR",
-                    "description": "Motor controller parameters",
-                    "id": 9,
-                    "bytes": [
-                        {
-                            "name": "SIGNATURE",
-                            "description": "Senders signature",
-                            "type": "u8",
-                            "units": ""
-                        },
-                        {
-                            "name": "MOTOR",
-                            "description": "Switches and states",
-                            "type": "bitfield",
-                            "units": "",
-                            "bits": [
-                                "MOTOR_ON",
-                                null,
-                                null,
-                                null,
-                                null,
-                                null,
-                                null,
-                                null
-                            ]
-                        },
-                        {
-                            "name": "D_RAW",
-                            "description": "Motor Duty Cycle",
-                            "type": "u8",
-                            "units": "%"
-                        },
-                        {
-                            "name": "I_RAW",
-                            "description": "Motor Soft Start",
-                            "type": "u8",
-                            "units": "%"
-                        },
+                    "description": "Switches and states",
+                    "type": "bitfield",
+                    "units": "",
+                    "bits": [
+                        "MOTOR_ON",
+                        null,
+                        null,
+                        null,
                         null,
                         null,
                         null,
                         null
                     ]
-                }
+                },
+                {
+                    "name": "D_RAW",
+                    "description": "Motor Duty Cycle",
+                    "type": "uint8_t",
+                    "units": "%"
+                },
+                {
+                    "name": "I_RAW",
+                    "description": "Motor Soft Start",
+                    "type": "uint8_t",
+                    "units": "%"
+                },
+                null,
+                null,
+                null,
+                null
             ]
-        }
-    ]
+        }]
+    }]
 }

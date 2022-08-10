@@ -14,19 +14,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -44,7 +44,7 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -71,19 +71,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -101,7 +101,7 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -123,13 +123,13 @@
                         {
                             "name": "D",
                             "description": "Motor Duty Cycle",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%"
                         },
                         {
                             "name": "I",
                             "description": "Motor Soft Start",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%"
                         },
                         null,
@@ -146,7 +146,7 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -181,7 +181,7 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -203,7 +203,7 @@
                         {
                             "name": "POT",
                             "description": "MPPTs maximum power limitation",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%"
                         },
                         null,
@@ -221,7 +221,7 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -256,19 +256,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "POSITION_L",
                             "description": "Steering wheel position, byte LOW",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "\u00b0/100"
                         },
                         {
                             "name": "POSITION_H",
                             "description": "Steering wheel position, byte HIGH",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "\u00b0/100"
                         },
                         null,
@@ -293,19 +293,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -323,43 +323,43 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "BATVOLTAGE_L",
                             "description": "Battery Voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "BATVOLTAGE_H",
                             "description": "Battery Voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "POSITION_L",
                             "description": "Tail Poisition, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "\u00b0/100"
                         },
                         {
                             "name": "POSITION_H",
                             "description": "Tail Poisition, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "\u00b0/100"
                         },
                         {
                             "name": "BATCURRENT_L",
                             "description": "Battery Current, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "BATCURRENT_H",
                             "description": "Battery Current, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         null
@@ -380,19 +380,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -417,19 +417,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -454,13 +454,13 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -494,49 +494,49 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "OUTPUT_VOLTAGE_L",
                             "description": "Average output voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "OUTPUT_VOLTAGE_H",
                             "description": "Average output voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "INPUT_CURRENT_L",
                             "description": "Average input current, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "INPUT_CURRENT_H",
                             "description": "Average input current, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_L",
                             "description": "Average input voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_H",
                             "description": "Average input voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "DT",
                             "description": "converter's duty cycle",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%/255"
                         }
                     ]
@@ -556,13 +556,13 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -596,49 +596,49 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "OUTPUT_VOLTAGE_L",
                             "description": "Average output voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "OUTPUT_VOLTAGE_H",
                             "description": "Average output voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "INPUT_CURRENT_L",
                             "description": "Average input current, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "INPUT_CURRENT_H",
                             "description": "Average input current, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_L",
                             "description": "Average input voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_H",
                             "description": "Average input voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "DT",
                             "description": "converter's duty cycle",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%/255"
                         }
                     ]
@@ -658,13 +658,13 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -698,49 +698,49 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "OUTPUT_VOLTAGE_L",
                             "description": "Average output voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "OUTPUT_VOLTAGE_H",
                             "description": "Average output voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "INPUT_CURRENT_L",
                             "description": "Average input current, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "INPUT_CURRENT_H",
                             "description": "Average input current, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_L",
                             "description": "Average input voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_H",
                             "description": "Average input voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "DT",
                             "description": "converter's duty cycle",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%/255"
                         }
                     ]
@@ -760,13 +760,13 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -800,49 +800,49 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "OUTPUT_VOLTAGE_L",
                             "description": "Average output voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "OUTPUT_VOLTAGE_H",
                             "description": "Average output voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "INPUT_CURRENT_L",
                             "description": "Average input current, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "INPUT_CURRENT_H",
                             "description": "Average input current, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_L",
                             "description": "Average input voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_H",
                             "description": "Average input voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "DT",
                             "description": "converter's duty cycle",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%/255"
                         }
                     ]
@@ -862,13 +862,13 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -902,49 +902,49 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "OUTPUT_VOLTAGE_L",
                             "description": "Average output voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "OUTPUT_VOLTAGE_H",
                             "description": "Average output voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "OUTPUT_CURRENT_L",
                             "description": "Average output current, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "OUTPUT_CURRENT_H",
                             "description": "Average output current, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_L",
                             "description": "Average input voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_H",
                             "description": "Average input voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "DT",
                             "description": "converter's duty cycle",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%/255"
                         }
                     ]
@@ -964,13 +964,13 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -1004,49 +1004,49 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "OUTPUT_VOLTAGE_L",
                             "description": "Average output voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "OUTPUT_VOLTAGE_H",
                             "description": "Average output voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "OUTPUT_CURRENT_L",
                             "description": "Average output current, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "OUTPUT_CURRENT_H",
                             "description": "Average output current, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_L",
                             "description": "Average input voltage, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "INPUT_VOLTAGE_H",
                             "description": "Average input voltage, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "DT",
                             "description": "converter's duty cycle",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%/255"
                         }
                     ]
@@ -1066,19 +1066,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -1096,13 +1096,13 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "RESPONSE",
                             "description": "Contactor task response",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -1128,19 +1128,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -1158,19 +1158,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "D",
                             "description": "Motor Duty Cycle",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%"
                         },
                         {
                             "name": "I",
                             "description": "Motor Soft Start",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%"
                         },
                         null,
@@ -1188,13 +1188,13 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "REQUEST",
                             "description": "Control the Contactor State",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -1220,19 +1220,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -1250,7 +1250,7 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -1292,19 +1292,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -1322,43 +1322,43 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "AVG_L",
                             "description": "Average, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "AVG_H",
                             "description": "Average, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "MIN_L",
                             "description": "Min byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "MIN_H",
                             "description": "Min byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "MAX_L",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "MAX_H",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         null
@@ -1379,19 +1379,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -1409,43 +1409,43 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "AVG_L",
                             "description": "Average, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "AVG_H",
                             "description": "Average, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "MIN_L",
                             "description": "Min byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "MIN_H",
                             "description": "Min byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "MAX_L",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "MAX_H",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         null
@@ -1466,19 +1466,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -1496,43 +1496,43 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "AVG_L",
                             "description": "Average, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "AVG_H",
                             "description": "Average, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "MIN_L",
                             "description": "Min byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "MIN_H",
                             "description": "Min byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "MAX_L",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         {
                             "name": "MAX_H",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "V/100"
                         },
                         null
@@ -1553,19 +1553,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -1583,43 +1583,43 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "AVG_L",
                             "description": "Average, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "AVG_H",
                             "description": "Average, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "MIN_L",
                             "description": "Min byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "MIN_H",
                             "description": "Min byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "MAX_L",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "MAX_H",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         null
@@ -1640,19 +1640,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -1670,43 +1670,43 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "AVG_L",
                             "description": "Average, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "AVG_H",
                             "description": "Average, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "MIN_L",
                             "description": "Min byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "MIN_H",
                             "description": "Min byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "MAX_L",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         {
                             "name": "MAX_H",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": "A/100"
                         },
                         null
@@ -1727,19 +1727,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -1757,7 +1757,7 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -1807,43 +1807,43 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "AVG_L",
                             "description": "Average, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         {
                             "name": "AVG_H",
                             "description": "Average, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         {
                             "name": "MIN_L",
                             "description": "Min byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         {
                             "name": "MIN_H",
                             "description": "Min byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         {
                             "name": "MAX_L",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         {
                             "name": "MAX_H",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         null
@@ -1857,43 +1857,43 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "AVG_L",
                             "description": "Average, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         {
                             "name": "AVG_H",
                             "description": "Average, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         {
                             "name": "MIN_L",
                             "description": "Min byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         {
                             "name": "MIN_H",
                             "description": "Min byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         {
                             "name": "MAX_L",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         {
                             "name": "MAX_H",
                             "description": "Max byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         null
@@ -1914,19 +1914,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -1944,19 +1944,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "AVG_L",
                             "description": "RPM Average, byte low",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         {
                             "name": "AVG_H",
                             "description": "RPM Average, byte high",
-                            "type": "u16",
+                            "type": "uint16_t",
                             "units": ""
                         },
                         null,
@@ -1981,19 +1981,19 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "STATE",
                             "description": "State code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
                             "name": "ERROR",
                             "description": "Error code",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         null,
@@ -2011,7 +2011,7 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -2033,13 +2033,13 @@
                         {
                             "name": "D",
                             "description": "Motor Duty Cycle",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%"
                         },
                         {
                             "name": "I",
                             "description": "Motor Soft Start",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%"
                         },
                         null,
@@ -2056,7 +2056,7 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -2091,7 +2091,7 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
@@ -2113,7 +2113,7 @@
                         {
                             "name": "POT",
                             "description": "MPPTs maximum power limitation",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": "%"
                         },
                         null,
@@ -2131,7 +2131,7 @@
                         {
                             "name": "SIGNATURE",
                             "description": "Senders signature",
-                            "type": "u8",
+                            "type": "uint8_t",
                             "units": ""
                         },
                         {
