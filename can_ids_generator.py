@@ -1,5 +1,3 @@
-#!/bin/python
-
 import semver
 import os
 from can import Can
@@ -2032,9 +2030,3 @@ module_mswi19.add_topic(topic_pumps)
 module_mswi19.add_topic(topic_mppts)
 module_mswi19.add_topic(topic_mcs)
 can.add_module(module_mswi19)
-
-
-################################################################################
-# EXPORT
-can.export_json("can_ids.json")
-can.export_h("can_ids.h")

@@ -213,15 +213,19 @@ class Can:
                     ))
         return self
 
-    def export_json(self, filename: str):
+    def export_json(self, filename: str = "can_ids.json"):
         with open(filename, 'w') as file:
             json.dump(dict(self.get()), file, indent=4)
 
     def export_h(self, filename: str):
-        template = Template(filename="can_ids.h.mako")
+        template = Template(filename=f"{filename}.mako")
         rendered = template.render(db=dict(self.get()))
         with open(filename, 'w') as file:
             file.write(rendered)
+
+    def export_c_library(self, filename: str = "can_ids.h"):
+        self.export_h("can_ids.h")
+        self.export_h("can_parser.h")
 
 
 if __name__ == '__main__':
@@ -245,4 +249,4 @@ if __name__ == '__main__':
     c2.import_json("sample.json")
     print(c2)
 
-    c2.export_h("sample.h")
+    c2.export_ids_h("sample.h")
