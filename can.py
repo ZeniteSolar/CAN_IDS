@@ -205,13 +205,13 @@ class Can:
     def import_json(self, filename: str):
         with open(filename, 'r') as file:
             data = dict(json.load(file))
-            for moduleslist in data.values():
-                for module in moduleslist:
-                    self.add_module(Can.module(
-                        name=module.get('name'),
-                        signature=module.get('signature'),
-                        description=module.get('description')
-                    ))
+            self.version = data["version"]
+            for module in data["modules"]:
+                self.add_module(Can.module(
+                    name=module.get('name'),
+                    signature=module.get('signature'),
+                    description=module.get('description')
+                ))
         return self
 
     def export_json(self, filename: str = "can_ids.json"):
