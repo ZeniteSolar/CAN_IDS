@@ -1,5 +1,5 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
-// FILE_VERSION: {db["version"]}
+// FILE_VERSION: 0.1.0
 
 
 // GENERIC - Modulo generico para facilitar implementacoes genericas

@@ -144,6 +144,7 @@ class Can:
 
     class module:
         def __init__(self, name: str, signature: int, description: str):
+
             self.validate_name(name)
 
             self.name = Can.convert_string(name)
@@ -180,12 +181,14 @@ class Can:
 
             self.topics.append(topic.get())
 
-    def __init__(self):
+    def __init__(self, version: str):
+        self.version = version
         self.modules = []
 
     def get(self) -> dict:
         return {
-            "modules": self.modules
+            "version": self.version,
+            "modules": self.modules,
         }
 
     def __str__(self) -> str:

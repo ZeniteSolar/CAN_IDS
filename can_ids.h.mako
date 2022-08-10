@@ -1,9 +1,8 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
-%for tbl in db:
-// FILE_VERSION: {db["version"]}
+#define CAN_VERSION "${db["version"]}"
 
 
-    %for module in db["modules"]:
+%for module in db["modules"]:
 // ${module["name"]} - ${module["description"]}
 #define CAN_SIGNATURE_${module["name"]} ${module["signature"]}
         %for topic in module["topics"]:
@@ -27,5 +26,4 @@
         %endfor
 
 
-    %endfor
-%endfor:
+%endfor
