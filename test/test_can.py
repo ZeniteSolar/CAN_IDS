@@ -3,6 +3,7 @@
 import unittest
 from can import Can
 
+
 class test_can_topic(unittest.TestCase):
     def setUp(self):
         self.can = Can
@@ -34,11 +35,13 @@ class test_can_topic(unittest.TestCase):
 
         # Trying to add using wrong type on the byte should raise TypeError:
         with self.assertRaises(TypeError):
-            t.describe_byte("some byte", "1", "byte description text here", 'u8')
+            t.describe_byte("some byte", "1",
+                            "byte description text here", 'u8')
 
         # Trying to add byte with a value less than zero should raise ValueError:
         with self.assertRaises(ValueError):
-            t.describe_byte("some byte", -1, "byte description text here", 'u8')
+            t.describe_byte("some byte", -1,
+                            "byte description text here", 'u8')
 
         # Trying to add byte with a value greater than 7 should raise ValueError:
         with self.assertRaises(ValueError):
@@ -95,10 +98,10 @@ class test_can_topic(unittest.TestCase):
         with self.assertRaises(ValueError):
             t.describe_bit("some bit", 1, 1)
 
-
     def test_describe_byte(self):
         t = self.can.topic("motor", 9, "topic description text here")
-        t.describe_byte("motor", 1, "byte description text here", "bitfield", "")
+        t.describe_byte(
+            "motor", 1, "byte description text here", "bitfield", "")
 
         expected = {
             "name": "MOTOR",
@@ -116,6 +119,7 @@ class test_can_topic(unittest.TestCase):
                     "description": "byte description text here",
                     "type": "bitfield",
                     "units": "",
+                    "bits": [None]*8,
                 },
                 *[None]*6
             ]
@@ -128,7 +132,8 @@ class test_can_topic(unittest.TestCase):
 
     def test_describe_bit(self):
         t = self.can.topic("motor", 9, "topic description text here")
-        t.describe_byte("motor", 1, "byte description text here", "bitfield", "")
+        t.describe_byte(
+            "motor", 1, "byte description text here", "bitfield", "")
         t.describe_bit("motor on", 1, 0)
 
         expected = {
@@ -157,6 +162,13 @@ class test_can_topic(unittest.TestCase):
             dict(t.get()),
             expected
         )
+
+        t.describe_byte(
+            "dutycycle", 2, "byte description text here", "u8", "")
+
+        # Trying to describe a bit in some byte that hasn't a "bitfield" type should raise ValueError
+        with self.assertRaises(ValueError):
+            t.describe_bit("some bit", 2, 0)
 
 
 class test_can_module(unittest.TestCase):

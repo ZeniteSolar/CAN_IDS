@@ -12,6 +12,7 @@ from mako.template import Template
 #   - atualizar um campo de um byte de um topico do modulo
 #   - atualizar um campo de um bit de um byte de um topico do modulo
 
+
 class Can:
     def convert_string(string: str) -> str:
         if not isinstance(string, str):
@@ -37,7 +38,6 @@ class Can:
             print("Bit number MUST be between 0 and 7 to be described.")
             return False
         return True
-
 
     class topic:
         def __init__(self, msg: str, id: int, description: str):
@@ -71,14 +71,16 @@ class Can:
                 raise TypeError("`byte` needs to be an integer type!")
 
             if (byte < 0) or (byte > 7):
-                raise ValueError("`byte` number MUST be between 0 and 7 to be described.")
+                raise ValueError(
+                    "`byte` number MUST be between 0 and 7 to be described.")
 
         def validate_bit(self, bit: int) -> bool:
             if not isinstance(bit, int):
                 raise TypeError("`bit` needs to be an integer type!")
 
             if (bit < 0) or (bit > 7):
-                raise ValueError("`bit` number MUST be between 0 and 7 to be described.")
+                raise ValueError(
+                    "`bit` number MUST be between 0 and 7 to be described.")
 
         def validate_byte_name(self, name: str):
             if not isinstance(name, str):
@@ -121,15 +123,19 @@ class Can:
                 "name": name,
                 "description": description,
                 "type": btype,
-                "units": units
+                "units": units,
             }
+
+            if self.bytes[byte]["type"] == "bitfield":
+                self.bytes[byte]["bits"] = [None]*8
 
         def describe_bit(self, name: str, byte: int, bit: int):
             self.validate_byte(byte)
             self.validate_bit(bit)
 
-            if "bits" not in self.bytes[byte].keys():
-                self.bytes[byte].update({ "bits": [None]*8 })
+            if self.bytes[byte]["type"] != "bitfield":
+                raise ValueError("`type` must a `bitfield`")
+
             self.validate_bit_name(byte, name)
 
             name = Can.convert_string(name)
@@ -221,15 +227,15 @@ if __name__ == '__main__':
     t1.describe_bit("motor on", 1, 0)
     t1.describe_byte("D raw", 2, "Motor Duty Cycle", "u8", "%")
     t1.describe_byte("I raw", 3, "Motor Soft Start", "u8", "%")
-    #print(t1)
+    # print(t1)
 
     m1 = Can.module("mic17", 10, "Modulo de Interface de Controle")
     m1.add_topic(t1)
-    #print(m1)
+    # print(m1)
 
     c1 = Can()
     c1.add_module(m1)
-    #print(c1)
+    # print(c1)
     c1.export_json("sample.json")
 
     c2 = Can()
@@ -237,4 +243,3 @@ if __name__ == '__main__':
     print(c2)
 
     c2.export_h("sample.h")
-
