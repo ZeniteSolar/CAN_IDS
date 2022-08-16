@@ -26,7 +26,20 @@ typedef struct
                     %endif
             } ${byte["name"].lower()};
                 %else:
+                    %if byte["type"] == "uint16_t":
+                        %if byte["name"].lower()[-1] == 'l':
+<% continue %>
+                        %endif
+            union {  // ${byte["description"].replace(" byte high", " bytes low/high")}. Units: ${byte["units"]}
+                ${byte["type"]} ${byte["name"].lower()[:-2]};
+                struct {
+                    uint8_t ${byte["name"].lower()[:-2]}_l;
+                    uint8_t ${byte["name"].lower()[:-2]}_h;
+                };
+            };
+                    %else:
             ${byte["type"]} ${byte["name"].lower()};  // ${byte["description"]}. Units: ${byte["units"]}
+                    %endif
                 %endif
             %endif
         %endfor
