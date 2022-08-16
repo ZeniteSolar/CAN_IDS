@@ -1,5 +1,5 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
-#define CAN_VERSION "0.1.0"
+#define CAN_VERSION "0.1.1"
 
 #include <stdint.h>
 
@@ -115,8 +115,13 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t position_l;  // Steering wheel position, byte LOW. Units: °/100
-            uint16_t position_h;  // Steering wheel position, byte HIGH. Units: °/100
+            union {  // Steering wheel position, byte HIGH. Units: °/100
+                uint16_t position;
+                struct {
+                    uint8_t position_l;
+                    uint8_t position_h;
+                };
+            };
         };
     };
 } can_mic19_mde_msg_t;
@@ -141,12 +146,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t batvoltage_l;  // Battery Voltage, byte low. Units: V/100
-            uint16_t batvoltage_h;  // Battery Voltage, byte high. Units: V/100
-            uint16_t position_l;  // Tail Poisition, byte low. Units: °/100
-            uint16_t position_h;  // Tail Poisition, byte high. Units: °/100
-            uint16_t batcurrent_l;  // Battery Current, byte low. Units: A/100
-            uint16_t batcurrent_h;  // Battery Current, byte high. Units: A/100
+            union {  // Battery Voltage, bytes low/high. Units: V/100
+                uint16_t batvoltage;
+                struct {
+                    uint8_t batvoltage_l;
+                    uint8_t batvoltage_h;
+                };
+            };
+            union {  // Tail Poisition, bytes low/high. Units: °/100
+                uint16_t position;
+                struct {
+                    uint8_t position_l;
+                    uint8_t position_h;
+                };
+            };
+            union {  // Battery Current, bytes low/high. Units: A/100
+                uint16_t batcurrent;
+                struct {
+                    uint8_t batcurrent_l;
+                    uint8_t batcurrent_h;
+                };
+            };
         };
     };
 } can_mde22_steeringbat_measurements_msg_t;
@@ -204,12 +224,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t output_voltage_l;  // Average output voltage, byte low. Units: V/100
-            uint16_t output_voltage_h;  // Average output voltage, byte high. Units: V/100
-            uint16_t input_current_l;  // Average input current, byte low. Units: A/100
-            uint16_t input_current_h;  // Average input current, byte high. Units: A/100
-            uint16_t input_voltage_l;  // Average input voltage, byte low. Units: V/100
-            uint16_t input_voltage_h;  // Average input voltage, byte high. Units: V/100
+            union {  // Average output voltage, bytes low/high. Units: V/100
+                uint16_t output_voltage;
+                struct {
+                    uint8_t output_voltage_l;
+                    uint8_t output_voltage_h;
+                };
+            };
+            union {  // Average input current, bytes low/high. Units: A/100
+                uint16_t input_current;
+                struct {
+                    uint8_t input_current_l;
+                    uint8_t input_current_h;
+                };
+            };
+            union {  // Average input voltage, bytes low/high. Units: V/100
+                uint16_t input_voltage;
+                struct {
+                    uint8_t input_voltage_l;
+                    uint8_t input_voltage_h;
+                };
+            };
             uint8_t dt;  // converter's duty cycle. Units: %/255
         };
     };
@@ -242,12 +277,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t output_voltage_l;  // Average output voltage, byte low. Units: V/100
-            uint16_t output_voltage_h;  // Average output voltage, byte high. Units: V/100
-            uint16_t input_current_l;  // Average input current, byte low. Units: A/100
-            uint16_t input_current_h;  // Average input current, byte high. Units: A/100
-            uint16_t input_voltage_l;  // Average input voltage, byte low. Units: V/100
-            uint16_t input_voltage_h;  // Average input voltage, byte high. Units: V/100
+            union {  // Average output voltage, bytes low/high. Units: V/100
+                uint16_t output_voltage;
+                struct {
+                    uint8_t output_voltage_l;
+                    uint8_t output_voltage_h;
+                };
+            };
+            union {  // Average input current, bytes low/high. Units: A/100
+                uint16_t input_current;
+                struct {
+                    uint8_t input_current_l;
+                    uint8_t input_current_h;
+                };
+            };
+            union {  // Average input voltage, bytes low/high. Units: V/100
+                uint16_t input_voltage;
+                struct {
+                    uint8_t input_voltage_l;
+                    uint8_t input_voltage_h;
+                };
+            };
             uint8_t dt;  // converter's duty cycle. Units: %/255
         };
     };
@@ -280,12 +330,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t output_voltage_l;  // Average output voltage, byte low. Units: V/100
-            uint16_t output_voltage_h;  // Average output voltage, byte high. Units: V/100
-            uint16_t input_current_l;  // Average input current, byte low. Units: A/100
-            uint16_t input_current_h;  // Average input current, byte high. Units: A/100
-            uint16_t input_voltage_l;  // Average input voltage, byte low. Units: V/100
-            uint16_t input_voltage_h;  // Average input voltage, byte high. Units: V/100
+            union {  // Average output voltage, bytes low/high. Units: V/100
+                uint16_t output_voltage;
+                struct {
+                    uint8_t output_voltage_l;
+                    uint8_t output_voltage_h;
+                };
+            };
+            union {  // Average input current, bytes low/high. Units: A/100
+                uint16_t input_current;
+                struct {
+                    uint8_t input_current_l;
+                    uint8_t input_current_h;
+                };
+            };
+            union {  // Average input voltage, bytes low/high. Units: V/100
+                uint16_t input_voltage;
+                struct {
+                    uint8_t input_voltage_l;
+                    uint8_t input_voltage_h;
+                };
+            };
             uint8_t dt;  // converter's duty cycle. Units: %/255
         };
     };
@@ -318,12 +383,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t output_voltage_l;  // Average output voltage, byte low. Units: V/100
-            uint16_t output_voltage_h;  // Average output voltage, byte high. Units: V/100
-            uint16_t input_current_l;  // Average input current, byte low. Units: A/100
-            uint16_t input_current_h;  // Average input current, byte high. Units: A/100
-            uint16_t input_voltage_l;  // Average input voltage, byte low. Units: V/100
-            uint16_t input_voltage_h;  // Average input voltage, byte high. Units: V/100
+            union {  // Average output voltage, bytes low/high. Units: V/100
+                uint16_t output_voltage;
+                struct {
+                    uint8_t output_voltage_l;
+                    uint8_t output_voltage_h;
+                };
+            };
+            union {  // Average input current, bytes low/high. Units: A/100
+                uint16_t input_current;
+                struct {
+                    uint8_t input_current_l;
+                    uint8_t input_current_h;
+                };
+            };
+            union {  // Average input voltage, bytes low/high. Units: V/100
+                uint16_t input_voltage;
+                struct {
+                    uint8_t input_voltage_l;
+                    uint8_t input_voltage_h;
+                };
+            };
             uint8_t dt;  // converter's duty cycle. Units: %/255
         };
     };
@@ -356,12 +436,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t output_voltage_l;  // Average output voltage, byte low. Units: V/100
-            uint16_t output_voltage_h;  // Average output voltage, byte high. Units: V/100
-            uint16_t output_current_l;  // Average output current, byte low. Units: A/100
-            uint16_t output_current_h;  // Average output current, byte high. Units: A/100
-            uint16_t input_voltage_l;  // Average input voltage, byte low. Units: V/100
-            uint16_t input_voltage_h;  // Average input voltage, byte high. Units: V/100
+            union {  // Average output voltage, bytes low/high. Units: V/100
+                uint16_t output_voltage;
+                struct {
+                    uint8_t output_voltage_l;
+                    uint8_t output_voltage_h;
+                };
+            };
+            union {  // Average output current, bytes low/high. Units: A/100
+                uint16_t output_current;
+                struct {
+                    uint8_t output_current_l;
+                    uint8_t output_current_h;
+                };
+            };
+            union {  // Average input voltage, bytes low/high. Units: V/100
+                uint16_t input_voltage;
+                struct {
+                    uint8_t input_voltage_l;
+                    uint8_t input_voltage_h;
+                };
+            };
             uint8_t dt;  // converter's duty cycle. Units: %/255
         };
     };
@@ -394,12 +489,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t output_voltage_l;  // Average output voltage, byte low. Units: V/100
-            uint16_t output_voltage_h;  // Average output voltage, byte high. Units: V/100
-            uint16_t output_current_l;  // Average output current, byte low. Units: A/100
-            uint16_t output_current_h;  // Average output current, byte high. Units: A/100
-            uint16_t input_voltage_l;  // Average input voltage, byte low. Units: V/100
-            uint16_t input_voltage_h;  // Average input voltage, byte high. Units: V/100
+            union {  // Average output voltage, bytes low/high. Units: V/100
+                uint16_t output_voltage;
+                struct {
+                    uint8_t output_voltage_l;
+                    uint8_t output_voltage_h;
+                };
+            };
+            union {  // Average output current, bytes low/high. Units: A/100
+                uint16_t output_current;
+                struct {
+                    uint8_t output_current_l;
+                    uint8_t output_current_h;
+                };
+            };
+            union {  // Average input voltage, bytes low/high. Units: V/100
+                uint16_t input_voltage;
+                struct {
+                    uint8_t input_voltage_l;
+                    uint8_t input_voltage_h;
+                };
+            };
             uint8_t dt;  // converter's duty cycle. Units: %/255
         };
     };
@@ -518,12 +628,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t avg_l;  // Average, byte low. Units: V/100
-            uint16_t avg_h;  // Average, byte high. Units: V/100
-            uint16_t min_l;  // Min byte low. Units: V/100
-            uint16_t min_h;  // Min byte high. Units: V/100
-            uint16_t max_l;  // Max byte low. Units: V/100
-            uint16_t max_h;  // Max byte low. Units: V/100
+            union {  // Average, bytes low/high. Units: V/100
+                uint16_t avg;
+                struct {
+                    uint8_t avg_l;
+                    uint8_t avg_h;
+                };
+            };
+            union {  // Min bytes low/high. Units: V/100
+                uint16_t min;
+                struct {
+                    uint8_t min_l;
+                    uint8_t min_h;
+                };
+            };
+            union {  // Max byte low. Units: V/100
+                uint16_t max;
+                struct {
+                    uint8_t max_l;
+                    uint8_t max_h;
+                };
+            };
         };
     };
 } can_msc19_1_adc_msg_t;
@@ -548,12 +673,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t avg_l;  // Average, byte low. Units: V/100
-            uint16_t avg_h;  // Average, byte high. Units: V/100
-            uint16_t min_l;  // Min byte low. Units: V/100
-            uint16_t min_h;  // Min byte high. Units: V/100
-            uint16_t max_l;  // Max byte low. Units: V/100
-            uint16_t max_h;  // Max byte low. Units: V/100
+            union {  // Average, bytes low/high. Units: V/100
+                uint16_t avg;
+                struct {
+                    uint8_t avg_l;
+                    uint8_t avg_h;
+                };
+            };
+            union {  // Min bytes low/high. Units: V/100
+                uint16_t min;
+                struct {
+                    uint8_t min_l;
+                    uint8_t min_h;
+                };
+            };
+            union {  // Max byte low. Units: V/100
+                uint16_t max;
+                struct {
+                    uint8_t max_l;
+                    uint8_t max_h;
+                };
+            };
         };
     };
 } can_msc19_2_adc_msg_t;
@@ -578,12 +718,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t avg_l;  // Average, byte low. Units: V/100
-            uint16_t avg_h;  // Average, byte high. Units: V/100
-            uint16_t min_l;  // Min byte low. Units: V/100
-            uint16_t min_h;  // Min byte high. Units: V/100
-            uint16_t max_l;  // Max byte low. Units: V/100
-            uint16_t max_h;  // Max byte low. Units: V/100
+            union {  // Average, bytes low/high. Units: V/100
+                uint16_t avg;
+                struct {
+                    uint8_t avg_l;
+                    uint8_t avg_h;
+                };
+            };
+            union {  // Min bytes low/high. Units: V/100
+                uint16_t min;
+                struct {
+                    uint8_t min_l;
+                    uint8_t min_h;
+                };
+            };
+            union {  // Max byte low. Units: V/100
+                uint16_t max;
+                struct {
+                    uint8_t max_l;
+                    uint8_t max_h;
+                };
+            };
         };
     };
 } can_msc19_3_adc_msg_t;
@@ -608,12 +763,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t avg_l;  // Average, byte low. Units: A/100
-            uint16_t avg_h;  // Average, byte high. Units: A/100
-            uint16_t min_l;  // Min byte low. Units: A/100
-            uint16_t min_h;  // Min byte high. Units: A/100
-            uint16_t max_l;  // Max byte low. Units: A/100
-            uint16_t max_h;  // Max byte low. Units: A/100
+            union {  // Average, bytes low/high. Units: A/100
+                uint16_t avg;
+                struct {
+                    uint8_t avg_l;
+                    uint8_t avg_h;
+                };
+            };
+            union {  // Min bytes low/high. Units: A/100
+                uint16_t min;
+                struct {
+                    uint8_t min_l;
+                    uint8_t min_h;
+                };
+            };
+            union {  // Max byte low. Units: A/100
+                uint16_t max;
+                struct {
+                    uint8_t max_l;
+                    uint8_t max_h;
+                };
+            };
         };
     };
 } can_msc19_4_adc_msg_t;
@@ -638,12 +808,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t avg_l;  // Average, byte low. Units: A/100
-            uint16_t avg_h;  // Average, byte high. Units: A/100
-            uint16_t min_l;  // Min byte low. Units: A/100
-            uint16_t min_h;  // Min byte high. Units: A/100
-            uint16_t max_l;  // Max byte low. Units: A/100
-            uint16_t max_h;  // Max byte low. Units: A/100
+            union {  // Average, bytes low/high. Units: A/100
+                uint16_t avg;
+                struct {
+                    uint8_t avg_l;
+                    uint8_t avg_h;
+                };
+            };
+            union {  // Min bytes low/high. Units: A/100
+                uint16_t min;
+                struct {
+                    uint8_t min_l;
+                    uint8_t min_h;
+                };
+            };
+            union {  // Max byte low. Units: A/100
+                uint16_t max;
+                struct {
+                    uint8_t max_l;
+                    uint8_t max_h;
+                };
+            };
         };
     };
 } can_msc19_5_adc_msg_t;
@@ -687,12 +872,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t avg_l;  // Average, byte low. Units: 
-            uint16_t avg_h;  // Average, byte high. Units: 
-            uint16_t min_l;  // Min byte low. Units: 
-            uint16_t min_h;  // Min byte high. Units: 
-            uint16_t max_l;  // Max byte low. Units: 
-            uint16_t max_h;  // Max byte low. Units: 
+            union {  // Average, bytes low/high. Units: 
+                uint16_t avg;
+                struct {
+                    uint8_t avg_l;
+                    uint8_t avg_h;
+                };
+            };
+            union {  // Min bytes low/high. Units: 
+                uint16_t min;
+                struct {
+                    uint8_t min_l;
+                    uint8_t min_h;
+                };
+            };
+            union {  // Max byte low. Units: 
+                uint16_t max;
+                struct {
+                    uint8_t max_l;
+                    uint8_t max_h;
+                };
+            };
         };
     };
 } can_mcs19_bat_msg_t;
@@ -704,12 +904,27 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t avg_l;  // Average, byte low. Units: 
-            uint16_t avg_h;  // Average, byte high. Units: 
-            uint16_t min_l;  // Min byte low. Units: 
-            uint16_t min_h;  // Min byte high. Units: 
-            uint16_t max_l;  // Max byte low. Units: 
-            uint16_t max_h;  // Max byte low. Units: 
+            union {  // Average, bytes low/high. Units: 
+                uint16_t avg;
+                struct {
+                    uint8_t avg_l;
+                    uint8_t avg_h;
+                };
+            };
+            union {  // Min bytes low/high. Units: 
+                uint16_t min;
+                struct {
+                    uint8_t min_l;
+                    uint8_t min_h;
+                };
+            };
+            union {  // Max byte low. Units: 
+                uint16_t max;
+                struct {
+                    uint8_t max_l;
+                    uint8_t max_h;
+                };
+            };
         };
     };
 } can_mcs19_cap_msg_t;
@@ -734,8 +949,13 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            uint16_t avg_l;  // RPM Average, byte low. Units: 
-            uint16_t avg_h;  // RPM Average, byte high. Units: 
+            union {  // RPM Average, bytes low/high. Units: 
+                uint16_t avg;
+                struct {
+                    uint8_t avg_l;
+                    uint8_t avg_h;
+                };
+            };
         };
     };
 } can_mt19_rpm_msg_t;
