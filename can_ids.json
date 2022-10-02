@@ -1,5 +1,5 @@
 {
-    "version": "0.1.1",
+    "version": "0.1.2",
     "modules": [
         {
             "name": "GENERIC",
@@ -751,6 +751,108 @@
             "name": "MCC19_4",
             "description": "Modulo controlador de carga",
             "signature": 228,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 16,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "CONTROL",
+                            "description": "Control flags for operating point",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "ENABLE",
+                                "VI_SAFE_RANGE",
+                                "VO_SAFE_RANGE",
+                                "VI_STABLE",
+                                "DT_SAFE_RANGE",
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                {
+                    "name": "MEASUREMENTS",
+                    "description": "All measurements from the converter",
+                    "id": 17,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_VOLTAGE_L",
+                            "description": "Average output voltage, byte low",
+                            "type": "uint16_t",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "OUTPUT_VOLTAGE_H",
+                            "description": "Average output voltage, byte high",
+                            "type": "uint16_t",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "INPUT_CURRENT_L",
+                            "description": "Average input current, byte low",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "INPUT_CURRENT_H",
+                            "description": "Average input current, byte high",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "INPUT_VOLTAGE_L",
+                            "description": "Average input voltage, byte low",
+                            "type": "uint16_t",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "INPUT_VOLTAGE_H",
+                            "description": "Average input voltage, byte high",
+                            "type": "uint16_t",
+                            "units": "V/100"
+                        },
+                        {
+                            "name": "DT",
+                            "description": "converter's duty cycle",
+                            "type": "uint8_t",
+                            "units": "%/255"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MCC19_5",
+            "description": "Modulo controlador de carga",
+            "signature": 229,
             "topics": [
                 {
                     "name": "STATE",

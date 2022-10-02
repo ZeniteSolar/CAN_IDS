@@ -846,6 +846,126 @@ module_mcc19_4.add_topic(topic_state)
 module_mcc19_4.add_topic(topic_measurements)
 can.add_module(module_mcc19_4)
 
+################################################################################
+### MODULE: MCC19_5
+module_mcc19_5 = can.module(
+    name="mcc19_5",
+    signature=229,
+    description="Modulo controlador de carga"
+)
+#### TOPIC: STATE
+topic_state = can.topic(
+    msg="state",
+    id=0b10000,
+    description="Module state report"
+)
+topic_state.describe_byte(
+    name="state",
+    byte=1,
+    description="State code",
+    btype="uint8_t",
+    units=""
+)
+topic_state.describe_byte(
+    name="error",
+    byte=2,
+    description="Error code",
+    btype="uint8_t",
+    units=""
+)
+topic_state.describe_byte(
+    name="control",
+    byte=2,
+    description="Control flags for operating point",
+    btype="bitfield",
+    units=""
+)
+topic_state.describe_bit(
+    name="enable",
+    byte=2,
+    bit=0
+)
+topic_state.describe_bit(
+    name="vi_safe_range",
+    byte=2,
+    bit=1
+)
+topic_state.describe_bit(
+    name="vo_safe_range",
+    byte=2,
+    bit=2
+)
+topic_state.describe_bit(
+    name="vi_stable",
+    byte=2,
+    bit=3
+)
+topic_state.describe_bit(
+    name="dt_safe_range",
+    byte=2,
+    bit=4
+)
+
+### TOPIC: MEASUREMENTS
+topic_measurements = can.topic(
+    msg="measurements",
+    id=0b10001,
+    description="All measurements from the converter"
+)
+topic_measurements.describe_byte(
+    name="output_voltage_l",
+    byte=1,
+    description="Average output voltage, byte low",
+    btype="uint16_t",
+    units="V/100"
+)
+topic_measurements.describe_byte(
+    name="output_voltage_h",
+    byte=2,
+    description="Average output voltage, byte high",
+    btype="uint16_t",
+    units="V/100"
+)
+topic_measurements.describe_byte(
+    name="input_current_l",
+    byte=3,
+    description="Average input current, byte low",
+    btype="uint16_t",
+    units="A/100"
+)
+topic_measurements.describe_byte(
+    name="input_current_h",
+    byte=4,
+    description="Average input current, byte high",
+    btype="uint16_t",
+    units="A/100"
+)
+topic_measurements.describe_byte(
+    name="input_voltage_l",
+    byte=5,
+    description="Average input voltage, byte low",
+    btype="uint16_t",
+    units="V/100"
+)
+topic_measurements.describe_byte(
+    name="input_voltage_h",
+    byte=6,
+    description="Average input voltage, byte high",
+    btype="uint16_t",
+    units="V/100"
+)
+topic_measurements.describe_byte(
+    name="dt",
+    byte=7,
+    description="converter's duty cycle",
+    btype="uint8_t",
+    units="%/255"
+)
+
+module_mcc19_5.add_topic(topic_state)
+module_mcc19_5.add_topic(topic_measurements)
+can.add_module(module_mcc19_5)
+
 
 ################################################################################
 ### MODULE: MCB19_1
