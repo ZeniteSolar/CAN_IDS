@@ -970,7 +970,7 @@ can.add_module(module_mcc19_5)
 ### MODULE: MCC19_6
 module_mcc19_6 = can.module(
     name="mcc19_6",
-    signature=229,
+    signature=239,
     description="Modulo controlador de carga"
 )
 #### TOPIC: STATE

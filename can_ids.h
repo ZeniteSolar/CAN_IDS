@@ -419,7 +419,7 @@
 
 
 // MCC19_6 - Modulo controlador de carga
-#define CAN_SIGNATURE_MCC19_6 229
+#define CAN_SIGNATURE_MCC19_6 239
 // MCC19_6 - STATE - Module state report
 #define CAN_MSG_MCC19_6_STATE_ID 16
 #define CAN_MSG_MCC19_6_STATE_LENGTH 3
