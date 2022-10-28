@@ -40,7 +40,7 @@ class Can:
         return True
 
     class topic:
-        def __init__(self, msg: str, id: int, description: str):
+        def __init__(self, msg: str, id: int,frequency: int, description: str):
             self.name = Can.convert_string(msg)
 
             if not isinstance(id, int):
@@ -53,6 +53,10 @@ class Can:
 
             self.bytes = [None] * 8
 
+            self.frequency = frequency
+
+            self.frame_length = 47
+
             self.describe_byte(
                 "signature", 0, "Senders signature", "uint8_t", "")
 
@@ -61,7 +65,9 @@ class Can:
                 "name": str(self.name),
                 "description": self.description,
                 "id": self.id,
-                "bytes": self.bytes
+                "bytes": self.bytes,
+                "frequency": self.frequency,
+                "frame_length": self.frame_length
             }
 
         def __str__(self) -> str:
@@ -99,6 +105,12 @@ class Can:
                 for bit in filter(None, self.bytes[byte].get('bits')):
                     if bit == Can.convert_string(name):
                         raise ValueError("bit field `name` must be unique!")
+            
+        def get_length(self):
+            return len(list(filter(lambda x: x is not None, self.bytes)))
+
+        def get_frame_length(self):
+            return 44 + 8 * self.get_length()
 
         def describe_byte(self,
                           name: str,
@@ -119,6 +131,8 @@ class Can:
                 raise TypeError("`units` must a string type!")
 
             name = Can.convert_string(name)
+
+            self.frame_length += 8
 
             self.bytes[byte] = {
                 "name": name,
@@ -172,6 +186,12 @@ class Can:
                 "topics": self.topics
             }
 
+        def get_total_load(self, bitrate):
+            load = 0
+            for topic in self.topics:
+                load += topic.get_load(bitrate)
+            return load
+            
         def __str__(self) -> str:
             return json.dumps(self.get(), indent=4)
 
@@ -182,14 +202,16 @@ class Can:
 
             self.topics.append(topic.get())
 
-    def __init__(self, version: str):
+    def __init__(self, version: str, bitrate: int):
         self.version = version
         self.modules = []
+        self.bitrate = bitrate
 
     def get(self) -> dict:
         return {
             "version": self.version,
             "modules": self.modules,
+            "bitrate": self.bitrate,
         }
 
     def __str__(self) -> str:
@@ -228,26 +250,87 @@ class Can:
         self.export_h("can_ids.h")
         self.export_h("can_parser_types.h")
 
+    def get_can_load_by_topic(self):
+        load = {}
+        for module in self.modules:
+            for topic in module["topics"]:
+                if not topic["id"] in load.keys():
+                    load[topic["id"]] = []
+                load[topic["id"]].append(self.get_topic_load(topic))
+        return load
+    
+
+    def get_can_load(self):
+        load = 0
+        for module in self.modules:
+            for topic in module["topics"]:
+                load += self.get_topic_load(topic)
+        return load
+
+    def get_topic_load(self, topic: dict):
+        frame_length = topic["frame_length"]
+        frame_period = (1/self.bitrate) * frame_length
+        return frame_period * topic["frequency"] * 100     
+        # load = period for 1 msg *  frequency * 100% 
+        # Reference:
+        # https://support.vector.com/kb?id=kb_article_view&sysparm_article=KB0012332&sys_kb_id=99354e281b2614148e9a535c2e4bcb6d&spa=1
+
+    def plot_load(self):
+        import matplotlib.pyplot as plt
+        import numpy as np
+        from matplotlib.ticker import StrMethodFormatter
+        fig, ax = plt.subplots(figsize=(9, 6))
+        plt.figtext(.5, .9, "Can Load ", fontsize=15, ha='center')
+
+        load = []
+        id = []
+        for module in self.modules:
+            for topic in module["topics"]:
+                load.append(self.get_topic_load(topic))
+                id.append(topic["id"])
+
+        ax.barh(id, load, align='center', color='royalblue')
+
+        ax.set(title='Ids')
+        ax.invert_xaxis()
+        ax.grid()
+        plt.show()
+
+        
+
 
 if __name__ == '__main__':
-    t1 = Can.topic("motor", 9, "Motor controller parameters")
+    t1 = Can.topic("motor", 9, 100, "Motor controller parameters")
     t1.describe_byte("motor", 1, "Switches and states", "bitfield", "")
     t1.describe_bit("motor on", 1, 0)
     t1.describe_byte("D raw", 2, "Motor Duty Cycle", "uint8_t", "%")
     t1.describe_byte("I raw", 3, "Motor Soft Start", "uint8_t", "%")
+    t2 = Can.topic("motor2", 19, 10, "Motor controller parameters")
+    t2.describe_byte("motor", 1, "Switches and states", "bitfield", "")
+    t2.describe_bit("motor on", 1, 0)
+    t2.describe_byte("D raw", 2, "Motor Duty Cycle", "uint8_t", "%")
+    t2.describe_byte("I raw", 3, "Motor Soft Start", "uint8_t", "%")
     # print(t1)
 
     m1 = Can.module("mic17", 10, "Modulo de Interface de Controle")
     m1.add_topic(t1)
+    m1.add_topic(t2)
+    m2 = Can.module("mam21", 10, "Mamm")
+
     # print(m1)
 
-    c1 = Can()
+    c1 = Can("0.0.0", 500e3)
     c1.add_module(m1)
     # print(c1)
     c1.export_json("sample.json")
+    print(c1.get_can_load())
+    print(c1.get_topic_load(t1.get()))
+    c1.plot_load()
 
-    c2 = Can()
-    c2.import_json("sample.json")
-    print(c2)
+    # c2 = Can()
+    # c2.import_json("sample.json")
+    # print(c2)
 
-    c2.export_ids_h("sample.h")
+    # c2.export_ids_h("sample.h")
+
+    
