@@ -9,11 +9,13 @@ class test_can_topic(unittest.TestCase):
         self.can = Can
 
     def test_topic(self):
-        t = self.can.topic("motor", 9, "topic description text here")
+        t = self.can.topic("motor", 9, 100, "topic description text here")
         expected = {
             "name": "MOTOR",
             "description": "topic description text here",
             "id": 9,
+            "frequency": 100,
+            "frame_length": 55,
             "bytes": [
                 {
                     "name": "SIGNATURE",
@@ -31,27 +33,27 @@ class test_can_topic(unittest.TestCase):
         )
 
     def test_validate_byte(self):
-        t = self.can.topic("motor", 9, "topic description text here")
+        t = self.can.topic("motor", 9, 100, "topic description text here")
 
         # Trying to add using wrong type on the byte should raise TypeError:
         with self.assertRaises(TypeError):
-            t.describe_byte("some byte", "1",
+            t.describe_byte("some byte", "1", 100,
                             "byte description text here", 'u8')
 
         # Trying to add byte with a value less than zero should raise ValueError:
         with self.assertRaises(ValueError):
-            t.describe_byte("some byte", -1,
+            t.describe_byte("some byte", -1, 100,
                             "byte description text here", 'u8')
 
         # Trying to add byte with a value greater than 7 should raise ValueError:
         with self.assertRaises(ValueError):
-            t.describe_byte("some byte", 8, "byte description text here", 'u8')
+            t.describe_byte("some byte", 8, 100, "byte description text here", 'u8')
 
         # But using the correct type and range should run with no errors:
-        t.describe_byte("some byte", 1, "byte description text here", 'u8')
+        t.describe_byte("some byte", 1, 100, "byte description text here", 'u8')
 
     def test_validate_bit(self):
-        t = self.can.topic("motor", 9, "topic description text here")
+        t = self.can.topic("motor", 9, 100, "topic description text here")
         t.describe_byte("some byte", 1, "byte description text here",
                         'bitfield')
 
@@ -192,7 +194,7 @@ class test_can_module(unittest.TestCase):
 
     def test_add_topic(self):
         m = self.can.module("mic17", 10, "module description text here")
-        t = self.can.topic("motor", 9, "topic description text here")
+        t = self.can.topic("motor", 9, 100, "topic description text here")
 
         m.add_topic(t)
 
@@ -205,6 +207,7 @@ class test_can_module(unittest.TestCase):
                     "name": "MOTOR",
                     "description": "topic description text here",
                     "id": 9,
+                    "frequency": 100,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -234,11 +237,12 @@ class test_can(unittest.TestCase):
 
     def test_add_module(self):
         m = self.can.module("mic17", 10, "module description text here")
-        c = Can(version="0.0.0")
+        c = Can(version="0.0.0", bitrate=500e3)
         c.add_module(m)
 
         expected = {
             "version": "0.0.0",
+            "bitrate": 500e3,
             "modules": [
                 {
                     "name": "MIC17",
@@ -260,11 +264,11 @@ class test_can(unittest.TestCase):
 
     def test_export_and_import_json(self):
         m = self.can.module("mic17", 10, "module description text here")
-        c1 = Can(version="0.0.0")
+        c1 = Can(version="0.0.0", bitrate=500e3)
         c1.add_module(m)
         c1.export_json("test/test.json")
 
-        c2 = Can(version="0.0.0")
+        c2 = Can(version="0.0.0", bitrate=500e3)
         c2.import_json("test/test.json")
 
         self.assertEqual(
