@@ -10,6 +10,7 @@
 // ${module["name"]} - ${topic["name"]} - ${topic["description"]}
 #define CAN_MSG_${module["name"]}_${topic["name"]}_ID ${topic["id"]}
 #define CAN_MSG_${module["name"]}_${topic["name"]}_LENGTH ${len(list(filter(None, topic["bytes"])))}
+#define CAN_MSG_${module["name"]}_${topic["name"]}_FREQUENCY ${int(topic["frequency"])}
             %for i,byte in enumerate(topic["bytes"]):
                 %if byte:
 #define CAN_MSG_${module["name"]}_${topic["name"]}_${byte["name"]}_BYTE ${i} //<!" ${byte["description"]}

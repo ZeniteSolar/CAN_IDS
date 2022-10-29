@@ -9,7 +9,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 8,
+                    "id": 50,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -34,12 +34,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 0,
+                    "frame_length": 71
                 },
                 {
                     "name": "GENERIC",
                     "description": "Generic topic",
-                    "id": 0,
+                    "id": 51,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -54,7 +56,9 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 0,
+                    "frame_length": 55
                 }
             ]
         },
@@ -66,7 +70,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 8,
+                    "id": 30,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -91,12 +95,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 5,
+                    "frame_length": 71
                 },
                 {
                     "name": "MOTOR",
                     "description": "Motor controller parameters",
-                    "id": 9,
+                    "id": 31,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -136,12 +142,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 50,
+                    "frame_length": 79
                 },
                 {
                     "name": "PUMPS",
                     "description": "Pumps controller parameters",
-                    "id": 10,
+                    "id": 41,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -171,12 +179,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 4,
+                    "frame_length": 63
                 },
                 {
                     "name": "MPPTS",
                     "description": "Mppts controller parameters",
-                    "id": 11,
+                    "id": 200,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -211,12 +221,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 4,
+                    "frame_length": 71
                 },
                 {
                     "name": "MCS",
                     "description": "MCS controller parameters",
-                    "id": 12,
+                    "id": 32,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -246,12 +258,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 50,
+                    "frame_length": 63
                 },
                 {
                     "name": "MDE",
                     "description": "Steereing wheel controls",
-                    "id": 13,
+                    "id": 33,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -276,7 +290,9 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 50,
+                    "frame_length": 71
                 }
             ]
         },
@@ -288,7 +304,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 32,
+                    "id": 100,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -313,12 +329,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 71
                 },
                 {
                     "name": "STEERINGBAT_MEASUREMENTS",
                     "description": "Auxiliar Battery Voltage",
-                    "id": 33,
+                    "id": 201,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -363,7 +381,9 @@
                             "units": "A/100"
                         },
                         null
-                    ]
+                    ],
+                    "frequency": 10,
+                    "frame_length": 103
                 }
             ]
         },
@@ -375,7 +395,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 32,
+                    "id": 101,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -400,7 +420,9 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 71
                 }
             ]
         },
@@ -412,7 +434,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 32,
+                    "id": 102,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -437,7 +459,9 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 71
                 }
             ]
         },
@@ -449,7 +473,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 16,
+                    "id": 103,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -484,12 +508,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 79
                 },
                 {
                     "name": "MEASUREMENTS",
                     "description": "All measurements from the converter",
-                    "id": 17,
+                    "id": 202,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -539,7 +565,9 @@
                             "type": "uint8_t",
                             "units": "%/255"
                         }
-                    ]
+                    ],
+                    "frequency": 30,
+                    "frame_length": 111
                 }
             ]
         },
@@ -551,7 +579,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 16,
+                    "id": 104,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -586,12 +614,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 79
                 },
                 {
                     "name": "MEASUREMENTS",
                     "description": "All measurements from the converter",
-                    "id": 17,
+                    "id": 203,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -641,7 +671,9 @@
                             "type": "uint8_t",
                             "units": "%/255"
                         }
-                    ]
+                    ],
+                    "frequency": 30,
+                    "frame_length": 111
                 }
             ]
         },
@@ -653,7 +685,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 16,
+                    "id": 105,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -688,12 +720,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 79
                 },
                 {
                     "name": "MEASUREMENTS",
                     "description": "All measurements from the converter",
-                    "id": 17,
+                    "id": 204,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -743,7 +777,9 @@
                             "type": "uint8_t",
                             "units": "%/255"
                         }
-                    ]
+                    ],
+                    "frequency": 30,
+                    "frame_length": 111
                 }
             ]
         },
@@ -755,7 +791,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 16,
+                    "id": 106,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -790,12 +826,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 79
                 },
                 {
                     "name": "MEASUREMENTS",
                     "description": "All measurements from the converter",
-                    "id": 17,
+                    "id": 205,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -845,7 +883,9 @@
                             "type": "uint8_t",
                             "units": "%/255"
                         }
-                    ]
+                    ],
+                    "frequency": 30,
+                    "frame_length": 111
                 }
             ]
         },
@@ -857,7 +897,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 16,
+                    "id": 107,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -892,12 +932,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 79
                 },
                 {
                     "name": "MEASUREMENTS",
                     "description": "All measurements from the converter",
-                    "id": 17,
+                    "id": 206,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -947,7 +989,9 @@
                             "type": "uint8_t",
                             "units": "%/255"
                         }
-                    ]
+                    ],
+                    "frequency": 30,
+                    "frame_length": 111
                 }
             ]
         },
@@ -959,7 +1003,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 16,
+                    "id": 108,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -994,12 +1038,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 79
                 },
                 {
                     "name": "MEASUREMENTS",
                     "description": "All measurements from the converter",
-                    "id": 17,
+                    "id": 207,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1049,7 +1095,9 @@
                             "type": "uint8_t",
                             "units": "%/255"
                         }
-                    ]
+                    ],
+                    "frequency": 30,
+                    "frame_length": 111
                 }
             ]
         },
@@ -1061,7 +1109,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 16,
+                    "id": 109,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1096,12 +1144,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 79
                 },
                 {
                     "name": "MEASUREMENTS",
                     "description": "All measurements from the converter",
-                    "id": 17,
+                    "id": 208,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1151,7 +1201,9 @@
                             "type": "uint8_t",
                             "units": "%/255"
                         }
-                    ]
+                    ],
+                    "frequency": 10,
+                    "frame_length": 111
                 }
             ]
         },
@@ -1163,7 +1215,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 16,
+                    "id": 110,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1198,12 +1250,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 79
                 },
                 {
                     "name": "MEASUREMENTS",
                     "description": "All measurements from the converter",
-                    "id": 17,
+                    "id": 209,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1253,7 +1307,9 @@
                             "type": "uint8_t",
                             "units": "%/255"
                         }
-                    ]
+                    ],
+                    "frequency": 10,
+                    "frame_length": 111
                 }
             ]
         },
@@ -1265,7 +1321,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 16,
+                    "id": 35,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1290,12 +1346,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 5,
+                    "frame_length": 71
                 },
                 {
                     "name": "CONTACTOR",
                     "description": "Contactor task response",
-                    "id": 17,
+                    "id": 34,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1315,7 +1373,9 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 50,
+                    "frame_length": 63
                 }
             ]
         },
@@ -1327,7 +1387,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 16,
+                    "id": 99,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1352,12 +1412,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 5,
+                    "frame_length": 71
                 },
                 {
                     "name": "MOTOR",
                     "description": "Motor controller parameters",
-                    "id": 17,
+                    "id": 98,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1382,12 +1444,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 50,
+                    "frame_length": 71
                 },
                 {
                     "name": "CONTACTOR",
                     "description": "Contactor requests",
-                    "id": 18,
+                    "id": 36,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1407,7 +1471,9 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 5,
+                    "frame_length": 63
                 }
             ]
         },
@@ -1419,7 +1485,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 64,
+                    "id": 111,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1444,12 +1510,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 0,
+                    "frame_length": 71
                 },
                 {
                     "name": "PUMPS",
                     "description": "Pumps state",
-                    "id": 65,
+                    "id": 210,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1479,7 +1547,9 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 0,
+                    "frame_length": 63
                 }
             ]
         },
@@ -1491,7 +1561,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 32,
+                    "id": 112,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1516,12 +1586,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 71
                 },
                 {
                     "name": "ADC",
                     "description": "Voltage measurements",
-                    "id": 33,
+                    "id": 211,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1566,7 +1638,9 @@
                             "units": "V/100"
                         },
                         null
-                    ]
+                    ],
+                    "frequency": 10,
+                    "frame_length": 103
                 }
             ]
         },
@@ -1578,7 +1652,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 32,
+                    "id": 113,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1603,12 +1677,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 71
                 },
                 {
                     "name": "ADC",
                     "description": "Voltage measurements",
-                    "id": 33,
+                    "id": 212,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1653,7 +1729,9 @@
                             "units": "V/100"
                         },
                         null
-                    ]
+                    ],
+                    "frequency": 10,
+                    "frame_length": 103
                 }
             ]
         },
@@ -1665,7 +1743,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 32,
+                    "id": 114,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1690,12 +1768,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 71
                 },
                 {
                     "name": "ADC",
                     "description": "Voltage measurements",
-                    "id": 33,
+                    "id": 213,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1740,7 +1820,9 @@
                             "units": "V/100"
                         },
                         null
-                    ]
+                    ],
+                    "frequency": 10,
+                    "frame_length": 103
                 }
             ]
         },
@@ -1752,7 +1834,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 32,
+                    "id": 115,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1777,12 +1859,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 71
                 },
                 {
                     "name": "ADC",
                     "description": "Current measurements",
-                    "id": 33,
+                    "id": 214,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1827,7 +1911,9 @@
                             "units": "A/100"
                         },
                         null
-                    ]
+                    ],
+                    "frequency": 10,
+                    "frame_length": 103
                 }
             ]
         },
@@ -1839,7 +1925,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 32,
+                    "id": 116,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1864,12 +1950,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 71
                 },
                 {
                     "name": "ADC",
                     "description": "Current measurements",
-                    "id": 33,
+                    "id": 215,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1914,7 +2002,9 @@
                             "units": "A/100"
                         },
                         null
-                    ]
+                    ],
+                    "frequency": 10,
+                    "frame_length": 103
                 }
             ]
         },
@@ -1926,7 +2016,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 256,
+                    "id": 117,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -1951,12 +2041,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 71
                 },
                 {
                     "name": "START_STAGES",
                     "description": "Boat charging // Boat on",
-                    "id": 516,
+                    "id": 37,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -2001,12 +2093,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 50,
+                    "frame_length": 71
                 },
                 {
                     "name": "BAT",
                     "description": "battery voltage values",
-                    "id": 258,
+                    "id": 216,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -2051,12 +2145,14 @@
                             "units": ""
                         },
                         null
-                    ]
+                    ],
+                    "frequency": 10,
+                    "frame_length": 103
                 },
                 {
                     "name": "CAP",
                     "description": "capacitor bank voltage values",
-                    "id": 259,
+                    "id": 217,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -2101,7 +2197,9 @@
                             "units": ""
                         },
                         null
-                    ]
+                    ],
+                    "frequency": 10,
+                    "frame_length": 103
                 }
             ]
         },
@@ -2113,7 +2211,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 32,
+                    "id": 218,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -2138,12 +2236,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 0,
+                    "frame_length": 71
                 },
                 {
                     "name": "RPM",
                     "description": "RPM motor values",
-                    "id": 33,
+                    "id": 219,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -2168,7 +2268,9 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 0,
+                    "frame_length": 71
                 }
             ]
         },
@@ -2180,7 +2282,7 @@
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 8,
+                    "id": 9,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -2205,12 +2307,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 5,
+                    "frame_length": 71
                 },
                 {
                     "name": "MOTOR",
                     "description": "Motor controller parameters",
-                    "id": 9,
+                    "id": 10,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -2250,12 +2354,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 50,
+                    "frame_length": 79
                 },
                 {
                     "name": "PUMPS",
                     "description": "Pumps controller parameters",
-                    "id": 10,
+                    "id": 220,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -2285,12 +2391,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 0,
+                    "frame_length": 63
                 },
                 {
                     "name": "MPPTS",
                     "description": "Mppts controller parameters",
-                    "id": 11,
+                    "id": 221,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -2325,12 +2433,14 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 0,
+                    "frame_length": 71
                 },
                 {
                     "name": "MCS",
                     "description": "MCS controller parameters",
-                    "id": 12,
+                    "id": 40,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -2360,9 +2470,12 @@
                         null,
                         null,
                         null
-                    ]
+                    ],
+                    "frequency": 1,
+                    "frame_length": 63
                 }
             ]
         }
-    ]
+    ],
+    "bitrate": 500000.0
 }
