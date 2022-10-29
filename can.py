@@ -15,27 +15,27 @@ from mako.template import Template
 
 
 class Can:
-    def convert_string(string: str) -> str:
-        if not isinstance(string, str):
+    def convert_string(self) -> str:
+        if not isinstance(self, str):
             raise TypeError("`string` needs to be an integer type!")
 
-        string = string.upper()
-        string = string.replace(' ', '_')
-        string = normalize('NFKD', string)
-        string = string.encode('ASCII', 'ignore')
-        string = string.decode('ASCII')
-        string = re.sub('[^A-Z0-9_]+', '', string)
+        self = self.upper()
+        self = self.replace(' ', '_')
+        self = normalize('NFKD', self)
+        self = self.encode('ASCII', 'ignore')
+        self = self.decode('ASCII')
+        self = re.sub('[^A-Z0-9_]+', '', self)
 
-        return string
+        return self
 
-    def validate_byte(byte: int) -> bool:
-        if (byte < 0) | (byte > 8):
+    def validate_byte(self) -> bool:
+        if (self < 0) | (self > 8):
             print("Byte number MUST be between 0 and 7 to be described.")
             return False
         return True
 
-    def validate_bit(bit: int) -> bool:
-        if (bit < 0) | (bit > 8):
+    def validate_bit(self) -> bool:
+        if (self < 0) | (self > 8):
             print("Bit number MUST be between 0 and 7 to be described.")
             return False
         return True
@@ -188,10 +188,7 @@ class Can:
             }
 
         def get_total_load(self, bitrate):
-            load = 0
-            for topic in self.topics:
-                load += topic.get_load(bitrate)
-            return load
+            return sum(topic.get_load(bitrate) for topic in self.topics)
             
         def __str__(self) -> str:
             return json.dumps(self.get(), indent=4)
@@ -253,7 +250,7 @@ class Can:
 
     def export_csv(self, filename: str):
         import pandas as pd
-        
+
         modules = []
         signature = []
         ids = []
@@ -284,7 +281,7 @@ class Can:
             "frame_length": frame_length,
             "description": description,
             })
-        
+
         df.to_csv(filename)
         
 
@@ -295,7 +292,7 @@ class Can:
         load = {}
         for module in self.modules:
             for topic in module["topics"]:
-                if not topic["id"] in load.keys():
+                if topic["id"] not in load:
                     load[topic["id"]] = []
                 load[topic["id"]].append(self.get_topic_load(topic))
         return load
@@ -326,19 +323,14 @@ class Can:
         ids = {}
         for module in self.modules:
             for topic in module["topics"]:
-                if not topic["id"] in ids.keys():
+                if topic["id"] not in ids:
                     ids[topic["id"]] = 0
                 ids[topic["id"]] += self.get_topic_load(topic)
 
-        id = list(ids.keys())
-        id.sort()
-        
-        load = []
-        for i in id:
-            load.append(ids[i])
-        
-        axes[0][0].bar(range(0, len(id)), load, align='center', color='royalblue')
-        axes[0][0].set_xticks(range(0, len(id)))
+        id = sorted(ids.keys())
+        load = [ids[i] for i in id]
+        axes[0][0].bar(range(len(id)), load, align='center', color='royalblue')
+        axes[0][0].set_xticks(range(len(id)))
         axes[0][0].set_xticklabels(list(id), fontsize = 9, rotation = 90)
         axes[0][0].set_title("Load x Id")
         axes[0][0].set_ylabel("Load [%]")
@@ -359,14 +351,14 @@ class Can:
         modules = {}
         for module in self.modules:
             for topic in module["topics"]:
-                if not module["name"] in modules.keys():
+                if module["name"] not in modules:
                     modules[module["name"]] = 0
                 modules[module["name"]] += self.get_topic_load(topic)
         load = list(modules.values())
         modules = list(modules.keys())
         axes[1][0].set_title("Load x Module")
-        axes[1][0].bar(range(0, len(modules)), load)
-        axes[1][0].set_xticks(range(0,len(modules)))
+        axes[1][0].bar(range(len(modules)), load)
+        axes[1][0].set_xticks(range(len(modules)))
         axes[1][0].set_xticklabels(modules, fontsize = 9, rotation=90)
         axes[1][0].set_ylabel("Load [%]")
 

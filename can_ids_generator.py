@@ -4,13 +4,12 @@ from can import Can
 
 SEMVER_FILENAME = ".semver"
 
-if os.path.exists(SEMVER_FILENAME):
-    content = open(SEMVER_FILENAME, "r").readline()
-    version = semver.VersionInfo.parse(content)
-else:
+if not os.path.exists(SEMVER_FILENAME):
     raise FileNotFoundError(
         f"File {SEMVER_FILENAME} not found. It should contain the version in semver standard.")
 
+content = open(SEMVER_FILENAME, "r").readline()
+version = semver.VersionInfo.parse(content)
 can = Can(version=f"{version}", bitrate=500e3)
 
 ################################################################################
