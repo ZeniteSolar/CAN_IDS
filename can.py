@@ -278,22 +278,65 @@ class Can:
     def plot_load(self):
         import matplotlib.pyplot as plt
         import numpy as np
-        from matplotlib.ticker import StrMethodFormatter
-        fig, ax = plt.subplots(figsize=(9, 6))
+        fig, axes = plt.subplots(nrows= 2, ncols=2,figsize=(9, 6))
         plt.figtext(.5, .9, "Can Load ", fontsize=15, ha='center')
 
-        load = []
-        id = []
+        ### Ids x Load
+        ids = {}
         for module in self.modules:
             for topic in module["topics"]:
-                load.append(self.get_topic_load(topic))
-                id.append(topic["id"])
+                if not topic["id"] in ids.keys():
+                    ids[topic["id"]] = 0
+                ids[topic["id"]] += self.get_topic_load(topic)
 
-        ax.barh(id, load, align='center', color='royalblue')
+        id = list(ids.keys())
+        id.sort()
+        
+        load = []
+        for i in id:
+            load.append(ids[i])
+        
+        axes[0][0].bar(range(0, len(id)), load, align='center', color='royalblue')
+        axes[0][0].set_xticks(range(0, len(id)))
+        axes[0][0].set_xticklabels(list(id), fontsize = 9, rotation = 90)
+        axes[0][0].set_title("Load x Id")
+        axes[0][0].set_ylabel("Load [%]")
+        axes[0][0].set_xlabel("Ids")
+        axes[0][0].invert_xaxis()
+        axes[0][0].grid()
 
-        ax.set(title='Ids')
-        ax.invert_xaxis()
-        ax.grid()
+        id.append("free")
+        load.append(100 - sum(load))
+        cmap = plt.cm.prism
+        colors = cmap(np.linspace(0.2, 0.8, len(id)))
+        axes[0][1].set_title("Load x Id")
+        axes[0][1].pie(load, labels=id,
+                       textprops={'size': 'smaller'}, radius=1.5,colors=colors, labeldistance=1.1, startangle=-45)
+
+        #### Modules X Load
+        load = []
+        modules = {}
+        for module in self.modules:
+            for topic in module["topics"]:
+                if not module["name"] in modules.keys():
+                    modules[module["name"]] = 0
+                modules[module["name"]] += self.get_topic_load(topic)
+        load = list(modules.values())
+        modules = list(modules.keys())
+        axes[1][0].set_title("Load x Module")
+        axes[1][0].bar(range(0, len(modules)), load)
+        axes[1][0].set_xticks(range(0,len(modules)))
+        axes[1][0].set_xticklabels(modules, fontsize = 9, rotation=90)
+        axes[1][0].set_ylabel("Load [%]")
+
+        modules.append("free")
+        load.append(100.0 - sum(load))
+        axes[1][1].set_title("Load x Module")
+        axes[1][1].pie(load, labels=modules,
+                       textprops={'size': 'smaller'}, radius=1.5, labeldistance=1.1,startangle=-45)
+
+
+
         plt.show()
 
         
