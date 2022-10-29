@@ -1,5 +1,6 @@
 #!/bin/python
 
+from operator import mod
 from unicodedata import normalize
 import json
 import re
@@ -250,6 +251,43 @@ class Can:
         self.export_h("can_ids.h")
         self.export_h("can_parser_types.h")
 
+    def export_csv(self, filename: str):
+        import pandas as pd
+        
+        modules = []
+        signature = []
+        ids = []
+        names = []
+        frequency = []
+        load = []
+        frame_length = []
+        description = []
+
+        for module in self.modules:
+            for topic in module["topics"]:
+                modules.append(module["name"])
+                signature.append(module["signature"])
+                ids.append(topic["id"])
+                names.append(topic["name"])
+                frequency.append(round(topic["frequency"],3))
+                load.append(round(self.get_topic_load(topic),3))
+                frame_length.append(topic["frame_length"])
+                description.append(topic["description"])
+
+        df = pd.DataFrame({
+            "modules":modules,
+            "signature": signature,
+            "name": names,
+            "ids": ids,
+            "frequency": frequency,
+            "load": load,
+            "frame_length": frame_length,
+            "description": description,
+            })
+        
+        df.to_csv(filename)
+        
+
     def get_can_load_by_topic(self):
         load = {}
         for module in self.modules:
@@ -369,7 +407,7 @@ if __name__ == '__main__':
     print(c1.get_can_load())
     print(c1.get_topic_load(t1.get()))
     c1.plot_load()
-
+    c1.export_csv("a")
     # c2 = Can()
     # c2.import_json("sample.json")
     # print(c2)

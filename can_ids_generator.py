@@ -2325,8 +2325,3 @@ module_mswi19.add_topic(topic_pumps)
 module_mswi19.add_topic(topic_mppts)
 module_mswi19.add_topic(topic_mcs)
 can.add_module(module_mswi19)
-loads = can.get_can_load_by_topic()
-for id in loads:
-    print("Id: ", id, "load:", loads[id])
-print("Total load:", can.get_can_load())
-can.plot_load()
