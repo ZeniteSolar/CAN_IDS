@@ -37,20 +37,20 @@ class test_can_topic(unittest.TestCase):
 
         # Trying to add using wrong type on the byte should raise TypeError:
         with self.assertRaises(TypeError):
-            t.describe_byte("some byte", "1", 100,
+            t.describe_byte("some byte", "1",
                             "byte description text here", 'u8')
 
         # Trying to add byte with a value less than zero should raise ValueError:
         with self.assertRaises(ValueError):
-            t.describe_byte("some byte", -1, 100,
+            t.describe_byte("some byte", -1,
                             "byte description text here", 'u8')
 
         # Trying to add byte with a value greater than 7 should raise ValueError:
         with self.assertRaises(ValueError):
-            t.describe_byte("some byte", 8, 100, "byte description text here", 'u8')
+            t.describe_byte("some byte", 8,"byte description text here", 'u8')
 
         # But using the correct type and range should run with no errors:
-        t.describe_byte("some byte", 1, 100, "byte description text here", 'u8')
+        t.describe_byte("some byte", 1,"byte description text here", 'u8')
 
     def test_validate_bit(self):
         t = self.can.topic("motor", 9, 100, "topic description text here")
@@ -73,7 +73,7 @@ class test_can_topic(unittest.TestCase):
         t.describe_bit("some bit", 1, 0)
 
     def test_validate_byte_name(self):
-        t = self.can.topic("motor", 9, "topic description text here")
+        t = self.can.topic("motor", 9, 100, "topic description text here")
 
         # Trying to add using wrong type on the name should raise TypeError:
         with self.assertRaises(TypeError):
@@ -86,7 +86,7 @@ class test_can_topic(unittest.TestCase):
             t.describe_byte("some byte", 1, "byte description text here", 'u8')
 
     def test_validate_bit_name(self):
-        t = self.can.topic("motor", 9, "topic description text here")
+        t = self.can.topic("motor", 9, 100, "topic description text here")
         t.describe_byte("some byte", 1, "byte description text here",
                         'bitfield')
 
@@ -101,7 +101,7 @@ class test_can_topic(unittest.TestCase):
             t.describe_bit("some bit", 1, 1)
 
     def test_describe_byte(self):
-        t = self.can.topic("motor", 9, "topic description text here")
+        t = self.can.topic("motor", 9, 100, "topic description text here")
         t.describe_byte(
             "motor", 1, "byte description text here", "bitfield", "")
 
@@ -109,6 +109,8 @@ class test_can_topic(unittest.TestCase):
             "name": "MOTOR",
             "description": "topic description text here",
             "id": 9,
+            "frequency": 100,
+            "frame_length": 63,
             "bytes": [
                 {
                     "name": "SIGNATURE",
@@ -133,7 +135,8 @@ class test_can_topic(unittest.TestCase):
         )
 
     def test_describe_bit(self):
-        t = self.can.topic("motor", 9, "topic description text here")
+        self.maxDiff = None
+        t = self.can.topic("motor", 9, 100, "topic description text here")
         t.describe_byte(
             "motor", 1, "byte description text here", "bitfield", "")
         t.describe_bit("motor on", 1, 0)
@@ -142,6 +145,8 @@ class test_can_topic(unittest.TestCase):
             "name": "MOTOR",
             "description": "topic description text here",
             "id": 9,
+            "frequency": 100,
+            "frame_length": 63,
             "bytes": [
                 {
                     "name": "SIGNATURE",
@@ -208,6 +213,7 @@ class test_can_module(unittest.TestCase):
                     "description": "topic description text here",
                     "id": 9,
                     "frequency": 100,
+                    "frame_length": 55,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
