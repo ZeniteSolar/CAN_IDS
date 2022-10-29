@@ -440,7 +440,7 @@ topic_state.describe_bit(
 topic_measurements = can.topic(
     msg="measurements",
     id=202,
-    frequency=30,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -563,7 +563,7 @@ topic_state.describe_bit(
 topic_measurements = can.topic(
     msg="measurements",
     id=203,
-    frequency=30,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -686,7 +686,7 @@ topic_state.describe_bit(
 topic_measurements = can.topic(
     msg="measurements",
     id=204,
-    frequency=30,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -809,7 +809,7 @@ topic_state.describe_bit(
 topic_measurements = can.topic(
     msg="measurements",
     id=205,
-    frequency=30,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -931,7 +931,7 @@ topic_state.describe_bit(
 topic_measurements = can.topic(
     msg="measurements",
     id=206,
-    frequency=30,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -1053,7 +1053,7 @@ topic_state.describe_bit(
 topic_measurements = can.topic(
     msg="measurements",
     id=207,
-    frequency=30,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
