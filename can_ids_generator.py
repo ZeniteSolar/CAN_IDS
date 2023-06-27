@@ -11,7 +11,7 @@ else:
     raise FileNotFoundError(
         f"File {SEMVER_FILENAME} not found. It should contain the version in semver standard.")
 
-can = Can(version=f"{version}")
+can = Can(version=f"{version}", bitrate=500e3)
 
 ################################################################################
 ### MODULE: GENERIC
@@ -23,7 +23,8 @@ module_generic = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b1000,
+    id=50,
+    frequency=0,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -43,7 +44,8 @@ topic_state.describe_byte(
 #### TOPIC: GENERIC
 topic_generic = can.topic(
     msg="generic",
-    id=0,
+    id=51,
+    frequency=0,
     description="Generic topic"
 )
 
@@ -61,8 +63,9 @@ module_mic19 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b1000,
-    description="Module state report"
+    id=30,
+    description="Module state report",
+    frequency = 5,
 )
 topic_state.describe_byte(
     name="state",
@@ -81,8 +84,9 @@ topic_state.describe_byte(
 #### TOPIC: MOTOR
 topic_motor = can.topic(
     msg="motor",
-    id=0b1001,
-    description="Motor controller parameters"
+    id=31,
+    description="Motor controller parameters",
+    frequency = 50
 )
 topic_motor.describe_byte(
     name="motor",
@@ -123,8 +127,9 @@ topic_motor.describe_byte(
 #### TOPIC: PUMPS
 topic_pumps = can.topic(
     msg="pumps",
-    id=0b1010,
-    description="Pumps controller parameters"
+    id=41,
+    frequency = 4,
+    description="Pumps controller parameters",
 )
 topic_pumps.describe_byte(
     name="pumps",
@@ -151,8 +156,9 @@ topic_pumps.describe_bit(
 #### TOPIC: MPPTS
 topic_mppts = can.topic(
     msg="mppts",
-    id=0b1011,
-    description="Mppts controller parameters"
+    id=200,
+    frequency = 4, 
+    description="Mppts controller parameters",
 )
 topic_mppts.describe_byte(
     name="mppts on",
@@ -176,8 +182,9 @@ topic_mppts.describe_byte(
 #### TOPIC: MCS
 topic_mcs = can.topic(
     msg="mcs",
-    id=0b1100,
-    description="MCS controller parameters"
+    id=32,
+    frequency = 50,
+    description="MCS controller parameters",
 )
 topic_mcs.describe_byte(
     name="boat on",
@@ -194,8 +201,9 @@ topic_mcs.describe_bit(
 #### TOPIC: MDE
 topic_mde = can.topic(
     msg="mde",
-    id=0b1101,
-    description="Steereing wheel controls"
+    id=33,
+    frequency = 50,
+    description="Steereing wheel controls",
 )
 topic_mde.describe_byte(
     name="position_l",
@@ -230,7 +238,8 @@ module_mde22 = can.module(
 ### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b100000,
+    id=100,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -250,7 +259,8 @@ topic_state.describe_byte(
 # TOPIC: STEERING MODULE MEASUREMENTS
 topic_measurements = can.topic(
     msg="steeringbat_measurements",
-    id=0b100001,
+    id=201,
+    frequency=10,
     description="Auxiliar Battery Voltage"
 )
 topic_measurements.describe_byte(
@@ -310,7 +320,8 @@ module_mvc19_1 = can.module(
 ### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b100000,
+    id=101,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -341,7 +352,8 @@ module_mvc19_2 = can.module(
 ### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b100000,
+    frequency=1,
+    id=102,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -373,7 +385,8 @@ module_mcc19_1 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b10000,
+    id=103,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -426,7 +439,8 @@ topic_state.describe_bit(
 ### TOPIC: MEASUREMENTS
 topic_measurements = can.topic(
     msg="measurements",
-    id=0b10001,
+    id=202,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -494,8 +508,9 @@ module_mcc19_2 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b10000,
-    description="Module state report"
+    id=104,
+    frequency=1,
+    description="Module state report",
 )
 topic_state.describe_byte(
     name="state",
@@ -547,7 +562,8 @@ topic_state.describe_bit(
 ### TOPIC: MEASUREMENTS
 topic_measurements = can.topic(
     msg="measurements",
-    id=0b10001,
+    id=203,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -615,7 +631,8 @@ module_mcc19_3 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b10000,
+    id=105,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -668,7 +685,8 @@ topic_state.describe_bit(
 ### TOPIC: MEASUREMENTS
 topic_measurements = can.topic(
     msg="measurements",
-    id=0b10001,
+    id=204,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -736,8 +754,9 @@ module_mcc19_4 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b10000,
-    description="Module state report"
+    id=106,
+    frequency=1,
+    description="Module state report",
 )
 topic_state.describe_byte(
     name="state",
@@ -789,7 +808,8 @@ topic_state.describe_bit(
 ### TOPIC: MEASUREMENTS
 topic_measurements = can.topic(
     msg="measurements",
-    id=0b10001,
+    id=205,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -856,7 +876,8 @@ module_mcc19_5 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b10000,
+    id=107,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -909,7 +930,8 @@ topic_state.describe_bit(
 ### TOPIC: MEASUREMENTS
 topic_measurements = can.topic(
     msg="measurements",
-    id=0b10001,
+    id=206,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -976,7 +998,8 @@ module_mcc19_6 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b10000,
+    id=108,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -1029,7 +1052,8 @@ topic_state.describe_bit(
 ### TOPIC: MEASUREMENTS
 topic_measurements = can.topic(
     msg="measurements",
-    id=0b10001,
+    id=207,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -1096,7 +1120,8 @@ module_mcb19_1 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b10000,
+    id=109,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -1149,7 +1174,8 @@ topic_state.describe_bit(
 ### TOPIC: MEASUREMENTS
 topic_measurements = can.topic(
     msg="measurements",
-    id=0b10001,
+    id=208,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -1216,7 +1242,8 @@ module_mcb19_2 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b10000,
+    id=110,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -1269,7 +1296,8 @@ topic_state.describe_bit(
 ### TOPIC: MEASUREMENTS
 topic_measurements = can.topic(
     msg="measurements",
-    id=0b10001,
+    id=209,
+    frequency=10,
     description="All measurements from the converter"
 )
 topic_measurements.describe_byte(
@@ -1336,8 +1364,9 @@ module_mac22 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b10000,
-    description="Module state report"
+    id=35,
+    frequency=5,
+    description="Module state report",
 )
 topic_state.describe_byte(
     name="state",
@@ -1356,8 +1385,9 @@ topic_state.describe_byte(
 #### TOPIC: CONTACTOR
 topic_contactor = can.topic(
     msg="contactor",
-    id=0b10001,
-    description="Contactor task response"
+    id=34,
+    frequency=50,
+    description="Contactor task response",
 )
 topic_contactor.describe_byte(
     name="response",
@@ -1382,7 +1412,8 @@ module_mam19 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b10000,
+    id=0b1100011,
+    frequency=5,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -1402,7 +1433,8 @@ topic_state.describe_byte(
 #### TOPIC: MOTOR
 topic_motor = can.topic(
     msg="motor",
-    id=0b10001,
+    id=0b1100010,
+    frequency=50,
     description="Motor controller parameters"
 )
 topic_motor.describe_byte(
@@ -1422,7 +1454,8 @@ topic_motor.describe_byte(
 #### TOPIC: CONTACTOR
 topic_contactor = can.topic(
     msg="contactor",
-    id=0b10010,
+    id=0b100100,
+    frequency=5,
     description="Contactor requests"
 )
 topic_contactor.describe_byte(
@@ -1450,7 +1483,8 @@ module_mab19 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b1000000,
+    id=0b1101111,
+    frequency=0,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -1471,8 +1505,9 @@ topic_state.describe_byte(
 #### TOPIC: PUMPS
 topic_pumps = can.topic(
     msg="pumps",
-    id=0b1000001,
-    description="Pumps state"
+    id=0b11010010,
+    frequency=0,
+    description="Pumps state",
 )
 topic_pumps.describe_byte(
     name="pumps",
@@ -1512,7 +1547,8 @@ module_msc19_1 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b100000,
+    id=0b1110000,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -1532,7 +1568,8 @@ topic_state.describe_byte(
 #### TOPIC: ADC
 topic_adc = can.topic(
     msg="ADC",
-    id=0b100001,
+    id=0b11010011,
+    frequency=10,
     description="Voltage measurements"
 )
 topic_adc.describe_byte(
@@ -1593,7 +1630,8 @@ module_msc19_2 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b100000,
+    id=0b1110001,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -1613,7 +1651,8 @@ topic_state.describe_byte(
 #### TOPIC: ADC
 topic_adc = can.topic(
     msg="ADC",
-    id=0b100001,
+    id=0b11010100,
+    frequency=10,
     description="Voltage measurements"
 )
 topic_adc.describe_byte(
@@ -1674,7 +1713,8 @@ module_msc19_3 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b100000,
+    id=0b1110010,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -1694,7 +1734,8 @@ topic_state.describe_byte(
 #### TOPIC: ADC
 topic_adc = can.topic(
     msg="ADC",
-    id=0b100001,
+    id=0b11010101,
+    frequency=10,
     description="Voltage measurements"
 )
 topic_adc.describe_byte(
@@ -1755,7 +1796,8 @@ module_msc19_4 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b100000,
+    id=0b1110011,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -1775,7 +1817,8 @@ topic_state.describe_byte(
 #### TOPIC: ADC
 topic_adc = can.topic(
     msg="ADC",
-    id=0b100001,
+    id=0b11010110,
+    frequency=10,
     description="Current measurements"
 )
 topic_adc.describe_byte(
@@ -1836,7 +1879,8 @@ module_msc19_5 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b100000,
+    id=0b1110100,
+    frequency=1,
     description="Module state report"
 )
 topic_state.describe_byte(
@@ -1856,7 +1900,8 @@ topic_state.describe_byte(
 #### TOPIC: ADC
 topic_adc = can.topic(
     msg="ADC",
-    id=0b100001,
+    id=0b11010111,
+    frequency=10,
     description="Current measurements"
 )
 topic_adc.describe_byte(
@@ -1917,8 +1962,9 @@ module_mcs19 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b00100000000,
-    description="Module state report"
+    id=117,
+    frequency=1,
+    description="Module state report",
 )
 topic_state.describe_byte(
     name="state",
@@ -1938,7 +1984,8 @@ topic_state.describe_byte(
 # TOPIC: Start stages
 topic_start_stages = can.topic(
     msg="start_stages",
-    id=0b001000000100,
+    id=0b100101,
+    frequency=50,
     description="Boat charging // Boat on"
 )
 topic_start_stages.describe_byte(
@@ -1970,7 +2017,8 @@ topic_start_stages.describe_bit(
 #### TOPIC: BATTERY
 topic_bat = can.topic(
     msg="BAT",
-    id=0b00100000010,
+    id=0b11011000,
+    frequency=10,
     description="battery voltage values"
 )
 topic_bat.describe_byte(
@@ -2019,7 +2067,8 @@ topic_bat.describe_byte(
 #### TOPIC: CAPACITOR
 topic_cap = can.topic(
     msg="CAP",
-    id=0b00100000011,
+    id=0b11011001,
+    frequency=10,
     description="capacitor bank voltage values"
 )
 topic_cap.describe_byte(
@@ -2083,8 +2132,9 @@ module_mt19 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b00000100000,
-    description="Module state report"
+    id=0b11011010,
+    description="Module state report",
+    frequency = 0
 )
 topic_state.describe_byte(
     name="state",
@@ -2104,8 +2154,9 @@ topic_state.describe_byte(
 #### TOPIC: RPM
 topic_rpm = can.topic(
     msg="RPM",
-    id=0b00000100001,
-    description="RPM motor values"
+    id=0b11011011,
+    description="RPM motor values",
+    frequency = 0
 )
 topic_rpm.describe_byte(
     name="AVG_L",
@@ -2137,8 +2188,9 @@ module_mswi19 = can.module(
 #### TOPIC: STATE
 topic_state = can.topic(
     msg="state",
-    id=0b1000,
-    description="Module state report"
+    id=0b1001,
+    description="Module state report",
+    frequency = 5
 )
 topic_state.describe_byte(
     name="state",
@@ -2157,8 +2209,9 @@ topic_state.describe_byte(
 #### TOPIC: MOTOR
 topic_motor = can.topic(
     msg="motor",
-    id=0b1001,
-    description="Motor controller parameters"
+    id=0b1010,
+    description="Motor controller parameters",
+    frequency = 50
 )
 topic_motor.describe_byte(
     name="motor",
@@ -2194,8 +2247,9 @@ topic_motor.describe_byte(
 #### TOPIC: PUMPS
 topic_pumps = can.topic(
     msg="pumps",
-    id=0b1010,
-    description="Pumps controller parameters"
+    id=0b11011100,
+    description="Pumps controller parameters",
+    frequency = 0
 )
 topic_pumps.describe_byte(
     name="pumps",
@@ -2222,8 +2276,9 @@ topic_pumps.describe_bit(
 #### TOPIC: MPPTS
 topic_mppts = can.topic(
     msg="mppts",
-    id=0b1011,
-    description="Mppts controller parameters"
+    id=0b11011101,
+    description="Mppts controller parameters",
+    frequency = 0
 )
 topic_mppts.describe_byte(
     name="mppts on",
@@ -2247,8 +2302,9 @@ topic_mppts.describe_byte(
 #### TOPIC: MCS
 topic_mcs = can.topic(
     msg="mcs",
-    id=0b1100,
-    description="MCS controller parameters"
+    id=0b101000,
+    description="MCS controller parameters",
+    frequency = 1
 )
 topic_mcs.describe_byte(
     name="boat on",
