@@ -11,7 +11,7 @@ else:
     raise FileNotFoundError(
         f"File {SEMVER_FILENAME} not found. It should contain the version in semver standard.")
 
-can = Can(version=f"{version}", bitrate=500e3)
+can = Can(version=f"{version}", bitrate=500_000)
 
 ################################################################################
 ### MODULE: GENERIC
@@ -157,7 +157,7 @@ topic_pumps.describe_bit(
 topic_mppts = can.topic(
     msg="mppts",
     id=200,
-    frequency = 4, 
+    frequency = 4,
     description="Mppts controller parameters",
 )
 topic_mppts.describe_byte(

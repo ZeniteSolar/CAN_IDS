@@ -1,5 +1,6 @@
 #!/bin/python
 
+from typing import Optional, List
 from operator import mod
 from unicodedata import normalize
 import json
@@ -15,7 +16,8 @@ from mako.template import Template
 
 
 class Can:
-    def convert_string(string: str) -> str:
+    @classmethod
+    def convert_string(cls, string: str) -> str:
         if not isinstance(string, str):
             raise TypeError("`string` needs to be an integer type!")
 
@@ -28,13 +30,15 @@ class Can:
 
         return string
 
-    def validate_byte(byte: int) -> bool:
+    @classmethod
+    def validate_byte(cls, byte: int) -> bool:
         if (byte < 0) | (byte > 8):
             print("Byte number MUST be between 0 and 7 to be described.")
             return False
         return True
 
-    def validate_bit(bit: int) -> bool:
+    @classmethod
+    def validate_bit(cls, bit: int) -> bool:
         if (bit < 0) | (bit > 8):
             print("Bit number MUST be between 0 and 7 to be described.")
             return False
@@ -52,7 +56,7 @@ class Can:
                 raise TypeError("`description` must be a string type!")
             self.description = description
 
-            self.bytes = [None] * 8
+            self.bytes: List[Optional[dict]] = [None] * 8
 
             self.frequency = frequency
 
@@ -74,13 +78,15 @@ class Can:
         def __str__(self) -> str:
             return json.dumps(self.get(), indent=4)
 
-        def validate_byte(self, byte: int):
+        def validate_byte(self, byte: int) -> bool:
             if not isinstance(byte, int):
                 raise TypeError("`byte` needs to be an integer type!")
 
             if (byte < 0) or (byte > 7):
                 raise ValueError(
                     "`byte` number MUST be between 0 and 7 to be described.")
+
+            return True
 
         def validate_bit(self, bit: int) -> bool:
             if not isinstance(bit, int):
@@ -90,7 +96,9 @@ class Can:
                 raise ValueError(
                     "`bit` number MUST be between 0 and 7 to be described.")
 
-        def validate_byte_name(self, name: str):
+            return True
+
+        def validate_byte_name(self, name: str) -> bool:
             if not isinstance(name, str):
                 raise TypeError("byte field `name` must be a string type!")
 
@@ -98,7 +106,9 @@ class Can:
                 if byte.get('name') == Can.convert_string(name):
                     raise ValueError("byte field `name` must be unique!")
 
-        def validate_bit_name(self, byte: int, name: str):
+            return True
+
+        def validate_bit_name(self, byte: int, name: str) -> bool:
             if not isinstance(name, str):
                 raise TypeError("bit field `name` must be a string type!")
 
@@ -106,11 +116,13 @@ class Can:
                 for bit in filter(None, self.bytes[byte].get('bits')):
                     if bit == Can.convert_string(name):
                         raise ValueError("bit field `name` must be unique!")
-            
-        def get_length(self):
+
+            return True
+
+        def get_length(self) -> int:
             return len(list(filter(lambda x: x is not None, self.bytes)))
 
-        def get_frame_length(self):
+        def get_frame_length(self) -> int:
             return 44 + 8 * self.get_length()
 
         def describe_byte(self,
@@ -118,7 +130,7 @@ class Can:
                           byte: int,
                           description: str,
                           btype: str,
-                          units: str = None):
+                          units: Optional[str] = None):
             self.validate_byte_name(name)
             self.validate_byte(byte)
 
@@ -192,7 +204,7 @@ class Can:
             for topic in self.topics:
                 load += topic.get_load(bitrate)
             return load
-            
+
         def __str__(self) -> str:
             return json.dumps(self.get(), indent=4)
 
@@ -253,7 +265,7 @@ class Can:
 
     def export_csv(self, filename: str):
         import pandas as pd
-        
+
         modules = []
         signature = []
         ids = []
@@ -284,12 +296,8 @@ class Can:
             "frame_length": frame_length,
             "description": description,
             })
-        
+
         df.to_csv(filename)
-        
-
-                
-
 
     def get_can_load_by_topic(self):
         load = {}
@@ -299,7 +307,6 @@ class Can:
                     load[topic["id"]] = []
                 load[topic["id"]].append(self.get_topic_load(topic))
         return load
-    
 
     def get_can_load(self):
         load = 0
@@ -311,14 +318,15 @@ class Can:
     def get_topic_load(self, topic: dict):
         frame_length = topic["frame_length"]
         frame_period = (1/self.bitrate) * frame_length
-        return frame_period * topic["frequency"] * 100     
-        # load = period for 1 msg *  frequency * 100% 
+        return frame_period * topic["frequency"] * 100
+        # load = period for 1 msg *  frequency * 100%
         # Reference:
         # https://support.vector.com/kb?id=kb_article_view&sysparm_article=KB0012332&sys_kb_id=99354e281b2614148e9a535c2e4bcb6d&spa=1
 
     def plot_load(self):
         import matplotlib.pyplot as plt
         import numpy as np
+
         fig, axes = plt.subplots(nrows= 2, ncols=2,figsize=(9, 6))
         plt.figtext(.5, .9, "Can Load ", fontsize=15, ha='center')
 
@@ -332,11 +340,11 @@ class Can:
 
         id = list(ids.keys())
         id.sort()
-        
+
         load = []
         for i in id:
             load.append(ids[i])
-        
+
         axes[0][0].bar(range(0, len(id)), load, align='center', color='royalblue')
         axes[0][0].set_xticks(range(0, len(id)))
         axes[0][0].set_xticklabels(list(id), fontsize = 9, rotation = 90)
@@ -376,11 +384,7 @@ class Can:
         axes[1][1].pie(load, labels=modules,
                        textprops={'size': 'smaller'}, radius=1.5, labeldistance=1.1,startangle=-45)
 
-
-
         plt.show()
-
-        
 
 
 if __name__ == '__main__':
@@ -403,7 +407,7 @@ if __name__ == '__main__':
 
     # print(m1)
 
-    c1 = Can("0.0.0", 500e3)
+    c1 = Can("0.0.0", 500_000)
     c1.add_module(m1)
     # print(c1)
     c1.export_json("sample.json")
@@ -416,5 +420,3 @@ if __name__ == '__main__':
     # print(c2)
 
     # c2.export_ids_h("sample.h")
-
-    
