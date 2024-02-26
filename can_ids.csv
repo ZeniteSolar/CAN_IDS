@@ -12,17 +12,17 @@
 10,MVC19_1,210,STATE,101,1,0.014,71,Module state report
 11,MVC19_2,211,STATE,102,1,0.014,71,Module state report
 12,MCC19_1,225,STATE,103,1,0.016,79,Module state report
-13,MCC19_1,225,MEASUREMENTS,202,30,0.666,111,All measurements from the converter
+13,MCC19_1,225,MEASUREMENTS,202,10,0.222,111,All measurements from the converter
 14,MCC19_2,226,STATE,104,1,0.016,79,Module state report
-15,MCC19_2,226,MEASUREMENTS,203,30,0.666,111,All measurements from the converter
+15,MCC19_2,226,MEASUREMENTS,203,10,0.222,111,All measurements from the converter
 16,MCC19_3,227,STATE,105,1,0.016,79,Module state report
-17,MCC19_3,227,MEASUREMENTS,204,30,0.666,111,All measurements from the converter
+17,MCC19_3,227,MEASUREMENTS,204,10,0.222,111,All measurements from the converter
 18,MCC19_4,228,STATE,106,1,0.016,79,Module state report
-19,MCC19_4,228,MEASUREMENTS,205,30,0.666,111,All measurements from the converter
+19,MCC19_4,228,MEASUREMENTS,205,10,0.222,111,All measurements from the converter
 20,MCC19_5,229,STATE,107,1,0.016,79,Module state report
-21,MCC19_5,229,MEASUREMENTS,206,30,0.666,111,All measurements from the converter
+21,MCC19_5,229,MEASUREMENTS,206,10,0.222,111,All measurements from the converter
 22,MCC19_6,239,STATE,108,1,0.016,79,Module state report
-23,MCC19_6,239,MEASUREMENTS,207,30,0.666,111,All measurements from the converter
+23,MCC19_6,239,MEASUREMENTS,207,10,0.222,111,All measurements from the converter
 24,MCB19_1,220,STATE,109,1,0.016,79,Module state report
 25,MCB19_1,220,MEASUREMENTS,208,10,0.222,111,All measurements from the converter
 26,MCB19_2,221,STATE,110,1,0.016,79,Module state report
