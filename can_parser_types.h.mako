@@ -48,3 +48,17 @@ typedef struct
 } can_${module["name"].lower()}_${topic["name"].lower()}_msg_t;
     %endfor
 %endfor
+
+typedef struct {
+    uint32_t id;
+    uint8_t dlc;
+    union {
+        uint8_t raw[8];
+%for module in db["modules"]:
+%for topic in module["topics"]:
+        can_${module["name"].lower()}_${topic["name"].lower()}_msg_t can_${module["name"].lower()}_${topic["name"].lower()};
+%endfor
+%endfor
+    };
+} can_msg_t;
+
