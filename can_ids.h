@@ -1,5 +1,5 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
-#define CAN_VERSION "0.1.3"
+#define CAN_VERSION "0.1.4"
 
 #include <stdint.h>
 
