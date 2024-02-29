@@ -9,7 +9,7 @@ class test_can_topic(unittest.TestCase):
         self.can = Can
 
     def test_topic(self):
-        t = self.can.topic("motor", 9, 100, "topic description text here")
+        t = self.can.Topic("motor", 9, 100, "topic description text here")
         expected = {
             "name": "MOTOR",
             "description": "topic description text here",
@@ -33,7 +33,7 @@ class test_can_topic(unittest.TestCase):
         )
 
     def test_validate_byte(self):
-        t = self.can.topic("motor", 9, 100, "topic description text here")
+        t = self.can.Topic("motor", 9, 100, "topic description text here")
 
         # Trying to add using wrong type on the byte should raise TypeError:
         with self.assertRaises(TypeError):
@@ -53,7 +53,7 @@ class test_can_topic(unittest.TestCase):
         t.describe_byte("some byte", 1,"byte description text here", 'u8')
 
     def test_validate_bit(self):
-        t = self.can.topic("motor", 9, 100, "topic description text here")
+        t = self.can.Topic("motor", 9, 100, "topic description text here")
         t.describe_byte("some byte", 1, "byte description text here",
                         'bitfield')
 
@@ -73,7 +73,7 @@ class test_can_topic(unittest.TestCase):
         t.describe_bit("some bit", 1, 0)
 
     def test_validate_byte_name(self):
-        t = self.can.topic("motor", 9, 100, "topic description text here")
+        t = self.can.Topic("motor", 9, 100, "topic description text here")
 
         # Trying to add using wrong type on the name should raise TypeError:
         with self.assertRaises(TypeError):
@@ -86,7 +86,7 @@ class test_can_topic(unittest.TestCase):
             t.describe_byte("some byte", 1, "byte description text here", 'u8')
 
     def test_validate_bit_name(self):
-        t = self.can.topic("motor", 9, 100, "topic description text here")
+        t = self.can.Topic("motor", 9, 100, "topic description text here")
         t.describe_byte("some byte", 1, "byte description text here",
                         'bitfield')
 
@@ -101,7 +101,7 @@ class test_can_topic(unittest.TestCase):
             t.describe_bit("some bit", 1, 1)
 
     def test_describe_byte(self):
-        t = self.can.topic("motor", 9, 100, "topic description text here")
+        t = self.can.Topic("motor", 9, 100, "topic description text here")
         t.describe_byte(
             "motor", 1, "byte description text here", "bitfield", "")
 
@@ -136,7 +136,7 @@ class test_can_topic(unittest.TestCase):
 
     def test_describe_bit(self):
         self.maxDiff = None
-        t = self.can.topic("motor", 9, 100, "topic description text here")
+        t = self.can.Topic("motor", 9, 100, "topic description text here")
         t.describe_byte(
             "motor", 1, "byte description text here", "bitfield", "")
         t.describe_bit("motor on", 1, 0)
@@ -183,7 +183,7 @@ class test_can_module(unittest.TestCase):
         self.can = Can
 
     def test_module(self):
-        m = self.can.module("mic17", 10, "module description text here")
+        m = self.can.Module("mic17", 10, "module description text here")
 
         expected = {
             "name": "MIC17",
@@ -198,8 +198,8 @@ class test_can_module(unittest.TestCase):
         )
 
     def test_add_topic(self):
-        m = self.can.module("mic17", 10, "module description text here")
-        t = self.can.topic("motor", 9, 100, "topic description text here")
+        m = self.can.Module("mic17", 10, "module description text here")
+        t = self.can.Topic("motor", 9, 100, "topic description text here")
 
         m.add_topic(t)
 
@@ -242,7 +242,7 @@ class test_can(unittest.TestCase):
         self.can = Can
 
     def test_add_module(self):
-        m = self.can.module("mic17", 10, "module description text here")
+        m = self.can.Module("mic17", 10, "module description text here")
         c = Can(version="0.0.0", bitrate=500e3)
         c.add_module(m)
 
@@ -269,7 +269,7 @@ class test_can(unittest.TestCase):
             c.add_module(m)
 
     def test_export_and_import_json(self):
-        m = self.can.module("mic17", 10, "module description text here")
+        m = self.can.Module("mic17", 10, "module description text here")
         c1 = Can(version="0.0.0", bitrate=500e3)
         c1.add_module(m)
         c1.export_json("test/test.json")

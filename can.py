@@ -40,7 +40,7 @@ class Can:
             return False
         return True
 
-    class topic:
+    class Topic:
         def __init__(self, msg: str, id: int,frequency: int, description: str):
             self.name = Can.convert_string(msg)
 
@@ -158,7 +158,7 @@ class Can:
 
             self.bytes[byte]["bits"][bit] = name
 
-    class module:
+    class Module:
         def __init__(self, name: str, signature: int, description: str):
 
             self.validate_name(name)
@@ -230,7 +230,7 @@ class Can:
             data = dict(json.load(file))
             self.version = data["version"]
             for module in data["modules"]:
-                self.add_module(Can.module(
+                self.add_module(Can.Module(
                     name=module.get('name'),
                     signature=module.get('signature'),
                     description=module.get('description')
@@ -384,22 +384,22 @@ class Can:
 
 
 if __name__ == '__main__':
-    t1 = Can.topic("motor", 9, 100, "Motor controller parameters")
+    t1 = Can.Topic("motor", 9, 100, "Motor controller parameters")
     t1.describe_byte("motor", 1, "Switches and states", "bitfield", "")
     t1.describe_bit("motor on", 1, 0)
     t1.describe_byte("D raw", 2, "Motor Duty Cycle", "uint8_t", "%")
     t1.describe_byte("I raw", 3, "Motor Soft Start", "uint8_t", "%")
-    t2 = Can.topic("motor2", 19, 10, "Motor controller parameters")
+    t2 = Can.Topic("motor2", 19, 10, "Motor controller parameters")
     t2.describe_byte("motor", 1, "Switches and states", "bitfield", "")
     t2.describe_bit("motor on", 1, 0)
     t2.describe_byte("D raw", 2, "Motor Duty Cycle", "uint8_t", "%")
     t2.describe_byte("I raw", 3, "Motor Soft Start", "uint8_t", "%")
     # print(t1)
 
-    m1 = Can.module("mic17", 10, "Modulo de Interface de Controle")
+    m1 = Can.Module("mic17", 10, "Modulo de Interface de Controle")
     m1.add_topic(t1)
     m1.add_topic(t2)
-    m2 = Can.module("mam21", 10, "Mamm")
+    m2 = Can.Module("mam21", 10, "Mamm")
 
     # print(m1)
 
