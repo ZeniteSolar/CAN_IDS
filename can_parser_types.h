@@ -1,5 +1,5 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
-#define CAN_VERSION "0.1.4"
+#define CAN_VERSION "0.1.5"
 
 #include <stdint.h>
 
@@ -514,6 +514,165 @@ typedef struct
         };
     };
 } can_mcc19_6_measurements_msg_t;
+
+// Module state report
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            uint8_t state;  // State code. Units: 
+            struct { // Control flags for operating point
+                uint8_t enable : 1;
+                uint8_t vi_safe_range : 1;
+                uint8_t vo_safe_range : 1;
+                uint8_t vi_stable : 1;
+                uint8_t dt_safe_range : 1;
+                uint8_t _unused : 3;
+            } control;
+        };
+    };
+} can_mcc19_7_state_msg_t;
+
+// All measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output voltage, bytes low/high. Units: V/100
+                uint16_t output_voltage;
+                struct {
+                    uint8_t output_voltage_l;
+                    uint8_t output_voltage_h;
+                };
+            };
+            union {  // Average input current, bytes low/high. Units: A/100
+                uint16_t input_current;
+                struct {
+                    uint8_t input_current_l;
+                    uint8_t input_current_h;
+                };
+            };
+            union {  // Average input voltage, bytes low/high. Units: V/100
+                uint16_t input_voltage;
+                struct {
+                    uint8_t input_voltage_l;
+                    uint8_t input_voltage_h;
+                };
+            };
+            uint8_t dt;  // converter's duty cycle. Units: %/255
+        };
+    };
+} can_mcc19_7_measurements_msg_t;
+
+// Module state report
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            uint8_t state;  // State code. Units: 
+            struct { // Control flags for operating point
+                uint8_t enable : 1;
+                uint8_t vi_safe_range : 1;
+                uint8_t vo_safe_range : 1;
+                uint8_t vi_stable : 1;
+                uint8_t dt_safe_range : 1;
+                uint8_t _unused : 3;
+            } control;
+        };
+    };
+} can_mcc19_8_state_msg_t;
+
+// All measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output voltage, bytes low/high. Units: V/100
+                uint16_t output_voltage;
+                struct {
+                    uint8_t output_voltage_l;
+                    uint8_t output_voltage_h;
+                };
+            };
+            union {  // Average input current, bytes low/high. Units: A/100
+                uint16_t input_current;
+                struct {
+                    uint8_t input_current_l;
+                    uint8_t input_current_h;
+                };
+            };
+            union {  // Average input voltage, bytes low/high. Units: V/100
+                uint16_t input_voltage;
+                struct {
+                    uint8_t input_voltage_l;
+                    uint8_t input_voltage_h;
+                };
+            };
+            uint8_t dt;  // converter's duty cycle. Units: %/255
+        };
+    };
+} can_mcc19_8_measurements_msg_t;
+
+// Module state report
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            uint8_t state;  // State code. Units: 
+            struct { // Control flags for operating point
+                uint8_t enable : 1;
+                uint8_t vi_safe_range : 1;
+                uint8_t vo_safe_range : 1;
+                uint8_t vi_stable : 1;
+                uint8_t dt_safe_range : 1;
+                uint8_t _unused : 3;
+            } control;
+        };
+    };
+} can_mcc19_9_state_msg_t;
+
+// All measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output voltage, bytes low/high. Units: V/100
+                uint16_t output_voltage;
+                struct {
+                    uint8_t output_voltage_l;
+                    uint8_t output_voltage_h;
+                };
+            };
+            union {  // Average input current, bytes low/high. Units: A/100
+                uint16_t input_current;
+                struct {
+                    uint8_t input_current_l;
+                    uint8_t input_current_h;
+                };
+            };
+            union {  // Average input voltage, bytes low/high. Units: V/100
+                uint16_t input_voltage;
+                struct {
+                    uint8_t input_voltage_l;
+                    uint8_t input_voltage_h;
+                };
+            };
+            uint8_t dt;  // converter's duty cycle. Units: %/255
+        };
+    };
+} can_mcc19_9_measurements_msg_t;
 
 // Module state report
 typedef struct
@@ -1174,6 +1333,12 @@ typedef struct {
         can_mcc19_5_measurements_msg_t mcc19_5_measurements;
         can_mcc19_6_state_msg_t mcc19_6_state;
         can_mcc19_6_measurements_msg_t mcc19_6_measurements;
+        can_mcc19_7_state_msg_t mcc19_7_state;
+        can_mcc19_7_measurements_msg_t mcc19_7_measurements;
+        can_mcc19_8_state_msg_t mcc19_8_state;
+        can_mcc19_8_measurements_msg_t mcc19_8_measurements;
+        can_mcc19_9_state_msg_t mcc19_9_state;
+        can_mcc19_9_measurements_msg_t mcc19_9_measurements;
         can_mcb19_1_state_msg_t mcb19_1_state;
         can_mcb19_1_measurements_msg_t mcb19_1_measurements;
         can_mcb19_2_state_msg_t mcb19_2_state;
