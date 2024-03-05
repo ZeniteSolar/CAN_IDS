@@ -11,53 +11,62 @@
 9,MDE22,170,STEERINGBAT_MEASUREMENTS,201,10,0.206,103,Auxiliar Battery Voltage
 10,MVC19_1,210,STATE,101,1,0.014,71,Module state report
 11,MVC19_2,211,STATE,102,1,0.014,71,Module state report
-12,MCC19_1,225,STATE,103,1,0.014,71,Module state report
-13,MCC19_1,225,MEASUREMENTS,202,10,0.222,111,All measurements from the converter
-14,MCC19_2,226,STATE,104,1,0.014,71,Module state report
-15,MCC19_2,226,MEASUREMENTS,203,10,0.222,111,All measurements from the converter
-16,MCC19_3,227,STATE,105,1,0.014,71,Module state report
-17,MCC19_3,227,MEASUREMENTS,204,10,0.222,111,All measurements from the converter
-18,MCC19_4,228,STATE,106,1,0.014,71,Module state report
-19,MCC19_4,228,MEASUREMENTS,205,10,0.222,111,All measurements from the converter
-20,MCC19_5,229,STATE,107,1,0.014,71,Module state report
-21,MCC19_5,229,MEASUREMENTS,206,10,0.222,111,All measurements from the converter
-22,MCC19_6,230,STATE,108,1,0.014,71,Module state report
-23,MCC19_6,230,MEASUREMENTS,207,10,0.222,111,All measurements from the converter
-24,MCC19_7,231,STATE,109,1,0.014,71,Module state report
-25,MCC19_7,231,MEASUREMENTS,208,10,0.222,111,All measurements from the converter
-26,MCC19_8,232,STATE,110,1,0.014,71,Module state report
-27,MCC19_8,232,MEASUREMENTS,209,10,0.222,111,All measurements from the converter
-28,MCC19_9,233,STATE,111,1,0.014,71,Module state report
-29,MCC19_9,233,MEASUREMENTS,210,10,0.222,111,All measurements from the converter
-30,MCB19_1,220,STATE,118,1,0.014,71,Module state report
-31,MCB19_1,220,MEASUREMENTS,222,10,0.222,111,All measurements from the converter
-32,MCB19_2,221,STATE,119,1,0.014,71,Module state report
-33,MCB19_2,221,MEASUREMENTS,223,10,0.222,111,All measurements from the converter
-34,MAC22,180,STATE,35,5,0.071,71,Module state report
-35,MAC22,180,CONTACTOR,34,50,0.63,63,Contactor task response
-36,MAM19,190,STATE,99,5,0.071,71,Module state report
-37,MAM19,190,MOTOR,98,50,0.71,71,Motor controller parameters
-38,MAM19,190,CONTACTOR,36,5,0.063,63,Contactor requests
-39,MAB19,235,STATE,120,0,0.0,71,Module state report
-40,MAB19,235,PUMPS,224,0,0.0,63,Pumps state
-41,MSC19_1,250,STATE,112,1,0.014,71,Module state report
-42,MSC19_1,250,ADC,211,10,0.206,103,Voltage measurements
-43,MSC19_2,251,STATE,113,1,0.014,71,Module state report
-44,MSC19_2,251,ADC,212,10,0.206,103,Voltage measurements
-45,MSC19_3,252,STATE,114,1,0.014,71,Module state report
-46,MSC19_3,252,ADC,213,10,0.206,103,Voltage measurements
-47,MSC19_4,253,STATE,115,1,0.014,71,Module state report
-48,MSC19_4,253,ADC,214,10,0.206,103,Current measurements
-49,MSC19_5,254,STATE,116,1,0.014,71,Module state report
-50,MSC19_5,254,ADC,215,10,0.206,103,Current measurements
-51,MCS19,200,STATE,117,1,0.014,71,Module state report
-52,MCS19,200,START_STAGES,37,50,0.71,71,Boat charging // Boat on
-53,MCS19,200,BAT,216,10,0.206,103,battery voltage values
-54,MCS19,200,CAP,217,10,0.206,103,capacitor bank voltage values
-55,MT19,255,STATE,218,0,0.0,71,Module state report
-56,MT19,255,RPM,219,0,0.0,71,RPM motor values
-57,MSWI19,241,STATE,9,5,0.071,71,Module state report
-58,MSWI19,241,MOTOR,10,50,0.79,79,Motor controller parameters
-59,MSWI19,241,PUMPS,220,0,0.0,63,Pumps controller parameters
-60,MSWI19,241,MPPTS,221,0,0.0,71,Mppts controller parameters
-61,MSWI19,241,MCS,40,1,0.013,63,MCS controller parameters
+12,MCC23_1,225,STATE,103,1,0.014,71,Module state report
+13,MCC23_1,225,MEASUREMENTS,202,10,0.222,111,All measurements from the converter
+14,MCC23_1,225,AUX_MEASUREMENTS,225,10,0.142,71,Auxiliary measurements from the converter
+15,MCC23_2,226,STATE,104,1,0.014,71,Module state report
+16,MCC23_2,226,MEASUREMENTS,203,10,0.222,111,All measurements from the converter
+17,MCC23_2,226,AUX_MEASUREMENTS,226,10,0.142,71,Auxiliary measurements from the converter
+18,MCC23_3,227,STATE,105,1,0.014,71,Module state report
+19,MCC23_3,227,MEASUREMENTS,204,10,0.222,111,All measurements from the converter
+20,MCC23_3,227,AUX_MEASUREMENTS,227,10,0.142,71,Auxiliary measurements from the converter
+21,MCC23_4,228,STATE,106,1,0.014,71,Module state report
+22,MCC23_4,228,MEASUREMENTS,205,10,0.222,111,All measurements from the converter
+23,MCC23_4,228,AUX_MEASUREMENTS,228,10,0.142,71,Auxiliary measurements from the converter
+24,MCC23_5,229,STATE,107,1,0.014,71,Module state report
+25,MCC23_5,229,MEASUREMENTS,206,10,0.222,111,All measurements from the converter
+26,MCC23_5,229,AUX_MEASUREMENTS,229,10,0.142,71,Auxiliary measurements from the converter
+27,MCC23_6,230,STATE,108,1,0.014,71,Module state report
+28,MCC23_6,230,MEASUREMENTS,207,10,0.222,111,All measurements from the converter
+29,MCC23_6,230,AUX_MEASUREMENTS,230,10,0.142,71,Auxiliary measurements from the converter
+30,MCC23_7,231,STATE,109,1,0.014,71,Module state report
+31,MCC23_7,231,MEASUREMENTS,208,10,0.222,111,All measurements from the converter
+32,MCC23_7,231,AUX_MEASUREMENTS,231,10,0.142,71,Auxiliary measurements from the converter
+33,MCC23_8,232,STATE,110,1,0.014,71,Module state report
+34,MCC23_8,232,MEASUREMENTS,209,10,0.222,111,All measurements from the converter
+35,MCC23_8,232,AUX_MEASUREMENTS,232,10,0.142,71,Auxiliary measurements from the converter
+36,MCC23_9,233,STATE,111,1,0.014,71,Module state report
+37,MCC23_9,233,MEASUREMENTS,210,10,0.222,111,All measurements from the converter
+38,MCC23_9,233,AUX_MEASUREMENTS,233,10,0.142,71,Auxiliary measurements from the converter
+39,MCB19_1,220,STATE,118,1,0.014,71,Module state report
+40,MCB19_1,220,MEASUREMENTS,222,10,0.222,111,All measurements from the converter
+41,MCB19_2,221,STATE,119,1,0.014,71,Module state report
+42,MCB19_2,221,MEASUREMENTS,223,10,0.222,111,All measurements from the converter
+43,MAC22,180,STATE,35,5,0.071,71,Module state report
+44,MAC22,180,CONTACTOR,34,50,0.63,63,Contactor task response
+45,MAM19,190,STATE,99,5,0.071,71,Module state report
+46,MAM19,190,MOTOR,98,50,0.71,71,Motor controller parameters
+47,MAM19,190,CONTACTOR,36,5,0.063,63,Contactor requests
+48,MAB19,235,STATE,120,0,0.0,71,Module state report
+49,MAB19,235,PUMPS,224,0,0.0,63,Pumps state
+50,MSC19_1,250,STATE,112,1,0.014,71,Module state report
+51,MSC19_1,250,ADC,211,10,0.206,103,Voltage measurements
+52,MSC19_2,251,STATE,113,1,0.014,71,Module state report
+53,MSC19_2,251,ADC,212,10,0.206,103,Voltage measurements
+54,MSC19_3,252,STATE,114,1,0.014,71,Module state report
+55,MSC19_3,252,ADC,213,10,0.206,103,Voltage measurements
+56,MSC19_4,253,STATE,115,1,0.014,71,Module state report
+57,MSC19_4,253,ADC,214,10,0.206,103,Current measurements
+58,MSC19_5,254,STATE,116,1,0.014,71,Module state report
+59,MSC19_5,254,ADC,215,10,0.206,103,Current measurements
+60,MCS19,200,STATE,117,1,0.014,71,Module state report
+61,MCS19,200,START_STAGES,37,50,0.71,71,Boat charging // Boat on
+62,MCS19,200,BAT,216,10,0.206,103,battery voltage values
+63,MCS19,200,CAP,217,10,0.206,103,capacitor bank voltage values
+64,MT19,255,STATE,218,0,0.0,71,Module state report
+65,MT19,255,RPM,219,0,0.0,71,RPM motor values
+66,MSWI19,241,STATE,9,5,0.071,71,Module state report
+67,MSWI19,241,MOTOR,10,50,0.79,79,Motor controller parameters
+68,MSWI19,241,PUMPS,220,0,0.0,63,Pumps controller parameters
+69,MSWI19,241,MPPTS,221,0,0.0,71,Mppts controller parameters
+70,MSWI19,241,MCS,40,1,0.013,63,MCS controller parameters

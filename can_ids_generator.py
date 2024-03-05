@@ -343,9 +343,9 @@ module_mvc19.add_topic(topic_state)
 can.add_multiple_modules(module_mvc19, 2)
 
 ################################################################################
-### MODULE: MCC19
-module_mcc19 = can.Module(
-    name="mcc19",
+### MODULE: MCC23
+module_mcc23 = can.Module(
+    name="mcc23",
     signature=225,
     description="Modulo controlador de carga"
 )
@@ -460,9 +460,32 @@ topic_measurements.describe_byte(
     units="%/255"
 )
 
-module_mcc19.add_topic(topic_state)
-module_mcc19.add_topic(topic_measurements)
-can.add_multiple_modules(module_mcc19, 9)
+### TOPIC: AUXILIARY MEASUREMENTS
+topic_aux_measurements = can.Topic(
+    msg="aux_measurements",
+    id=225,
+    frequency=10,
+    description="Auxiliary measurements from the converter"
+)
+topic_aux_measurements.describe_byte(
+    name="output_current_l",
+    byte=1,
+    description="Average output current, byte low",
+    btype="uint16_t",
+    units="A/100"
+)
+topic_aux_measurements.describe_byte(
+    name="output_current_h",
+    byte=2,
+    description="Average output current, byte high",
+    btype="uint16_t",
+    units="A/100"
+)
+
+module_mcc23.add_topic(topic_state)
+module_mcc23.add_topic(topic_measurements)
+module_mcc23.add_topic(topic_aux_measurements)
+can.add_multiple_modules(module_mcc23, 9)
 
 
 ################################################################################

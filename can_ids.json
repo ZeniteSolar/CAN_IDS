@@ -466,7 +466,7 @@
             ]
         },
         {
-            "name": "MCC19_1",
+            "name": "MCC23_1",
             "description": "Modulo controlador de carga 1",
             "signature": 225,
             "topics": [
@@ -568,11 +568,43 @@
                     ],
                     "frequency": 10,
                     "frame_length": 111
+                },
+                {
+                    "name": "AUX_MEASUREMENTS",
+                    "description": "Auxiliary measurements from the converter",
+                    "id": 225,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 10,
+                    "frame_length": 71
                 }
             ]
         },
         {
-            "name": "MCC19_2",
+            "name": "MCC23_2",
             "description": "Modulo controlador de carga 2",
             "signature": 226,
             "topics": [
@@ -674,11 +706,43 @@
                     ],
                     "frequency": 10,
                     "frame_length": 111
+                },
+                {
+                    "name": "AUX_MEASUREMENTS",
+                    "description": "Auxiliary measurements from the converter",
+                    "id": 226,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 10,
+                    "frame_length": 71
                 }
             ]
         },
         {
-            "name": "MCC19_3",
+            "name": "MCC23_3",
             "description": "Modulo controlador de carga 3",
             "signature": 227,
             "topics": [
@@ -780,11 +844,43 @@
                     ],
                     "frequency": 10,
                     "frame_length": 111
+                },
+                {
+                    "name": "AUX_MEASUREMENTS",
+                    "description": "Auxiliary measurements from the converter",
+                    "id": 227,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 10,
+                    "frame_length": 71
                 }
             ]
         },
         {
-            "name": "MCC19_4",
+            "name": "MCC23_4",
             "description": "Modulo controlador de carga 4",
             "signature": 228,
             "topics": [
@@ -886,11 +982,43 @@
                     ],
                     "frequency": 10,
                     "frame_length": 111
+                },
+                {
+                    "name": "AUX_MEASUREMENTS",
+                    "description": "Auxiliary measurements from the converter",
+                    "id": 228,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 10,
+                    "frame_length": 71
                 }
             ]
         },
         {
-            "name": "MCC19_5",
+            "name": "MCC23_5",
             "description": "Modulo controlador de carga 5",
             "signature": 229,
             "topics": [
@@ -992,11 +1120,43 @@
                     ],
                     "frequency": 10,
                     "frame_length": 111
+                },
+                {
+                    "name": "AUX_MEASUREMENTS",
+                    "description": "Auxiliary measurements from the converter",
+                    "id": 229,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 10,
+                    "frame_length": 71
                 }
             ]
         },
         {
-            "name": "MCC19_6",
+            "name": "MCC23_6",
             "description": "Modulo controlador de carga 6",
             "signature": 230,
             "topics": [
@@ -1098,11 +1258,43 @@
                     ],
                     "frequency": 10,
                     "frame_length": 111
+                },
+                {
+                    "name": "AUX_MEASUREMENTS",
+                    "description": "Auxiliary measurements from the converter",
+                    "id": 230,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 10,
+                    "frame_length": 71
                 }
             ]
         },
         {
-            "name": "MCC19_7",
+            "name": "MCC23_7",
             "description": "Modulo controlador de carga 7",
             "signature": 231,
             "topics": [
@@ -1204,11 +1396,43 @@
                     ],
                     "frequency": 10,
                     "frame_length": 111
+                },
+                {
+                    "name": "AUX_MEASUREMENTS",
+                    "description": "Auxiliary measurements from the converter",
+                    "id": 231,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 10,
+                    "frame_length": 71
                 }
             ]
         },
         {
-            "name": "MCC19_8",
+            "name": "MCC23_8",
             "description": "Modulo controlador de carga 8",
             "signature": 232,
             "topics": [
@@ -1310,11 +1534,43 @@
                     ],
                     "frequency": 10,
                     "frame_length": 111
+                },
+                {
+                    "name": "AUX_MEASUREMENTS",
+                    "description": "Auxiliary measurements from the converter",
+                    "id": 232,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 10,
+                    "frame_length": 71
                 }
             ]
         },
         {
-            "name": "MCC19_9",
+            "name": "MCC23_9",
             "description": "Modulo controlador de carga 9",
             "signature": 233,
             "topics": [
@@ -1416,6 +1672,38 @@
                     ],
                     "frequency": 10,
                     "frame_length": 111
+                },
+                {
+                    "name": "AUX_MEASUREMENTS",
+                    "description": "Auxiliary measurements from the converter",
+                    "id": 233,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_L",
+                            "description": "Average output current, byte low",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        {
+                            "name": "OUTPUT_CURRENT_H",
+                            "description": "Average output current, byte high",
+                            "type": "uint16_t",
+                            "units": "A/100"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 10,
+                    "frame_length": 71
                 }
             ]
         },
