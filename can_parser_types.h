@@ -1,5 +1,5 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
-#define CAN_VERSION "0.1.4"
+#define CAN_VERSION "0.1.5"
 
 #include <stdint.h>
 
@@ -215,7 +215,7 @@ typedef struct
             } control;
         };
     };
-} can_mcc19_1_state_msg_t;
+} can_mcc23_1_state_msg_t;
 
 // All measurements from the converter
 typedef struct
@@ -248,7 +248,25 @@ typedef struct
             uint8_t dt;  // converter's duty cycle. Units: %/255
         };
     };
-} can_mcc19_1_measurements_msg_t;
+} can_mcc23_1_measurements_msg_t;
+
+// Auxiliary measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output current, bytes low/high. Units: A/100
+                uint16_t output_current;
+                struct {
+                    uint8_t output_current_l;
+                    uint8_t output_current_h;
+                };
+            };
+        };
+    };
+} can_mcc23_1_aux_measurements_msg_t;
 
 // Module state report
 typedef struct
@@ -268,7 +286,7 @@ typedef struct
             } control;
         };
     };
-} can_mcc19_2_state_msg_t;
+} can_mcc23_2_state_msg_t;
 
 // All measurements from the converter
 typedef struct
@@ -301,7 +319,25 @@ typedef struct
             uint8_t dt;  // converter's duty cycle. Units: %/255
         };
     };
-} can_mcc19_2_measurements_msg_t;
+} can_mcc23_2_measurements_msg_t;
+
+// Auxiliary measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output current, bytes low/high. Units: A/100
+                uint16_t output_current;
+                struct {
+                    uint8_t output_current_l;
+                    uint8_t output_current_h;
+                };
+            };
+        };
+    };
+} can_mcc23_2_aux_measurements_msg_t;
 
 // Module state report
 typedef struct
@@ -321,7 +357,7 @@ typedef struct
             } control;
         };
     };
-} can_mcc19_3_state_msg_t;
+} can_mcc23_3_state_msg_t;
 
 // All measurements from the converter
 typedef struct
@@ -354,7 +390,25 @@ typedef struct
             uint8_t dt;  // converter's duty cycle. Units: %/255
         };
     };
-} can_mcc19_3_measurements_msg_t;
+} can_mcc23_3_measurements_msg_t;
+
+// Auxiliary measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output current, bytes low/high. Units: A/100
+                uint16_t output_current;
+                struct {
+                    uint8_t output_current_l;
+                    uint8_t output_current_h;
+                };
+            };
+        };
+    };
+} can_mcc23_3_aux_measurements_msg_t;
 
 // Module state report
 typedef struct
@@ -374,7 +428,7 @@ typedef struct
             } control;
         };
     };
-} can_mcc19_4_state_msg_t;
+} can_mcc23_4_state_msg_t;
 
 // All measurements from the converter
 typedef struct
@@ -407,7 +461,25 @@ typedef struct
             uint8_t dt;  // converter's duty cycle. Units: %/255
         };
     };
-} can_mcc19_4_measurements_msg_t;
+} can_mcc23_4_measurements_msg_t;
+
+// Auxiliary measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output current, bytes low/high. Units: A/100
+                uint16_t output_current;
+                struct {
+                    uint8_t output_current_l;
+                    uint8_t output_current_h;
+                };
+            };
+        };
+    };
+} can_mcc23_4_aux_measurements_msg_t;
 
 // Module state report
 typedef struct
@@ -427,7 +499,7 @@ typedef struct
             } control;
         };
     };
-} can_mcc19_5_state_msg_t;
+} can_mcc23_5_state_msg_t;
 
 // All measurements from the converter
 typedef struct
@@ -460,7 +532,25 @@ typedef struct
             uint8_t dt;  // converter's duty cycle. Units: %/255
         };
     };
-} can_mcc19_5_measurements_msg_t;
+} can_mcc23_5_measurements_msg_t;
+
+// Auxiliary measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output current, bytes low/high. Units: A/100
+                uint16_t output_current;
+                struct {
+                    uint8_t output_current_l;
+                    uint8_t output_current_h;
+                };
+            };
+        };
+    };
+} can_mcc23_5_aux_measurements_msg_t;
 
 // Module state report
 typedef struct
@@ -480,7 +570,7 @@ typedef struct
             } control;
         };
     };
-} can_mcc19_6_state_msg_t;
+} can_mcc23_6_state_msg_t;
 
 // All measurements from the converter
 typedef struct
@@ -513,7 +603,238 @@ typedef struct
             uint8_t dt;  // converter's duty cycle. Units: %/255
         };
     };
-} can_mcc19_6_measurements_msg_t;
+} can_mcc23_6_measurements_msg_t;
+
+// Auxiliary measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output current, bytes low/high. Units: A/100
+                uint16_t output_current;
+                struct {
+                    uint8_t output_current_l;
+                    uint8_t output_current_h;
+                };
+            };
+        };
+    };
+} can_mcc23_6_aux_measurements_msg_t;
+
+// Module state report
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            uint8_t state;  // State code. Units: 
+            struct { // Control flags for operating point
+                uint8_t enable : 1;
+                uint8_t vi_safe_range : 1;
+                uint8_t vo_safe_range : 1;
+                uint8_t vi_stable : 1;
+                uint8_t dt_safe_range : 1;
+                uint8_t _unused : 3;
+            } control;
+        };
+    };
+} can_mcc23_7_state_msg_t;
+
+// All measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output voltage, bytes low/high. Units: V/100
+                uint16_t output_voltage;
+                struct {
+                    uint8_t output_voltage_l;
+                    uint8_t output_voltage_h;
+                };
+            };
+            union {  // Average input current, bytes low/high. Units: A/100
+                uint16_t input_current;
+                struct {
+                    uint8_t input_current_l;
+                    uint8_t input_current_h;
+                };
+            };
+            union {  // Average input voltage, bytes low/high. Units: V/100
+                uint16_t input_voltage;
+                struct {
+                    uint8_t input_voltage_l;
+                    uint8_t input_voltage_h;
+                };
+            };
+            uint8_t dt;  // converter's duty cycle. Units: %/255
+        };
+    };
+} can_mcc23_7_measurements_msg_t;
+
+// Auxiliary measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output current, bytes low/high. Units: A/100
+                uint16_t output_current;
+                struct {
+                    uint8_t output_current_l;
+                    uint8_t output_current_h;
+                };
+            };
+        };
+    };
+} can_mcc23_7_aux_measurements_msg_t;
+
+// Module state report
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            uint8_t state;  // State code. Units: 
+            struct { // Control flags for operating point
+                uint8_t enable : 1;
+                uint8_t vi_safe_range : 1;
+                uint8_t vo_safe_range : 1;
+                uint8_t vi_stable : 1;
+                uint8_t dt_safe_range : 1;
+                uint8_t _unused : 3;
+            } control;
+        };
+    };
+} can_mcc23_8_state_msg_t;
+
+// All measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output voltage, bytes low/high. Units: V/100
+                uint16_t output_voltage;
+                struct {
+                    uint8_t output_voltage_l;
+                    uint8_t output_voltage_h;
+                };
+            };
+            union {  // Average input current, bytes low/high. Units: A/100
+                uint16_t input_current;
+                struct {
+                    uint8_t input_current_l;
+                    uint8_t input_current_h;
+                };
+            };
+            union {  // Average input voltage, bytes low/high. Units: V/100
+                uint16_t input_voltage;
+                struct {
+                    uint8_t input_voltage_l;
+                    uint8_t input_voltage_h;
+                };
+            };
+            uint8_t dt;  // converter's duty cycle. Units: %/255
+        };
+    };
+} can_mcc23_8_measurements_msg_t;
+
+// Auxiliary measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output current, bytes low/high. Units: A/100
+                uint16_t output_current;
+                struct {
+                    uint8_t output_current_l;
+                    uint8_t output_current_h;
+                };
+            };
+        };
+    };
+} can_mcc23_8_aux_measurements_msg_t;
+
+// Module state report
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            uint8_t state;  // State code. Units: 
+            struct { // Control flags for operating point
+                uint8_t enable : 1;
+                uint8_t vi_safe_range : 1;
+                uint8_t vo_safe_range : 1;
+                uint8_t vi_stable : 1;
+                uint8_t dt_safe_range : 1;
+                uint8_t _unused : 3;
+            } control;
+        };
+    };
+} can_mcc23_9_state_msg_t;
+
+// All measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output voltage, bytes low/high. Units: V/100
+                uint16_t output_voltage;
+                struct {
+                    uint8_t output_voltage_l;
+                    uint8_t output_voltage_h;
+                };
+            };
+            union {  // Average input current, bytes low/high. Units: A/100
+                uint16_t input_current;
+                struct {
+                    uint8_t input_current_l;
+                    uint8_t input_current_h;
+                };
+            };
+            union {  // Average input voltage, bytes low/high. Units: V/100
+                uint16_t input_voltage;
+                struct {
+                    uint8_t input_voltage_l;
+                    uint8_t input_voltage_h;
+                };
+            };
+            uint8_t dt;  // converter's duty cycle. Units: %/255
+        };
+    };
+} can_mcc23_9_measurements_msg_t;
+
+// Auxiliary measurements from the converter
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Average output current, bytes low/high. Units: A/100
+                uint16_t output_current;
+                struct {
+                    uint8_t output_current_l;
+                    uint8_t output_current_h;
+                };
+            };
+        };
+    };
+} can_mcc23_9_aux_measurements_msg_t;
 
 // Module state report
 typedef struct
@@ -1162,18 +1483,33 @@ typedef struct {
         can_mde22_steeringbat_measurements_msg_t mde22_steeringbat_measurements;
         can_mvc19_1_state_msg_t mvc19_1_state;
         can_mvc19_2_state_msg_t mvc19_2_state;
-        can_mcc19_1_state_msg_t mcc19_1_state;
-        can_mcc19_1_measurements_msg_t mcc19_1_measurements;
-        can_mcc19_2_state_msg_t mcc19_2_state;
-        can_mcc19_2_measurements_msg_t mcc19_2_measurements;
-        can_mcc19_3_state_msg_t mcc19_3_state;
-        can_mcc19_3_measurements_msg_t mcc19_3_measurements;
-        can_mcc19_4_state_msg_t mcc19_4_state;
-        can_mcc19_4_measurements_msg_t mcc19_4_measurements;
-        can_mcc19_5_state_msg_t mcc19_5_state;
-        can_mcc19_5_measurements_msg_t mcc19_5_measurements;
-        can_mcc19_6_state_msg_t mcc19_6_state;
-        can_mcc19_6_measurements_msg_t mcc19_6_measurements;
+        can_mcc23_1_state_msg_t mcc23_1_state;
+        can_mcc23_1_measurements_msg_t mcc23_1_measurements;
+        can_mcc23_1_aux_measurements_msg_t mcc23_1_aux_measurements;
+        can_mcc23_2_state_msg_t mcc23_2_state;
+        can_mcc23_2_measurements_msg_t mcc23_2_measurements;
+        can_mcc23_2_aux_measurements_msg_t mcc23_2_aux_measurements;
+        can_mcc23_3_state_msg_t mcc23_3_state;
+        can_mcc23_3_measurements_msg_t mcc23_3_measurements;
+        can_mcc23_3_aux_measurements_msg_t mcc23_3_aux_measurements;
+        can_mcc23_4_state_msg_t mcc23_4_state;
+        can_mcc23_4_measurements_msg_t mcc23_4_measurements;
+        can_mcc23_4_aux_measurements_msg_t mcc23_4_aux_measurements;
+        can_mcc23_5_state_msg_t mcc23_5_state;
+        can_mcc23_5_measurements_msg_t mcc23_5_measurements;
+        can_mcc23_5_aux_measurements_msg_t mcc23_5_aux_measurements;
+        can_mcc23_6_state_msg_t mcc23_6_state;
+        can_mcc23_6_measurements_msg_t mcc23_6_measurements;
+        can_mcc23_6_aux_measurements_msg_t mcc23_6_aux_measurements;
+        can_mcc23_7_state_msg_t mcc23_7_state;
+        can_mcc23_7_measurements_msg_t mcc23_7_measurements;
+        can_mcc23_7_aux_measurements_msg_t mcc23_7_aux_measurements;
+        can_mcc23_8_state_msg_t mcc23_8_state;
+        can_mcc23_8_measurements_msg_t mcc23_8_measurements;
+        can_mcc23_8_aux_measurements_msg_t mcc23_8_aux_measurements;
+        can_mcc23_9_state_msg_t mcc23_9_state;
+        can_mcc23_9_measurements_msg_t mcc23_9_measurements;
+        can_mcc23_9_aux_measurements_msg_t mcc23_9_aux_measurements;
         can_mcb19_1_state_msg_t mcb19_1_state;
         can_mcb19_1_measurements_msg_t mcb19_1_measurements;
         can_mcb19_2_state_msg_t mcb19_2_state;

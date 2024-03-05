@@ -101,6 +101,50 @@
                     "frame_length": 79
                 }
             ]
+        },
+        {
+            "name": "MAM21",
+            "description": "Mamm",
+            "signature": 11,
+            "topics": [
+                {
+                    "name": "MOTOR3",
+                    "description": "Motor controller parameters",
+                    "id": 19,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "MOTOR",
+                            "description": "Switches and states",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "MOTOR_ON",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 10,
+                    "frame_length": 63
+                }
+            ]
         }
     ],
     "bitrate": 500000.0

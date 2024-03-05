@@ -311,11 +311,11 @@ module_mde22.add_topic(topic_measurements)
 can.add_module(module_mde22)
 
 ################################################################################
-### MODULE: MVC19_1
-module_mvc19_1 = can.Module(
-    name="mvc19_1",
+### MODULE: MVC19
+module_mvc19 = can.Module(
+    name="mvc19",
     signature=210,
-    description="Modulo de voltimetro 1"
+    description="Modulo de voltimetro"
 )
 ### TOPIC: STATE
 topic_state = can.Topic(
@@ -339,46 +339,13 @@ topic_state.describe_byte(
     units=""
 )
 
-module_mvc19_1.add_topic(topic_state)
-can.add_module(module_mvc19_1)
+module_mvc19.add_topic(topic_state)
+can.add_multiple_modules(module_mvc19, 2)
 
 ################################################################################
-### MODULE: MVC19_2
-module_mvc19_2 = can.Module(
-    name="mvc19_2",
-    signature=211,
-    description="Modulo de voltimetro 2"
-)
-### TOPIC: STATE
-topic_state = can.Topic(
-    msg="state",
-    frequency=1,
-    id=102,
-    description="Module state report"
-)
-topic_state.describe_byte(
-    name="state",
-    byte=1,
-    description="State code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="error",
-    byte=2,
-    description="Error code",
-    btype="uint8_t",
-    units=""
-)
-
-module_mvc19_2.add_topic(topic_state)
-can.add_module(module_mvc19_2)
-
-
-################################################################################
-### MODULE: MCC19_1
-module_mcc19_1 = can.Module(
-    name="mcc19_1",
+### MODULE: MCC23
+module_mcc23 = can.Module(
+    name="mcc23",
     signature=225,
     description="Modulo controlador de carga"
 )
@@ -493,634 +460,45 @@ topic_measurements.describe_byte(
     units="%/255"
 )
 
-module_mcc19_1.add_topic(topic_state)
-module_mcc19_1.add_topic(topic_measurements)
-can.add_module(module_mcc19_1)
-
-
-################################################################################
-### MODULE: MCC19_2
-module_mcc19_2 = can.Module(
-    name="mcc19_2",
-    signature=226,
-    description="Modulo controlador de carga"
-)
-#### TOPIC: STATE
-topic_state = can.Topic(
-    msg="state",
-    id=104,
-    frequency=1,
-    description="Module state report",
-)
-topic_state.describe_byte(
-    name="state",
-    byte=1,
-    description="State code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="error",
-    byte=2,
-    description="Error code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="control",
-    byte=2,
-    description="Control flags for operating point",
-    btype="bitfield",
-    units=""
-)
-topic_state.describe_bit(
-    name="enable",
-    byte=2,
-    bit=0
-)
-topic_state.describe_bit(
-    name="vi_safe_range",
-    byte=2,
-    bit=1
-)
-topic_state.describe_bit(
-    name="vo_safe_range",
-    byte=2,
-    bit=2
-)
-topic_state.describe_bit(
-    name="vi_stable",
-    byte=2,
-    bit=3
-)
-topic_state.describe_bit(
-    name="dt_safe_range",
-    byte=2,
-    bit=4
-)
-
-### TOPIC: MEASUREMENTS
-topic_measurements = can.Topic(
-    msg="measurements",
-    id=203,
+### TOPIC: AUXILIARY MEASUREMENTS
+topic_aux_measurements = can.Topic(
+    msg="aux_measurements",
+    id=225,
     frequency=10,
-    description="All measurements from the converter"
+    description="Auxiliary measurements from the converter"
 )
-topic_measurements.describe_byte(
-    name="output_voltage_l",
+topic_aux_measurements.describe_byte(
+    name="output_current_l",
     byte=1,
-    description="Average output voltage, byte low",
+    description="Average output current, byte low",
     btype="uint16_t",
-    units="V/100"
+    units="A/100"
 )
-topic_measurements.describe_byte(
-    name="output_voltage_h",
+topic_aux_measurements.describe_byte(
+    name="output_current_h",
     byte=2,
-    description="Average output voltage, byte high",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="input_current_l",
-    byte=3,
-    description="Average input current, byte low",
+    description="Average output current, byte high",
     btype="uint16_t",
     units="A/100"
-)
-topic_measurements.describe_byte(
-    name="input_current_h",
-    byte=4,
-    description="Average input current, byte high",
-    btype="uint16_t",
-    units="A/100"
-)
-topic_measurements.describe_byte(
-    name="input_voltage_l",
-    byte=5,
-    description="Average input voltage, byte low",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="input_voltage_h",
-    byte=6,
-    description="Average input voltage, byte high",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="dt",
-    byte=7,
-    description="converter's duty cycle",
-    btype="uint8_t",
-    units="%/255"
 )
 
-module_mcc19_2.add_topic(topic_state)
-module_mcc19_2.add_topic(topic_measurements)
-can.add_module(module_mcc19_2)
+module_mcc23.add_topic(topic_state)
+module_mcc23.add_topic(topic_measurements)
+module_mcc23.add_topic(topic_aux_measurements)
+can.add_multiple_modules(module_mcc23, 9)
 
 
 ################################################################################
-### MODULE: MCC19_3
-module_mcc19_3 = can.Module(
-    name="mcc19_3",
-    signature=227,
-    description="Modulo controlador de carga"
-)
-#### TOPIC: STATE
-topic_state = can.Topic(
-    msg="state",
-    id=105,
-    frequency=1,
-    description="Module state report"
-)
-topic_state.describe_byte(
-    name="state",
-    byte=1,
-    description="State code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="error",
-    byte=2,
-    description="Error code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="control",
-    byte=2,
-    description="Control flags for operating point",
-    btype="bitfield",
-    units=""
-)
-topic_state.describe_bit(
-    name="enable",
-    byte=2,
-    bit=0
-)
-topic_state.describe_bit(
-    name="vi_safe_range",
-    byte=2,
-    bit=1
-)
-topic_state.describe_bit(
-    name="vo_safe_range",
-    byte=2,
-    bit=2
-)
-topic_state.describe_bit(
-    name="vi_stable",
-    byte=2,
-    bit=3
-)
-topic_state.describe_bit(
-    name="dt_safe_range",
-    byte=2,
-    bit=4
-)
-
-### TOPIC: MEASUREMENTS
-topic_measurements = can.Topic(
-    msg="measurements",
-    id=204,
-    frequency=10,
-    description="All measurements from the converter"
-)
-topic_measurements.describe_byte(
-    name="output_voltage_l",
-    byte=1,
-    description="Average output voltage, byte low",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="output_voltage_h",
-    byte=2,
-    description="Average output voltage, byte high",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="input_current_l",
-    byte=3,
-    description="Average input current, byte low",
-    btype="uint16_t",
-    units="A/100"
-)
-topic_measurements.describe_byte(
-    name="input_current_h",
-    byte=4,
-    description="Average input current, byte high",
-    btype="uint16_t",
-    units="A/100"
-)
-topic_measurements.describe_byte(
-    name="input_voltage_l",
-    byte=5,
-    description="Average input voltage, byte low",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="input_voltage_h",
-    byte=6,
-    description="Average input voltage, byte high",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="dt",
-    byte=7,
-    description="converter's duty cycle",
-    btype="uint8_t",
-    units="%/255"
-)
-
-module_mcc19_3.add_topic(topic_state)
-module_mcc19_3.add_topic(topic_measurements)
-can.add_module(module_mcc19_3)
-
-
-################################################################################
-### MODULE: MCC19_4
-module_mcc19_4 = can.Module(
-    name="mcc19_4",
-    signature=228,
-    description="Modulo controlador de carga"
-)
-#### TOPIC: STATE
-topic_state = can.Topic(
-    msg="state",
-    id=106,
-    frequency=1,
-    description="Module state report",
-)
-topic_state.describe_byte(
-    name="state",
-    byte=1,
-    description="State code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="error",
-    byte=2,
-    description="Error code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="control",
-    byte=2,
-    description="Control flags for operating point",
-    btype="bitfield",
-    units=""
-)
-topic_state.describe_bit(
-    name="enable",
-    byte=2,
-    bit=0
-)
-topic_state.describe_bit(
-    name="vi_safe_range",
-    byte=2,
-    bit=1
-)
-topic_state.describe_bit(
-    name="vo_safe_range",
-    byte=2,
-    bit=2
-)
-topic_state.describe_bit(
-    name="vi_stable",
-    byte=2,
-    bit=3
-)
-topic_state.describe_bit(
-    name="dt_safe_range",
-    byte=2,
-    bit=4
-)
-
-### TOPIC: MEASUREMENTS
-topic_measurements = can.Topic(
-    msg="measurements",
-    id=205,
-    frequency=10,
-    description="All measurements from the converter"
-)
-topic_measurements.describe_byte(
-    name="output_voltage_l",
-    byte=1,
-    description="Average output voltage, byte low",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="output_voltage_h",
-    byte=2,
-    description="Average output voltage, byte high",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="input_current_l",
-    byte=3,
-    description="Average input current, byte low",
-    btype="uint16_t",
-    units="A/100"
-)
-topic_measurements.describe_byte(
-    name="input_current_h",
-    byte=4,
-    description="Average input current, byte high",
-    btype="uint16_t",
-    units="A/100"
-)
-topic_measurements.describe_byte(
-    name="input_voltage_l",
-    byte=5,
-    description="Average input voltage, byte low",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="input_voltage_h",
-    byte=6,
-    description="Average input voltage, byte high",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="dt",
-    byte=7,
-    description="converter's duty cycle",
-    btype="uint8_t",
-    units="%/255"
-)
-
-module_mcc19_4.add_topic(topic_state)
-module_mcc19_4.add_topic(topic_measurements)
-can.add_module(module_mcc19_4)
-
-################################################################################
-### MODULE: MCC19_5
-module_mcc19_5 = can.Module(
-    name="mcc19_5",
-    signature=229,
-    description="Modulo controlador de carga"
-)
-#### TOPIC: STATE
-topic_state = can.Topic(
-    msg="state",
-    id=107,
-    frequency=1,
-    description="Module state report"
-)
-topic_state.describe_byte(
-    name="state",
-    byte=1,
-    description="State code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="error",
-    byte=2,
-    description="Error code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="control",
-    byte=2,
-    description="Control flags for operating point",
-    btype="bitfield",
-    units=""
-)
-topic_state.describe_bit(
-    name="enable",
-    byte=2,
-    bit=0
-)
-topic_state.describe_bit(
-    name="vi_safe_range",
-    byte=2,
-    bit=1
-)
-topic_state.describe_bit(
-    name="vo_safe_range",
-    byte=2,
-    bit=2
-)
-topic_state.describe_bit(
-    name="vi_stable",
-    byte=2,
-    bit=3
-)
-topic_state.describe_bit(
-    name="dt_safe_range",
-    byte=2,
-    bit=4
-)
-
-### TOPIC: MEASUREMENTS
-topic_measurements = can.Topic(
-    msg="measurements",
-    id=206,
-    frequency=10,
-    description="All measurements from the converter"
-)
-topic_measurements.describe_byte(
-    name="output_voltage_l",
-    byte=1,
-    description="Average output voltage, byte low",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="output_voltage_h",
-    byte=2,
-    description="Average output voltage, byte high",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="input_current_l",
-    byte=3,
-    description="Average input current, byte low",
-    btype="uint16_t",
-    units="A/100"
-)
-topic_measurements.describe_byte(
-    name="input_current_h",
-    byte=4,
-    description="Average input current, byte high",
-    btype="uint16_t",
-    units="A/100"
-)
-topic_measurements.describe_byte(
-    name="input_voltage_l",
-    byte=5,
-    description="Average input voltage, byte low",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="input_voltage_h",
-    byte=6,
-    description="Average input voltage, byte high",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="dt",
-    byte=7,
-    description="converter's duty cycle",
-    btype="uint8_t",
-    units="%/255"
-)
-
-module_mcc19_5.add_topic(topic_state)
-module_mcc19_5.add_topic(topic_measurements)
-can.add_module(module_mcc19_5)
-
-################################################################################
-### MODULE: MCC19_6
-module_mcc19_6 = can.Module(
-    name="mcc19_6",
-    signature=239,
-    description="Modulo controlador de carga"
-)
-#### TOPIC: STATE
-topic_state = can.Topic(
-    msg="state",
-    id=108,
-    frequency=1,
-    description="Module state report"
-)
-topic_state.describe_byte(
-    name="state",
-    byte=1,
-    description="State code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="error",
-    byte=2,
-    description="Error code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="control",
-    byte=2,
-    description="Control flags for operating point",
-    btype="bitfield",
-    units=""
-)
-topic_state.describe_bit(
-    name="enable",
-    byte=2,
-    bit=0
-)
-topic_state.describe_bit(
-    name="vi_safe_range",
-    byte=2,
-    bit=1
-)
-topic_state.describe_bit(
-    name="vo_safe_range",
-    byte=2,
-    bit=2
-)
-topic_state.describe_bit(
-    name="vi_stable",
-    byte=2,
-    bit=3
-)
-topic_state.describe_bit(
-    name="dt_safe_range",
-    byte=2,
-    bit=4
-)
-
-### TOPIC: MEASUREMENTS
-topic_measurements = can.Topic(
-    msg="measurements",
-    id=207,
-    frequency=10,
-    description="All measurements from the converter"
-)
-topic_measurements.describe_byte(
-    name="output_voltage_l",
-    byte=1,
-    description="Average output voltage, byte low",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="output_voltage_h",
-    byte=2,
-    description="Average output voltage, byte high",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="input_current_l",
-    byte=3,
-    description="Average input current, byte low",
-    btype="uint16_t",
-    units="A/100"
-)
-topic_measurements.describe_byte(
-    name="input_current_h",
-    byte=4,
-    description="Average input current, byte high",
-    btype="uint16_t",
-    units="A/100"
-)
-topic_measurements.describe_byte(
-    name="input_voltage_l",
-    byte=5,
-    description="Average input voltage, byte low",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="input_voltage_h",
-    byte=6,
-    description="Average input voltage, byte high",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="dt",
-    byte=7,
-    description="converter's duty cycle",
-    btype="uint8_t",
-    units="%/255"
-)
-
-module_mcc19_6.add_topic(topic_state)
-module_mcc19_6.add_topic(topic_measurements)
-can.add_module(module_mcc19_6)
-
-################################################################################
-### MODULE: MCB19_1
-module_mcb19_1 = can.Module(
-    name="mcb19_1",
+### MODULE: MCB19
+module_mcb19 = can.Module(
+    name="mcb19",
     signature=220,
     description="Modulo de carregamento das baterias auxiliares"
 )
 #### TOPIC: STATE
 topic_state = can.Topic(
     msg="state",
-    id=109,
+    id=118,
     frequency=1,
     description="Module state report"
 )
@@ -1174,7 +552,7 @@ topic_state.describe_bit(
 ### TOPIC: MEASUREMENTS
 topic_measurements = can.Topic(
     msg="measurements",
-    id=208,
+    id=222,
     frequency=10,
     description="All measurements from the converter"
 )
@@ -1228,131 +606,9 @@ topic_measurements.describe_byte(
     units="%/255"
 )
 
-module_mcb19_1.add_topic(topic_state)
-module_mcb19_1.add_topic(topic_measurements)
-can.add_module(module_mcb19_1)
-
-################################################################################
-### MODULE: MCB19_2
-module_mcb19_2 = can.Module(
-    name="mcb19_2",
-    signature=221,
-    description="Modulo de carregamento das baterias auxiliares"
-)
-#### TOPIC: STATE
-topic_state = can.Topic(
-    msg="state",
-    id=110,
-    frequency=1,
-    description="Module state report"
-)
-topic_state.describe_byte(
-    name="state",
-    byte=1,
-    description="State code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="error",
-    byte=2,
-    description="Error code",
-    btype="uint8_t",
-    units=""
-)
-topic_state.describe_byte(
-    name="control",
-    byte=2,
-    description="Control flags for operating point",
-    btype="bitfield",
-    units=""
-)
-topic_state.describe_bit(
-    name="enable",
-    byte=2,
-    bit=0
-)
-topic_state.describe_bit(
-    name="vi_safe_range",
-    byte=2,
-    bit=1
-)
-topic_state.describe_bit(
-    name="vo_safe_range",
-    byte=2,
-    bit=2
-)
-topic_state.describe_bit(
-    name="vi_stable",
-    byte=2,
-    bit=3
-)
-topic_state.describe_bit(
-    name="dt_safe_range",
-    byte=2,
-    bit=4
-)
-
-### TOPIC: MEASUREMENTS
-topic_measurements = can.Topic(
-    msg="measurements",
-    id=209,
-    frequency=10,
-    description="All measurements from the converter"
-)
-topic_measurements.describe_byte(
-    name="output_voltage_l",
-    byte=1,
-    description="Average output voltage, byte low",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="output_voltage_h",
-    byte=2,
-    description="Average output voltage, byte high",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="output_current_l",
-    byte=3,
-    description="Average output current, byte low",
-    btype="uint16_t",
-    units="A/100"
-)
-topic_measurements.describe_byte(
-    name="output_current_h",
-    byte=4,
-    description="Average output current, byte high",
-    btype="uint16_t",
-    units="A/100"
-)
-topic_measurements.describe_byte(
-    name="input_voltage_l",
-    byte=5,
-    description="Average input voltage, byte low",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="input_voltage_h",
-    byte=6,
-    description="Average input voltage, byte high",
-    btype="uint16_t",
-    units="V/100"
-)
-topic_measurements.describe_byte(
-    name="dt",
-    byte=7,
-    description="converter's duty cycle",
-    btype="uint8_t",
-    units="%/255"
-)
-
-module_mcb19_2.add_topic(topic_state)
-module_mcb19_2.add_topic(topic_measurements)
-can.add_module(module_mcb19_2)
+module_mcb19.add_topic(topic_state)
+module_mcb19.add_topic(topic_measurements)
+can.add_multiple_modules(module_mcb19, 2) 
 
 ################################################################################
 ### MODULE: MAC22
@@ -1476,14 +732,14 @@ can.add_module(module_mam19)
 ### MODULE: MAB19
 module_mab19 = can.Module(
     name="mab19",
-    signature=230,
+    signature=235,
     description="Modulo de Acionamento das Bombas de Porao"
 )
 
 #### TOPIC: STATE
 topic_state = can.Topic(
     msg="state",
-    id=0b1101111,
+    id=120,
     frequency=0,
     description="Module state report"
 )
@@ -1505,7 +761,7 @@ topic_state.describe_byte(
 #### TOPIC: PUMPS
 topic_pumps = can.Topic(
     msg="pumps",
-    id=0b11010010,
+    id=224,
     frequency=0,
     description="Pumps state",
 )
@@ -1538,7 +794,7 @@ can.add_module(module_mab19)
 
 
 ################################################################################
-### MODULE: MSC19_1
+### MODULE: MSC19
 module_msc19_1 = can.Module(
     name="msc19_1",
     signature=250,
