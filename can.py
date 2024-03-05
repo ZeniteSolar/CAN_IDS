@@ -181,7 +181,7 @@ class Can:
             }
 
             if self.bytes[byte]["type"] == "bitfield":
-                self.bytes[byte]["bits"] = [None]*8
+                self.bytes[byte]["bits"] = [None] * 8
 
         def describe_bit(self, name: str, byte: int, bit: int):
             self.validate_byte(byte)
@@ -258,8 +258,25 @@ class Can:
 
     def add_module(self, module):
         for m in self.modules:
+            # Check if module name is unique
             if m['name'] == dict(module.get()).get('name'):
-                raise ValueError("module field `name` must be unique!")
+                raise ValueError("module field `name` must be unique!", m['name'])
+            # Check if module signature is unique
+            if m['signature'] == dict(module.get()).get('signature'):
+                raise ValueError(
+                    "module field `signature` must be unique!, module ",
+                    m['name'],
+                    " and ",
+                    module.get()['name'],
+                    " have the same signature: ",
+                    m["signature"]
+                )
+            # Check if topics id is unique
+            for db_topic in m['topics']:
+                for topic in module.get()['topics']:
+                    if topic['id'] == db_topic['id']:
+                        print(f"WARNING: Topic id {topic['id']} is not unique",
+                            f"conflict between module {m['name']} and {module.get()['name']}")
 
         self.modules.append(module.get())
 
