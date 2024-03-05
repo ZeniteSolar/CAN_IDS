@@ -1,5 +1,6 @@
 #!/bin/python
 
+from __future__ import annotations
 from operator import mod
 from unicodedata import normalize
 import json
@@ -70,6 +71,43 @@ class Can:
                 "frequency": self.frequency,
                 "frame_length": self.frame_length
             }
+        
+        @classmethod
+        def from_dict(cls, data: dict) -> Can.Topic:
+            topic = cls(
+                msg=data["name"],
+                id=data["id"],
+                frequency=data["frequency"],
+                description=data["description"]
+            )
+            for (i, byte) in enumerate(data["bytes"]):
+                # Signature byte is already described
+                if i == 0 or byte is None:
+                    continue
+
+                topic.describe_byte(
+                    name=byte["name"],
+                    byte=i,
+                    description=byte["description"],
+                    btype=byte["type"],
+                    units=byte["units"]
+                )
+
+                # Describe bits if byte is a bitfield
+                if byte["type"] != "bitfield":
+                    continue
+                
+                for bit in byte["bits"]:
+                    # Skip if bit is not described
+                    if bit is None:
+                        continue
+
+                    topic.describe_bit(
+                        name=bit,
+                        byte=i,
+                        bit=byte["bits"].index(bit)
+                    )
+            return topic
 
         def __str__(self) -> str:
             return json.dumps(self.get(), indent=4)
