@@ -279,6 +279,32 @@ class Can:
                             f"conflict between module {m['name']} and {module.get()['name']}")
 
         self.modules.append(module.get())
+    
+    def add_multiple_modules(self, module: Module, quantity: int) -> None:
+        '''
+            Add multiple modules based on a template module and a quantity
+        '''
+        for i in range(quantity):
+            # Create topics
+            topics = []
+            for topic in module.get()["topics"]:
+                new_topic = Can.Topic.from_dict(topic)
+                # Update topic id
+                new_topic.id = topic["id"] + i
+                topics.append(new_topic)
+
+            # Create module
+            new_module = Can.Module(
+                name=module.get()["name"] + "_" + str(i + 1),
+                signature=module.get()["signature"] + i,
+                description=module.get()["description"] + " " + str(i + 1)
+            )
+            # Add topics to module
+            for topic in topics:
+                new_module.add_topic(topic)
+
+            # Add module to database
+            self.add_module(new_module)
 
     def import_json(self, filename: str):
         with open(filename, 'r') as file:
