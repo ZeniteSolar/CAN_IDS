@@ -1,5 +1,6 @@
 #!/bin/python
 
+from __future__ import annotations
 from operator import mod
 from unicodedata import normalize
 import json
@@ -40,7 +41,7 @@ class Can:
             return False
         return True
 
-    class topic:
+    class Topic:
         def __init__(self, msg: str, id: int,frequency: int, description: str):
             self.name = Can.convert_string(msg)
 
@@ -70,6 +71,43 @@ class Can:
                 "frequency": self.frequency,
                 "frame_length": self.frame_length
             }
+        
+        @classmethod
+        def from_dict(cls, data: dict) -> Can.Topic:
+            topic = cls(
+                msg=data["name"],
+                id=data["id"],
+                frequency=data["frequency"],
+                description=data["description"]
+            )
+            for (i, byte) in enumerate(data["bytes"]):
+                # Signature byte is already described
+                if i == 0 or byte is None:
+                    continue
+
+                topic.describe_byte(
+                    name=byte["name"],
+                    byte=i,
+                    description=byte["description"],
+                    btype=byte["type"],
+                    units=byte["units"]
+                )
+
+                # Describe bits if byte is a bitfield
+                if byte["type"] != "bitfield":
+                    continue
+                
+                for bit in byte["bits"]:
+                    # Skip if bit is not described
+                    if bit is None:
+                        continue
+
+                    topic.describe_bit(
+                        name=bit,
+                        byte=i,
+                        bit=byte["bits"].index(bit)
+                    )
+            return topic
 
         def __str__(self) -> str:
             return json.dumps(self.get(), indent=4)
@@ -143,7 +181,7 @@ class Can:
             }
 
             if self.bytes[byte]["type"] == "bitfield":
-                self.bytes[byte]["bits"] = [None]*8
+                self.bytes[byte]["bits"] = [None] * 8
 
         def describe_bit(self, name: str, byte: int, bit: int):
             self.validate_byte(byte)
@@ -158,7 +196,7 @@ class Can:
 
             self.bytes[byte]["bits"][bit] = name
 
-    class module:
+    class Module:
         def __init__(self, name: str, signature: int, description: str):
 
             self.validate_name(name)
@@ -220,17 +258,60 @@ class Can:
 
     def add_module(self, module):
         for m in self.modules:
+            # Check if module name is unique
             if m['name'] == dict(module.get()).get('name'):
-                raise ValueError("module field `name` must be unique!")
+                raise ValueError("module field `name` must be unique!", m['name'])
+            # Check if module signature is unique
+            if m['signature'] == dict(module.get()).get('signature'):
+                raise ValueError(
+                    "module field `signature` must be unique!, module ",
+                    m['name'],
+                    " and ",
+                    module.get()['name'],
+                    " have the same signature: ",
+                    m["signature"]
+                )
+            # Check if topics id is unique
+            for db_topic in m['topics']:
+                for topic in module.get()['topics']:
+                    if topic['id'] == db_topic['id']:
+                        print(f"WARNING: Topic id {topic['id']} is not unique",
+                            f"conflict between module {m['name']} and {module.get()['name']}")
 
         self.modules.append(module.get())
+    
+    def add_multiple_modules(self, module: Module, quantity: int) -> None:
+        '''
+            Add multiple modules based on a template module and a quantity
+        '''
+        for i in range(quantity):
+            # Create topics
+            topics = []
+            for topic in module.get()["topics"]:
+                new_topic = Can.Topic.from_dict(topic)
+                # Update topic id
+                new_topic.id = topic["id"] + i
+                topics.append(new_topic)
+
+            # Create module
+            new_module = Can.Module(
+                name=module.get()["name"] + "_" + str(i + 1),
+                signature=module.get()["signature"] + i,
+                description=module.get()["description"] + " " + str(i + 1)
+            )
+            # Add topics to module
+            for topic in topics:
+                new_module.add_topic(topic)
+
+            # Add module to database
+            self.add_module(new_module)
 
     def import_json(self, filename: str):
         with open(filename, 'r') as file:
             data = dict(json.load(file))
             self.version = data["version"]
             for module in data["modules"]:
-                self.add_module(Can.module(
+                self.add_module(Can.Module(
                     name=module.get('name'),
                     signature=module.get('signature'),
                     description=module.get('description')
@@ -384,22 +465,22 @@ class Can:
 
 
 if __name__ == '__main__':
-    t1 = Can.topic("motor", 9, 100, "Motor controller parameters")
+    t1 = Can.Topic("motor", 9, 100, "Motor controller parameters")
     t1.describe_byte("motor", 1, "Switches and states", "bitfield", "")
     t1.describe_bit("motor on", 1, 0)
     t1.describe_byte("D raw", 2, "Motor Duty Cycle", "uint8_t", "%")
     t1.describe_byte("I raw", 3, "Motor Soft Start", "uint8_t", "%")
-    t2 = Can.topic("motor2", 19, 10, "Motor controller parameters")
+    t2 = Can.Topic("motor2", 19, 10, "Motor controller parameters")
     t2.describe_byte("motor", 1, "Switches and states", "bitfield", "")
     t2.describe_bit("motor on", 1, 0)
     t2.describe_byte("D raw", 2, "Motor Duty Cycle", "uint8_t", "%")
     t2.describe_byte("I raw", 3, "Motor Soft Start", "uint8_t", "%")
     # print(t1)
 
-    m1 = Can.module("mic17", 10, "Modulo de Interface de Controle")
+    m1 = Can.Module("mic17", 10, "Modulo de Interface de Controle")
     m1.add_topic(t1)
     m1.add_topic(t2)
-    m2 = Can.module("mam21", 10, "Mamm")
+    m2 = Can.Module("mam21", 10, "Mamm")
 
     # print(m1)
 
