@@ -481,6 +481,20 @@ topic_aux_measurements.describe_byte(
     btype="uint16_t",
     units="A/100"
 )
+topic_aux_measurements.describe_byte(
+    name="mosfet_temp",
+    byte=3,
+    description="MOSFET temperature",
+    btype="uint8_t",
+    units="°C"
+)
+topic_aux_measurements.describe_byte(
+    name="diode_temp",
+    byte=4,
+    description="Diode temperature",
+    btype="uint8_t",
+    units="°C"
+)
 
 module_mcc23.add_topic(topic_state)
 module_mcc23.add_topic(topic_measurements)
