@@ -1,5 +1,5 @@
 {
-    "version": "0.1.6",
+    "version": "0.1.8",
     "modules": [
         {
             "name": "GENERIC",
@@ -592,14 +592,24 @@
                             "type": "uint16_t",
                             "units": "A/100"
                         },
-                        null,
-                        null,
+                        {
+                            "name": "MOSFET_TEMP",
+                            "description": "MOSFET temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
+                        {
+                            "name": "DIODE_TEMP",
+                            "description": "Diode temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 71
+                    "frame_length": 87
                 }
             ]
         },
@@ -730,14 +740,24 @@
                             "type": "uint16_t",
                             "units": "A/100"
                         },
-                        null,
-                        null,
+                        {
+                            "name": "MOSFET_TEMP",
+                            "description": "MOSFET temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
+                        {
+                            "name": "DIODE_TEMP",
+                            "description": "Diode temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 71
+                    "frame_length": 87
                 }
             ]
         },
@@ -868,14 +888,24 @@
                             "type": "uint16_t",
                             "units": "A/100"
                         },
-                        null,
-                        null,
+                        {
+                            "name": "MOSFET_TEMP",
+                            "description": "MOSFET temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
+                        {
+                            "name": "DIODE_TEMP",
+                            "description": "Diode temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 71
+                    "frame_length": 87
                 }
             ]
         },
@@ -1006,14 +1036,24 @@
                             "type": "uint16_t",
                             "units": "A/100"
                         },
-                        null,
-                        null,
+                        {
+                            "name": "MOSFET_TEMP",
+                            "description": "MOSFET temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
+                        {
+                            "name": "DIODE_TEMP",
+                            "description": "Diode temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 71
+                    "frame_length": 87
                 }
             ]
         },
@@ -1144,14 +1184,24 @@
                             "type": "uint16_t",
                             "units": "A/100"
                         },
-                        null,
-                        null,
+                        {
+                            "name": "MOSFET_TEMP",
+                            "description": "MOSFET temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
+                        {
+                            "name": "DIODE_TEMP",
+                            "description": "Diode temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 71
+                    "frame_length": 87
                 }
             ]
         },
@@ -1282,14 +1332,24 @@
                             "type": "uint16_t",
                             "units": "A/100"
                         },
-                        null,
-                        null,
+                        {
+                            "name": "MOSFET_TEMP",
+                            "description": "MOSFET temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
+                        {
+                            "name": "DIODE_TEMP",
+                            "description": "Diode temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 71
+                    "frame_length": 87
                 }
             ]
         },
@@ -1420,14 +1480,24 @@
                             "type": "uint16_t",
                             "units": "A/100"
                         },
-                        null,
-                        null,
+                        {
+                            "name": "MOSFET_TEMP",
+                            "description": "MOSFET temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
+                        {
+                            "name": "DIODE_TEMP",
+                            "description": "Diode temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 71
+                    "frame_length": 87
                 }
             ]
         },
@@ -1558,14 +1628,24 @@
                             "type": "uint16_t",
                             "units": "A/100"
                         },
-                        null,
-                        null,
+                        {
+                            "name": "MOSFET_TEMP",
+                            "description": "MOSFET temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
+                        {
+                            "name": "DIODE_TEMP",
+                            "description": "Diode temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 71
+                    "frame_length": 87
                 }
             ]
         },
@@ -1696,14 +1776,24 @@
                             "type": "uint16_t",
                             "units": "A/100"
                         },
-                        null,
-                        null,
+                        {
+                            "name": "MOSFET_TEMP",
+                            "description": "MOSFET temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
+                        {
+                            "name": "DIODE_TEMP",
+                            "description": "Diode temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 71
+                    "frame_length": 87
                 }
             ]
         },

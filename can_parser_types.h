@@ -1,5 +1,5 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
-#define CAN_VERSION "0.1.6"
+#define CAN_VERSION "0.1.8"
 
 #include <stdint.h>
 
@@ -279,6 +279,8 @@ typedef struct
                     uint8_t output_current_h;
                 };
             };
+            uint8_t mosfet_temp;  // MOSFET temperature. Units: °C
+            uint8_t diode_temp;  // Diode temperature. Units: °C
         };
     };
 } can_mcc23_1_aux_measurements_msg_t;
@@ -353,6 +355,8 @@ typedef struct
                     uint8_t output_current_h;
                 };
             };
+            uint8_t mosfet_temp;  // MOSFET temperature. Units: °C
+            uint8_t diode_temp;  // Diode temperature. Units: °C
         };
     };
 } can_mcc23_2_aux_measurements_msg_t;
@@ -427,6 +431,8 @@ typedef struct
                     uint8_t output_current_h;
                 };
             };
+            uint8_t mosfet_temp;  // MOSFET temperature. Units: °C
+            uint8_t diode_temp;  // Diode temperature. Units: °C
         };
     };
 } can_mcc23_3_aux_measurements_msg_t;
@@ -501,6 +507,8 @@ typedef struct
                     uint8_t output_current_h;
                 };
             };
+            uint8_t mosfet_temp;  // MOSFET temperature. Units: °C
+            uint8_t diode_temp;  // Diode temperature. Units: °C
         };
     };
 } can_mcc23_4_aux_measurements_msg_t;
@@ -575,6 +583,8 @@ typedef struct
                     uint8_t output_current_h;
                 };
             };
+            uint8_t mosfet_temp;  // MOSFET temperature. Units: °C
+            uint8_t diode_temp;  // Diode temperature. Units: °C
         };
     };
 } can_mcc23_5_aux_measurements_msg_t;
@@ -649,6 +659,8 @@ typedef struct
                     uint8_t output_current_h;
                 };
             };
+            uint8_t mosfet_temp;  // MOSFET temperature. Units: °C
+            uint8_t diode_temp;  // Diode temperature. Units: °C
         };
     };
 } can_mcc23_6_aux_measurements_msg_t;
@@ -723,6 +735,8 @@ typedef struct
                     uint8_t output_current_h;
                 };
             };
+            uint8_t mosfet_temp;  // MOSFET temperature. Units: °C
+            uint8_t diode_temp;  // Diode temperature. Units: °C
         };
     };
 } can_mcc23_7_aux_measurements_msg_t;
@@ -797,6 +811,8 @@ typedef struct
                     uint8_t output_current_h;
                 };
             };
+            uint8_t mosfet_temp;  // MOSFET temperature. Units: °C
+            uint8_t diode_temp;  // Diode temperature. Units: °C
         };
     };
 } can_mcc23_8_aux_measurements_msg_t;
@@ -871,6 +887,8 @@ typedef struct
                     uint8_t output_current_h;
                 };
             };
+            uint8_t mosfet_temp;  // MOSFET temperature. Units: °C
+            uint8_t diode_temp;  // Diode temperature. Units: °C
         };
     };
 } can_mcc23_9_aux_measurements_msg_t;

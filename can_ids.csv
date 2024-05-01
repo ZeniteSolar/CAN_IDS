@@ -13,31 +13,31 @@
 11,MVC19_2,211,STATE,102,1,0.014,71,Module state report
 12,MCC23_1,225,STATE,103,1,0.014,71,Module state report
 13,MCC23_1,225,MEASUREMENTS,202,10,0.222,111,All measurements from the converter
-14,MCC23_1,225,AUX_MEASUREMENTS,225,10,0.142,71,Auxiliary measurements from the converter
+14,MCC23_1,225,AUX_MEASUREMENTS,225,10,0.174,87,Auxiliary measurements from the converter
 15,MCC23_2,226,STATE,104,1,0.014,71,Module state report
 16,MCC23_2,226,MEASUREMENTS,203,10,0.222,111,All measurements from the converter
-17,MCC23_2,226,AUX_MEASUREMENTS,226,10,0.142,71,Auxiliary measurements from the converter
+17,MCC23_2,226,AUX_MEASUREMENTS,226,10,0.174,87,Auxiliary measurements from the converter
 18,MCC23_3,227,STATE,105,1,0.014,71,Module state report
 19,MCC23_3,227,MEASUREMENTS,204,10,0.222,111,All measurements from the converter
-20,MCC23_3,227,AUX_MEASUREMENTS,227,10,0.142,71,Auxiliary measurements from the converter
+20,MCC23_3,227,AUX_MEASUREMENTS,227,10,0.174,87,Auxiliary measurements from the converter
 21,MCC23_4,228,STATE,106,1,0.014,71,Module state report
 22,MCC23_4,228,MEASUREMENTS,205,10,0.222,111,All measurements from the converter
-23,MCC23_4,228,AUX_MEASUREMENTS,228,10,0.142,71,Auxiliary measurements from the converter
+23,MCC23_4,228,AUX_MEASUREMENTS,228,10,0.174,87,Auxiliary measurements from the converter
 24,MCC23_5,229,STATE,107,1,0.014,71,Module state report
 25,MCC23_5,229,MEASUREMENTS,206,10,0.222,111,All measurements from the converter
-26,MCC23_5,229,AUX_MEASUREMENTS,229,10,0.142,71,Auxiliary measurements from the converter
+26,MCC23_5,229,AUX_MEASUREMENTS,229,10,0.174,87,Auxiliary measurements from the converter
 27,MCC23_6,230,STATE,108,1,0.014,71,Module state report
 28,MCC23_6,230,MEASUREMENTS,207,10,0.222,111,All measurements from the converter
-29,MCC23_6,230,AUX_MEASUREMENTS,230,10,0.142,71,Auxiliary measurements from the converter
+29,MCC23_6,230,AUX_MEASUREMENTS,230,10,0.174,87,Auxiliary measurements from the converter
 30,MCC23_7,231,STATE,109,1,0.014,71,Module state report
 31,MCC23_7,231,MEASUREMENTS,208,10,0.222,111,All measurements from the converter
-32,MCC23_7,231,AUX_MEASUREMENTS,231,10,0.142,71,Auxiliary measurements from the converter
+32,MCC23_7,231,AUX_MEASUREMENTS,231,10,0.174,87,Auxiliary measurements from the converter
 33,MCC23_8,232,STATE,110,1,0.014,71,Module state report
 34,MCC23_8,232,MEASUREMENTS,209,10,0.222,111,All measurements from the converter
-35,MCC23_8,232,AUX_MEASUREMENTS,232,10,0.142,71,Auxiliary measurements from the converter
+35,MCC23_8,232,AUX_MEASUREMENTS,232,10,0.174,87,Auxiliary measurements from the converter
 36,MCC23_9,233,STATE,111,1,0.014,71,Module state report
 37,MCC23_9,233,MEASUREMENTS,210,10,0.222,111,All measurements from the converter
-38,MCC23_9,233,AUX_MEASUREMENTS,233,10,0.142,71,Auxiliary measurements from the converter
+38,MCC23_9,233,AUX_MEASUREMENTS,233,10,0.174,87,Auxiliary measurements from the converter
 39,MCB19_1,220,STATE,118,1,0.014,71,Module state report
 40,MCB19_1,220,MEASUREMENTS,222,10,0.222,111,All measurements from the converter
 41,MCB19_2,221,STATE,119,1,0.014,71,Module state report
