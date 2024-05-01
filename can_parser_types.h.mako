@@ -7,6 +7,7 @@
     %for topic in module["topics"]:
 
 // ${topic["description"]}
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {

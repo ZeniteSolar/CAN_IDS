@@ -1,10 +1,11 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
-#define CAN_VERSION "0.1.5"
+#define CAN_VERSION "0.1.6"
 
 #include <stdint.h>
 
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -18,6 +19,7 @@ typedef struct
 } can_generic_state_msg_t;
 
 // Generic topic
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -29,6 +31,7 @@ typedef struct
 } can_generic_generic_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -42,6 +45,7 @@ typedef struct
 } can_mic19_state_msg_t;
 
 // Motor controller parameters
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -61,6 +65,7 @@ typedef struct
 } can_mic19_motor_msg_t;
 
 // Pumps controller parameters
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -78,6 +83,7 @@ typedef struct
 } can_mic19_pumps_msg_t;
 
 // Mppts controller parameters
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -94,6 +100,7 @@ typedef struct
 } can_mic19_mppts_msg_t;
 
 // MCS controller parameters
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -109,6 +116,7 @@ typedef struct
 } can_mic19_mcs_msg_t;
 
 // Steereing wheel controls
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -127,6 +135,7 @@ typedef struct
 } can_mic19_mde_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -140,6 +149,7 @@ typedef struct
 } can_mde22_state_msg_t;
 
 // Auxiliar Battery Voltage
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -172,6 +182,7 @@ typedef struct
 } can_mde22_steeringbat_measurements_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -185,6 +196,7 @@ typedef struct
 } can_mvc19_1_state_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -198,6 +210,7 @@ typedef struct
 } can_mvc19_2_state_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -218,6 +231,7 @@ typedef struct
 } can_mcc23_1_state_msg_t;
 
 // All measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -251,6 +265,7 @@ typedef struct
 } can_mcc23_1_measurements_msg_t;
 
 // Auxiliary measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -269,6 +284,7 @@ typedef struct
 } can_mcc23_1_aux_measurements_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -289,6 +305,7 @@ typedef struct
 } can_mcc23_2_state_msg_t;
 
 // All measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -322,6 +339,7 @@ typedef struct
 } can_mcc23_2_measurements_msg_t;
 
 // Auxiliary measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -340,6 +358,7 @@ typedef struct
 } can_mcc23_2_aux_measurements_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -360,6 +379,7 @@ typedef struct
 } can_mcc23_3_state_msg_t;
 
 // All measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -393,6 +413,7 @@ typedef struct
 } can_mcc23_3_measurements_msg_t;
 
 // Auxiliary measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -411,6 +432,7 @@ typedef struct
 } can_mcc23_3_aux_measurements_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -431,6 +453,7 @@ typedef struct
 } can_mcc23_4_state_msg_t;
 
 // All measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -464,6 +487,7 @@ typedef struct
 } can_mcc23_4_measurements_msg_t;
 
 // Auxiliary measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -482,6 +506,7 @@ typedef struct
 } can_mcc23_4_aux_measurements_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -502,6 +527,7 @@ typedef struct
 } can_mcc23_5_state_msg_t;
 
 // All measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -535,6 +561,7 @@ typedef struct
 } can_mcc23_5_measurements_msg_t;
 
 // Auxiliary measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -553,6 +580,7 @@ typedef struct
 } can_mcc23_5_aux_measurements_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -573,6 +601,7 @@ typedef struct
 } can_mcc23_6_state_msg_t;
 
 // All measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -606,6 +635,7 @@ typedef struct
 } can_mcc23_6_measurements_msg_t;
 
 // Auxiliary measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -624,6 +654,7 @@ typedef struct
 } can_mcc23_6_aux_measurements_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -644,6 +675,7 @@ typedef struct
 } can_mcc23_7_state_msg_t;
 
 // All measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -677,6 +709,7 @@ typedef struct
 } can_mcc23_7_measurements_msg_t;
 
 // Auxiliary measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -695,6 +728,7 @@ typedef struct
 } can_mcc23_7_aux_measurements_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -715,6 +749,7 @@ typedef struct
 } can_mcc23_8_state_msg_t;
 
 // All measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -748,6 +783,7 @@ typedef struct
 } can_mcc23_8_measurements_msg_t;
 
 // Auxiliary measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -766,6 +802,7 @@ typedef struct
 } can_mcc23_8_aux_measurements_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -786,6 +823,7 @@ typedef struct
 } can_mcc23_9_state_msg_t;
 
 // All measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -819,6 +857,7 @@ typedef struct
 } can_mcc23_9_measurements_msg_t;
 
 // Auxiliary measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -837,6 +876,7 @@ typedef struct
 } can_mcc23_9_aux_measurements_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -857,6 +897,7 @@ typedef struct
 } can_mcb19_1_state_msg_t;
 
 // All measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -890,6 +931,7 @@ typedef struct
 } can_mcb19_1_measurements_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -910,6 +952,7 @@ typedef struct
 } can_mcb19_2_state_msg_t;
 
 // All measurements from the converter
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -943,6 +986,7 @@ typedef struct
 } can_mcb19_2_measurements_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -956,6 +1000,7 @@ typedef struct
 } can_mac22_state_msg_t;
 
 // Contactor task response
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -968,6 +1013,7 @@ typedef struct
 } can_mac22_contactor_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -981,6 +1027,7 @@ typedef struct
 } can_mam19_state_msg_t;
 
 // Motor controller parameters
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -994,6 +1041,7 @@ typedef struct
 } can_mam19_motor_msg_t;
 
 // Contactor requests
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1006,6 +1054,7 @@ typedef struct
 } can_mam19_contactor_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1019,6 +1068,7 @@ typedef struct
 } can_mab19_state_msg_t;
 
 // Pumps state
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1036,6 +1086,7 @@ typedef struct
 } can_mab19_pumps_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1049,6 +1100,7 @@ typedef struct
 } can_msc19_1_state_msg_t;
 
 // Voltage measurements
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1081,6 +1133,7 @@ typedef struct
 } can_msc19_1_adc_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1094,6 +1147,7 @@ typedef struct
 } can_msc19_2_state_msg_t;
 
 // Voltage measurements
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1126,6 +1180,7 @@ typedef struct
 } can_msc19_2_adc_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1139,6 +1194,7 @@ typedef struct
 } can_msc19_3_state_msg_t;
 
 // Voltage measurements
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1171,6 +1227,7 @@ typedef struct
 } can_msc19_3_adc_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1184,6 +1241,7 @@ typedef struct
 } can_msc19_4_state_msg_t;
 
 // Current measurements
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1216,6 +1274,7 @@ typedef struct
 } can_msc19_4_adc_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1229,6 +1288,7 @@ typedef struct
 } can_msc19_5_state_msg_t;
 
 // Current measurements
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1261,6 +1321,7 @@ typedef struct
 } can_msc19_5_adc_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1274,6 +1335,7 @@ typedef struct
 } can_mcs19_state_msg_t;
 
 // Boat charging // Boat on
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1293,6 +1355,7 @@ typedef struct
 } can_mcs19_start_stages_msg_t;
 
 // battery voltage values
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1325,6 +1388,7 @@ typedef struct
 } can_mcs19_bat_msg_t;
 
 // capacitor bank voltage values
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1357,6 +1421,7 @@ typedef struct
 } can_mcs19_cap_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1370,6 +1435,7 @@ typedef struct
 } can_mt19_state_msg_t;
 
 // RPM motor values
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1388,6 +1454,7 @@ typedef struct
 } can_mt19_rpm_msg_t;
 
 // Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1401,6 +1468,7 @@ typedef struct
 } can_mswi19_state_msg_t;
 
 // Motor controller parameters
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1419,6 +1487,7 @@ typedef struct
 } can_mswi19_motor_msg_t;
 
 // Pumps controller parameters
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1436,6 +1505,7 @@ typedef struct
 } can_mswi19_pumps_msg_t;
 
 // Mppts controller parameters
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
@@ -1452,6 +1522,7 @@ typedef struct
 } can_mswi19_mppts_msg_t;
 
 // MCS controller parameters
+#pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
     union {
