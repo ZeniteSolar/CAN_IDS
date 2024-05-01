@@ -1,4 +1,6 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
+#ifndef CAN_PARSER_TYPES_H
+#define CAN_PARSER_TYPES_H
 #define CAN_VERSION "${db["version"]}"
 
 #include <stdint.h>
@@ -63,3 +65,4 @@ typedef struct {
     };
 } can_msg_t;
 
+#endif // CAN_PARSER_TYPES_H
