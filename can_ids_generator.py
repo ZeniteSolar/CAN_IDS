@@ -495,6 +495,13 @@ topic_aux_measurements.describe_byte(
     btype="uint8_t",
     units="°C"
 )
+topic_aux_measurements.describe_byte(
+    name="room_temp",
+    byte=5,
+    description="Room temperature",
+    btype="uint8_t",
+    units="°C"
+)
 
 module_mcc23.add_topic(topic_state)
 module_mcc23.add_topic(topic_measurements)

@@ -604,12 +604,17 @@
                             "type": "uint8_t",
                             "units": "\u00b0C"
                         },
-                        null,
+                        {
+                            "name": "ROOM_TEMP",
+                            "description": "Room temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 87
+                    "frame_length": 95
                 }
             ]
         },
@@ -752,12 +757,17 @@
                             "type": "uint8_t",
                             "units": "\u00b0C"
                         },
-                        null,
+                        {
+                            "name": "ROOM_TEMP",
+                            "description": "Room temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 87
+                    "frame_length": 95
                 }
             ]
         },
@@ -900,12 +910,17 @@
                             "type": "uint8_t",
                             "units": "\u00b0C"
                         },
-                        null,
+                        {
+                            "name": "ROOM_TEMP",
+                            "description": "Room temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 87
+                    "frame_length": 95
                 }
             ]
         },
@@ -1048,12 +1063,17 @@
                             "type": "uint8_t",
                             "units": "\u00b0C"
                         },
-                        null,
+                        {
+                            "name": "ROOM_TEMP",
+                            "description": "Room temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 87
+                    "frame_length": 95
                 }
             ]
         },
@@ -1196,12 +1216,17 @@
                             "type": "uint8_t",
                             "units": "\u00b0C"
                         },
-                        null,
+                        {
+                            "name": "ROOM_TEMP",
+                            "description": "Room temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 87
+                    "frame_length": 95
                 }
             ]
         },
@@ -1344,12 +1369,17 @@
                             "type": "uint8_t",
                             "units": "\u00b0C"
                         },
-                        null,
+                        {
+                            "name": "ROOM_TEMP",
+                            "description": "Room temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 87
+                    "frame_length": 95
                 }
             ]
         },
@@ -1492,12 +1522,17 @@
                             "type": "uint8_t",
                             "units": "\u00b0C"
                         },
-                        null,
+                        {
+                            "name": "ROOM_TEMP",
+                            "description": "Room temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 87
+                    "frame_length": 95
                 }
             ]
         },
@@ -1640,12 +1675,17 @@
                             "type": "uint8_t",
                             "units": "\u00b0C"
                         },
-                        null,
+                        {
+                            "name": "ROOM_TEMP",
+                            "description": "Room temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 87
+                    "frame_length": 95
                 }
             ]
         },
@@ -1788,12 +1828,17 @@
                             "type": "uint8_t",
                             "units": "\u00b0C"
                         },
-                        null,
+                        {
+                            "name": "ROOM_TEMP",
+                            "description": "Room temperature",
+                            "type": "uint8_t",
+                            "units": "\u00b0C"
+                        },
                         null,
                         null
                     ],
                     "frequency": 10,
-                    "frame_length": 87
+                    "frame_length": 95
                 }
             ]
         },
