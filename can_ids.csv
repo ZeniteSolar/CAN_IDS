@@ -63,10 +63,10 @@
 61,MCS19,200,START_STAGES,37,50,0.71,71,Boat charging // Boat on
 62,MCS19,200,BAT,216,10,0.206,103,battery voltage values
 63,MCS19,200,CAP,217,10,0.206,103,capacitor bank voltage values
-64,MT19,255,STATE,218,0,0.0,71,Module state report
-65,MT19,255,RPM,219,0,0.0,71,RPM motor values
+64,MT19,255,STATE,218,1,0.014,71,Module state report
+65,MT19,255,RPM,219,10,0.142,71,RPM motor values
 66,MSWI19,241,STATE,9,5,0.071,71,Module state report
 67,MSWI19,241,MOTOR,10,50,0.79,79,Motor controller parameters
-68,MSWI19,241,PUMPS,220,0,0.0,63,Pumps controller parameters
-69,MSWI19,241,MPPTS,221,0,0.0,71,Mppts controller parameters
+68,MSWI19,241,PUMPS,220,1,0.013,63,Pumps controller parameters
+69,MSWI19,241,MPPTS,221,1,0.014,71,Mppts controller parameters
 70,MSWI19,241,MCS,40,1,0.013,63,MCS controller parameters

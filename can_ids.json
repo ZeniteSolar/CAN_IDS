@@ -1,5 +1,5 @@
 {
-    "version": "0.1.10",
+    "version": "0.1.11",
     "modules": [
         {
             "name": "GENERIC",
@@ -2978,7 +2978,7 @@
                         null,
                         null
                     ],
-                    "frequency": 0,
+                    "frequency": 1,
                     "frame_length": 71
                 },
                 {
@@ -3010,7 +3010,7 @@
                         null,
                         null
                     ],
-                    "frequency": 0,
+                    "frequency": 10,
                     "frame_length": 71
                 }
             ]
@@ -3133,7 +3133,7 @@
                         null,
                         null
                     ],
-                    "frequency": 0,
+                    "frequency": 1,
                     "frame_length": 63
                 },
                 {
@@ -3175,7 +3175,7 @@
                         null,
                         null
                     ],
-                    "frequency": 0,
+                    "frequency": 1,
                     "frame_length": 71
                 },
                 {

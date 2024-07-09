@@ -1,7 +1,7 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
 #ifndef CAN_PARSER_TYPES_H
 #define CAN_PARSER_TYPES_H
-#define CAN_VERSION "0.1.10"
+#define CAN_VERSION "0.1.11"
 
 #include <stdint.h>
 

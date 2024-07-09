@@ -1411,7 +1411,7 @@ topic_state = can.Topic(
     msg="state",
     id=0b11011010,
     description="Module state report",
-    frequency = 0
+    frequency = 1
 )
 topic_state.describe_byte(
     name="state",
@@ -1433,7 +1433,7 @@ topic_rpm = can.Topic(
     msg="RPM",
     id=0b11011011,
     description="RPM motor values",
-    frequency = 0
+    frequency = 10
 )
 topic_rpm.describe_byte(
     name="AVG_L",
@@ -1526,7 +1526,7 @@ topic_pumps = can.Topic(
     msg="pumps",
     id=0b11011100,
     description="Pumps controller parameters",
-    frequency = 0
+    frequency = 1
 )
 topic_pumps.describe_byte(
     name="pumps",
@@ -1555,7 +1555,7 @@ topic_mppts = can.Topic(
     msg="mppts",
     id=0b11011101,
     description="Mppts controller parameters",
-    frequency = 0
+    frequency = 1
 )
 topic_mppts.describe_byte(
     name="mppts on",
