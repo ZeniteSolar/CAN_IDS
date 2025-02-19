@@ -310,6 +310,209 @@ module_mde22.add_topic(topic_state)
 module_mde22.add_topic(topic_measurements)
 can.add_module(module_mde22)
 
+
+################################################################################
+### MODULE: MNA23
+module_mna23 = can.Module(
+    name="mna23",
+    signature=171,
+    description="Automatic Navigation Module"
+)
+### TOPIC: STATE
+topic_state = can.Topic(
+    msg="state",
+    id=102,
+    frequency=1,
+    description="Module state report"
+)
+topic_state.describe_byte(
+    name="state",
+    byte=1,
+    description="State code",
+    btype="uint8_t",
+    units=""
+)
+topic_state.describe_byte(
+    name="error",
+    byte=2,
+    description="Error code",
+    btype="uint8_t",
+    units=""
+)
+# TOPIC: Navigation data measurements
+topic_measurements = can.Topic(
+    msg="navigation_measurements",
+    id=203,
+    frequency=50,
+    description="Navigation data"
+)
+topic_measurements.describe_byte(
+    name="yaw_l",
+    byte=1,
+    description="Current Yaw Angle, byte low",
+    btype="uint16_t",
+    units="º"
+)
+topic_measurements.describe_byte(
+    name="yaw_h",
+    byte=2,
+    description="Current Yaw Angle, byte high",
+    btype="uint16_t",
+    units="º"
+)
+topic_measurements.describe_byte(
+    name="roll_l",
+    byte=3,
+    description="Current Roll Angle, byte low",
+    btype="uint16_t",
+    units="º"
+)
+topic_measurements.describe_byte(
+    name="roll_h",
+    byte=4,
+    description="Current Roll Angle, byte high",
+    btype="uint16_t",
+    units="º"
+)
+topic_measurements.describe_byte(
+    name="pitch_l",
+    byte=5,
+    description="Current Pitch Angle, byte low",
+    btype="uint16_t",
+    units="º"
+)
+topic_measurements.describe_byte(
+    name="pitch_h",
+    byte=6,
+    description="Current Pitch Angle, byte high",
+    btype="uint16_t",
+    units="º"
+)
+topic_measurements.describe_byte(
+    name="lat_l",
+    byte=7,
+    description="Current Latitude, byte low",
+    btype="uint16_t",
+    units="º"
+)
+topic_measurements.describe_byte(
+    name="lat_h",
+    byte=8,
+    description="Current Latitude, byte high",
+    btype="uint16_t",
+    units="º"
+)
+topic_measurements.describe_byte(
+    name="lon_l",
+    byte=9,
+    description="Current Longitude, byte low",
+    btype="uint16_t",
+    units="º"
+)
+topic_measurements.describe_byte(
+    name="lon_h",
+    byte=10,
+    description="Current Longitude, byte high",
+    btype="uint16_t",
+    units="º"
+)
+topic_measurements.describe_byte(
+    name="speed_l",
+    byte=11,
+    description="Current Speed, byte low",
+    btype="uint16_t",
+    units="kn"
+)
+topic_measurements.describe_byte(
+    name="speed_h",
+    byte=12,
+    description="Current Speed, byte high",
+    btype="uint16_t",
+    units="kn"
+)
+topic_measurements.describe_byte(
+    name="approx_speed_l",
+    byte=13,
+    description="Current Aproximate Speed, byte low",
+    btype="uint16_t",
+    units="kn"
+)
+topic_measurements.describe_byte(
+    name="approx_speed_h",
+    byte=14,
+    description="Current Aproximate Speed, byte high",
+    btype="uint16_t",
+    units="kn"
+)
+# TOPIC: Navigation commands setpoints
+topic_commands = can.Topic(
+    msg="navigation_commands",
+    id=204,
+    frequency=50,
+    description="Navigation commands"
+)
+topic_commands.describe_byte(
+    name="heading_l",
+    byte=1,
+    description="Current Heading, byte low",
+    btype="uint16_t",
+    units="º"
+)
+topic_commands.describe_byte(
+    name="heading_h",
+    byte=2,
+    description="Current Heading, byte high",
+    btype="uint16_t",
+    units="º"
+)
+topic_commands.describe_byte(
+    name="dest_lat_l",
+    byte=3,
+    description="Destination Latitude, byte low",
+    btype="uint16_t",
+    units="º"
+)
+topic_commands.describe_byte(
+    name="dest_lat_h",
+    byte=4,
+    description="Destination Latitude, byte high",
+    btype="uint16_t",
+    units="º"
+)
+topic_commands.describe_byte(
+    name="dest_lon_l",
+    byte=5,
+    description="Destination Longitude, byte low",
+    btype="uint16_t",
+    units="º"
+)
+topic_commands.describe_byte(
+    name="dest_lon_h",
+    byte=6,
+    description="Destination Longitude, byte high",
+    btype="uint16_t",
+    units="º"
+)
+topic_commands.describe_byte(
+    name="setpnt_speed_l",
+    byte=7,
+    description="Speed Setpoint, byte low",
+    btype="uint16_t",
+    units="kn"
+)
+topic_commands.describe_byte(
+    name="setpnt_speed_h",
+    byte=8,
+    description="Speed Setpoint, byte high",
+    btype="uint16_t",
+    units="kn"
+)
+
+module_mna23.add_topic(topic_state)
+module_mna23.add_topic(topic_measurements)
+module_mna23.add_topic(topic_commands)
+can.add_module(module_mna23)
+
 ################################################################################
 ### MODULE: MVC19
 module_mvc19 = can.Module(
