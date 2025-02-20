@@ -390,12 +390,12 @@
         {
             "name": "MNA23",
             "description": "Automatic Navigation Module",
-            "signature": 300,
+            "signature": 171,
             "topics": [
                 {
                     "name": "STATE",
                     "description": "Module state report",
-                    "id": 301,
+                    "id": 172,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -427,7 +427,7 @@
                 {
                     "name": "NAVIGATION_ROTATION",
                     "description": "Navigation rotation measurements",
-                    "id": 302,
+                    "id": 173,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -479,7 +479,7 @@
                 {
                     "name": "NAVIGATION_POSITION",
                     "description": "Navigation position measurements",
-                    "id": 303,
+                    "id": 174,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -521,7 +521,7 @@
                 {
                     "name": "NAVIGATION_SPEED",
                     "description": "Navigation speed measurements",
-                    "id": 304,
+                    "id": 175,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -563,7 +563,7 @@
                 {
                     "name": "NAVIGATION_COMMANDS",
                     "description": "Navigation commands",
-                    "id": 305,
+                    "id": 176,
                     "bytes": [
                         {
                             "name": "SIGNATURE",

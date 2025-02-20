@@ -9,11 +9,11 @@
 7,MIC19,240,MDE,33,50,0.71,71,Steereing wheel controls
 8,MDE22,170,STATE,100,1,0.014,71,Module state report
 9,MDE22,170,STEERINGBAT_MEASUREMENTS,201,10,0.206,103,Auxiliar Battery Voltage
-10,MNA23,300,STATE,301,1,0.014,71,Module state report
-11,MNA23,300,NAVIGATION_ROTATION,302,50,1.03,103,Navigation rotation measurements
-12,MNA23,300,NAVIGATION_POSITION,303,50,0.87,87,Navigation position measurements
-13,MNA23,300,NAVIGATION_SPEED,304,50,0.87,87,Navigation speed measurements
-14,MNA23,300,NAVIGATION_COMMANDS,305,50,1.11,111,Navigation commands
+10,MNA23,171,STATE,172,1,0.014,71,Module state report
+11,MNA23,171,NAVIGATION_ROTATION,173,50,1.03,103,Navigation rotation measurements
+12,MNA23,171,NAVIGATION_POSITION,174,50,0.87,87,Navigation position measurements
+13,MNA23,171,NAVIGATION_SPEED,175,50,0.87,87,Navigation speed measurements
+14,MNA23,171,NAVIGATION_COMMANDS,176,50,1.11,111,Navigation commands
 15,MVC19_1,210,STATE,101,1,0.014,71,Module state report
 16,MVC19_2,211,STATE,102,1,0.014,71,Module state report
 17,MCC23_1,225,STATE,103,1,0.014,71,Module state report
