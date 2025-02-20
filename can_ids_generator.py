@@ -310,7 +310,6 @@ module_mde22.add_topic(topic_state)
 module_mde22.add_topic(topic_measurements)
 can.add_module(module_mde22)
 
-
 ################################################################################
 ### MODULE: MNA23
 module_mna23 = can.Module(
