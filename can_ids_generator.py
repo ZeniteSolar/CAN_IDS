@@ -314,13 +314,13 @@ can.add_module(module_mde22)
 ### MODULE: MNA23
 module_mna23 = can.Module(
     name="mna23",
-    signature=300,
+    signature=171,
     description="Automatic Navigation Module"
 )
 ### TOPIC: STATE
 topic_state = can.Topic(
     msg="state",
-    id=301,
+    id=172,
     frequency=1,
     description="Module state report"
 )
@@ -341,7 +341,7 @@ topic_state.describe_byte(
 # TOPIC: Navigation rotation measurements
 topic_rotation = can.Topic(
     msg="navigation_rotation",
-    id=302,
+    id=173,
     frequency=50,
     description="Navigation rotation measurements"
 )
@@ -390,7 +390,7 @@ topic_rotation.describe_byte(
 # TOPIC: Navigation position measurements
 topic_position = can.Topic(
     msg="navigation_position",
-    id=303,
+    id=174,
     frequency=50,
     description="Navigation position measurements"
 )
@@ -425,7 +425,7 @@ topic_position.describe_byte(
 # TOPIC: Navigation speed measurements
 topic_speed = can.Topic(
     msg="navigation_speed",
-    id=304,
+    id=175,
     frequency=50,
     description="Navigation speed measurements"
 )
@@ -460,7 +460,7 @@ topic_speed.describe_byte(
 # TOPIC: Navigation commands setpoints
 topic_commands = can.Topic(
     msg="navigation_commands",
-    id=305,
+    id=176,
     frequency=50,
     description="Navigation commands"
 )
