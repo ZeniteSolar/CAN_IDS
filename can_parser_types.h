@@ -1,7 +1,7 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
 #ifndef CAN_PARSER_TYPES_H
 #define CAN_PARSER_TYPES_H
-#define CAN_VERSION "0.1.11"
+#define CAN_VERSION "0.1.12"
 
 #include <stdint.h>
 
@@ -182,6 +182,139 @@ typedef struct
         };
     };
 } can_mde22_steeringbat_measurements_msg_t;
+
+// Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            uint8_t state;  // State code. Units: 
+            uint8_t error;  // Error code. Units: 
+        };
+    };
+} can_mna23_state_msg_t;
+
+// Navigation rotation measurements
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Current Yaw Angle, bytes low/high. Units: º
+                uint16_t yaw;
+                struct {
+                    uint8_t yaw_l;
+                    uint8_t yaw_h;
+                };
+            };
+            union {  // Current Roll Angle, bytes low/high. Units: º
+                uint16_t roll;
+                struct {
+                    uint8_t roll_l;
+                    uint8_t roll_h;
+                };
+            };
+            union {  // Current Pitch Angle, bytes low/high. Units: º
+                uint16_t pitch;
+                struct {
+                    uint8_t pitch_l;
+                    uint8_t pitch_h;
+                };
+            };
+        };
+    };
+} can_mna23_navigation_rotation_msg_t;
+
+// Navigation position measurements
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Current Latitude, bytes low/high. Units: º
+                uint16_t lat;
+                struct {
+                    uint8_t lat_l;
+                    uint8_t lat_h;
+                };
+            };
+            union {  // Current Longitude, bytes low/high. Units: º
+                uint16_t lon;
+                struct {
+                    uint8_t lon_l;
+                    uint8_t lon_h;
+                };
+            };
+        };
+    };
+} can_mna23_navigation_position_msg_t;
+
+// Navigation speed measurements
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Current Speed, bytes low/high. Units: kn
+                uint16_t speed;
+                struct {
+                    uint8_t speed_l;
+                    uint8_t speed_h;
+                };
+            };
+            union {  // Current Aproximate Speed, bytes low/high. Units: kn
+                uint16_t approx_speed;
+                struct {
+                    uint8_t approx_speed_l;
+                    uint8_t approx_speed_h;
+                };
+            };
+        };
+    };
+} can_mna23_navigation_speed_msg_t;
+
+// Navigation commands
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Current Heading, bytes low/high. Units: º
+                uint16_t heading;
+                struct {
+                    uint8_t heading_l;
+                    uint8_t heading_h;
+                };
+            };
+            union {  // Destination Latitude, bytes low/high. Units: º
+                uint16_t dest_lat;
+                struct {
+                    uint8_t dest_lat_l;
+                    uint8_t dest_lat_h;
+                };
+            };
+            union {  // Destination Longitude, bytes low/high. Units: º
+                uint16_t dest_lon;
+                struct {
+                    uint8_t dest_lon_l;
+                    uint8_t dest_lon_h;
+                };
+            };
+            uint8_t setpnt_speed;  // Speed Setpoint. Units: kn
+        };
+    };
+} can_mna23_navigation_commands_msg_t;
 
 // Module state report
 #pragma pack(push, 1) /* Ensure struct is packed */
@@ -1581,6 +1714,11 @@ typedef struct {
         can_mic19_mde_msg_t mic19_mde;
         can_mde22_state_msg_t mde22_state;
         can_mde22_steeringbat_measurements_msg_t mde22_steeringbat_measurements;
+        can_mna23_state_msg_t mna23_state;
+        can_mna23_navigation_rotation_msg_t mna23_navigation_rotation;
+        can_mna23_navigation_position_msg_t mna23_navigation_position;
+        can_mna23_navigation_speed_msg_t mna23_navigation_speed;
+        can_mna23_navigation_commands_msg_t mna23_navigation_commands;
         can_mvc19_1_state_msg_t mvc19_1_state;
         can_mvc19_2_state_msg_t mvc19_2_state;
         can_mcc23_1_state_msg_t mcc23_1_state;

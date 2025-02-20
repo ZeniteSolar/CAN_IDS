@@ -1,5 +1,5 @@
 {
-    "version": "0.1.11",
+    "version": "0.1.12",
     "modules": [
         {
             "name": "GENERIC",
@@ -384,6 +384,238 @@
                     ],
                     "frequency": 10,
                     "frame_length": 103
+                }
+            ]
+        },
+        {
+            "name": "MNA23",
+            "description": "Automatic Navigation Module",
+            "signature": 300,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 301,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 1,
+                    "frame_length": 71
+                },
+                {
+                    "name": "NAVIGATION_ROTATION",
+                    "description": "Navigation rotation measurements",
+                    "id": 302,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "YAW_L",
+                            "description": "Current Yaw Angle, byte low",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "YAW_H",
+                            "description": "Current Yaw Angle, byte high",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "ROLL_L",
+                            "description": "Current Roll Angle, byte low",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "ROLL_H",
+                            "description": "Current Roll Angle, byte high",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "PITCH_L",
+                            "description": "Current Pitch Angle, byte low",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "PITCH_H",
+                            "description": "Current Pitch Angle, byte high",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        null
+                    ],
+                    "frequency": 50,
+                    "frame_length": 103
+                },
+                {
+                    "name": "NAVIGATION_POSITION",
+                    "description": "Navigation position measurements",
+                    "id": 303,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "LAT_L",
+                            "description": "Current Latitude, byte low",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "LAT_H",
+                            "description": "Current Latitude, byte high",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "LON_L",
+                            "description": "Current Longitude, byte low",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "LON_H",
+                            "description": "Current Longitude, byte high",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 50,
+                    "frame_length": 87
+                },
+                {
+                    "name": "NAVIGATION_SPEED",
+                    "description": "Navigation speed measurements",
+                    "id": 304,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "SPEED_L",
+                            "description": "Current Speed, byte low",
+                            "type": "uint16_t",
+                            "units": "kn"
+                        },
+                        {
+                            "name": "SPEED_H",
+                            "description": "Current Speed, byte high",
+                            "type": "uint16_t",
+                            "units": "kn"
+                        },
+                        {
+                            "name": "APPROX_SPEED_L",
+                            "description": "Current Aproximate Speed, byte low",
+                            "type": "uint16_t",
+                            "units": "kn"
+                        },
+                        {
+                            "name": "APPROX_SPEED_H",
+                            "description": "Current Aproximate Speed, byte high",
+                            "type": "uint16_t",
+                            "units": "kn"
+                        },
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 50,
+                    "frame_length": 87
+                },
+                {
+                    "name": "NAVIGATION_COMMANDS",
+                    "description": "Navigation commands",
+                    "id": 305,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "HEADING_L",
+                            "description": "Current Heading, byte low",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "HEADING_H",
+                            "description": "Current Heading, byte high",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "DEST_LAT_L",
+                            "description": "Destination Latitude, byte low",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "DEST_LAT_H",
+                            "description": "Destination Latitude, byte high",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "DEST_LON_L",
+                            "description": "Destination Longitude, byte low",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "DEST_LON_H",
+                            "description": "Destination Longitude, byte high",
+                            "type": "uint16_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "SETPNT_SPEED",
+                            "description": "Speed Setpoint",
+                            "type": "uint8_t",
+                            "units": "kn"
+                        }
+                    ],
+                    "frequency": 50,
+                    "frame_length": 111
                 }
             ]
         },
