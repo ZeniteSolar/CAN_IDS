@@ -477,8 +477,8 @@
                     "frame_length": 103
                 },
                 {
-                    "name": "NAVIGATION_POSITION",
-                    "description": "Navigation position measurements",
+                    "name": "NAVIGATION_POSITION_LAT",
+                    "description": "Navigation position latitude measurements",
                     "id": 174,
                     "bytes": [
                         {
@@ -488,39 +488,39 @@
                             "units": ""
                         },
                         {
-                            "name": "LAT_L",
-                            "description": "Current Latitude, byte low",
-                            "type": "uint16_t",
+                            "name": "LAT_0",
+                            "description": "Current Latitude, first byte (LSB)",
+                            "type": "uint32_t",
                             "units": "\u00ba"
                         },
                         {
-                            "name": "LAT_H",
-                            "description": "Current Latitude, byte high",
-                            "type": "uint16_t",
+                            "name": "LAT_1",
+                            "description": "Current Latitude, second byte",
+                            "type": "uint32_t",
                             "units": "\u00ba"
                         },
                         {
-                            "name": "LON_L",
-                            "description": "Current Longitude, byte low",
-                            "type": "uint16_t",
+                            "name": "LAT_2",
+                            "description": "Current Latitude, third byte",
+                            "type": "uint32_t",
                             "units": "\u00ba"
                         },
                         {
-                            "name": "LON_H",
-                            "description": "Current Longitude, byte high",
-                            "type": "uint16_t",
+                            "name": "LAT_3",
+                            "description": "Current Latitude, fourth byte (MSB)",
+                            "type": "uint32_t",
                             "units": "\u00ba"
                         },
                         null,
                         null,
                         null
                     ],
-                    "frequency": 50,
+                    "frequency": 1,
                     "frame_length": 87
                 },
                 {
-                    "name": "NAVIGATION_SPEED",
-                    "description": "Navigation speed measurements",
+                    "name": "NAVIGATION_POSITION_LON",
+                    "description": "Navigation position longitude measurements",
                     "id": 175,
                     "bytes": [
                         {
@@ -530,40 +530,156 @@
                             "units": ""
                         },
                         {
-                            "name": "SPEED_L",
-                            "description": "Current Speed, byte low",
-                            "type": "uint16_t",
-                            "units": "kn"
+                            "name": "LON_0",
+                            "description": "Current Longitude, first byte (LSB)",
+                            "type": "uint32_t",
+                            "units": "\u00ba"
                         },
                         {
-                            "name": "SPEED_H",
-                            "description": "Current Speed, byte high",
-                            "type": "uint16_t",
-                            "units": "kn"
+                            "name": "LON_1",
+                            "description": "Current Longitude, second byte",
+                            "type": "uint32_t",
+                            "units": "\u00ba"
                         },
                         {
-                            "name": "APPROX_SPEED_L",
-                            "description": "Current Aproximate Speed, byte low",
-                            "type": "uint16_t",
-                            "units": "kn"
+                            "name": "LON_2",
+                            "description": "Current Longitude, third byte",
+                            "type": "uint32_t",
+                            "units": "\u00ba"
                         },
                         {
-                            "name": "APPROX_SPEED_H",
-                            "description": "Current Aproximate Speed, byte high",
-                            "type": "uint16_t",
-                            "units": "kn"
+                            "name": "LON_3",
+                            "description": "Current Longitude, fourth byte (MSB)",
+                            "type": "uint32_t",
+                            "units": "\u00ba"
                         },
                         null,
                         null,
                         null
                     ],
-                    "frequency": 50,
+                    "frequency": 1,
                     "frame_length": 87
+                },
+                {
+                    "name": "NAVIGATION_DESTINATION_LAT",
+                    "description": "Navigation destination latitude",
+                    "id": 176,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "LAT_0",
+                            "description": "Destination Latitude, first byte (LSB)",
+                            "type": "uint32_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "LAT_1",
+                            "description": "Destination Latitude, second byte",
+                            "type": "uint32_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "LAT_2",
+                            "description": "Destination Latitude, third byte",
+                            "type": "uint32_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "LAT_3",
+                            "description": "Destination Latitude, fourth byte (MSB)",
+                            "type": "uint32_t",
+                            "units": "\u00ba"
+                        },
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 1,
+                    "frame_length": 87
+                },
+                {
+                    "name": "NAVIGATION_DESTINATION_LON",
+                    "description": "Navigation destination longitude",
+                    "id": 177,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "LON_0",
+                            "description": "Destination Longitude, first byte (LSB)",
+                            "type": "uint32_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "LON_1",
+                            "description": "Destination Longitude, second byte",
+                            "type": "uint32_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "LON_2",
+                            "description": "Destination Longitude, third byte",
+                            "type": "uint32_t",
+                            "units": "\u00ba"
+                        },
+                        {
+                            "name": "LON_3",
+                            "description": "Destination Longitude, fourth byte (MSB)",
+                            "type": "uint32_t",
+                            "units": "\u00ba"
+                        },
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 1,
+                    "frame_length": 87
+                },
+                {
+                    "name": "NAVIGATION_SPEED",
+                    "description": "Navigation speed measurements",
+                    "id": 178,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "SPEED",
+                            "description": "Current Speed",
+                            "type": "uint8_t",
+                            "units": "km/h"
+                        },
+                        {
+                            "name": "APPROX_SPEED",
+                            "description": "Current Aproximate Speed",
+                            "type": "uint8_t",
+                            "units": "km/h"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 50,
+                    "frame_length": 71
                 },
                 {
                     "name": "NAVIGATION_COMMANDS",
                     "description": "Navigation commands",
-                    "id": 176,
+                    "id": 179,
                     "bytes": [
                         {
                             "name": "SIGNATURE",
@@ -584,38 +700,18 @@
                             "units": "\u00ba"
                         },
                         {
-                            "name": "DEST_LAT_L",
-                            "description": "Destination Latitude, byte low",
-                            "type": "uint16_t",
-                            "units": "\u00ba"
-                        },
-                        {
-                            "name": "DEST_LAT_H",
-                            "description": "Destination Latitude, byte high",
-                            "type": "uint16_t",
-                            "units": "\u00ba"
-                        },
-                        {
-                            "name": "DEST_LON_L",
-                            "description": "Destination Longitude, byte low",
-                            "type": "uint16_t",
-                            "units": "\u00ba"
-                        },
-                        {
-                            "name": "DEST_LON_H",
-                            "description": "Destination Longitude, byte high",
-                            "type": "uint16_t",
-                            "units": "\u00ba"
-                        },
-                        {
                             "name": "SETPNT_SPEED",
                             "description": "Speed Setpoint",
                             "type": "uint8_t",
                             "units": "kn"
-                        }
+                        },
+                        null,
+                        null,
+                        null,
+                        null
                     ],
                     "frequency": 50,
-                    "frame_length": 111
+                    "frame_length": 79
                 }
             ]
         },

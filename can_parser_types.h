@@ -230,7 +230,7 @@ typedef struct
     };
 } can_mna23_navigation_rotation_msg_t;
 
-// Navigation position measurements
+// Navigation position latitude measurements
 #pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
@@ -238,23 +238,61 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            union {  // Current Latitude, bytes low/high. Units: º
-                uint16_t lat;
-                struct {
-                    uint8_t lat_l;
-                    uint8_t lat_h;
-                };
-            };
-            union {  // Current Longitude, bytes low/high. Units: º
-                uint16_t lon;
-                struct {
-                    uint8_t lon_l;
-                    uint8_t lon_h;
-                };
-            };
+            uint32_t lat_0;  // Current Latitude, first byte (LSB). Units: º
+            uint32_t lat_1;  // Current Latitude, second byte. Units: º
+            uint32_t lat_2;  // Current Latitude, third byte. Units: º
+            uint32_t lat_3;  // Current Latitude, fourth byte (MSB). Units: º
         };
     };
-} can_mna23_navigation_position_msg_t;
+} can_mna23_navigation_position_lat_msg_t;
+
+// Navigation position longitude measurements
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            uint32_t lon_0;  // Current Longitude, first byte (LSB). Units: º
+            uint32_t lon_1;  // Current Longitude, second byte. Units: º
+            uint32_t lon_2;  // Current Longitude, third byte. Units: º
+            uint32_t lon_3;  // Current Longitude, fourth byte (MSB). Units: º
+        };
+    };
+} can_mna23_navigation_position_lon_msg_t;
+
+// Navigation destination latitude
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            uint32_t lat_0;  // Destination Latitude, first byte (LSB). Units: º
+            uint32_t lat_1;  // Destination Latitude, second byte. Units: º
+            uint32_t lat_2;  // Destination Latitude, third byte. Units: º
+            uint32_t lat_3;  // Destination Latitude, fourth byte (MSB). Units: º
+        };
+    };
+} can_mna23_navigation_destination_lat_msg_t;
+
+// Navigation destination longitude
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            uint32_t lon_0;  // Destination Longitude, first byte (LSB). Units: º
+            uint32_t lon_1;  // Destination Longitude, second byte. Units: º
+            uint32_t lon_2;  // Destination Longitude, third byte. Units: º
+            uint32_t lon_3;  // Destination Longitude, fourth byte (MSB). Units: º
+        };
+    };
+} can_mna23_navigation_destination_lon_msg_t;
 
 // Navigation speed measurements
 #pragma pack(push, 1) /* Ensure struct is packed */
@@ -264,20 +302,8 @@ typedef struct
         uint8_t raw[8];
         struct {
             uint8_t signature;  // Senders signature. Units: 
-            union {  // Current Speed, bytes low/high. Units: kn
-                uint16_t speed;
-                struct {
-                    uint8_t speed_l;
-                    uint8_t speed_h;
-                };
-            };
-            union {  // Current Aproximate Speed, bytes low/high. Units: kn
-                uint16_t approx_speed;
-                struct {
-                    uint8_t approx_speed_l;
-                    uint8_t approx_speed_h;
-                };
-            };
+            uint8_t speed;  // Current Speed. Units: km/h
+            uint8_t approx_speed;  // Current Aproximate Speed. Units: km/h
         };
     };
 } can_mna23_navigation_speed_msg_t;
@@ -295,20 +321,6 @@ typedef struct
                 struct {
                     uint8_t heading_l;
                     uint8_t heading_h;
-                };
-            };
-            union {  // Destination Latitude, bytes low/high. Units: º
-                uint16_t dest_lat;
-                struct {
-                    uint8_t dest_lat_l;
-                    uint8_t dest_lat_h;
-                };
-            };
-            union {  // Destination Longitude, bytes low/high. Units: º
-                uint16_t dest_lon;
-                struct {
-                    uint8_t dest_lon_l;
-                    uint8_t dest_lon_h;
                 };
             };
             uint8_t setpnt_speed;  // Speed Setpoint. Units: kn
@@ -1716,7 +1728,10 @@ typedef struct {
         can_mde22_steeringbat_measurements_msg_t mde22_steeringbat_measurements;
         can_mna23_state_msg_t mna23_state;
         can_mna23_navigation_rotation_msg_t mna23_navigation_rotation;
-        can_mna23_navigation_position_msg_t mna23_navigation_position;
+        can_mna23_navigation_position_lat_msg_t mna23_navigation_position_lat;
+        can_mna23_navigation_position_lon_msg_t mna23_navigation_position_lon;
+        can_mna23_navigation_destination_lat_msg_t mna23_navigation_destination_lat;
+        can_mna23_navigation_destination_lon_msg_t mna23_navigation_destination_lon;
         can_mna23_navigation_speed_msg_t mna23_navigation_speed;
         can_mna23_navigation_commands_msg_t mna23_navigation_commands;
         can_mvc19_1_state_msg_t mvc19_1_state;
