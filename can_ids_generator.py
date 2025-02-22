@@ -387,80 +387,171 @@ topic_rotation.describe_byte(
     btype="uint16_t",
     units="º"
 )
-# TOPIC: Navigation position measurements
-topic_position = can.Topic(
-    msg="navigation_position",
+# TOPIC: Navigation position latitude measurements
+topic_position_lat = can.Topic(
+    msg="navigation_position_lat",
     id=174,
-    frequency=50,
-    description="Navigation position measurements"
+    frequency=1,
+    description="Navigation position latitude measurements"
 )
-topic_position.describe_byte(
-    name="lat_l",
+topic_position_lat.describe_byte(
+    name="lat_0",
     byte=1,
-    description="Current Latitude, byte low",
-    btype="uint16_t",
+    description="Current Latitude, first byte (LSB)",
+    btype="uint32_t",
     units="º"
 )
-topic_position.describe_byte(
-    name="lat_h",
+topic_position_lat.describe_byte(
+    name="lat_1",
     byte=2,
-    description="Current Latitude, byte high",
-    btype="uint16_t",
+    description="Current Latitude, second byte",
+    btype="uint32_t",
     units="º"
 )
-topic_position.describe_byte(
-    name="lon_l",
+topic_position_lat.describe_byte(
+    name="lat_2",
     byte=3,
-    description="Current Longitude, byte low",
-    btype="uint16_t",
+    description="Current Latitude, third byte",
+    btype="uint32_t",
     units="º"
 )
-topic_position.describe_byte(
-    name="lon_h",
+topic_position_lat.describe_byte(
+    name="lat_3",
     byte=4,
-    description="Current Longitude, byte high",
-    btype="uint16_t",
+    description="Current Latitude, fourth byte (MSB)",
+    btype="uint32_t",
+    units="º"
+)
+# TOPIC: Navigation position longitude measurements
+topic_position_lon = can.Topic(
+    msg="navigation_position_lon",
+    id=175,
+    frequency=1,
+    description="Navigation position longitude measurements"
+)
+topic_position_lon.describe_byte(
+    name="lon_0",
+    byte=1,
+    description="Current Longitude, first byte (LSB)",
+    btype="uint32_t",
+    units="º"
+)
+topic_position_lon.describe_byte(
+    name="lon_1",
+    byte=2,
+    description="Current Longitude, second byte",
+    btype="uint32_t",
+    units="º"
+)
+topic_position_lon.describe_byte(
+    name="lon_2",
+    byte=3,
+    description="Current Longitude, third byte",
+    btype="uint32_t",
+    units="º"
+)
+topic_position_lon.describe_byte(
+    name="lon_3",
+    byte=4,
+    description="Current Longitude, fourth byte (MSB)",
+    btype="uint32_t",
+    units="º"
+)
+# TOPIC: Navigation destination latitude
+topic_destination_lat = can.Topic(
+    msg="navigation_destination_lat",
+    id=176,
+    frequency=1,
+    description="Navigation destination latitude"
+)
+topic_destination_lat.describe_byte(
+    name="lat_0",
+    byte=1,
+    description="Destination Latitude, first byte (LSB)",
+    btype="uint32_t",
+    units="º"
+)
+topic_destination_lat.describe_byte(
+    name="lat_1",
+    byte=2,
+    description="Destination Latitude, second byte",
+    btype="uint32_t",
+    units="º"
+)
+topic_destination_lat.describe_byte(
+    name="lat_2",
+    byte=3,
+    description="Destination Latitude, third byte",
+    btype="uint32_t",
+    units="º"
+)
+topic_destination_lat.describe_byte(
+    name="lat_3",
+    byte=4,
+    description="Destination Latitude, fourth byte (MSB)",
+    btype="uint32_t",
+    units="º"
+)
+# TOPIC: Navigation destination longitude
+topic_destination_lon = can.Topic(
+    msg="navigation_destination_lon",
+    id=177,
+    frequency=1,
+    description="Navigation destination longitude"
+)
+topic_destination_lon.describe_byte(
+    name="lon_0",
+    byte=1,
+    description="Destination Longitude, first byte (LSB)",
+    btype="uint32_t",
+    units="º"
+)
+topic_destination_lon.describe_byte(
+    name="lon_1",
+    byte=2,
+    description="Destination Longitude, second byte",
+    btype="uint32_t",
+    units="º"
+)
+topic_destination_lon.describe_byte(
+    name="lon_2",
+    byte=3,
+    description="Destination Longitude, third byte",
+    btype="uint32_t",
+    units="º"
+)
+topic_destination_lon.describe_byte(
+    name="lon_3",
+    byte=4,
+    description="Destination Longitude, fourth byte (MSB)",
+    btype="uint32_t",
     units="º"
 )
 # TOPIC: Navigation speed measurements
 topic_speed = can.Topic(
     msg="navigation_speed",
-    id=175,
+    id=178,
     frequency=50,
     description="Navigation speed measurements"
 )
 topic_speed.describe_byte(
-    name="speed_l",
+    name="speed",
     byte=1,
-    description="Current Speed, byte low",
-    btype="uint16_t",
-    units="kn"
+    description="Current Speed",
+    btype="uint8_t",
+    units="km/h"
 )
 topic_speed.describe_byte(
-    name="speed_h",
+    name="approx_speed",
     byte=2,
-    description="Current Speed, byte high",
-    btype="uint16_t",
-    units="kn"
-)
-topic_speed.describe_byte(
-    name="approx_speed_l",
-    byte=3,
-    description="Current Aproximate Speed, byte low",
-    btype="uint16_t",
-    units="kn"
-)
-topic_speed.describe_byte(
-    name="approx_speed_h",
-    byte=4,
-    description="Current Aproximate Speed, byte high",
-    btype="uint16_t",
-    units="kn"
+    description="Current Aproximate Speed",
+    btype="uint8_t",
+    units="km/h"
 )
 # TOPIC: Navigation commands setpoints
 topic_commands = can.Topic(
     msg="navigation_commands",
-    id=176,
+    id=179,
     frequency=50,
     description="Navigation commands"
 )
@@ -479,36 +570,8 @@ topic_commands.describe_byte(
     units="º"
 )
 topic_commands.describe_byte(
-    name="dest_lat_l",
-    byte=3,
-    description="Destination Latitude, byte low",
-    btype="uint16_t",
-    units="º"
-)
-topic_commands.describe_byte(
-    name="dest_lat_h",
-    byte=4,
-    description="Destination Latitude, byte high",
-    btype="uint16_t",
-    units="º"
-)
-topic_commands.describe_byte(
-    name="dest_lon_l",
-    byte=5,
-    description="Destination Longitude, byte low",
-    btype="uint16_t",
-    units="º"
-)
-topic_commands.describe_byte(
-    name="dest_lon_h",
-    byte=6,
-    description="Destination Longitude, byte high",
-    btype="uint16_t",
-    units="º"
-)
-topic_commands.describe_byte(
     name="setpnt_speed",
-    byte=7,
+    byte=3,
     description="Speed Setpoint",
     btype="uint8_t",
     units="kn"
@@ -516,7 +579,10 @@ topic_commands.describe_byte(
 
 module_mna23.add_topic(topic_state)
 module_mna23.add_topic(topic_rotation)
-module_mna23.add_topic(topic_position)
+module_mna23.add_topic(topic_position_lat)
+module_mna23.add_topic(topic_position_lon)
+module_mna23.add_topic(topic_destination_lat)
+module_mna23.add_topic(topic_destination_lon)
 module_mna23.add_topic(topic_speed)
 module_mna23.add_topic(topic_commands)
 can.add_module(module_mna23)
