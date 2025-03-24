@@ -531,7 +531,7 @@ topic_destination_lon.describe_byte(
 topic_speed = can.Topic(
     msg="navigation_speed",
     id=178,
-    frequency=50,
+    frequency=10,
     description="Navigation speed measurements"
 )
 topic_speed.describe_byte(
