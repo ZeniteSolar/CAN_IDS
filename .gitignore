@@ -144,5 +144,6 @@ ENV/
 env.bak/
 venv.bak/
 pip-selfcheck.json
+.python_venv/
 
 # End of https://www.gitignore.io/api/vim,python,virtualenv
