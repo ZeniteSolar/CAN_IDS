@@ -15,7 +15,7 @@
 13,MNA23,171,NAVIGATION_POSITION_LON,175,1,0.017,87,Navigation position longitude measurements
 14,MNA23,171,NAVIGATION_DESTINATION_LAT,176,1,0.017,87,Navigation destination latitude
 15,MNA23,171,NAVIGATION_DESTINATION_LON,177,1,0.017,87,Navigation destination longitude
-16,MNA23,171,NAVIGATION_SPEED,178,50,0.71,71,Navigation speed measurements
+16,MNA23,171,NAVIGATION_SPEED,178,10,0.142,71,Navigation speed measurements
 17,MNA23,171,NAVIGATION_COMMANDS,179,50,0.79,79,Navigation commands
 18,MVC19_1,210,STATE,101,1,0.014,71,Module state report
 19,MVC19_2,211,STATE,102,1,0.014,71,Module state report

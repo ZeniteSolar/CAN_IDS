@@ -673,7 +673,7 @@
                         null,
                         null
                     ],
-                    "frequency": 50,
+                    "frequency": 10,
                     "frame_length": 71
                 },
                 {
