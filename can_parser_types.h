@@ -1,7 +1,7 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
 #ifndef CAN_PARSER_TYPES_H
 #define CAN_PARSER_TYPES_H
-#define CAN_VERSION "0.1.12"
+#define CAN_VERSION "0.1.13"
 
 #include <stdint.h>
 
@@ -117,7 +117,7 @@ typedef struct
     };
 } can_mic19_mcs_msg_t;
 
-// Steereing wheel controls
+// Steering wheel controls
 #pragma pack(push, 1) /* Ensure struct is packed */
 typedef struct
 {
@@ -135,6 +135,22 @@ typedef struct
         };
     };
 } can_mic19_mde_msg_t;
+
+// Autopilot control
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            struct { // Autopilot disable command
+                uint8_t mna_disable : 1;
+                uint8_t _unused : 7;
+            } mna_disable;
+        };
+    };
+} can_mic19_mna_msg_t;
 
 // Module state report
 #pragma pack(push, 1) /* Ensure struct is packed */
@@ -1724,6 +1740,7 @@ typedef struct {
         can_mic19_mppts_msg_t mic19_mppts;
         can_mic19_mcs_msg_t mic19_mcs;
         can_mic19_mde_msg_t mic19_mde;
+        can_mic19_mna_msg_t mic19_mna;
         can_mde22_state_msg_t mde22_state;
         can_mde22_steeringbat_measurements_msg_t mde22_steeringbat_measurements;
         can_mna23_state_msg_t mna23_state;

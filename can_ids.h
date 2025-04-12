@@ -1,5 +1,5 @@
 // CODE GENERATED USING MAKOTEMPLATES.ORG, DO NOT EDIT.
-#define CAN_VERSION "0.1.12"
+#define CAN_VERSION "0.1.13"
 
 #include <stdint.h>
 
@@ -99,7 +99,7 @@
 #define CAN_MSG_MIC19_MCS_BOAT_ON_TYPE uint8_t
 #define CAN_MSG_MIC19_MCS_BOAT_ON_UNITS ""
 #define CAN_MSG_MIC19_MCS_BOAT_ON_BOAT_ON_BIT 0
-// MIC19 - MDE - Steereing wheel controls
+// MIC19 - MDE - Steering wheel controls
 #define CAN_MSG_MIC19_MDE_ID 33
 #define CAN_MSG_MIC19_MDE_LENGTH 3
 #define CAN_MSG_MIC19_MDE_FREQUENCY 50
@@ -112,6 +112,17 @@
 #define CAN_MSG_MIC19_MDE_POSITION_H_BYTE 2 //<!" Steering wheel position, byte HIGH
 #define CAN_MSG_MIC19_MDE_POSITION_H_TYPE uint16_t
 #define CAN_MSG_MIC19_MDE_POSITION_H_UNITS "°/100"
+// MIC19 - MNA - Autopilot control
+#define CAN_MSG_MIC19_MNA_ID 38
+#define CAN_MSG_MIC19_MNA_LENGTH 2
+#define CAN_MSG_MIC19_MNA_FREQUENCY 50
+#define CAN_MSG_MIC19_MNA_SIGNATURE_BYTE 0 //<!" Senders signature
+#define CAN_MSG_MIC19_MNA_SIGNATURE_TYPE uint8_t
+#define CAN_MSG_MIC19_MNA_SIGNATURE_UNITS ""
+#define CAN_MSG_MIC19_MNA_MNA_DISABLE_BYTE 1 //<!" Autopilot disable command
+#define CAN_MSG_MIC19_MNA_MNA_DISABLE_TYPE uint8_t
+#define CAN_MSG_MIC19_MNA_MNA_DISABLE_UNITS ""
+#define CAN_MSG_MIC19_MNA_MNA_DISABLE_MNA_DISABLE_BIT 0
 
 
 // MDE22 - Modulo da Direção Elétrica

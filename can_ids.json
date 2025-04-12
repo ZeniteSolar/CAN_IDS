@@ -1,5 +1,5 @@
 {
-    "version": "0.1.12",
+    "version": "0.1.13",
     "modules": [
         {
             "name": "GENERIC",
@@ -264,7 +264,7 @@
                 },
                 {
                     "name": "MDE",
-                    "description": "Steereing wheel controls",
+                    "description": "Steering wheel controls",
                     "id": 33,
                     "bytes": [
                         {
@@ -293,6 +293,43 @@
                     ],
                     "frequency": 50,
                     "frame_length": 71
+                },
+                {
+                    "name": "MNA",
+                    "description": "Autopilot control",
+                    "id": 38,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "MNA_DISABLE",
+                            "description": "Autopilot disable command",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "MNA_DISABLE",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 50,
+                    "frame_length": 63
                 }
             ]
         },
