@@ -203,7 +203,7 @@ topic_mde = can.Topic(
     msg="mde",
     id=33,
     frequency = 50,
-    description="Steereing wheel controls",
+    description="Steering wheel controls",
 )
 topic_mde.describe_byte(
     name="position_l",
@@ -219,6 +219,25 @@ topic_mde.describe_byte(
     btype="uint16_t",
     units="°/100"
 )
+#### TOPIC: MNA
+topic_mna = can.Topic(
+    msg="mna",
+    id=38,
+    frequency = 50,
+    description="Autopilot control",
+)
+topic_mna.describe_byte(
+    name="mna disable",
+    byte=1,
+    description="Autopilot disable command",
+    btype="bitfield",
+    units=""
+)
+topic_mna.describe_bit(
+    name="mna disable",
+    byte=1,
+    bit=0
+)
 
 module_mic19.add_topic(topic_state)
 module_mic19.add_topic(topic_motor)
@@ -226,6 +245,7 @@ module_mic19.add_topic(topic_pumps)
 module_mic19.add_topic(topic_mppts)
 module_mic19.add_topic(topic_mcs)
 module_mic19.add_topic(topic_mde)
+module_mic19.add_topic(topic_mna)
 can.add_module(module_mic19)
 
 ################################################################################
