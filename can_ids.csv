@@ -38,9 +38,9 @@
 36,MCC23_9,233,STATE,111,1,0.014,71,Module state report
 37,MCC23_9,233,MEASUREMENTS,210,10,0.222,111,All measurements from the converter
 38,MCC23_9,233,AUX_MEASUREMENTS,233,10,0.19,95,Auxiliary measurements from the converter
-39,MCB19_1,220,STATE,118,1,0.014,71,Module state report
+39,MCB19_1,220,STATE,118,1,0.016,79,Module state report
 40,MCB19_1,220,MEASUREMENTS,222,10,0.222,111,All measurements from the converter
-41,MCB19_2,221,STATE,119,1,0.014,71,Module state report
+41,MCB19_2,221,STATE,119,1,0.016,79,Module state report
 42,MCB19_2,221,MEASUREMENTS,223,10,0.222,111,All measurements from the converter
 43,MAC22,180,STATE,35,5,0.071,71,Module state report
 44,MAC22,180,CONTACTOR,34,50,0.63,63,Contactor task response

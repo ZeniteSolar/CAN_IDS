@@ -539,34 +539,34 @@ topic_state.describe_byte(
 )
 topic_state.describe_byte(
     name="control",
-    byte=2,
+    byte=3,
     description="Control flags for operating point",
     btype="bitfield",
     units=""
 )
 topic_state.describe_bit(
     name="enable",
-    byte=2,
+    byte=3,
     bit=0
 )
 topic_state.describe_bit(
     name="vi_safe_range",
-    byte=2,
+    byte=3,
     bit=1
 )
 topic_state.describe_bit(
     name="vo_safe_range",
-    byte=2,
+    byte=3,
     bit=2
 )
 topic_state.describe_bit(
     name="vi_stable",
-    byte=2,
+    byte=3,
     bit=3
 )
 topic_state.describe_bit(
     name="dt_safe_range",
-    byte=2,
+    byte=3,
     bit=4
 )
 

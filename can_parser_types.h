@@ -913,6 +913,7 @@ typedef struct
         struct {
             uint8_t signature;  // Senders signature. Units: 
             uint8_t state;  // State code. Units: 
+            uint8_t error;  // Error code. Units: 
             struct { // Control flags for operating point
                 uint8_t enable : 1;
                 uint8_t vi_safe_range : 1;
@@ -968,6 +969,7 @@ typedef struct
         struct {
             uint8_t signature;  // Senders signature. Units: 
             uint8_t state;  // State code. Units: 
+            uint8_t error;  // Error code. Units: 
             struct { // Control flags for operating point
                 uint8_t enable : 1;
                 uint8_t vi_safe_range : 1;
