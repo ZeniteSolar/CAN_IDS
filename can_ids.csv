@@ -70,3 +70,6 @@
 68,MSWI19,241,PUMPS,220,1,0.013,63,Pumps controller parameters
 69,MSWI19,241,MPPTS,221,1,0.014,71,Mppts controller parameters
 70,MSWI19,241,MCS,40,1,0.013,63,MCS controller parameters
+71,MCV25,242,STATE,90,0,0.0,71,Module state report
+72,MCV25,242,MOTOR,91,25,0.395,79,Motor controller parameters
+73,MCV25,242,MDE,92,25,0.355,71,Steereing wheel controls

@@ -1602,3 +1602,101 @@ module_mswi19.add_topic(topic_pumps)
 module_mswi19.add_topic(topic_mppts)
 module_mswi19.add_topic(topic_mcs)
 can.add_module(module_mswi19)
+
+################################################################################
+### MODULE: MCV25
+module_mcv25 = can.Module(
+    name="mcv25",
+    signature=242,
+    description="Modulo de Controle por Voz"
+)
+#### TOPIC: STATE
+topic_state = can.Topic(
+    msg="state",
+    id=90,
+    description="Module state report",
+    frequency = 0
+)
+topic_state.describe_byte(
+    name="state",
+    byte=1,
+    description="State code",
+    btype="uint8_t",
+    units=""
+)
+topic_state.describe_byte(
+    name="error",
+    byte=2,
+    description="Error code",
+    btype="uint8_t",
+    units=""
+)
+#### TOPIC: MOTOR
+topic_motor = can.Topic(
+    msg="motor",
+    id=91,
+    frequency=25,
+    description="Motor controller parameters"
+)
+topic_motor.describe_byte(
+    name="motor",
+    byte=1,
+    description="Motor state",
+    btype="bitfield",
+    units=""
+)
+topic_motor.describe_bit(
+    name="motor on",
+    byte=1,
+    bit=0
+)
+topic_motor.describe_bit(
+    name="dms on",
+    byte=1,
+    bit=1
+)
+topic_motor.describe_bit(
+    name="reverse",
+    byte=1,
+    bit=2
+)
+topic_motor.describe_byte(
+    name="D",
+    byte=2,
+    description="Motor Duty Cycle",
+    btype="uint8_t",
+    units="%"
+)
+topic_motor.describe_byte(
+    name="I",
+    byte=3,
+    description="Motor Soft Start",
+    btype="uint8_t",
+    units="%"
+)
+#### TOPIC: MDE
+topic_mde = can.Topic(
+    msg="mde",
+    id=92,
+    frequency = 25,
+    description="Steereing wheel controls",
+)
+topic_mde.describe_byte(
+    name="position_l",
+    byte=1,
+    description="Steering wheel position, byte LOW",
+    btype="uint16_t",
+    units="°/100"
+)
+topic_mde.describe_byte(
+    name="position_h",
+    byte=2,
+    description="Steering wheel position, byte HIGH",
+    btype="uint16_t",
+    units="°/100"
+)
+
+module_mcv25.add_topic(topic_state)
+module_mcv25.add_topic(topic_motor)
+module_mcv25.add_topic(topic_mde)
+can.add_module(module_mcv25)

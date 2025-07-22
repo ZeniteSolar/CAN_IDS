@@ -1568,6 +1568,59 @@ typedef struct
     };
 } can_mswi19_mcs_msg_t;
 
+// Module state report
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            uint8_t state;  // State code. Units: 
+            uint8_t error;  // Error code. Units: 
+        };
+    };
+} can_mcv25_state_msg_t;
+
+// Motor controller parameters
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            struct { // Motor state
+                uint8_t motor_on : 1;
+                uint8_t dms_on : 1;
+                uint8_t reverse : 1;
+                uint8_t _unused : 5;
+            } motor;
+            uint8_t d;  // Motor Duty Cycle. Units: %
+            uint8_t i;  // Motor Soft Start. Units: %
+        };
+    };
+} can_mcv25_motor_msg_t;
+
+// Steereing wheel controls
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            union {  // Steering wheel position, byte HIGH. Units: °/100
+                uint16_t position;
+                struct {
+                    uint8_t position_l;
+                    uint8_t position_h;
+                };
+            };
+        };
+    };
+} can_mcv25_mde_msg_t;
+
 typedef struct {
     uint32_t id;
     uint8_t dlc;
@@ -1644,6 +1697,9 @@ typedef struct {
         can_mswi19_pumps_msg_t mswi19_pumps;
         can_mswi19_mppts_msg_t mswi19_mppts;
         can_mswi19_mcs_msg_t mswi19_mcs;
+        can_mcv25_state_msg_t mcv25_state;
+        can_mcv25_motor_msg_t mcv25_motor;
+        can_mcv25_mde_msg_t mcv25_mde;
     };
 } can_msg_t;
 

@@ -3226,6 +3226,124 @@
                     "frame_length": 63
                 }
             ]
+        },
+        {
+            "name": "MCV25",
+            "description": "Modulo de Controle por Voz",
+            "signature": 242,
+            "topics": [
+                {
+                    "name": "STATE",
+                    "description": "Module state report",
+                    "id": 90,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "STATE",
+                            "description": "State code",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "ERROR",
+                            "description": "Error code",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 0,
+                    "frame_length": 71
+                },
+                {
+                    "name": "MOTOR",
+                    "description": "Motor controller parameters",
+                    "id": 91,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "MOTOR",
+                            "description": "Motor state",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "MOTOR_ON",
+                                "DMS_ON",
+                                "REVERSE",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        {
+                            "name": "D",
+                            "description": "Motor Duty Cycle",
+                            "type": "uint8_t",
+                            "units": "%"
+                        },
+                        {
+                            "name": "I",
+                            "description": "Motor Soft Start",
+                            "type": "uint8_t",
+                            "units": "%"
+                        },
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 25,
+                    "frame_length": 79
+                },
+                {
+                    "name": "MDE",
+                    "description": "Steereing wheel controls",
+                    "id": 92,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "POSITION_L",
+                            "description": "Steering wheel position, byte LOW",
+                            "type": "uint16_t",
+                            "units": "\u00b0/100"
+                        },
+                        {
+                            "name": "POSITION_H",
+                            "description": "Steering wheel position, byte HIGH",
+                            "type": "uint16_t",
+                            "units": "\u00b0/100"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 25,
+                    "frame_length": 71
+                }
+            ]
         }
     ],
     "bitrate": 500000.0
