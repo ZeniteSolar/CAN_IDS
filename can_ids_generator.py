@@ -1695,8 +1695,28 @@ topic_mde.describe_byte(
     btype="uint16_t",
     units="°/100"
 )
+#### TOPIC: Boat state
+topic_boat_state = can.Topic(
+    msg="Boat state",
+    id=93,
+    frequency = 50,
+    description="MCV25 controller parameters",
+)
+topic_boat_state.describe_byte(
+    name="boat on",
+    byte=1,
+    description="Boat state",
+    btype="bitfield",
+    units=""
+)
+topic_boat_state.describe_bit(
+    name="boat on",
+    byte=1,
+    bit=0
+)
 
 module_mcv25.add_topic(topic_state)
 module_mcv25.add_topic(topic_motor)
 module_mcv25.add_topic(topic_mde)
+module_mcv25.add_topic(topic_boat_state)
 can.add_module(module_mcv25)

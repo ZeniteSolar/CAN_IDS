@@ -73,3 +73,4 @@
 71,MCV25,242,STATE,90,0,0.0,71,Module state report
 72,MCV25,242,MOTOR,91,25,0.395,79,Motor controller parameters
 73,MCV25,242,MDE,92,25,0.355,71,Steereing wheel controls
+74,MCV25,242,BOAT_STATE,93,50,0.63,63,MCV25 controller parameters

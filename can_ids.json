@@ -3342,6 +3342,43 @@
                     ],
                     "frequency": 25,
                     "frame_length": 71
+                },
+                {
+                    "name": "BOAT_STATE",
+                    "description": "MCV25 controller parameters",
+                    "id": 93,
+                    "bytes": [
+                        {
+                            "name": "SIGNATURE",
+                            "description": "Senders signature",
+                            "type": "uint8_t",
+                            "units": ""
+                        },
+                        {
+                            "name": "BOAT_ON",
+                            "description": "Boat state",
+                            "type": "bitfield",
+                            "units": "",
+                            "bits": [
+                                "BOAT_ON",
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "frequency": 50,
+                    "frame_length": 63
                 }
             ]
         }

@@ -1621,6 +1621,22 @@ typedef struct
     };
 } can_mcv25_mde_msg_t;
 
+// MCV25 controller parameters
+#pragma pack(push, 1) /* Ensure struct is packed */
+typedef struct
+{
+    union {
+        uint8_t raw[8];
+        struct {
+            uint8_t signature;  // Senders signature. Units: 
+            struct { // Boat state
+                uint8_t boat_on : 1;
+                uint8_t _unused : 7;
+            } boat_on;
+        };
+    };
+} can_mcv25_boat_state_msg_t;
+
 typedef struct {
     uint32_t id;
     uint8_t dlc;
@@ -1700,6 +1716,7 @@ typedef struct {
         can_mcv25_state_msg_t mcv25_state;
         can_mcv25_motor_msg_t mcv25_motor;
         can_mcv25_mde_msg_t mcv25_mde;
+        can_mcv25_boat_state_msg_t mcv25_boat_state;
     };
 } can_msg_t;
 
